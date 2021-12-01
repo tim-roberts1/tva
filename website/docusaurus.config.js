@@ -17,7 +17,8 @@ const config = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'pluralsight',
-  projectName: 'tva',
+  projectName: 'pluralsight/tva/',
+  trailingSlash: true,
 
   presets: [
     [
