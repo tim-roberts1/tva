@@ -11,13 +11,13 @@ const config = {
   tagline:
     'A single set of principles, guidelines, patterns, assets and components for Pluralsight.',
   // url: 'https://design.pluralsight.com',
-  url: 'https://pluralsight.github.io/tva/',
-  baseUrl: '/',
+  url: 'https://pluralsight.github.io',
+  baseUrl: '/tva/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'pluralsight',
-  projectName: 'pluralsight/tva/',
+  projectName: 'tva',
   trailingSlash: true,
 
   presets: [
