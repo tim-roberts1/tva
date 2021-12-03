@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[6959],{8572:function(o){o.exports=JSON.parse('{"name":"color","permalink":"/tva/docs/tags/color","docs":[{"id":"foundations/color","title":"Color","description":"This section is a work in progress.","permalink":"/tva/docs/foundations/color"}],"allTagsPath":"/tva/docs/tags"}')}}]);
