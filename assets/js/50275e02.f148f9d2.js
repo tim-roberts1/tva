@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[284],{187:function(s){s.exports=JSON.parse('{"name":"Accessibility","permalink":"/tva/docs/tags/accessibility","docs":[{"id":"foundations/a11y","title":"Accessibility","description":"This section is a work in progress.","permalink":"/tva/docs/foundations/a11y"}],"allTagsPath":"/tva/docs/tags"}')}}]);
