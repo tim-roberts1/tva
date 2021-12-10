@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[3804],{5770:function(e){e.exports=JSON.parse('{"name":"FAQ","permalink":"/tva/docs/tags/faq","docs":[{"id":"development/getting-started/faq","title":"FAQ","description":"This section is a work in progress.","permalink":"/tva/docs/development/getting-started/faq"}],"allTagsPath":"/tva/docs/tags"}')}}]);

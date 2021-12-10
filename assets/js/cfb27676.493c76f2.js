@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[2637],{1881:function(s){s.exports=JSON.parse('{"name":"Typography","permalink":"/tva/docs/tags/typography","docs":[{"id":"foundations/typography","title":"Typography","description":"This section is a work in progress.","permalink":"/tva/docs/foundations/typography"}],"allTagsPath":"/tva/docs/tags"}')}}]);

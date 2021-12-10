@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[3551],{7881:function(e){e.exports=JSON.parse('{"name":"Inclusive","permalink":"/tva/docs/tags/inclusive","docs":[{"id":"content/language","title":"Inclusive Language","description":"This section is a work in progress.","permalink":"/tva/docs/content/language"}],"allTagsPath":"/tva/docs/tags"}')}}]);

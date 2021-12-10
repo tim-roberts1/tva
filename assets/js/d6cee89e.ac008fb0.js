@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[6281],{5686:function(s){s.exports=JSON.parse('{"name":"Components","permalink":"/tva/docs/tags/components","docs":[{"id":"components/app-frame","title":"App Frame","description":"This section is a work in progress.","permalink":"/tva/docs/components/app-frame"}],"allTagsPath":"/tva/docs/tags"}')}}]);

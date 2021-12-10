@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[3080],{7657:function(s){s.exports=JSON.parse('{"name":"Logos","permalink":"/tva/docs/tags/logos","docs":[{"id":"foundations/logos","title":"Logos","description":"This section is a work in progress.","permalink":"/tva/docs/foundations/logos"}],"allTagsPath":"/tva/docs/tags"}')}}]);
