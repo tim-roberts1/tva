@@ -9,7 +9,7 @@ Please read [the full text](/CODE_OF_CONDUCT.md) so that you can understand what
 
 ## A large spectrum of contributions
 
-There are many ways to contribute to TVA, code contribution is one aspect of it. For instance, documentation improvements are as important as code changes.
+There are many ways to contribute to TVA; code contribution is one aspect of it. For instance, documentation improvements are as important as code changes.
 
 ## Your first Pull Request
 
@@ -30,9 +30,9 @@ When in doubt, keep your Pull Requests small. To give a Pull Request the best ch
 
 The core team is monitoring for Pull Requests. We will review your Pull Request and either merge it, request changes to it, or close it with an explanation.
 
-## PR edicate
+## PR etiquette
 
-Before "creating a pull request", please consider instead [creating a draft](https://github.blog/2019-02-14-introducing-draft-pull-requests/) while the CI is waiting to complete. Once **all your tests pass**, then open your pull request. There is no need to assign anyone as our maintainers will recieve notifications when any PR's are posted.
+Before "creating a pull request," please consider instead [creating a draft](https://github.blog/2019-02-14-introducing-draft-pull-requests/) while the CI is waiting to complete. Once **all your tests pass**, then open your pull request. There is no need to assign anyone as our maintainers will recieve notifications when any PR's are posted.
 
 ## Online one-click setup for contributing
 
@@ -40,7 +40,7 @@ You can use the new [github.dev](https://github.dev/pluralsight/tva) feature. Wh
 
 ## Workspaces
 
-We use Yarn 2 workspaces so each workspace is a NPM package or our docs website. All NPM packages are located in the `packages` directory and our docs are located in `website`. You will find easy start up commands for every workspace in the project root package.json file.
+We use Yarn 2 workspaces so each workspace is an NPM package or our docs website. All NPM packages are located in the `packages` directory and our docs are located in `website`. You will find easy start up commands for every workspace in the project root package.json file.
 
 All you need to do is run `yarn install` once you are in your online editor.
 
