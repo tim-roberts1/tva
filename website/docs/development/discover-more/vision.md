@@ -5,7 +5,7 @@ tags: [Development, Discover More, Vision]
 
 # Vision
 
-Our vision is to provide an elegant framework agnostic implementation of the Pluralsight Design guidelines that can be customized to fully match your brand.
+Our vision is to provide an elegant framework-agnostic implementation of the Pluralsight Design guidelines that can be customized to fully match your brand.
 
 The Pluralsight Design guidelines are an incredible starting point, but they do not provide guidance on all aspects or needs of an application. In addition to the guidelines-specific implementation, we want Pluralsight Design to become whatever is generally useful for application development, all in the spirit of the Pluralsight Design guidelines.
 
@@ -17,5 +17,5 @@ From a developer's point of view, we want Pluralsight Design to:
 
 - Deliver on fully composable "headless" helpers.
 - Be themable / customizable.
-- Be cross browser compatible and accessible.
+- Be cross-browser compatible and accessible.
 - Promote developer joy, a sense of community, and an environment where new and experienced developers can learn from each other.
