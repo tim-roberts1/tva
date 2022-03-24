@@ -70,10 +70,6 @@ All of our web packages **depend on our normalize.css** file to be used in your 
 />
 ```
 
-## Mobile Assets
-
-Our `tokens` package will also deliver all of our fonts and icons via assets for each platform we support (commonly `.png` types). :heart:
-
 ## Design resources
 
 A set of reusable components for design tools is available, designed to match the web components and to help you craft great products:
