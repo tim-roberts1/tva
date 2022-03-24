@@ -11,7 +11,7 @@ This is **alpha** documentation for the **design-tokens** package.
 
 :::
 
-#### Learn how to use design-tokens for any project or OS platform.
+<p class="page-subheadline" markdown="1">Learn how to use design-tokens for any project or OS platform.</p>
 
 ## npm
 

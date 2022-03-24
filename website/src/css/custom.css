@@ -341,3 +341,8 @@ html[data-theme='dark'] .card__text,
 html[data-theme='dark'] .card__text h3 {
   color: hsl(214deg 36% 16% / 100%);
 }
+
+.page-subheadline {
+  font-size: 1.25rem;
+  font-weight: 600;
+}

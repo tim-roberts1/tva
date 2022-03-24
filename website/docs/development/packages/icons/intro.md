@@ -11,7 +11,7 @@ This is **unreleased** documentation for Pluralsight Design **icons** package.
 
 :::
 
-The `icons` package provides icons ready to insert into your application as inline SVG elements.
+<p class="page-subheadline" markdown="1">The icons package provides icons ready to insert into your application as inline SVG elements.</p>
 
 ## npm
 
