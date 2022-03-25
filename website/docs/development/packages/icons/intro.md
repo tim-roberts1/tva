@@ -21,100 +21,108 @@ To use icons in your application, install the npm package.
 npm install @pluralsight/icons@alpha
 ```
 
+## Pluralsight icons
+
+**TODO**
+
+## Why SVG?
+
+We chose to use inline Scalable Vector Graphics (SVG) after a thorough consideration of alternatives.
+
+See also: [Discussion](https://github.com/pluralsight/tva/discussions/70), [RFC](https://github.com/pluralsight/tva-rfcs/blob/main/text/0000-icons.md#alternatives)
+
+Benefits of inline SVG include:
+
+- Same high quality at any size
+- Compact format
+- No layout shift
+- Good default accessibility
+- Can control color with CSS, including inheriting from parent
+- No additional requests to load
+- Can be individually imported and tree-shaken
+- Increased control for things like animation and multiple colors
+
+Other methods showed promise, but had one or more drawbacks that ruled them out. The main contenders were:
+
+- Icon fonts
+  - Pros
+    - Controlled with CSS
+    - Cacheable
+    - Usable by any framework (and beyond, since it is a font)
+  - Cons
+    - Limited built-in accessibility (could use ligatures and in some cases, symbol matching)
+    - Degraded quality due to rendering as a font (usually minor but noticeable)
+    - Requires single-path SVG to generate font. Quality and optimizations can be lost in the conversion.
+    - Always includes all icons
+    - Controlled by `font-size` instead of `height` and `width` (a pro in some contexts)
+    - Monochromatic
+    - Layout shift
+    - Additional network request - similar challenges as custom fonts (FOUT)
+- CSS: mask-image
+  - Pros
+    - Controlled with CSS
+    - Usable by any framework
+  - Cons
+    - Will not render at all in IE11
+    - No built-in accessibility
+    - Increased CSS size (could potentially be tree-shaken, but still each icon would need to be listed twice due to current vendor prefixes)
+- img with data-uri
+  - Pros
+    - Fast rendering
+    - Easier to support any framework with the same output
+    - Easy to make accessible (img tag)
+  - Cons
+    - Cannot control color via CSS
+    - No default accessibility
+
 ## Usage
 
-### Inline SVG Elements
+The `icons` package provides an inline SVG element specific to your framework.
+
+Icons can be imported by name from the package root for React JSX.
+
+```javascript
+import { menuIcon } from '@pluralsight/icons'
+```
+
+If you are using a different, supported framework, append its name to the path.
+
+```javascript
+import { menuIcon } from '@pluralsight/icons/svelte'
+```
 
 :::note
 
-This library provides only the icon element to allow for maximum flexibility.
-
-Additional attributes will be provided by the `headless-styles` package.
+If your bundler does not support tree shaking, please see our notes on [minimizing bundle size](api.md#minimizing-bundle-size)
 
 :::
 
-```jsx title="Using an icon element in React"
-import { menuIcon } from '@pluralsight/icons/navigation'
-import { getIconStyles } from '@pluralsight/headless-styles'
+For comparisson, here is an example of a 1:1 replacement of an inline SVG element with an icon from the library in JSX
 
+```jsx title="Inline icon element"
 const MenuIcon = (props) => (
-  <span {...getIconStyles()} {...props}>
-    {menuIcon}
+  <span {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="menu icon"
+      viewBox="0 0 24 24"
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M22 11.5v1a.5.5 0 0 1-.5.5h-19a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h19a.5.5 0 0 1 .5.5zM2.5 17h18.98a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2.5a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm0-12h18.977a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2.5a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z"
+      />
+    </svg>
   </span>
 )
 
 export default MenuIcon
 ```
 
-### Coloring
+```jsx title="TVA icon element"
+import { menuIcon } from '@pluralsight/icons'
 
-By default the icons are monochromatic and will inherit the `color` of their parent.
+const MenuIcon = (props) => <span {...props}>{menuIcon}</span>
 
-This ensures the icon color matches its context by default to enable seamless theming while still allowing for control over the icon's color separately.
-
-```jsx title="Example of icon color inheritance"
-import { menuIcon } from '@pluralsight/icons/navigation'
-
-// icon is blue
-const BlueBlock = (
-  <div style={{ color: '#00f' }}>
-    ...
-    <span>{menuIcon}</span>
-    ...
-  </div>
-)
+export default MenuIcon
 ```
-
-### SVG Files (fallback)
-
-:::danger
-
-Directly importing the SVG files is meant only for unsupported frameworks.
-
-This approach requires that you provide any tooling necessary for importing and using the SVG elements in your environment.
-
-:::
-
-```jsx title="Importing an icon as SVG file into an app created with create-react-app"
-import { ReactComponent as MenuIcon } from '@pluralsight/icons/svg/navigation/menu.svg'
-import { getIconProps } from '@pluralsight/headless-styles'
-
-// Props are applied to the parent rather than directly to the component
-// in order to maintain consistent structural assumptions.
-const MyMenuComponent = (props) => (
-  <span {...getIconProps()} {...props}>
-    <MenuIcon />
-  </span>
-)
-```
-
-## Accessibility
-
-An accessible description of each icon is included by default in the SVG itself.
-
-## Organization and Naming
-
-We provide `jsx` elements by default. Other formats will be available in corresponding subfolders. e.g., `import { menuIcon } from '@pluralsight/icons/svelte/navigation'`
-
-Each exported icon is named in camelCase and suffixed with "Icon".
-
-Icons are organized into the same categories as [Material UI icons](https://fonts.google.com/icons).
-
-- Action
-- Alert
-- Audio & Video
-- Communication
-- Content
-- Device
-- Editor
-- File
-- Hardware
-- Home
-- Image
-- Maps
-- Navigation
-- Notification
-- Places
-- Search
-- Social
-- Toggle
