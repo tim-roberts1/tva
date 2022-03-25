@@ -15,7 +15,7 @@ This is **unreleased** documentation for Pluralsight Design **icons** package.
 
 ## npm
 
-To use icons in your application, first install the npm package.
+To use icons in your application, install the npm package.
 
 ```bash npm2yarn
 npm install @pluralsight/icons@alpha
