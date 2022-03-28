@@ -3,7 +3,7 @@ sidebar_position: 2
 tags: [Development, Usage, Icons]
 ---
 
-# Icons
+# API
 
 :::caution
 
