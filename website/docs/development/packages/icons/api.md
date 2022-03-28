@@ -24,7 +24,6 @@ npm install @pluralsight/icons@alpha
 :::note
 
 This library provides only the svg element to allow for maximum flexibility.
-
 Additional attributes, such as sizing, will be provided by the `headless-styles` package.
 
 :::
