@@ -13,19 +13,7 @@ This is **unreleased** documentation for Pluralsight Design **icons** package.
 
 <p class="page-subheadline" markdown="1">The icons package provides icons ready to insert into your application as inline SVG elements.</p>
 
-## npm
-
-To use icons in your application, install the npm package.
-
-```bash npm2yarn
-npm install @pluralsight/icons@alpha
-```
-
-## Pluralsight icons
-
-**TODO**
-
-## Why SVG?
+## SVG vs. Icon Font War
 
 We chose to use inline Scalable Vector Graphics (SVG) after a thorough consideration of alternatives.
 
