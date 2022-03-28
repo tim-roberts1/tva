@@ -122,7 +122,7 @@ Icons are organized into the same categories as [Material UI icons](https://font
 
 ## Icon Listing
 
-_Coming soon_
+_TBD_
 
 ## Minimizing Bundle Size
 
@@ -203,7 +203,6 @@ module.exports = { plugins }
 :::danger
 
 Directly importing the SVG files is meant only for unsupported frameworks and is not recommended.
-
 This approach requires that you provide any tooling necessary for importing and using the SVG elements in your environment.
 
 :::
