@@ -21,13 +21,6 @@ npm install @pluralsight/icons@alpha
 
 ## Usage
 
-:::note
-
-This library provides only the svg element to allow for maximum flexibility.
-Additional attributes, such as sizing, will be provided by the `headless-styles` package.
-
-:::
-
 Icons can be imported by name from the package root for React JSX.
 
 ```javascript
@@ -58,6 +51,13 @@ const MenuIcon = (props) => (
 
 export default MenuIcon
 ```
+
+:::tip
+
+This library provides only the svg element to allow for maximum flexibility.
+Additional attributes, such as sizing, will be provided by the `headless-styles` package.
+
+:::
 
 ## Coloring
 
