@@ -1,28 +1,29 @@
 import React from 'react'
 import CodeBlock from '@theme/CodeBlock'
 
-export function ButtonSizesPreview() {
+export function IconSizesPreview() {
   return (
-    <CodeBlock>{`<button {...getButtonProps()}>default</button>
-<button {...getButtonProps({ size: 'xs' })}>xtra-small</button>
-<button {...getButtonProps({ size: 's' })}>small</button>
-<button {...getButtonProps({ size: 'm' })}>medium</button>
-<button {...getButtonProps({ size: 'l' })}>large</button>`}</CodeBlock>
+    <CodeBlock>{`<span {...getIconProps()}>{menuIcon}</span>
+<span {...getIconProps({ size: 'xs' })}>{menuIcon}</span>
+<span {...getIconProps({ size: 's' })}>{menuIcon}</span>
+<span {...getIconProps({ size: 'm' })}>{menuIcon}</span>
+<span {...getIconProps({ size: 'l' })}>{menuIcon}</span>`}</CodeBlock>
   )
 }
 
-export function ButtonSizesFullPreview() {
+export function IconSizesFullPreview() {
   return (
-    <CodeBlock>{`import { getButtonProps } from '@pluralsight/headless-styles';
+    <CodeBlock>{`import { menuIcon } from '@pluralsight/icons'
+import { getIconProps } from '@pluralsight/headless-styles'
 
-export default function ButtonsSizes() {
+export default function IconsSizes() {
   return (
     <div>
-      <button {...getButtonProps()}>default</button>
-      <button {...getButtonProps({ size: 'xs' })}>xtra-small</button>
-      <button {...getButtonProps({ size: 's' })}>small</button>
-      <button {...getButtonProps({ size: 'm' })}>medium</button>
-      <button {...getButtonProps({ size: 'l' })}>large</button>
+      <span {...getIconProps()}>{menuIcon}</span>
+      <span {...getIconProps({ size: 'xs' })}>{menuIcon}</span>
+      <span {...getIconProps({ size: 's' })}>{menuIcon}</span>
+      <span {...getIconProps({ size: 'm' })}>{menuIcon}</span>
+      <span {...getIconProps({ size: 'l' })}>{menuIcon}</span>
     </div>
   );
 }`}</CodeBlock>

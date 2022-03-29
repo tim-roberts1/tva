@@ -8,6 +8,10 @@ import {
   BasicIconPreview,
   BasicIconFullPreview,
 } from '@site/src/components/Icons/BasicIcon.preview'
+import {
+  IconSizesPreview,
+  IconSizesFullPreview,
+} from '@site/src/components/Icons/IconSizes.preview'
 
 # API
 
@@ -69,7 +73,7 @@ If your bundler does not support tree shaking, please see our notes on [minimizi
 ## Icon colors
 
 By default the icons are monochromatic and will inherit the `color` of their parent.
-This ensures the icon color matches its context by default and facilitate theming while still allowing for control over the icon's color directly.
+This ensures the icon color matches its context by default and facilitates theming while still allowing for control over the icon's color directly.
 
 ```jsx title="Example of icon color inheritance"
 import { warningIcon } from '@pluralsight/icons'
@@ -89,28 +93,19 @@ const DangerBlock = (
 
 ## Icon sizes
 
-We have defined four standard sizes for icons. This sizing should be applied using the `headless-styles` package.
+`Icons` come in four size variants: xs, s, m (default), l.
 
-```typescript title="Example interface - does not exist in types"
-interface IconSizeGuide {
-  xs: {
-    height: '1rem'
-    width: '1rem'
-  }
-  s: {
-    height: '1.25rem'
-    width: '1.25rem'
-  }
-  m: {
-    height: '1.5rem'
-    width: '1.5rem'
-  }
-  l: {
-    height: '3rem'
-    width: '3rem'
-  }
-}
-```
+<LiveExampleTabs
+  fullCode={<IconSizesFullPreview />}
+  sandboxList={{
+    chakra: '',
+    joy: '',
+    styled: '',
+    svelte: '',
+  }}
+>
+  <IconSizesPreview />
+</LiveExampleTabs>
 
 ## Icons
 
