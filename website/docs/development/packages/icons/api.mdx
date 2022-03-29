@@ -72,13 +72,16 @@ By default the icons are monochromatic and will inherit the `color` of their par
 This ensures the icon color matches its context by default and facilitate theming while still allowing for control over the icon's color directly.
 
 ```jsx title="Example of icon color inheritance"
-import { menuIcon } from '@pluralsight/icons'
+import { warningIcon } from '@pluralsight/icons'
 
-const BlueBlock = (
-  <div style={{ color: '#00f' }}>
+const DangerBlock = (
+  <div style={{
+    color: 'var(--ps-danger-text)'
+    background: 'var(--ps-danger-background)'
+  }}>
     ...
-    {/* icon is blue */}
-    <span>{menuIcon}</span>
+    {/* icon color will match text */}
+    <span>{warningIcon}</span>
     ...
   </div>
 )
@@ -116,7 +119,6 @@ An accessible label is included by default for each icon in the SVG itself.
 ## Organization and Naming
 
 We provide `jsx` elements by default. Other formats will be available in corresponding subfolders. e.g., `import { menuIcon } from '@pluralsight/icons/svelte'`
-
 Each exported icon is named in camelCase and suffixed with "Icon".
 
 Icons are organized into the same categories as [Material UI icons](https://fonts.google.com/icons).
