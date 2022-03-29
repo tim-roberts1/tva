@@ -15,53 +15,7 @@ This is **unreleased** documentation for Pluralsight Design **icons** package.
 
 ## SVG vs. Icon Font War
 
-We chose to use inline Scalable Vector Graphics (SVG) after a thorough consideration of alternatives.
-
-See also: [Discussion](https://github.com/pluralsight/tva/discussions/70), [RFC](https://github.com/pluralsight/tva-rfcs/blob/main/text/0000-icons.md#alternatives)
-
-Benefits of inline SVG include:
-
-- Same high quality at any size
-- Compact format
-- No layout shift
-- Good default accessibility
-- Can control color with CSS, including inheriting from parent
-- No additional requests to load
-- Can be individually imported and tree-shaken
-- Increased control for things like animation and multiple colors
-
-Other methods showed promise, but had one or more drawbacks that ruled them out. The main contenders were:
-
-- Icon fonts
-  - Pros
-    - Controlled with CSS
-    - Cacheable
-    - Usable by any framework (and beyond, since it is a font)
-  - Cons
-    - Limited built-in accessibility (could use ligatures and in some cases, symbol matching)
-    - Degraded quality due to rendering as a font (usually minor but noticeable)
-    - Requires single-path SVG to generate font. Quality and optimizations can be lost in the conversion.
-    - Always includes all icons
-    - Controlled by `font-size` instead of `height` and `width` (a pro in some contexts)
-    - Monochromatic
-    - Layout shift
-    - Additional network request - similar challenges as custom fonts (FOUT)
-- CSS: mask-image
-  - Pros
-    - Controlled with CSS
-    - Usable by any framework
-  - Cons
-    - Will not render at all in IE11
-    - No built-in accessibility
-    - Increased CSS size (could potentially be tree-shaken, but still each icon would need to be listed twice due to current vendor prefixes)
-- img with data-uri
-  - Pros
-    - Fast rendering
-    - Easier to support any framework with the same output
-    - Easy to make accessible (img tag)
-  - Cons
-    - Cannot control color via CSS
-    - No default accessibility
+After a [thorough and unbiased comparison of the performance and quality of icon fonts vs inline SVG](https://github.com/pluralsight/tva/discussions/70) we determined that the most performant approach will be to use inline SVG elements. In the [RFC for the Icons package](https://github.com/pluralsight/tva-rfcs/blob/main/text/0000-icons.md) we continued to refine our approach for delivering and rendering icons on the web.
 
 ## Usage
 
