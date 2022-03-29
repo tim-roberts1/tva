@@ -88,10 +88,26 @@ const BlueBlock = (
 
 We have defined four standard sizes for icons. This sizing should be applied using the `headless-styles` package.
 
-- `xs`: 16px
-- `s`: 20px
-- `m`: 24px
-- `l`: 48px
+```typescript title="Example interface - does not exist in types"
+interface IconSizeGuide {
+  xs: {
+    height: '1rem'
+    width: '1rem'
+  }
+  s: {
+    height: '1.25rem'
+    width: '1.25rem'
+  }
+  m: {
+    height: '1.5rem'
+    width: '1.5rem'
+  }
+  l: {
+    height: '3rem'
+    width: '3rem'
+  }
+}
+```
 
 ## Accessibility
 
