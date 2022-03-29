@@ -25,7 +25,7 @@ To use icons in your application, install the npm package.
 npm install @pluralsight/icons@alpha
 ```
 
-## Usage
+## Basic example
 
 <LiveExampleTabs
   fullCode={<BasicIconFullPreview />}
@@ -46,7 +46,7 @@ Additional attributes, such as sizing, will be provided by the `headless-styles`
 
 :::
 
-### Importing by Framework
+### Importing by framework
 
 Icons can be imported by name from the package root for React JSX.
 
@@ -66,7 +66,7 @@ If your bundler does not support tree shaking, please see our notes on [minimizi
 
 :::
 
-## Coloring
+## Icon colors
 
 By default the icons are monochromatic and will inherit the `color` of their parent.
 This ensures the icon color matches its context by default and facilitate theming while still allowing for control over the icon's color directly.
@@ -87,7 +87,7 @@ const DangerBlock = (
 )
 ```
 
-## Sizing
+## Icon sizes
 
 We have defined four standard sizes for icons. This sizing should be applied using the `headless-styles` package.
 
@@ -112,60 +112,36 @@ interface IconSizeGuide {
 }
 ```
 
-## Accessibility
-
-An accessible label is included by default for each icon in the SVG itself.
-
-```xml
-<svg aria-label="menu icon" role="img" viewBox="0 0 24 24">
-  <path
-    fill-rule="evenodd"
-    clip-rule="evenodd"
-    d="M22 11.5v1a.5.5 0 0 1-.5.5h-19a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h19a.5.5 0 0 1 .5.5zM2.5 17h18.98a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2.5a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm0-12h18.977a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2.5a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z"
-  ></path>
-</svg>
-```
-
-## Organization and Naming
-
-We provide `jsx` elements by default. Other formats will be available in corresponding subfolders. e.g., `import { menuIcon } from '@pluralsight/icons/svelte'`
-Each exported icon is named in camelCase and suffixed with "Icon".
-
-Icons are organized into the same categories as [Material UI icons](https://fonts.google.com/icons).
-
-## Icon Listing
+## Icons
 
 _TBD_
 
-## Minimizing Bundle Size
+## Icon size guide
 
-:::note
+We have defined four standard sizes for icons. This sizing should be applied using the `headless-styles` package.
 
-The following instructions are only needed if you are using an older bundler that doesn't support tree-shaking.
-
-:::
-
-Tree-shaking of `@pluralsight/icons` works out of the box in modern frameworks. If you're using ES6 modules and a bundler that supports tree-shaking you can safely use named imports and still get an optimized bundle size automatically:
-
-```javascript
-import { bookmarkIcon, menuIcon } from '@pluralsight/icons'
+```typescript title="Example interface - does not exist in types"
+interface IconSizeGuide {
+  xs: {
+    height: '1rem'
+    width: '1rem'
+  }
+  s: {
+    height: '1.25rem'
+    width: '1.25rem'
+  }
+  m: {
+    height: '1.5rem'
+    width: '1.5rem'
+  }
+  l: {
+    height: '3rem'
+    width: '3rem'
+  }
+}
 ```
 
-### Pathed Imports
-
-Without tree-shaking, you can reduce your bundle size by directly importing the icons you need. To do this, append the category to the path.
-
-```javascript title="Pathed import for React"
-import menuIcon from '@pluralsight/icons/navigation/menuIcon'
-```
-
-When importing for other frameworks, the framework comes before the category.
-
-```javascript title="Pathed import for Svelte"
-import menuIcon from '@pluralsight/icons/svelte/navigation/menuIcon'
-```
-
-## Importing SVG Files (fallback)
+## Importing SVG files (fallback)
 
 :::danger
 
