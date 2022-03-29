@@ -116,6 +116,16 @@ interface IconSizeGuide {
 
 An accessible label is included by default for each icon in the SVG itself.
 
+```xml
+<svg aria-label="menu icon" role="img" viewBox="0 0 24 24">
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M22 11.5v1a.5.5 0 0 1-.5.5h-19a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h19a.5.5 0 0 1 .5.5zM2.5 17h18.98a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2.5a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm0-12h18.977a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2.5a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z"
+  ></path>
+</svg>
+```
+
 ## Organization and Naming
 
 We provide `jsx` elements by default. Other formats will be available in corresponding subfolders. e.g., `import { menuIcon } from '@pluralsight/icons/svelte'`
