@@ -153,52 +153,6 @@ When importing for other frameworks, the framework comes before the category.
 import menuIcon from '@pluralsight/icons/svelte/navigation/menuIcon'
 ```
 
-### Babel
-
-If your bundler doesn't support tree-shaking, you can continue to use named imports using Babel to handle the tree-shaking.
-
-Pick one of the following plugins:
-
-#### [babel-plugin-import](https://github.com/umijs/babel-plugin-import)
-
-```bash npm2yarn
-npm install -D babel-plugin-import
-```
-
-Create a .babelrc.js file in the root directory of your project:
-
-```javascript
-const plugins = [
-  [
-    'babel-plugin-import',
-    {
-      libraryName: '@pluralsight/icons',
-      libraryDirectory: '',
-      camel2DashComponentName: false,
-    },
-    'icons',
-  ],
-]
-
-module.exports = { plugins }
-```
-
-#### [babel-plugin-direct-import](https://github.com/umidbekk/babel-plugin-direct-import)
-
-```bash npm2yarn
-  npm install -D babel-plugin-direct-import
-```
-
-Create a .babelrc.js file in the root directory of your project:
-
-```javascript
-const plugins = [
-  ['babel-plugin-direct-import', { modules: ['@pluralsight/icons'] }],
-]
-
-module.exports = { plugins }
-```
-
 ## Importing SVG Files (fallback)
 
 :::danger
