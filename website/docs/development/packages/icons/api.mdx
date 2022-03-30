@@ -1,0 +1,161 @@
+---
+sidebar_position: 2
+tags: [Development, Usage, Icons]
+---
+
+import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
+import {
+  BasicIconPreview,
+  BasicIconFullPreview,
+} from '@site/src/components/Icons/BasicIcon.preview'
+import {
+  IconSizesPreview,
+  IconSizesFullPreview,
+} from '@site/src/components/Icons/IconSizes.preview'
+import {
+  IconColorPreview,
+  IconColorFullPreview,
+} from '@site/src/components/Icons/IconColor.preview'
+
+# API
+
+:::caution
+
+This is **unreleased** documentation for Pluralsight Design **icons** package.
+
+:::
+
+## Installation
+
+To use icons in your application, install the npm package.
+
+```bash npm2yarn
+npm install @pluralsight/icons@alpha
+```
+
+## Basic example
+
+<LiveExampleTabs
+  fullCode={<BasicIconFullPreview />}
+  sandboxList={{
+    chakra: '',
+    joy: '',
+    styled: '',
+    svelte: '',
+  }}
+>
+  <BasicIconPreview />
+</LiveExampleTabs>
+
+:::tip
+
+This library provides only the svg element to allow for maximum flexibility.
+Additional attributes, such as sizing, will be provided by the `headless-styles` package.
+
+:::
+
+### Importing by framework
+
+Icons can be imported by name from the package root for React JSX.
+
+```javascript
+import { menuIcon } from '@pluralsight/icons'
+```
+
+If you are using a different, supported framework, append its name to the path.
+
+```javascript
+import { menuIcon } from '@pluralsight/icons/svelte'
+```
+
+:::note
+
+If your bundler does not support tree shaking, please see our notes on [minimizing bundle size](#minimizing-bundle-size)
+
+:::
+
+## Icon colors
+
+By default the icons are monochromatic and will inherit the `color` of their parent.
+This ensures the icon color matches its context by default and facilitates theming while still allowing for control over the icon's color directly.
+
+<LiveExampleTabs
+  fullCode={<IconColorFullPreview />}
+  sandboxList={{
+    chakra: '',
+    joy: '',
+    styled: '',
+    svelte: '',
+  }}
+>
+  <IconColorPreview />
+</LiveExampleTabs>
+
+## Icon sizes
+
+`Icons` come in four size variants: xs, s, m (default), l.
+
+<LiveExampleTabs
+  fullCode={<IconSizesFullPreview />}
+  sandboxList={{
+    chakra: '',
+    joy: '',
+    styled: '',
+    svelte: '',
+  }}
+>
+  <IconSizesPreview />
+</LiveExampleTabs>
+
+## Icons
+
+_TBD_
+
+## Icon size guide
+
+We have defined four standard sizes for icons. This sizing should be applied using the `headless-styles` package.
+
+```typescript title="Example interface - does not exist in types"
+interface IconSizeGuide {
+  xs: {
+    height: '1rem'
+    width: '1rem'
+  }
+  s: {
+    height: '1.25rem'
+    width: '1.25rem'
+  }
+  m: {
+    height: '1.5rem'
+    width: '1.5rem'
+  }
+  l: {
+    height: '3rem'
+    width: '3rem'
+  }
+}
+```
+
+## Importing SVG files (fallback)
+
+:::danger
+
+Directly importing the SVG files is meant only for unsupported frameworks and is not recommended.
+This approach requires that you provide any tooling necessary for importing and using the SVG elements in your environment.
+
+:::
+
+```jsx title="Importing an icon as SVG file into an app created with create-react-app"
+import { ReactComponent as MenuIcon } from '@pluralsight/icons/svg/navigation/menu.svg'
+import { getIconProps } from '@pluralsight/headless-styles'
+
+const MyMenuComponent = (props) => (
+  {/*
+    Props are applied to the parent rather than directly to the icon component
+    in order to maintain consistent structural assumptions.
+  */}
+  <span {...getIconProps()} {...props}>
+    <MenuIcon />
+  </span>
+)
+```
