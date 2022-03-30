@@ -12,6 +12,10 @@ import {
   IconSizesPreview,
   IconSizesFullPreview,
 } from '@site/src/components/Icons/IconSizes.preview'
+import {
+  IconColorPreview,
+  IconColorFullPreview,
+} from '@site/src/components/Icons/IconColor.preview'
 
 # API
 
@@ -75,21 +79,17 @@ If your bundler does not support tree shaking, please see our notes on [minimizi
 By default the icons are monochromatic and will inherit the `color` of their parent.
 This ensures the icon color matches its context by default and facilitates theming while still allowing for control over the icon's color directly.
 
-```jsx title="Example of icon color inheritance"
-import { warningIcon } from '@pluralsight/icons'
-
-const DangerBlock = (
-  <div style={{
-    color: 'var(--ps-danger-text)'
-    background: 'var(--ps-danger-background)'
-  }}>
-    ...
-    {/* icon color will match text */}
-    <span>{warningIcon}</span>
-    ...
-  </div>
-)
-```
+<LiveExampleTabs
+  fullCode={<IconColorFullPreview />}
+  sandboxList={{
+    chakra: '',
+    joy: '',
+    styled: '',
+    svelte: '',
+  }}
+>
+  <IconColorPreview />
+</LiveExampleTabs>
 
 ## Icon sizes
 
@@ -149,9 +149,11 @@ This approach requires that you provide any tooling necessary for importing and 
 import { ReactComponent as MenuIcon } from '@pluralsight/icons/svg/navigation/menu.svg'
 import { getIconProps } from '@pluralsight/headless-styles'
 
-// Props are applied to the parent rather than directly to the icon component
-// in order to maintain consistent structural assumptions.
 const MyMenuComponent = (props) => (
+  {/*
+    Props are applied to the parent rather than directly to the icon component
+    in order to maintain consistent structural assumptions.
+  */}
   <span {...getIconProps()} {...props}>
     <MenuIcon />
   </span>
