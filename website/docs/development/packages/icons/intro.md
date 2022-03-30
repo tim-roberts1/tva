@@ -19,7 +19,7 @@ As symbols, the initial meaning may be different for each person, so it is also 
 
 ## Purpose
 
-The purpose of this package is to provide the library of PluralSight icons as simple, low-level elements that can be used to build content or higher-order components for the web.
+The purpose of this package is to provide the library of Pluralsight icons as simple, low-level elements that can be used to build content or higher-order components for the web.
 
 ## SVG vs. icon font
 
