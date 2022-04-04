@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-tags: [Development, Usage, Icons]
+tags: [Development, Usage, Icons, Web]
 ---
 
 import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
@@ -17,7 +17,7 @@ import {
   IconColorFullPreview,
 } from '@site/src/components/Icons/IconColor.preview'
 
-# API
+# Usage (Web)
 
 :::caution
 
@@ -35,6 +35,8 @@ npm install @pluralsight/icons@alpha
 
 ## Basic example
 
+Icons are provided as simple inline SVG elements.
+
 <LiveExampleTabs
   fullCode={<BasicIconFullPreview />}
   sandboxList={{
@@ -50,27 +52,8 @@ npm install @pluralsight/icons@alpha
 :::tip
 
 This library provides only the svg element to allow for maximum flexibility.
-Additional attributes, such as sizing, will be provided by the `headless-styles` package.
-
-:::
-
-### Importing by framework
-
-Icons can be imported by name from the package root for React JSX.
-
-```javascript
-import { menuIcon } from '@pluralsight/icons'
-```
-
-If you are using a different, supported framework, append its name to the path.
-
-```javascript
-import { menuIcon } from '@pluralsight/icons/svelte'
-```
-
-:::note
-
-If your bundler does not support tree shaking, please see our notes on [minimizing bundle size](#minimizing-bundle-size)
+Additional attributes, such as sizing, will be provided by the `headless-styles`
+package, which can also be applied to custom icons.
 
 :::
 
@@ -135,6 +118,26 @@ interface IconSizeGuide {
   }
 }
 ```
+
+## Importing by framework
+
+Icons can be imported by name from the package root for React JSX.
+
+```javascript
+import { menuIcon } from '@pluralsight/icons'
+```
+
+If you are using a different, supported framework, append its name to the path.
+
+```javascript
+import { menuIcon } from '@pluralsight/icons/svelte'
+```
+
+:::note
+
+If your bundler does not support tree shaking, please see our notes on [minimizing bundle size](#minimizing-bundle-size)
+
+:::
 
 ## Importing SVG files (fallback)
 
