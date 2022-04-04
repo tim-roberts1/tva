@@ -54,26 +54,6 @@ Additional attributes, such as sizing, will be provided by the `headless-styles`
 
 :::
 
-### Importing by framework
-
-Icons can be imported by name from the package root for React JSX.
-
-```javascript
-import { menuIcon } from '@pluralsight/icons'
-```
-
-If you are using a different, supported framework, append its name to the path.
-
-```javascript
-import { menuIcon } from '@pluralsight/icons/svelte'
-```
-
-:::note
-
-If your bundler does not support tree shaking, please see our notes on [minimizing bundle size](#minimizing-bundle-size)
-
-:::
-
 ## Icon colors
 
 By default the icons are monochromatic and will inherit the `color` of their parent.
@@ -135,6 +115,26 @@ interface IconSizeGuide {
   }
 }
 ```
+
+## Importing by framework
+
+Icons can be imported by name from the package root for React JSX.
+
+```javascript
+import { menuIcon } from '@pluralsight/icons'
+```
+
+If you are using a different, supported framework, append its name to the path.
+
+```javascript
+import { menuIcon } from '@pluralsight/icons/svelte'
+```
+
+:::note
+
+If your bundler does not support tree shaking, please see our notes on [minimizing bundle size](#minimizing-bundle-size)
+
+:::
 
 ## Importing SVG files (fallback)
 
