@@ -44,7 +44,7 @@ An accessible label is included by default for each icon in the SVG itself.
 We provide `jsx` elements by default. Other formats will be available in corresponding subfolders. e.g., `import { menuIcon } from '@pluralsight/icons/svelte'`
 Each exported icon is named in camelCase and suffixed with "Icon".
 
-Icons are organized into categories in alignment with the [design](https://www.figma.com/file/HVFUT0XlrkfsTMde6PMWLITj/PSDS---Icons?node-id=1177%3A43).
+Icons are organized into categories in accordance with the Pluralsight Design standards.
 
 ## Minimizing bundle size
 
