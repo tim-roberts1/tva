@@ -152,13 +152,15 @@ This approach requires that you provide any tooling necessary for importing and 
 import { ReactComponent as PlayIcon } from '@pluralsight/icons/svg/audio-video/play.svg'
 import { getIconProps } from '@pluralsight/headless-styles'
 
-const MyPlayComponent = (props) => (
-  {/*
-    Props are applied to the parent rather than directly to the icon component
-    in order to maintain consistent structural assumptions.
-  */}
-  <span {...getIconProps()} {...props}>
-    <PlayIcon />
-  </span>
-)
+function MyPlayComponent (props) {
+  return(
+    {/*
+      Props are applied to the parent rather than directly to the icon component
+      in order to maintain consistent structural assumptions.
+    */}
+    <span {...getIconProps()} {...props}>
+      <PlayIcon />
+    </span>
+  )
+}
 ```
