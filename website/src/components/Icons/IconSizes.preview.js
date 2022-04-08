@@ -3,7 +3,7 @@ import CodeBlock from '@theme/CodeBlock'
 
 export function IconSizesPreview() {
   return (
-    <CodeBlock>{`<MenuIcon {...getIconProps()}>{}</MenuIcon>
+    <CodeBlock>{`<MenuIcon {...getIconProps()} />
 <MenuIcon {...getIconProps({ size: 'xs' })} />
 <MenuIcon {...getIconProps({ size: 's' })} />
 <MenuIcon {...getIconProps({ size: 'm' })} />
