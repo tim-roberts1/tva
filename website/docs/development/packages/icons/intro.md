@@ -41,8 +41,8 @@ An accessible label is included by default for each icon in the SVG itself.
 
 ## Organization and naming
 
-We provide `jsx` elements by default. Other formats will be available in corresponding subfolders. e.g., `import { menuIcon } from '@pluralsight/icons/svelte'`
-Each exported icon is named in camelCase and suffixed with "Icon".
+We provide React components by default. Other formats will be available in corresponding subfolders. e.g., `import { MenuIcon } from '@pluralsight/icons/svelte'`
+Each exported icon is named in PascalCase and suffixed with "Icon".
 
 Icons are organized into categories in accordance with the Pluralsight Design standards.
 
@@ -57,7 +57,7 @@ The following instructions are only needed if you are using an older bundler tha
 Tree-shaking of `@pluralsight/icons` works out of the box in modern frameworks. If you're using ES6 modules and a bundler that supports tree-shaking you can safely use named imports and still get an optimized bundle size automatically:
 
 ```javascript
-import { bookmarkIcon, menuIcon } from '@pluralsight/icons'
+import { BookmarkIcon, MenuIcon } from '@pluralsight/icons'
 ```
 
 ### Pathed imports
@@ -65,11 +65,11 @@ import { bookmarkIcon, menuIcon } from '@pluralsight/icons'
 Without tree-shaking, you can reduce your bundle size by directly importing the icons you need. To do this, append the category to the path.
 
 ```javascript title="Pathed import for React"
-import playIcon from '@pluralsight/icons/audio-video/playIcon'
+import PlayIcon from '@pluralsight/icons/audio-video/PlayIcon'
 ```
 
 When importing for other frameworks, the framework comes before the category.
 
 ```javascript title="Pathed import for Svelte"
-import playIcon from '@pluralsight/icons/svelte/audio-video/playIcon'
+import PlayIcon from '@pluralsight/icons/svelte/audio-video/PlayIcon'
 ```

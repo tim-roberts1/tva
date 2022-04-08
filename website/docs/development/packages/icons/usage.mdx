@@ -35,7 +35,7 @@ npm install @pluralsight/icons@alpha
 
 ## Basic example
 
-Icons are provided as simple inline SVG elements.
+Icons are provided as simple components containing an inline SVG element.
 
 <LiveExampleTabs
   fullCode={<BasicIconFullPreview />}
@@ -51,16 +51,17 @@ Icons are provided as simple inline SVG elements.
 
 :::tip
 
-This library provides only the svg element to allow for maximum flexibility.
-Additional attributes, such as sizing, will be provided by the `headless-styles`
-package, which can also be applied to custom icons.
+This library provides only the component containing an svg element to allow for
+maximum flexibility. Additional attributes, such as sizing, will be provided by
+the `headless-styles` package, which can also be applied to custom icons.
 
 :::
 
 ## Icon colors
 
 By default the icons are monochromatic and will inherit the `color` of their parent.
-This ensures the icon color matches its context by default and facilitates theming while still allowing for control over the icon's color directly.
+This ensures the icon color matches its context by default and facilitates
+theming while still allowing for control over the icon's color directly.
 
 <LiveExampleTabs
   fullCode={<IconColorFullPreview />}
@@ -121,16 +122,16 @@ interface IconSizeGuide {
 
 ## Importing by framework
 
-Icons can be imported by name from the package root for React JSX.
+Icons can be imported by name from the package root for React.
 
 ```javascript
-import { menuIcon } from '@pluralsight/icons'
+import { MenuIcon } from '@pluralsight/icons'
 ```
 
 If you are using a different, supported framework, append its name to the path.
 
 ```javascript
-import { menuIcon } from '@pluralsight/icons/svelte'
+import { MenuIcon } from '@pluralsight/icons/svelte'
 ```
 
 :::note
@@ -152,15 +153,7 @@ This approach requires that you provide any tooling necessary for importing and 
 import { ReactComponent as PlayIcon } from '@pluralsight/icons/svg/audio-video/play.svg'
 import { getIconProps } from '@pluralsight/headless-styles'
 
-function MyPlayComponent (props) {
-  return(
-    {/*
-      Props are applied to the parent rather than directly to the icon component
-      in order to maintain consistent structural assumptions.
-    */}
-    <span {...getIconProps()} {...props}>
-      <PlayIcon />
-    </span>
-  )
+function MyPlayIcon(props) {
+  return <PlayIcon {...getIconProps()} {...props} />
 }
 ```

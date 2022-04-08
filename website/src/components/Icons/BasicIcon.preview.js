@@ -1,11 +1,13 @@
 import React from 'react'
 import CodeBlock from '@theme/CodeBlock'
 
-const preview = `export default function MenuIcon(props) {
+const preview = `export default function Menu(props) {
   return (
-    <span {...getIconProps()} {...props}>
-      {menuIcon}
-    </span>
+    <div>
+      ...
+      <MenuIcon {...getIconProps()} />
+      ...
+    </div>
   )
 }`
 
@@ -15,7 +17,7 @@ export function BasicIconPreview() {
 
 export function BasicIconFullPreview() {
   return (
-    <CodeBlock>{`import { menuIcon } from '@pluralsight/icons'
+    <CodeBlock>{`import { MenuIcon } from '@pluralsight/icons'
 import { getIconProps } from '@pluralsight/headless-styles'
 
 ${preview}`}</CodeBlock>
