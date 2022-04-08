@@ -42,7 +42,6 @@ An accessible label is included by default for each icon in the SVG itself.
 ## Organization and naming
 
 We provide React components by default. Other formats will be available in corresponding subfolders. e.g., `import { MenuIcon } from '@pluralsight/icons/svelte'`
-Each exported icon is named in PascalCase and suffixed with "Icon".
 
 Icons are organized into categories in accordance with the Pluralsight Design standards.
 
