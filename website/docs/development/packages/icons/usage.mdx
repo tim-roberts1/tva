@@ -149,16 +149,16 @@ This approach requires that you provide any tooling necessary for importing and 
 :::
 
 ```jsx title="Importing an icon as SVG file into an app created with create-react-app"
-import { ReactComponent as MenuIcon } from '@pluralsight/icons/svg/navigation/menu.svg'
+import { ReactComponent as PlayIcon } from '@pluralsight/icons/svg/audio-video/play.svg'
 import { getIconProps } from '@pluralsight/headless-styles'
 
-const MyMenuComponent = (props) => (
+const MyPlayComponent = (props) => (
   {/*
     Props are applied to the parent rather than directly to the icon component
     in order to maintain consistent structural assumptions.
   */}
   <span {...getIconProps()} {...props}>
-    <MenuIcon />
+    <PlayIcon />
   </span>
 )
 ```

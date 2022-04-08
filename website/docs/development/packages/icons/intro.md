@@ -44,7 +44,7 @@ An accessible label is included by default for each icon in the SVG itself.
 We provide `jsx` elements by default. Other formats will be available in corresponding subfolders. e.g., `import { menuIcon } from '@pluralsight/icons/svelte'`
 Each exported icon is named in camelCase and suffixed with "Icon".
 
-Icons are organized into the same categories as [Material UI icons](https://fonts.google.com/icons).
+Icons are organized into categories in alignment with the [design](https://www.figma.com/file/HVFUT0XlrkfsTMde6PMWLITj/PSDS---Icons?node-id=1177%3A43).
 
 ## Minimizing bundle size
 
@@ -65,11 +65,11 @@ import { bookmarkIcon, menuIcon } from '@pluralsight/icons'
 Without tree-shaking, you can reduce your bundle size by directly importing the icons you need. To do this, append the category to the path.
 
 ```javascript title="Pathed import for React"
-import menuIcon from '@pluralsight/icons/navigation/menuIcon'
+import playIcon from '@pluralsight/icons/audio-video/playIcon'
 ```
 
 When importing for other frameworks, the framework comes before the category.
 
 ```javascript title="Pathed import for Svelte"
-import menuIcon from '@pluralsight/icons/svelte/navigation/menuIcon'
+import playIcon from '@pluralsight/icons/svelte/audio-video/playIcon'
 ```
