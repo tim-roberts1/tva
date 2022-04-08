@@ -6,8 +6,7 @@ const preview = `<div style={{
   background: 'var(--ps-danger-background)'
 }}>
   ...
-  {/* icon color will match text */}
-  <span>{warningIcon}</span>
+  <WarningIcon />
   ...
 </div>`
 
@@ -17,7 +16,7 @@ export function IconColorPreview() {
 
 export function IconColorFullPreview() {
   return (
-    <CodeBlock>{`import { warningIcon } from '@pluralsight/icons'
+    <CodeBlock>{`import { WarningIcon } from '@pluralsight/icons'
 
 const DangerBlock = (
 ${preview.replace(/^(.)/gm, '  $1')}
