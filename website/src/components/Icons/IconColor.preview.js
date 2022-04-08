@@ -6,7 +6,6 @@ const preview = `<div style={{
   background: 'var(--ps-danger-background)'
 }}>
   ...
-  {/* icon color will match text */}
   <WarningIcon />
   ...
 </div>`
