@@ -10,7 +10,9 @@
   ],
   "scripts": {
     "build": "echo \"no build command specified\"",
+    "build:svg": "yarn run clean:svg && svgo -r -f src/svg -o build/svg",
     "clean": "rm -rf build",
+    "clean:svg": "rm -rf build/svg",
     "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
   },
   "keywords": [
@@ -34,5 +36,9 @@
     "directory": "packages/icons"
   },
   "license": "Apache 2.0",
-  "packageManager": "yarn@3.1.0"
+  "packageManager": "yarn@3.1.0",
+  "devDependencies": {
+    "@types/svgo": "^2",
+    "svgo": "^2.8.0"
+  }
 }
