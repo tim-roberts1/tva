@@ -41,7 +41,8 @@ exports.fn = (root, params, source) => {
   } = params
   const fileLabel = path
     .basename(source.path, '.svg')
-    .split(/[^a-zA-Z0-9]+/)
+    .replace(/([A-Z])/gm, (saved) => ` ${saved.toLowerCase()}`)
+    .split(/[^a-z0-9]+/)
     .join(' ')
   const attribute = 'aria-label'
   const label = `${prefix}${useFilename ? fileLabel : ''}${suffix}`
