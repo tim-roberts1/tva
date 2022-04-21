@@ -2,16 +2,31 @@
   "name": "@pluralsight/icons",
   "version": "0.0.0",
   "description": "Icons for Pluralsight.",
-  "main": "build/common/index.js",
+  "type": "module",
+  "main": "build/index.cjs",
   "module": "build/index.js",
   "types": "build/index.d.ts",
+  "exports": {
+    "import": "build/wrapper.mjs",
+    "require": "build/index.cjs",
+    "./svg/": "./build/svg/"
+  },
   "files": [
     "build/*"
   ],
+  "sideEffects": [
+    "build/index.cjs",
+    "build/wrapper.mjs"
+  ],
   "scripts": {
     "build": "echo \"no build command specified\"",
-    "clean": "rm -rf build",
+    "build:svg": "svgo --recursive --folder src/svg --output build/svg",
+    "prebuild:svg": "rm -rf build/svg",
     "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/svgo": "^2",
+    "svgo": "^2.8.0"
   },
   "keywords": [
     "pluralsight",
