@@ -2,10 +2,10 @@
 
 const path = require('path')
 
-exports.name = 'addAriaLabel'
-exports.type = 'visitor'
-exports.active = true
-exports.description = 'adds aria-label attribute to an outer <svg> element'
+const name = 'addAriaLabel'
+const type = 'visitor'
+const active = true
+const description = 'adds aria-label attribute to an outer <svg> element'
 
 /**
  * Add 'aria-label' attribute to the outer <svg> element
@@ -32,7 +32,7 @@ exports.description = 'adds aria-label attribute to an outer <svg> element'
  *
  * @author Tom Pietrosanti
  */
-exports.fn = (root, params, source) => {
+function addAriaLabel(root, params, source) {
   const {
     prefix = '',
     suffix = '',
@@ -60,4 +60,12 @@ exports.fn = (root, params, source) => {
       },
     },
   }
+}
+
+module.exports = {
+  name,
+  type,
+  active,
+  description,
+  fn: addAriaLabel,
 }
