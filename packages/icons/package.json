@@ -14,7 +14,10 @@
   "files": [
     "build/*"
   ],
-  "sideEffects": false,
+  "sideEffects": [
+    "build/index.cjs",
+    "build/wrapper.mjs"
+  ],
   "scripts": {
     "build": "echo \"no build command specified\"",
     "build:svg": "svgo --recursive --folder src/svg --output build/svg",
