@@ -9,3 +9,6 @@
 
 # Workspace related
 packages/*/build
+
+# Mac system files
+.DS_Store
