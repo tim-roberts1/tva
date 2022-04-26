@@ -1,4 +1,4 @@
-const addAriaLabel = require('../../src/utils/addAriaLabel.cjs')
+const addAriaLabel = require('../../utils/addAriaLabel.cjs')
 
 describe('addAriaLabel', () => {
   test('should not overwrite existing aria-label by default', () => {

@@ -1,4 +1,4 @@
-const addAriaLabel = require('./src/utils/addAriaLabel.cjs')
+const addAriaLabel = require('./utils/addAriaLabel.cjs')
 
 module.exports = {
   plugins: [

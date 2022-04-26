@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "build": "echo \"no build command specified\"",
-    "build:svg": "svgo --recursive --folder src/svg --output build/svg",
+    "build:svg": "svgo --recursive --folder src --output build/svg",
     "prebuild:svg": "rm -rf build/svg",
     "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
   },
