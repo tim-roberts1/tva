@@ -1,1 +1,3 @@
-<svg aria-label="play" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.77 19.508 20 12.342c.246-.157.254-.68 0-.842L8.77 4.493c-.28-.18-.77.086-.77.42v14.174c0 .332.488.601.77.42z"/></svg>
+<svg aria-label="play" viewBox="0 0 13 16"  xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.769527 15.5075L12 8.34227C12.2461 8.18475 12.2539 7.66249 12 7.5L0.769527 0.492472C0.489225 0.313079 0 0.578794 0 0.913608L0 15.0863C0 15.4191 0.487522 15.688 0.769527 15.5075Z" />
+</svg>
