@@ -33,6 +33,14 @@ Or if you want maximum flexibility, just install the `design-tokens` package:
 npm install @pluralsight/design-tokens@alpha
 ```
 
+## Responsive meta tag
+
+Pluralsight Design is developed with a mobile-first strategy in which we first write code for mobile devices, and then scale up "components" as necessary using CSS media queries. To ensure proper rendering and touch zooming for all devices, add the responsive viewport meta tag to your `<head>` element.
+
+```html
+<meta name="viewport" content="initial-scale=1, width=device-width" />
+```
+
 ## PS TT Commons font
 
 Our libraries were designed with PS TT Commons (Pluralsight brand font) in mind. For the best results, install via an HTML `link` tag:
@@ -71,6 +79,10 @@ All of our web packages **depend on our normalize.css** file to be used in your 
   href="https://unpkg.com/@pluralsight/design-tokens@alpha/build/normalize/normalize.css"
 />
 ```
+
+### Using custom fonts
+
+Not interested in using the PS TT Commons font? Simply leave out the [font imports](#ps-tt-commons-font) and keep the normalize file. After that, all you have to do is just override the `font-family` for each Headless style you decide to use (we have to include this property to properly cater to 3rd party UI frameworks like MUI, etc.).
 
 ## Module Support
 
