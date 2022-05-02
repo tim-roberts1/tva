@@ -7,21 +7,6 @@ const type = 'visitor'
 const active = true
 const description = 'Adjusts viewbox to be a square if it is not'
 
-/**
- * Adjusts viewBox so that it is a square by expanding the smaller side and
- * adjusting the offset to preserve the original positioning.
- *
- * @example
- * plugins: [
- *   squareViewBox,
- * ]
- *
- * <svg viewBox="0 0 24 12">...
- *             ⬇
- * <svg viewBox="0 -6 24 24">...
- *
- * @author Tom Pietrosanti
- */
 function squareViewBox() {
   return {
     element: {
