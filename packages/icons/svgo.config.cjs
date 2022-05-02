@@ -1,4 +1,5 @@
 const addAriaLabel = require('./utils/addAriaLabel.cjs')
+const squareViewBox = require('./utils/squareViewBox.cjs')
 
 module.exports = {
   plugins: [
@@ -35,5 +36,6 @@ module.exports = {
         suffix: ' icon',
       },
     },
+    squareViewBox,
   ],
 }
