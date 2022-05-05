@@ -2,25 +2,28 @@
   "name": "@pluralsight/icons",
   "version": "0.0.0",
   "description": "Icons for Pluralsight.",
-  "type": "module",
-  "main": "build/index.cjs",
-  "module": "build/index.js",
-  "types": "build/index.d.ts",
+  "main": "build/react/index.js",
+  "module": "build/react/wrapper.js",
+  "types": "build/react/index.d.ts",
   "exports": {
-    "import": "build/wrapper.mjs",
-    "require": "build/index.cjs",
-    "./svg/": "./build/svg/"
+    ".": {
+      "import": "./build/react/wrapper.js",
+      "require": "./build/react/index.js"
+    },
+    "./react/*": "./build/react/*",
+    "./svg/*": "./build/svg/*.svg"
   },
   "files": [
     "build/*"
   ],
-  "sideEffects": [
-    "build/index.cjs",
-    "build/wrapper.mjs"
-  ],
+  "sideEffects": false,
   "scripts": {
-    "build": "yarn run build:svg",
+    "postbuild": "rm -rf build/generated",
+    "postbuild:react": "node ./utils/reactPostbuild.mjs",
+    "build": "yarn run build:svg && yarn run build:react && yarn run postbuild",
+    "build:react": "yarn run prebuild:react && tsc --project ./tsconfig.cjs.json && yarn run postbuild:react",
     "build:svg": "yarn run prebuild:svg && svgo --recursive --folder src --output build/svg",
+    "prebuild:react": "rm -rf build/react && yarn run generate:react",
     "prebuild:svg": "rm -rf build/svg",
     "generate:react": "yarn run pregenerate:react && node ./utils/svgToReact.mjs",
     "pregenerate:react": "rm -rf build/generated/react",
