@@ -4,7 +4,8 @@ import { transform } from '@svgr/core'
 import svgrOptions from '../svgr.config.cjs'
 
 const srcPath = path.join('build', 'svg')
-const buildPath = path.join('build', 'generated', 'react')
+const buildRoot = path.join('build', 'generated')
+const buildPath = path.join(buildRoot, 'react')
 
 function toPascalCase(name) {
   return name
@@ -20,13 +21,13 @@ function formatAndWriteTsx(reactIconContent, varName, outputPath) {
 
   // JS import always uses '/', but system may be different
   const tsxUrl = path
-    .relative(buildPath, outputPath)
+    .relative(buildRoot, outputPath)
     .split(path.sep)
     .concat([varName])
     .join('/')
 
   fs.appendFileSync(
-    path.resolve(buildPath, 'index.ts'),
+    path.resolve(buildRoot, 'index.ts'),
     `export { default as ${varName} } from './${tsxUrl}'\n`
   )
 }
