@@ -2,32 +2,35 @@
   "name": "@pluralsight/icons",
   "version": "0.0.0",
   "description": "Icons for Pluralsight.",
-  "main": "build/react/index.js",
-  "module": "build/react/wrapper.js",
-  "types": "build/react/index.d.ts",
+  "main": "build/index.js",
+  "module": "build/wrapper.js",
+  "types": "build/index.d.ts",
   "exports": {
     ".": {
-      "import": "./build/react/wrapper.js",
-      "require": "./build/react/index.js"
+      "import": "./build/wrapper.js",
+      "require": "./build/index.js"
     },
     "./react/": "./build/react/",
     "./svg/": "./build/svg/"
   },
   "files": [
-    "build/*"
+    "build/svg/**/*",
+    "build/react/**/*",
+    "index.js",
+    "index.d.ts",
+    "wrapper.js"
   ],
   "sideEffects": false,
   "scripts": {
-    "postbuild": "rm -rf build/generated",
-    "postbuild:react": "node ./utils/reactPostbuild.mjs",
-    "build": "yarn run build:svg && yarn run build:react && yarn run postbuild",
-    "build:react": "yarn run prebuild:react && tsc --project ./tsconfig.cjs.json && yarn run postbuild:react",
-    "build:svg": "yarn run prebuild:svg && svgo --recursive --folder src --output build/svg",
-    "prebuild:react": "rm -rf build/react && yarn run generate:react",
-    "prebuild:svg": "rm -rf build/svg",
-    "generate:react": "yarn run pregenerate:react && node ./utils/svgToReact.mjs",
-    "pregenerate:react": "rm -rf build/generated/react",
+    "build": "yarn run build:svg && yarn run build:react && yarn run create:entryFiles",
+    "build:react": "yarn generate:react && tsc --project ./tsconfig.cjs.json",
+    "build:svg": "svgo --recursive --folder src --output build/svg",
+    "create:entryFiles": "yarn node ./utils/reactPostbuild.mjs",
+    "generate:react": "yarn node ./utils/svgToReact.mjs",
     "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
+  },
+  "dependencies": {
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
     "@svgr/core": "^6.2.1",
@@ -57,8 +60,5 @@
     "directory": "packages/icons"
   },
   "license": "Apache 2.0",
-  "packageManager": "yarn@3.1.0",
-  "dependencies": {
-    "tslib": "^2.3.1"
-  }
+  "packageManager": "yarn@3.1.0"
 }

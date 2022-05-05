@@ -1,10 +1,13 @@
-import path from 'path'
-import fs from 'fs'
+import { resolve, join } from 'path'
+import { copyFileSync } from 'fs'
 
-const srcPath = path.join('build', 'generated', 'react')
-const buildPath = path.join('build', 'react')
+const srcPath = join('build', 'generated', 'react')
+const compiledPath = join('build', 'react')
+const buildPath = join('build')
 
-fs.copyFileSync(
-  path.resolve(srcPath, 'index.ts'),
-  path.resolve(buildPath, 'wrapper.js')
+copyFileSync(resolve(srcPath, 'index.ts'), resolve(buildPath, 'wrapper.js'))
+copyFileSync(resolve(compiledPath, 'index.js'), resolve(buildPath, 'index.js'))
+copyFileSync(
+  resolve(compiledPath, 'index.d.ts'),
+  resolve(buildPath, 'index.d.ts')
 )
