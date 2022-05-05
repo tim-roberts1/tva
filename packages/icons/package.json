@@ -10,8 +10,8 @@
       "import": "./build/react/wrapper.js",
       "require": "./build/react/index.js"
     },
-    "./react/*": "./build/react/*",
-    "./svg/*": "./build/svg/*.svg"
+    "./react/": "./build/react/",
+    "./svg/": "./build/svg/"
   },
   "files": [
     "build/*"
