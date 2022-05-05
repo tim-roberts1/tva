@@ -10,8 +10,13 @@ export {
   getJSDangerButtonProps,
 } from './components/Button/buttonJS'
 
+export { getCircularProgressProps } from './components/CircularProgress/circularProgressCSS'
+export { getJSCircularProgressProps } from './components/CircularProgress/circularProgressJS'
+export type { CircularProgressOptions } from './components/CircularProgress/types'
+
 export { getProgressProps } from './components/Progress/progressCSS'
 export { getJSProgressProps, muiReset } from './components/Progress/progressJS'
+export type { ProgressOptions } from './components/Progress/types'
 
 export { getSkeletonProps } from './components/Skeleton/skeletonCSS'
 export { getJSSkeletonProps } from './components/Skeleton/skeletonJS'
