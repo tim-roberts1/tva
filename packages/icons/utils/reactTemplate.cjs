@@ -6,7 +6,7 @@ import type { SVGProps } from 'react';
 ${variables.interfaces};
 
 function ${variables.componentName}(${variables.props}) {
-  ${variables.jsx}
+  return (${variables.jsx})
 }
 
 ${variables.exports};
