@@ -22,6 +22,8 @@
     "build": "yarn run build:svg",
     "build:svg": "yarn run prebuild:svg && svgo --recursive --folder src --output build/svg",
     "prebuild:svg": "rm -rf build/svg",
+    "generate:react": "yarn run pregenerate:react && node ./utils/svgToReact.mjs",
+    "pregenerate:react": "rm -rf build/generated/react",
     "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
   },
   "devDependencies": {
