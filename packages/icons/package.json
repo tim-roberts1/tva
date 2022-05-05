@@ -20,7 +20,10 @@
     "index.d.ts",
     "wrapper.js"
   ],
-  "sideEffects": false,
+  "sideEffects": [
+    "build/index.js",
+    "build/wrapper.js"
+  ],
   "scripts": {
     "build": "yarn run build:svg && yarn run build:react && yarn run create:entryFiles",
     "build:react": "yarn generate:react && tsc --project ./tsconfig.cjs.json",
