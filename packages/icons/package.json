@@ -34,7 +34,6 @@
     "@types/react": "^17.0.40",
     "@types/svgo": "^2",
     "svgo": "^2.8.0",
-    "tslib": "^2.3.1",
     "typescript": "4.4.4"
   },
   "keywords": [
@@ -58,5 +57,8 @@
     "directory": "packages/icons"
   },
   "license": "Apache 2.0",
-  "packageManager": "yarn@3.1.0"
+  "packageManager": "yarn@3.1.0",
+  "dependencies": {
+    "tslib": "^2.3.1"
+  }
 }
