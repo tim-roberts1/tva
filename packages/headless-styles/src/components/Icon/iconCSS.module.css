@@ -1,0 +1,30 @@
+.psIcon {
+  display: inline-block;
+}
+
+.xsSize,
+.sSize,
+.mSize,
+.lSize {
+  composes: psIcon;
+}
+
+.xsSize {
+  height: 1rem;
+  width: 1rem;
+}
+
+.sSize {
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.mSize {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.lSize {
+  height: 3rem;
+  width: 3rem;
+}
