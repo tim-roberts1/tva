@@ -2,31 +2,45 @@
   "name": "@pluralsight/icons",
   "version": "0.0.0",
   "description": "Icons for Pluralsight.",
-  "type": "module",
-  "main": "build/index.cjs",
-  "module": "build/index.js",
+  "main": "build/index.js",
+  "module": "build/wrapper.js",
   "types": "build/index.d.ts",
   "exports": {
-    "import": "build/wrapper.mjs",
-    "require": "build/index.cjs",
+    ".": {
+      "import": "./build/wrapper.js",
+      "require": "./build/index.js"
+    },
+    "./react/": "./build/react/",
     "./svg/": "./build/svg/"
   },
   "files": [
-    "build/*"
+    "build/svg/**/*",
+    "build/react/**/*",
+    "index.js",
+    "index.d.ts",
+    "wrapper.js"
   ],
   "sideEffects": [
-    "build/index.cjs",
-    "build/wrapper.mjs"
+    "build/index.js",
+    "build/wrapper.js"
   ],
   "scripts": {
-    "build": "yarn run build:svg",
-    "build:svg": "yarn run prebuild:svg && svgo --recursive --folder src --output build/svg",
-    "prebuild:svg": "rm -rf build/svg",
+    "build": "yarn run build:svg && yarn run build:react && yarn run create:entryFiles",
+    "build:react": "yarn generate:react && tsc --project ./tsconfig.cjs.json",
+    "build:svg": "svgo --recursive --folder src --output build/svg",
+    "create:entryFiles": "yarn node ./utils/reactPostbuild.mjs",
+    "generate:react": "yarn node ./utils/svgToReact.mjs",
     "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
   },
+  "dependencies": {
+    "tslib": "^2.3.1"
+  },
   "devDependencies": {
+    "@svgr/core": "^6.2.1",
+    "@types/react": "^17.0.40",
     "@types/svgo": "^2",
-    "svgo": "^2.8.0"
+    "svgo": "^2.8.0",
+    "typescript": "4.4.4"
   },
   "keywords": [
     "pluralsight",

@@ -17360,8 +17360,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation: './packages/icons/',
                 packageDependencies: [
                   ['@pluralsight/icons', 'workspace:packages/icons'],
+                  ['@svgr/core', 'npm:6.2.1'],
+                  ['@types/react', 'npm:17.0.40'],
                   ['@types/svgo', 'npm:2.6.3'],
                   ['svgo', 'npm:2.8.0'],
+                  ['tslib', 'npm:2.3.1'],
+                  [
+                    'typescript',
+                    'patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8',
+                  ],
                 ],
                 linkType: 'SOFT',
               },

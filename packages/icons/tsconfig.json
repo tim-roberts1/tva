@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["build/generated/**/*"],
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": "src",
+    "jsx": "react",
+    "outDir": "build",
+    "rootDir": "./build/generated"
+  }
+}
