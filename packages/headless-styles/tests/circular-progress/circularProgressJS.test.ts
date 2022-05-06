@@ -3,16 +3,25 @@ import { getJSCircularProgressProps } from '../../src'
 describe('circular progress JS', () => {
   test('should return a distinct animation based on the kind', () => {
     expect(
-      getJSCircularProgressProps().containerProps.styles.animationName
-    ).not.toBeDefined()
+      getJSCircularProgressProps().svgBoxProps.styles.animationName
+    ).toEqual('')
+    expect(
+      getJSCircularProgressProps().nowCircleProps.styles.animationName
+    ).toEqual('')
+
     expect(
       getJSCircularProgressProps({
         kind: 'indeterminate',
-      }).containerProps.styles.animationName
+      }).svgBoxProps.styles.animationName
     ).toEqual('spin')
+    expect(
+      getJSCircularProgressProps({
+        kind: 'indeterminate',
+      }).nowCircleProps.styles.animationName
+    ).toEqual('loading')
   })
 
-  test('should return a distinct height difference based on the size', () => {
+  test('should return a distinct width difference based on the size', () => {
     expect(getJSCircularProgressProps().svgBoxProps.styles.width).toEqual(
       '3rem'
     )

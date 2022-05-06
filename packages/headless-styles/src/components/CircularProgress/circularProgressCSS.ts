@@ -23,23 +23,25 @@ export function getCircularProgressProps(options?: CircularProgressOptions) {
     return {
       containerProps: {
         ...a11yProps,
-        ...createSvelteObj(`${CIRC_PROGRESS} base ${kind}`),
+        ...createSvelteObj(`${CIRC_PROGRESS} base`),
       },
       svgBoxProps: {
-        ...createSvelteObj(`${CIRC_PROGRESS}_box box ${styles[sizeClass]}`),
+        ...createSvelteObj(
+          `${CIRC_PROGRESS}-box box ${styles[sizeClass]} ${kind}`
+        ),
         viewBox: VIEWBOX,
       },
       baseCircleProps: {
         ...baseCircleProps,
-        ...createSvelteObj(`${CIRC_PROGRESS}_base circle`),
+        ...createSvelteObj(`${CIRC_PROGRESS}-base circle`),
       },
       nowCircleProps: {
         ...baseCircleProps,
-        ...createSvelteObj(`${CIRC_PROGRESS}_now circleNow`),
+        ...createSvelteObj(`${CIRC_PROGRESS}-now circleNow ${kind}`),
         ...getStrokeProps(now),
       },
       labelProps: {
-        ...createSvelteObj(`${CIRC_PROGRESS}_label text`),
+        ...createSvelteObj(`${CIRC_PROGRESS}-label text`),
         value,
       },
     }
@@ -48,25 +50,27 @@ export function getCircularProgressProps(options?: CircularProgressOptions) {
   return {
     containerProps: {
       ...a11yProps,
-      ...createCSSObj(`${CIRC_PROGRESS} ${styles.base} ${styles[kind]}`),
+      ...createCSSObj(`${CIRC_PROGRESS} ${styles.base}`),
     },
     svgBoxProps: {
       ...createCSSObj(
-        `${CIRC_PROGRESS}_box ${styles.box} ${styles[sizeClass]}`
+        `${CIRC_PROGRESS}-box ${styles[sizeClass]} ${styles[kind]}`
       ),
       viewBox: VIEWBOX,
     },
     baseCircleProps: {
       ...baseCircleProps,
-      ...createCSSObj(`${CIRC_PROGRESS}_base ${styles.circle}`),
+      ...createCSSObj(`${CIRC_PROGRESS}-base ${styles.circle}`),
     },
     nowCircleProps: {
       ...baseCircleProps,
-      ...createCSSObj(`${CIRC_PROGRESS}_now ${styles.circleNow}`),
+      ...createCSSObj(
+        `${CIRC_PROGRESS}-now ${styles.circleNow} ${styles[kind]}`
+      ),
       ...getStrokeProps(now),
     },
     labelProps: {
-      ...createCSSObj(`${CIRC_PROGRESS}_label ${styles.text}`),
+      ...createCSSObj(`${CIRC_PROGRESS}-label ${styles.text}`),
       value,
     },
   }
