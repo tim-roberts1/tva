@@ -29,7 +29,7 @@
     "build:react": "yarn generate:react && tsc --project ./tsconfig.cjs.json",
     "build:svg": "svgo --recursive --folder src --output build/svg",
     "create:entryFiles": "yarn node ./utils/reactPostbuild.mjs",
-    "generate:react": "rm -rf build/generated && yarn node ./utils/svgToReact.mjs",
+    "generate:react": "yarn node ./utils/svgToReact.mjs",
     "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
   },
   "dependencies": {
