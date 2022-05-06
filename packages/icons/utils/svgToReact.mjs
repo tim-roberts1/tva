@@ -6,6 +6,7 @@ import svgrOptions from '../svgr.config.cjs'
 const srcPath = path.join('build', 'svg')
 const buildRoot = path.join('build', 'generated')
 const buildPath = path.join(buildRoot, 'react')
+const indexFile = path.resolve(buildRoot, 'index.ts')
 
 function toPascalCase(name) {
   return name
@@ -27,7 +28,7 @@ function formatAndWriteTsx(reactIconContent, varName, outputPath) {
     .join('/')
 
   fs.appendFileSync(
-    path.resolve(buildRoot, 'index.ts'),
+    indexFile,
     `export { default as ${varName} } from './${tsxUrl}'\n`
   )
 }
@@ -65,4 +66,7 @@ function svgToReact(currentPath) {
   buildTsxFiles(currentPath)
 }
 
+if (fs.existsSync(indexFile)) {
+  fs.rmSync(indexFile)
+}
 svgToReact(srcPath)
