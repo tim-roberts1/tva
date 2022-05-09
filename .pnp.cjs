@@ -677,6 +677,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['@types/react-router', 'npm:5.1.18'],
         ['@types/react-router-config', 'npm:5.0.6'],
         ['@types/react-router-dom', 'npm:5.3.3'],
+        ['@types/resolve', 'npm:0.0.8'],
         ['@types/responselike', 'npm:1.0.0'],
         ['@types/retry', 'npm:0.12.1'],
         ['@types/sax', 'npm:1.2.3'],
@@ -851,6 +852,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['buble', 'npm:0.19.6'],
         ['buffer-crc32', 'npm:0.2.13'],
         ['buffer-from', 'npm:1.1.2'],
+        ['builtin-modules', 'npm:3.2.0'],
         ['bytes', 'npm:3.0.0'],
         ['cacache', 'npm:15.3.0'],
         ['cacheable-request', 'npm:6.1.0'],
@@ -1303,6 +1305,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['is-hexadecimal', 'npm:1.0.4'],
         ['is-installed-globally', 'npm:0.4.0'],
         ['is-lambda', 'npm:1.0.1'],
+        ['is-module', 'npm:1.0.0'],
         ['is-negative-zero', 'npm:2.0.1'],
         ['is-npm', 'npm:5.0.0'],
         ['is-number', 'npm:7.0.0'],
@@ -1849,6 +1852,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['require-directory', 'npm:2.1.1'],
         ['require-from-string', 'npm:2.0.2'],
         ['require-like', 'npm:0.1.2'],
+        ['require-relative', 'npm:0.8.7'],
         ['requires-port', 'npm:1.0.0'],
         [
           'resolve',
@@ -1864,7 +1868,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['retry', 'npm:0.12.0'],
         ['reusify', 'npm:1.0.4'],
         ['rimraf', 'npm:3.0.2'],
-        ['rollup', 'npm:2.70.1'],
+        ['rollup', 'npm:2.72.1'],
+        [
+          'rollup-plugin-node-resolve',
+          'virtual:f541e9456e3f5ae1a7a0e8b9c8f288baea09d71f345e79981714b089d412552cf46962d88e7f36a4cc13b7cb777e752723b4ea020b9d8861567211731e353317#npm:5.2.0',
+        ],
+        [
+          'rollup-plugin-svelte',
+          'virtual:f541e9456e3f5ae1a7a0e8b9c8f288baea09d71f345e79981714b089d412552cf46962d88e7f36a4cc13b7cb777e752723b4ea020b9d8861567211731e353317#npm:7.1.0',
+        ],
+        ['rollup-pluginutils', 'npm:2.8.2'],
         ['rtl-detect', 'npm:1.0.4'],
         ['rtlcss', 'npm:3.5.0'],
         ['run-parallel', 'npm:1.2.0'],
@@ -1978,6 +1991,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['supports-color', 'npm:9.2.1'],
         ['supports-hyperlinks', 'npm:2.2.0'],
         ['supports-preserve-symlinks-flag', 'npm:1.0.0'],
+        ['svelte', 'npm:3.48.0'],
         ['svg-parser', 'npm:2.0.4'],
         ['svg-tags', 'npm:1.0.0'],
         ['svgo', 'npm:2.8.0'],
@@ -17363,6 +17377,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['@svgr/core', 'npm:6.2.1'],
                   ['@types/react', 'npm:17.0.40'],
                   ['@types/svgo', 'npm:2.6.3'],
+                  ['rollup', 'npm:2.72.1'],
+                  [
+                    'rollup-plugin-node-resolve',
+                    'virtual:f541e9456e3f5ae1a7a0e8b9c8f288baea09d71f345e79981714b089d412552cf46962d88e7f36a4cc13b7cb777e752723b4ea020b9d8861567211731e353317#npm:5.2.0',
+                  ],
+                  [
+                    'rollup-plugin-svelte',
+                    'virtual:f541e9456e3f5ae1a7a0e8b9c8f288baea09d71f345e79981714b089d412552cf46962d88e7f36a4cc13b7cb777e752723b4ea020b9d8861567211731e353317#npm:7.1.0',
+                  ],
+                  ['svelte', 'npm:3.48.0'],
                   ['svgo', 'npm:2.8.0'],
                   ['tslib', 'npm:2.3.1'],
                   [
@@ -19150,6 +19174,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['@types/history', 'npm:4.7.11'],
                   ['@types/react', 'npm:17.0.40'],
                   ['@types/react-router', 'npm:5.1.18'],
+                ],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          '@types/resolve',
+          [
+            [
+              'npm:0.0.8',
+              {
+                packageLocation:
+                  './.yarn/cache/@types-resolve-npm-0.0.8-191de904ac-f241bb773a.zip/node_modules/@types/resolve/',
+                packageDependencies: [
+                  ['@types/resolve', 'npm:0.0.8'],
+                  ['@types/node', 'npm:16.11.7'],
                 ],
                 linkType: 'HARD',
               },
@@ -22748,6 +22789,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   './.yarn/cache/buffer-from-npm-1.1.2-03d2f20d7e-0448524a56.zip/node_modules/buffer-from/',
                 packageDependencies: [['buffer-from', 'npm:1.1.2']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'builtin-modules',
+          [
+            [
+              'npm:3.2.0',
+              {
+                packageLocation:
+                  './.yarn/cache/builtin-modules-npm-3.2.0-ef7266e931-0265aa1ba7.zip/node_modules/builtin-modules/',
+                packageDependencies: [['builtin-modules', 'npm:3.2.0']],
                 linkType: 'HARD',
               },
             ],
@@ -27738,6 +27793,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           'estree-walker',
           [
             [
+              'npm:0.6.1',
+              {
+                packageLocation:
+                  './.yarn/cache/estree-walker-npm-0.6.1-fe92d0e1f6-9d6f82a492.zip/node_modules/estree-walker/',
+                packageDependencies: [['estree-walker', 'npm:0.6.1']],
+                linkType: 'HARD',
+              },
+            ],
+            [
               'npm:2.0.2',
               {
                 packageLocation:
@@ -31309,6 +31373,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   './.yarn/cache/is-lambda-npm-1.0.1-7ab55bc8a8-93a32f0194.zip/node_modules/is-lambda/',
                 packageDependencies: [['is-lambda', 'npm:1.0.1']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'is-module',
+          [
+            [
+              'npm:1.0.0',
+              {
+                packageLocation:
+                  './.yarn/cache/is-module-npm-1.0.0-79ba918283-8cd5390730.zip/node_modules/is-module/',
+                packageDependencies: [['is-module', 'npm:1.0.0']],
                 linkType: 'HARD',
               },
             ],
@@ -40688,6 +40766,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
+          'require-relative',
+          [
+            [
+              'npm:0.8.7',
+              {
+                packageLocation:
+                  './.yarn/cache/require-relative-npm-0.8.7-d3d93176e4-f1c3be0697.zip/node_modules/require-relative/',
+                packageDependencies: [['require-relative', 'npm:0.8.7']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
           'requires-port',
           [
             [
@@ -40952,6 +41044,119 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     'fsevents',
                     'patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7',
                   ],
+                ],
+                linkType: 'HARD',
+              },
+            ],
+            [
+              'npm:2.72.1',
+              {
+                packageLocation:
+                  './.yarn/cache/rollup-npm-2.72.1-e2745fbd94-3dca122129.zip/node_modules/rollup/',
+                packageDependencies: [
+                  ['rollup', 'npm:2.72.1'],
+                  [
+                    'fsevents',
+                    'patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7',
+                  ],
+                ],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'rollup-plugin-node-resolve',
+          [
+            [
+              'npm:5.2.0',
+              {
+                packageLocation:
+                  './.yarn/cache/rollup-plugin-node-resolve-npm-5.2.0-6af239ea59-29687721d2.zip/node_modules/rollup-plugin-node-resolve/',
+                packageDependencies: [
+                  ['rollup-plugin-node-resolve', 'npm:5.2.0'],
+                ],
+                linkType: 'SOFT',
+              },
+            ],
+            [
+              'virtual:f541e9456e3f5ae1a7a0e8b9c8f288baea09d71f345e79981714b089d412552cf46962d88e7f36a4cc13b7cb777e752723b4ea020b9d8861567211731e353317#npm:5.2.0',
+              {
+                packageLocation:
+                  './.yarn/__virtual__/rollup-plugin-node-resolve-virtual-ee06aed205/0/cache/rollup-plugin-node-resolve-npm-5.2.0-6af239ea59-29687721d2.zip/node_modules/rollup-plugin-node-resolve/',
+                packageDependencies: [
+                  [
+                    'rollup-plugin-node-resolve',
+                    'virtual:f541e9456e3f5ae1a7a0e8b9c8f288baea09d71f345e79981714b089d412552cf46962d88e7f36a4cc13b7cb777e752723b4ea020b9d8861567211731e353317#npm:5.2.0',
+                  ],
+                  ['@types/resolve', 'npm:0.0.8'],
+                  ['@types/rollup', null],
+                  ['builtin-modules', 'npm:3.2.0'],
+                  ['is-module', 'npm:1.0.0'],
+                  [
+                    'resolve',
+                    'patch:resolve@npm%3A1.22.0#~builtin<compat/resolve>::version=1.22.0&hash=07638b',
+                  ],
+                  ['rollup', 'npm:2.72.1'],
+                  ['rollup-pluginutils', 'npm:2.8.2'],
+                ],
+                packagePeers: ['@types/rollup', 'rollup'],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'rollup-plugin-svelte',
+          [
+            [
+              'npm:7.1.0',
+              {
+                packageLocation:
+                  './.yarn/cache/rollup-plugin-svelte-npm-7.1.0-9400e823a7-e232d7712e.zip/node_modules/rollup-plugin-svelte/',
+                packageDependencies: [['rollup-plugin-svelte', 'npm:7.1.0']],
+                linkType: 'SOFT',
+              },
+            ],
+            [
+              'virtual:f541e9456e3f5ae1a7a0e8b9c8f288baea09d71f345e79981714b089d412552cf46962d88e7f36a4cc13b7cb777e752723b4ea020b9d8861567211731e353317#npm:7.1.0',
+              {
+                packageLocation:
+                  './.yarn/__virtual__/rollup-plugin-svelte-virtual-9e9a8cfcd6/0/cache/rollup-plugin-svelte-npm-7.1.0-9400e823a7-e232d7712e.zip/node_modules/rollup-plugin-svelte/',
+                packageDependencies: [
+                  [
+                    'rollup-plugin-svelte',
+                    'virtual:f541e9456e3f5ae1a7a0e8b9c8f288baea09d71f345e79981714b089d412552cf46962d88e7f36a4cc13b7cb777e752723b4ea020b9d8861567211731e353317#npm:7.1.0',
+                  ],
+                  ['@types/rollup', null],
+                  ['@types/svelte', null],
+                  ['require-relative', 'npm:0.8.7'],
+                  ['rollup', 'npm:2.72.1'],
+                  ['rollup-pluginutils', 'npm:2.8.2'],
+                  ['svelte', 'npm:3.48.0'],
+                ],
+                packagePeers: [
+                  '@types/rollup',
+                  '@types/svelte',
+                  'rollup',
+                  'svelte',
+                ],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'rollup-pluginutils',
+          [
+            [
+              'npm:2.8.2',
+              {
+                packageLocation:
+                  './.yarn/cache/rollup-pluginutils-npm-2.8.2-f554dd6ac5-339fdf866d.zip/node_modules/rollup-pluginutils/',
+                packageDependencies: [
+                  ['rollup-pluginutils', 'npm:2.8.2'],
+                  ['estree-walker', 'npm:0.6.1'],
                 ],
                 linkType: 'HARD',
               },
@@ -43207,6 +43412,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageDependencies: [
                   ['supports-preserve-symlinks-flag', 'npm:1.0.0'],
                 ],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'svelte',
+          [
+            [
+              'npm:3.48.0',
+              {
+                packageLocation:
+                  './.yarn/cache/svelte-npm-3.48.0-4bfc3244b5-d72587582b.zip/node_modules/svelte/',
+                packageDependencies: [['svelte', 'npm:3.48.0']],
                 linkType: 'HARD',
               },
             ],

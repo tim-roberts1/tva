@@ -11,11 +11,18 @@
       "require": "./build/index.js"
     },
     "./react/": "./build/react/",
+    "./svelte/": "./build/generated/svelte/",
+    "./svelte": {
+      "import": "./build/generated/svelte/wrapper.js",
+      "require": "./build/generated/svelte/index.js"
+    },
+    "./build/generated/svelte/": "./build/generated/svelte/",
     "./svg/": "./build/svg/"
   },
   "files": [
     "build/svg/**/*",
     "build/react/**/*",
+    "build/generated/svelte/**/*",
     "index.js",
     "index.d.ts",
     "wrapper.js"
@@ -27,9 +34,11 @@
   "scripts": {
     "build": "yarn run build:svg && yarn run build:react && yarn run create:entryFiles",
     "build:react": "yarn generate:react && tsc --project ./tsconfig.cjs.json",
+    "build:svelte": "yarn generate:svelte",
     "build:svg": "svgo --recursive --folder src --output build/svg",
     "create:entryFiles": "yarn node ./utils/reactPostbuild.mjs",
     "generate:react": "yarn node ./utils/svgToReact.mjs",
+    "generate:svelte": "yarn node ./utils/svgToSvelte.mjs",
     "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
   },
   "dependencies": {
@@ -39,6 +48,10 @@
     "@svgr/core": "^6.2.1",
     "@types/react": "^17.0.40",
     "@types/svgo": "^2",
+    "rollup": "^2.72.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-svelte": "^7.1.0",
+    "svelte": "^3.48.0",
     "svgo": "^2.8.0",
     "typescript": "4.4.4"
   },
