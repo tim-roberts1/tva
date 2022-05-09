@@ -32,7 +32,7 @@
     "build/wrapper.js"
   ],
   "scripts": {
-    "build": "yarn run build:svg && yarn run build:react && yarn run biuld:svelte && yarn run create:entryFiles",
+    "build": "yarn run build:svg && yarn run build:react && yarn run build:svelte && yarn run create:entryFiles",
     "build:react": "yarn generate:react && tsc --project ./tsconfig.cjs.json",
     "build:svelte": "yarn generate:svelte",
     "build:svg": "svgo --recursive --folder src --output build/svg",
