@@ -11,12 +11,10 @@
       "require": "./build/index.js"
     },
     "./react/": "./build/react/",
-    "./svelte/": "./build/generated/svelte/",
     "./svelte": {
       "import": "./build/generated/svelte/wrapper.js",
       "require": "./build/generated/svelte/index.js"
     },
-    "./build/generated/svelte/": "./build/generated/svelte/",
     "./svg/": "./build/svg/"
   },
   "files": [
