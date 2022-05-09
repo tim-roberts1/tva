@@ -2,8 +2,7 @@ import path from 'path'
 import fs from 'fs'
 
 const srcPath = path.join('build', 'svg')
-const buildRoot = path.join('build', 'generated')
-const buildPath = path.join(buildRoot, 'svelte')
+const buildPath = path.join('build', 'svelte')
 const indexFile = path.resolve(buildPath, 'wrapper.js')
 
 function toPascalCase(name) {

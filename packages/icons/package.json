@@ -12,15 +12,15 @@
     },
     "./react/": "./build/react/",
     "./svelte": {
-      "import": "./build/generated/svelte/wrapper.js",
-      "require": "./build/generated/svelte/index.js"
+      "import": "./build/svelte/wrapper.js",
+      "require": "./build/svelte/index.js"
     },
     "./svg/": "./build/svg/"
   },
   "files": [
     "build/svg/**/*",
     "build/react/**/*",
-    "build/generated/svelte/**/*",
+    "build/svelte/**/*",
     "index.js",
     "index.d.ts",
     "wrapper.js"
