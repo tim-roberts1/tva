@@ -34,7 +34,7 @@
   "scripts": {
     "build": "yarn run build:svg && yarn run build:react && yarn run build:svelte && yarn run create:entryFiles",
     "build:react": "yarn generate:react && tsc --project ./tsconfig.cjs.json",
-    "build:svelte": "yarn generate:svelte",
+    "build:svelte": "yarn generate:svelte && rollup -c",
     "build:svg": "svgo --recursive --folder src --output build/svg",
     "create:entryFiles": "yarn node ./utils/reactPostbuild.mjs",
     "generate:react": "yarn node ./utils/svgToReact.mjs",
