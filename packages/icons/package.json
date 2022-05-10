@@ -11,7 +11,10 @@
       "require": "./build/index.js"
     },
     "./react/": "./build/react/",
-    "./svelte": "./build/svelte/index.js",
+    "./svelte": {
+      "import": "./build/svelte/index.js",
+      "require": "./build/svelte/index.cjs"
+    },
     "./svelte/": "./build/svelte/",
     "./svg/": "./build/svg/",
     "./package.json": "./package.json"
