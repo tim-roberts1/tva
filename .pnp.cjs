@@ -650,6 +650,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['@types/estree', 'npm:0.0.50'],
         ['@types/express', 'npm:4.17.13'],
         ['@types/express-serve-static-core', 'npm:4.17.28'],
+        ['@types/fs-extra', 'npm:4.0.12'],
         ['@types/graceful-fs', 'npm:4.1.5'],
         ['@types/hast', 'npm:2.3.4'],
         ['@types/history', 'npm:4.7.11'],
@@ -1978,6 +1979,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['supports-color', 'npm:9.2.1'],
         ['supports-hyperlinks', 'npm:2.2.0'],
         ['supports-preserve-symlinks-flag', 'npm:1.0.0'],
+        ['svelte', 'npm:3.48.0'],
         ['svg-parser', 'npm:2.0.4'],
         ['svg-tags', 'npm:1.0.0'],
         ['svgo', 'npm:2.8.0'],
@@ -17361,8 +17363,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageDependencies: [
                   ['@pluralsight/icons', 'workspace:packages/icons'],
                   ['@svgr/core', 'npm:6.2.1'],
+                  ['@types/fs-extra', 'npm:4.0.12'],
                   ['@types/react', 'npm:17.0.40'],
                   ['@types/svgo', 'npm:2.6.3'],
+                  ['fs-extra', 'npm:4.0.3'],
+                  ['svelte', 'npm:3.48.0'],
                   ['svgo', 'npm:2.8.0'],
                   ['tslib', 'npm:2.3.1'],
                   [
@@ -18691,6 +18696,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['@types/node', 'npm:16.11.7'],
                   ['@types/qs', 'npm:6.9.7'],
                   ['@types/range-parser', 'npm:1.2.4'],
+                ],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          '@types/fs-extra',
+          [
+            [
+              'npm:4.0.12',
+              {
+                packageLocation:
+                  './.yarn/cache/@types-fs-extra-npm-4.0.12-ef65781a9b-6a14044be3.zip/node_modules/@types/fs-extra/',
+                packageDependencies: [
+                  ['@types/fs-extra', 'npm:4.0.12'],
+                  ['@types/node', 'npm:16.11.7'],
                 ],
                 linkType: 'HARD',
               },
@@ -43207,6 +43229,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageDependencies: [
                   ['supports-preserve-symlinks-flag', 'npm:1.0.0'],
                 ],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'svelte',
+          [
+            [
+              'npm:3.48.0',
+              {
+                packageLocation:
+                  './.yarn/cache/svelte-npm-3.48.0-4bfc3244b5-d72587582b.zip/node_modules/svelte/',
+                packageDependencies: [['svelte', 'npm:3.48.0']],
                 linkType: 'HARD',
               },
             ],

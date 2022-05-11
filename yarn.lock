@@ -4588,8 +4588,11 @@ __metadata:
   resolution: "@pluralsight/icons@workspace:packages/icons"
   dependencies:
     "@svgr/core": ^6.2.1
+    "@types/fs-extra": ^4
     "@types/react": ^17.0.40
     "@types/svgo": ^2
+    fs-extra: ^4.0.2
+    svelte: ^3.48.0
     svgo: ^2.8.0
     tslib: ^2.3.1
     typescript: 4.4.4
@@ -5209,6 +5212,15 @@ __metadata:
     "@types/qs": "*"
     "@types/serve-static": "*"
   checksum: 12a2a0e6c4b993fc0854bec665906788aea0d8ee4392389d7a98a5de1eefdd33c9e1e40a91f3afd274011119c506f7b4126acb97fae62ae20b654974d44cba12
+  languageName: node
+  linkType: hard
+
+"@types/fs-extra@npm:^4":
+  version: 4.0.12
+  resolution: "@types/fs-extra@npm:4.0.12"
+  dependencies:
+    "@types/node": "*"
+  checksum: 6a14044be355587faa176aed6553ada377b49fd49abf1bd1bef477399237614b56b8325e0a8e9e5cafc22268992bb7b763bb725ba944093edae75abd6f9e5de6
   languageName: node
   linkType: hard
 
@@ -18031,6 +18043,13 @@ __metadata:
   version: 1.0.0
   resolution: "supports-preserve-symlinks-flag@npm:1.0.0"
   checksum: 53b1e247e68e05db7b3808b99b892bd36fb096e6fba213a06da7fab22045e97597db425c724f2bbd6c99a3c295e1e73f3e4de78592289f38431049e1277ca0ae
+  languageName: node
+  linkType: hard
+
+"svelte@npm:^3.48.0":
+  version: 3.48.0
+  resolution: "svelte@npm:3.48.0"
+  checksum: d72587582b6967bf083ff7dc254f8067c22b57d4678182b48ca51010e0f3a1d98a33a00365046aee0c70ed3ffc716b73141207ec5ac6c44f1f5e34c5477e61ea
   languageName: node
   linkType: hard
 
