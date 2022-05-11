@@ -23,9 +23,9 @@
     "build/svg/**/*",
     "build/react/**/*",
     "build/svelte/**/*",
-    "index.js",
-    "index.d.ts",
-    "wrapper.js"
+    "build/index.js",
+    "build/index.d.ts",
+    "build/wrapper.js"
   ],
   "sideEffects": [
     "build/index.js",
