@@ -4588,8 +4588,10 @@ __metadata:
   resolution: "@pluralsight/icons@workspace:packages/icons"
   dependencies:
     "@svgr/core": ^6.2.1
+    "@types/fs-extra": ^4
     "@types/react": ^17.0.40
     "@types/svgo": ^2
+    fs-extra: ^4.0.2
     rollup: ^2.72.1
     rollup-plugin-node-resolve: ^5.2.0
     rollup-plugin-svelte: ^7.1.0
@@ -5213,6 +5215,15 @@ __metadata:
     "@types/qs": "*"
     "@types/serve-static": "*"
   checksum: 12a2a0e6c4b993fc0854bec665906788aea0d8ee4392389d7a98a5de1eefdd33c9e1e40a91f3afd274011119c506f7b4126acb97fae62ae20b654974d44cba12
+  languageName: node
+  linkType: hard
+
+"@types/fs-extra@npm:^4":
+  version: 4.0.12
+  resolution: "@types/fs-extra@npm:4.0.12"
+  dependencies:
+    "@types/node": "*"
+  checksum: 6a14044be355587faa176aed6553ada377b49fd49abf1bd1bef477399237614b56b8325e0a8e9e5cafc22268992bb7b763bb725ba944093edae75abd6f9e5de6
   languageName: node
   linkType: hard
 

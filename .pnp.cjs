@@ -650,6 +650,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['@types/estree', 'npm:0.0.50'],
         ['@types/express', 'npm:4.17.13'],
         ['@types/express-serve-static-core', 'npm:4.17.28'],
+        ['@types/fs-extra', 'npm:4.0.12'],
         ['@types/graceful-fs', 'npm:4.1.5'],
         ['@types/hast', 'npm:2.3.4'],
         ['@types/history', 'npm:4.7.11'],
@@ -17375,8 +17376,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageDependencies: [
                   ['@pluralsight/icons', 'workspace:packages/icons'],
                   ['@svgr/core', 'npm:6.2.1'],
+                  ['@types/fs-extra', 'npm:4.0.12'],
                   ['@types/react', 'npm:17.0.40'],
                   ['@types/svgo', 'npm:2.6.3'],
+                  ['fs-extra', 'npm:4.0.3'],
                   ['rollup', 'npm:2.72.1'],
                   [
                     'rollup-plugin-node-resolve',
@@ -18715,6 +18718,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['@types/node', 'npm:16.11.7'],
                   ['@types/qs', 'npm:6.9.7'],
                   ['@types/range-parser', 'npm:1.2.4'],
+                ],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          '@types/fs-extra',
+          [
+            [
+              'npm:4.0.12',
+              {
+                packageLocation:
+                  './.yarn/cache/@types-fs-extra-npm-4.0.12-ef65781a9b-6a14044be3.zip/node_modules/@types/fs-extra/',
+                packageDependencies: [
+                  ['@types/fs-extra', 'npm:4.0.12'],
+                  ['@types/node', 'npm:16.11.7'],
                 ],
                 linkType: 'HARD',
               },

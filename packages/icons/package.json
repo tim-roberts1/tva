@@ -12,8 +12,8 @@
     },
     "./react/": "./build/react/",
     "./svelte": {
-      "import": "./build/svelte/index.js",
-      "require": "./build/svelte/index.cjs"
+      "import": "./build/svelte/wrapper.js",
+      "require": "./build/svelte/index.js"
     },
     "./svelte/": "./build/svelte/",
     "./svg/": "./build/svg/",
@@ -34,7 +34,7 @@
   "scripts": {
     "build": "yarn run build:svg && yarn run build:react && yarn run build:svelte && yarn run create:entryFiles",
     "build:react": "yarn generate:react && tsc --project ./tsconfig.cjs.json",
-    "build:svelte": "yarn generate:svelte",
+    "build:svelte": "yarn generate:svelte && tsc --project ./tsconfig.svelte.json",
     "build:svg": "svgo --recursive --folder src --output build/svg",
     "create:entryFiles": "yarn node ./utils/reactPostbuild.mjs",
     "generate:react": "yarn node ./utils/svgToReact.mjs",
@@ -46,8 +46,10 @@
   },
   "devDependencies": {
     "@svgr/core": "^6.2.1",
+    "@types/fs-extra": "^4",
     "@types/react": "^17.0.40",
     "@types/svgo": "^2",
+    "fs-extra": "^4.0.2",
     "rollup": "^2.72.1",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^7.1.0",
