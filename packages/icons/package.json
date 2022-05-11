@@ -15,7 +15,7 @@
       "import": "./build/svelte/wrapper.js",
       "require": "./build/svelte/index.js"
     },
-    "./svelte/": "./build/svelte/",
+    "./svelte/*": "./build/svelte/*.svelte",
     "./svg/": "./build/svg/",
     "./package.json": "./package.json"
   },
