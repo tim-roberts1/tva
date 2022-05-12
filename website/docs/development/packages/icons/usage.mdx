@@ -159,10 +159,10 @@ This approach requires that you provide any tooling necessary for importing and 
 :::
 
 ```jsx title="Importing an icon as SVG file into an app created with create-react-app"
-import { ReactComponent as PlayIcon } from '@pluralsight/icons/svg/audio-video/play.svg'
+import { ReactComponent as ChatIcon } from '@pluralsight/icons/svg/communication/chat-message.svg'
 import { getIconProps } from '@pluralsight/headless-styles'
 
-function MyPlayIcon(props) {
-  return <PlayIcon {...getIconProps()} {...props} />
+function MyChatIcon(props) {
+  return <ChatIcon {...getIconProps()} {...props} />
 }
 ```
