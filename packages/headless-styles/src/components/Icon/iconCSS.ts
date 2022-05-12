@@ -9,7 +9,7 @@ export function getIconProps(options?: IconOptions) {
   const defaultOptions = getDefaultOptions(options)
   const { size, tech, ...a11y } = defaultOptions
   const a11yProps = getA11yIconProps(a11y)
-  const sizeClass = `${size}Size`
+  const sizeClass = `${size}IconSize`
 
   if (tech === 'svelte') {
     return {
