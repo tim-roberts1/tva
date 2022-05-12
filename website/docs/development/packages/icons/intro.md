@@ -27,17 +27,28 @@ After a [thorough and unbiased comparison of the performance and quality of icon
 
 ## Accessibility
 
-An accessible label is included by default for each icon in the SVG itself.
+An accessible label is included in each SVG.
+In most cases the label describes the image (e.g., "arrow pointing left"), in others what it represents (e.g., "exit fullscreen").
 
 ```xml
-<svg aria-label="menu icon" role="img" viewBox="0 0 24 24">
-  <path
-    fill-rule="evenodd"
-    clip-rule="evenodd"
-    d="M22 11.5v1a.5.5 0 0 1-.5.5h-19a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h19a.5.5 0 0 1 .5.5zM2.5 17h18.98a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2.5a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm0-12h18.977a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2.5a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z"
-  ></path>
+<svg
+  aria-label="arrow pointing right"
+  viewBox="0 -2 18 18"
+  role="img"
+  fill="currentColor"
+  class="ps-icon-svg"
+>
+  <path d="M9.864 13.01a.5.5 0 0 1 0-.708L14.166 8H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h13.668L9.864 1.696a.5.5 0 0 1 0-.708l.707-.707a.5.5 0 0 1 .707 0l6.364 6.364a.5.5 0 0 1 0 .707l-6.364 6.364a.5.5 0 0 1-.707 0l-.707-.707Z"/>
 </svg>
 ```
+
+**By default, the label will be read by screen readers.** The label may be overridden or disabled when a different label is needed or provided as part of a higher-order component (such as a button).
+
+:::caution
+
+If an icon provides meaning visually, be sure to provide the same meaning in an accessible way.
+
+:::
 
 ## Organization and naming
 
@@ -64,7 +75,7 @@ import { BookmarkIcon, MenuIcon } from '@pluralsight/icons'
 Without tree-shaking, you can reduce your bundle size by directly importing the icons you need. To do this, append the category to the path.
 
 ```javascript title="Pathed import for React"
-import PlayIcon from '@pluralsight/icons/audio-video/PlayIcon'
+import PlayIcon from '@pluralsight/icons/react/audio-video/PlayIcon'
 ```
 
 When importing for other frameworks, the framework comes before the category.
@@ -72,3 +83,10 @@ When importing for other frameworks, the framework comes before the category.
 ```javascript title="Pathed import for Svelte"
 import PlayIcon from '@pluralsight/icons/svelte/audio-video/PlayIcon'
 ```
+
+:::tip
+
+Some systems may not support the package.json `exports` field. If the pathed imports are not working, you may need to reference the file directly. To do this, prepend `build/` to the path, and, in some cases, append the file extension.
+
+`import PlayIcon from '@pluralsight/icons/build/svelte/audio-video/PlayIcon.svelte'`
+:::
