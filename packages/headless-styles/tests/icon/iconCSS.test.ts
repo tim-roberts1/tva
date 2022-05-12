@@ -4,7 +4,7 @@ describe('Icon CSS', () => {
   describe('getIconProps', () => {
     const baseClass = 'ps-icon'
     const result = {
-      className: `${baseClass} mSize`,
+      className: `${baseClass} mIconSize`,
       role: 'img',
       'aria-hidden': false,
     }
@@ -16,16 +16,16 @@ describe('Icon CSS', () => {
     test('should accept a size type', () => {
       expect(getIconProps({ size: 's' })).toEqual({
         ...result,
-        className: `${baseClass} sSize`,
+        className: `${baseClass} sIconSize`,
       })
       expect(getIconProps({ size: 'xs' })).toEqual({
         ...result,
-        className: `${baseClass} xsSize`,
+        className: `${baseClass} xsIconSize`,
       })
       expect(getIconProps({ size: 'm' })).toEqual(result)
       expect(getIconProps({ size: 'l' })).toEqual({
         ...result,
-        className: `${baseClass} lSize`,
+        className: `${baseClass} lIconSize`,
       })
     })
 
@@ -34,7 +34,7 @@ describe('Icon CSS', () => {
 
       expect(getIconProps({ tech: 'svelte' })).toEqual({
         ...svelteResult,
-        class: `ps-icon psIcon mSize`,
+        class: `ps-icon psIcon mIconSize`,
       })
     })
 
