@@ -13,6 +13,8 @@ export {
 export { getCircularProgressProps } from './components/CircularProgress/circularProgressCSS'
 export { getJSCircularProgressProps } from './components/CircularProgress/circularProgressJS'
 
+export { getIconProps } from './components/Icon/iconCSS'
+
 export { getProgressProps } from './components/Progress/progressCSS'
 export { getJSProgressProps, muiReset } from './components/Progress/progressJS'
 
