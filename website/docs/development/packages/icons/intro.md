@@ -75,7 +75,7 @@ import { BookmarkIcon, MenuIcon } from '@pluralsight/icons'
 Without tree-shaking, you can reduce your bundle size by directly importing the icons you need. To do this, append the category to the path.
 
 ```javascript title="Pathed import for React"
-import PlayIcon from '@pluralsight/icons/audio-video/PlayIcon'
+import PlayIcon from '@pluralsight/icons/react/audio-video/PlayIcon'
 ```
 
 When importing for other frameworks, the framework comes before the category.
@@ -83,3 +83,10 @@ When importing for other frameworks, the framework comes before the category.
 ```javascript title="Pathed import for Svelte"
 import PlayIcon from '@pluralsight/icons/svelte/audio-video/PlayIcon'
 ```
+
+:::tip
+
+Some systems may not support the package.json `exports` field. If the pathed imports are not working, you may need to reference the file directly. To do this, prepend `build/` to the path, and, in some cases, append the file extension.
+
+`import PlayIcon from '@pluralsight/icons/build/svelte/audio-video/PlayIcon.svelte'`
+:::
