@@ -1,0 +1,179 @@
+---
+sidebar_position: 5
+tags: [Development, Packages, Components, Headless Styles, Icon, Chakra]
+---
+
+<!-- TODO: As of 2.0.0-beta.17 live-codeblock do not support imports. -->
+<!-- Keep an eye out so we can kill the components we are importing in. -->
+<!-- https://docusaurus.io/docs/markdown-features/code-blocks#imports -->
+
+import CodeBlock from '@theme/CodeBlock'
+import BasicIcon from '@site/src/components/Icons/BasicIcon'
+import IconSizes from '@site/src/components/Icons/IconSizes'
+import {
+  BasicIconPreview,
+  BasicIconFullPreview,
+} from '@site/src/components/Icons/BasicIcon.preview'
+import {
+  IconSizesPreview,
+  IconSizesFullPreview,
+} from '@site/src/components/Icons/IconSizes.preview'
+import ViewSourceLink from '@site/src/components/ViewSourceLink/ViewSourceLink'
+import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
+
+:::caution
+
+This is **unreleased** documentation for **headless-styles** package.
+
+:::
+
+Icons are used to convey meaning at a glance.
+
+<ViewSourceLink
+  icon="github"
+  href="https://github.com/pluralsight/tva/tree/main/packages/headless-styles/src/components/Icon"
+>
+  View source
+</ViewSourceLink>
+
+## Import
+
+```javascript
+import { getIconProps } from '@pluralsight/headless-styles'
+```
+
+- **getIconProps**: The styles and a11y attributes for any SVG icon
+
+## Usage
+
+### Icon sizes
+
+Use the `size` options to change the size of an icon. The options are: `xs`, `s`, `m` (default), `l`.
+
+<IconSizes />
+<LiveExampleTabs
+  fullCode={<IconSizesFullPreview />}
+  sandboxList={{
+    chakra: 'basic-icons-chakra-vnew2e',
+    joy: 'basic-icons-mui-q0ww53',
+    styled: 'basic-icon-css-in-js-sc-rk9wxq',
+    svelte: 'basic-icons-svelte-r0dtoj',
+  }}
+>
+  <IconSizesPreview />
+</LiveExampleTabs>
+
+:::tip
+
+We use the standard clothing size shorthand values for all `size` related options in any library we provide (i.e. xs-xxl).
+
+:::
+
+## Accessibility
+
+An icon alone does not convey any useful information to non-visual users.
+Depending on the usage, you will need to provide additional information.
+
+### Decorative icons
+
+The icon is purely cosmetic and conveys no real semantic meaning.
+In this case, the icon should be hidden from assistive technology.
+
+```javascript
+const briefcaseIconProps = getIconProps({ ariaHidden: true })
+```
+
+### Interactive icons
+
+SVG elements are not semantically interactive elements;
+when the user would interact with an icon, a more appropriate element should "own" the interaction:
+
+- The icon element should be a child of a `<button>` or `<a>` element.
+- The `<button>` or `<a>` should have a meaningful label provided either through direct text content, `aria-label`, or `aria-labelledby`.
+
+See the [Button wth icon](./Button.mdx#button-with-icon) and [Button icon (no label)](./Button.mdx#button-icon-no-label) examples.
+
+### Indicator icons
+
+When an icon visually communicates some information (such as a status), that information must also be made available to screen readers.
+Use the `label` option to add a non-visible, accessible label to the icon.
+
+```javascript
+const volumeOffIconProps = getIconProps({ label: 'Volume is off' })
+```
+
+## CSS API
+
+### getIconProps
+
+```typescript
+getIconProps(options: IconOptions): IconProps
+```
+
+The icon prop-getter takes in [IconOptions](#iconoptions) returns [IconProps](#iconprops) that contains all the a11y attributes needed along with all the styles for you to use in any fashion you like - or easily extend/overwrite when needed.
+
+## API
+
+| Name           | Argument Type                            | Default       | Description           |
+| -------------- | ---------------------------------------- | ------------- | --------------------- |
+| `getIconProps` | **options**: [IconOptions](#iconoptions) | **size**: 'm' | Get main icon styles. |
+
+## IconOptions
+
+```typescript
+export interface IconOptions extends IconA11yOptions {
+  size?: 'xs' | 's' | 'm' | 'l'
+  tech?: 'svelte'
+}
+```
+
+## IconA11yOptions
+
+```typescript
+export interface IconA11yOptions {
+  label?: string
+  ariaHidden?: boolean
+}
+```
+
+## IconProps
+
+```typescript
+interface IconProps {
+  className: string
+  'aria-label'?: string
+  'aria-hidden'?: boolean
+  role: 'img'
+}
+```
+
+## Icon size guide
+
+Here is an interface that gives the sizing guide.
+
+```typescript title="Example interface - does not exist in types"
+interface IconSizeGuide {
+  xs: {
+    height: '1rem'
+    width: '1rem'
+  }
+  s: {
+    height: '1.25rem'
+    width: '1.25rem'
+  }
+  m: {
+    height: '1.5rem'
+    width: '1.5rem'
+  }
+  l: {
+    height: '3rem'
+    width: '3rem'
+  }
+}
+```
+
+## Icon color guide
+
+Icon colors are inherited from their context using `currentColor`. Here is an example of icon coloring.
+
+**TBD**
