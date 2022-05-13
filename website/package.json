@@ -20,6 +20,7 @@
     "@docusaurus/theme-live-codeblock": "latest",
     "@mdx-js/react": "^1.6.21",
     "@pluralsight/headless-styles": "experimental",
+    "@pluralsight/icons": "experimental",
     "@svgr/webpack": "^5.5.0",
     "clsx": "^1.1.1",
     "file-loader": "^6.2.0",

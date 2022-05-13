@@ -599,7 +599,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           '@pluralsight/headless-styles',
           'npm:0.0.0-experimental-577758-20220506',
         ],
-        ['@pluralsight/icons', 'workspace:packages/icons'],
+        ['@pluralsight/icons', 'npm:0.0.0-experimental-b5da4d-20220512'],
         ['@polka/url', 'npm:1.0.0-next.21'],
         ['@rollup/pluginutils', 'npm:4.2.0'],
         ['@sideway/address', 'npm:4.1.3'],
@@ -17356,6 +17356,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [
           '@pluralsight/icons',
           [
+            [
+              'npm:0.0.0-experimental-b5da4d-20220512',
+              {
+                packageLocation:
+                  './.yarn/cache/@pluralsight-icons-npm-0.0.0-experimental-b5da4d-20220512-c048486b68-31e43c7d70.zip/node_modules/@pluralsight/icons/',
+                packageDependencies: [
+                  [
+                    '@pluralsight/icons',
+                    'npm:0.0.0-experimental-b5da4d-20220512',
+                  ],
+                  ['tslib', 'npm:2.3.1'],
+                ],
+                linkType: 'HARD',
+              },
+            ],
             [
               'workspace:packages/icons',
               {
@@ -45849,6 +45864,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   [
                     '@pluralsight/headless-styles',
                     'npm:0.0.0-experimental-577758-20220506',
+                  ],
+                  [
+                    '@pluralsight/icons',
+                    'npm:0.0.0-experimental-b5da4d-20220512',
                   ],
                   ['@svgr/webpack', 'npm:5.5.0'],
                   ['clsx', 'npm:1.1.1'],

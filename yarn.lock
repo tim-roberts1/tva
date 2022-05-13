@@ -4583,6 +4583,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@pluralsight/icons@npm:experimental":
+  version: 0.0.0-experimental-b5da4d-20220512
+  resolution: "@pluralsight/icons@npm:0.0.0-experimental-b5da4d-20220512"
+  dependencies:
+    tslib: ^2.3.1
+  checksum: 31e43c7d70f72ab1d291f233656c58cfdd539430fb30437c3f7f93210675fd027120f55d2b6825b469fe6a5499eb02e63426f1f3d4b6848215205abb6d10b737
+  languageName: node
+  linkType: hard
+
 "@pluralsight/icons@workspace:packages/icons":
   version: 0.0.0-use.local
   resolution: "@pluralsight/icons@workspace:packages/icons"
@@ -19441,6 +19450,7 @@ __metadata:
     "@docusaurus/theme-live-codeblock": latest
     "@mdx-js/react": ^1.6.21
     "@pluralsight/headless-styles": experimental
+    "@pluralsight/icons": experimental
     "@svgr/webpack": ^5.5.0
     clsx: ^1.1.1
     file-loader: ^6.2.0
