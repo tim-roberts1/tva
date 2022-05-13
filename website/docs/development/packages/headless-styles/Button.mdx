@@ -103,15 +103,15 @@ You can add left and right icons to a button using the `getIconProps` and an Ico
 
 ```jsx title=components/EditButton.jsx
 import { getIconProps } from '@pluralsight/headless-styles'
-import { StarIcon } from '@pluralsight/icons'
+import { PencilIcon } from '@pluralsight/icons'
 
 const defaultBtnProps = getButtonProps({ kind: 'medium' })
-const iconProps = getIconProps()
+const iconProps = getIconProps({ ariaHidden: true })
 
 function EditButton(props) {
   return (
     <button {...props} {...defaultBtnProps}>
-      <StarIcon {...iconProps} />
+      <PencilIcon {...iconProps} />
       Edit
     </button>
   )
@@ -126,14 +126,14 @@ For icons acting as buttons, use the `getIconButtonProps` with your desired Icon
 
 ```jsx title=components/EditIconButton.jsx
 import { getIconProps, getIconButtonProps } from '@pluralsight/headless-styles'
-import { EditIcon } from '@pluralsight/icons'
+import { PencilIcon } from '@pluralsight/icons'
 
 const editIconBtnProps = getIconButtonProps('edit profile')
 
 function EditIconButton(props) {
   return (
     <button {...props} {...editIconBtnProps}>
-      <EditIcon {...getIconProps()} />
+      <PencilIcon {...getIconProps()} />
     </button>
   )
 }
