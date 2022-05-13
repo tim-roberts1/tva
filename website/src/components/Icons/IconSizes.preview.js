@@ -3,27 +3,25 @@ import CodeBlock from '@theme/CodeBlock'
 
 export function IconSizesPreview() {
   return (
-    <CodeBlock>{`<MenuIcon {...getIconProps()} />
-<MenuIcon {...getIconProps({ size: 'xs' })} />
-<MenuIcon {...getIconProps({ size: 's' })} />
-<MenuIcon {...getIconProps({ size: 'm' })} />
-<MenuIcon {...getIconProps({ size: 'l' })} />`}</CodeBlock>
+    <CodeBlock>{`<StarIcon {...getIconProps({ size: 'xs' })} />
+<StarIcon {...getIconProps({ size: 's' })} />
+<StarIcon {...getIconProps({ size: 'm' })} />
+<StarIcon {...getIconProps({ size: 'l' })} />`}</CodeBlock>
   )
 }
 
 export function IconSizesFullPreview() {
   return (
-    <CodeBlock>{`import { MenuIcon } from '@pluralsight/icons'
+    <CodeBlock>{`import { StarIcon } from '@pluralsight/icons'
 import { getIconProps } from '@pluralsight/headless-styles'
 
 export default function IconsSizes() {
   return (
     <div>
-      <MenuIcon {...getIconProps()} />
-      <MenuIcon {...getIconProps({ size: 'xs' })} />
-      <MenuIcon {...getIconProps({ size: 's' })} />
-      <MenuIcon {...getIconProps({ size: 'm' })} />
-      <MenuIcon {...getIconProps({ size: 'l' })} />
+      <StarIcon {...getIconProps({ size: 'xs' })} />
+      <StarIcon {...getIconProps({ size: 's' })} />
+      <StarIcon {...getIconProps({ size: 'm' })} />
+      <StarIcon {...getIconProps({ size: 'l' })} />
     </div>
   );
 }`}</CodeBlock>
