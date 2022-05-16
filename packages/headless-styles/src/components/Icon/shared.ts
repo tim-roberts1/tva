@@ -23,7 +23,7 @@ export function getDefaultIconOptions(options?: IconOptions) {
 
 export function getA11yIconProps(a11yOptions?: IconA11yOptions) {
   return {
-    [a11yPropMap.ariaHidden]: a11yOptions?.ariaHidden,
+    [a11yPropMap.ariaHidden]: a11yOptions?.ariaHidden ? 'true' : 'false',
     ...(a11yOptions?.label && { [a11yPropMap.label]: a11yOptions.label }),
     role: a11yRole,
   }

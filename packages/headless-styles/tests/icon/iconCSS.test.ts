@@ -6,7 +6,7 @@ describe('Icon CSS', () => {
     const result = {
       className: `${baseClass} mIconSize`,
       role: 'img',
-      'aria-hidden': false,
+      'aria-hidden': 'false',
     }
 
     test('should allow no props to be passed in', () => {
@@ -48,11 +48,11 @@ describe('Icon CSS', () => {
     test('should accept an ariaHidden flag', () => {
       expect(getIconProps({ ariaHidden: true })).toEqual({
         ...result,
-        'aria-hidden': true,
+        'aria-hidden': 'true',
       })
       expect(getIconProps({ ariaHidden: false })).toEqual({
         ...result,
-        'aria-hidden': false,
+        'aria-hidden': 'false',
       })
     })
   })
