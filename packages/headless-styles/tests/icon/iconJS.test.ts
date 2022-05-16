@@ -7,12 +7,25 @@ describe('icon JS', () => {
   }
 
   test('should return a distinct height and width difference based on the size', () => {
-    const mIconProps = getJSIconProps()
     const xsIconProps = getJSIconProps({ size: 'xs' })
-    expect(mIconProps.styles.height).toEqual('1.5rem')
-    expect(mIconProps.styles.width).toEqual('1.5rem')
-    expect(xsIconProps.styles.height).toEqual('1rem')
-    expect(xsIconProps.styles.width).toEqual('1rem')
+    const mIconProps = getJSIconProps({ size: 'm' })
+    const sIconProps = getJSIconProps({ size: 's' })
+    const lIconProps = getJSIconProps({ size: 'l' })
+
+    expect(xsIconProps.styles.height).not.toEqual(mIconProps.styles.height)
+    expect(xsIconProps.styles.width).not.toEqual(mIconProps.styles.width)
+    expect(xsIconProps.styles.height).not.toEqual(sIconProps.styles.height)
+    expect(xsIconProps.styles.width).not.toEqual(sIconProps.styles.width)
+    expect(xsIconProps.styles.height).not.toEqual(lIconProps.styles.height)
+    expect(xsIconProps.styles.width).not.toEqual(lIconProps.styles.width)
+
+    expect(sIconProps.styles.height).not.toEqual(mIconProps.styles.height)
+    expect(sIconProps.styles.width).not.toEqual(mIconProps.styles.width)
+    expect(sIconProps.styles.height).not.toEqual(lIconProps.styles.height)
+    expect(sIconProps.styles.width).not.toEqual(lIconProps.styles.width)
+
+    expect(mIconProps.styles.height).not.toEqual(lIconProps.styles.height)
+    expect(mIconProps.styles.width).not.toEqual(lIconProps.styles.width)
   })
 
   test('should accept a label', () => {
