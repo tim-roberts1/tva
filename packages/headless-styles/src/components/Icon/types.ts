@@ -1,6 +1,6 @@
 export interface IconA11yOptions {
   label?: string
-  ariaHidden?: boolean
+  ariaHidden?: BooleanString
 }
 
 export interface IconOptions extends IconA11yOptions {
@@ -12,3 +12,4 @@ export interface IconOptions extends IconA11yOptions {
 
 export type Size = 'xs' | 's' | 'm' | 'l'
 export type Tech = 'svelte' | ''
+export type BooleanString = 'true' | 'false'

@@ -46,11 +46,11 @@ describe('Icon CSS', () => {
     })
 
     test('should accept an ariaHidden flag', () => {
-      expect(getIconProps({ ariaHidden: true })).toEqual({
+      expect(getIconProps({ ariaHidden: 'true' })).toEqual({
         ...result,
         'aria-hidden': 'true',
       })
-      expect(getIconProps({ ariaHidden: false })).toEqual({
+      expect(getIconProps({ ariaHidden: 'false' })).toEqual({
         ...result,
         'aria-hidden': 'false',
       })

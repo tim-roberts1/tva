@@ -42,6 +42,6 @@ describe('icon JS', () => {
       ...baseA11yProps,
       'aria-hidden': 'true',
     }
-    expect(getJSIconProps({ ariaHidden: true }).a11yProps).toEqual(a11yProps)
+    expect(getJSIconProps({ ariaHidden: 'true' }).a11yProps).toEqual(a11yProps)
   })
 })
