@@ -12,7 +12,7 @@ export const defaultIconOptions = {
   ariaHidden: false,
 }
 
-export function getDefaultOptions(options?: IconOptions) {
+export function getDefaultIconOptions(options?: IconOptions) {
   return {
     size: options?.size ?? defaultIconOptions.size,
     tech: options?.tech ?? defaultIconOptions.tech,
