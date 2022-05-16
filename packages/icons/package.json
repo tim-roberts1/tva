@@ -32,13 +32,12 @@
     "build/wrapper.js"
   ],
   "scripts": {
-    "build": "yarn run build:svg && yarn run build:react && yarn run build:svelte && yarn run create:entryFiles",
-    "build:react": "yarn generate:react && tsc --project ./tsconfig.cjs.json",
-    "build:svelte": "yarn generate:svelte && tsc --project ./tsconfig.svelte.json",
+    "build": "yarn run build:svg && yarn run build:react && yarn run build:svelte && yarn run build:ts && yarn run create:entryFiles",
+    "build:ts": "tsc --project ./tsconfig.cjs.json",
+    "build:react": "yarn node ./utils/svgToReact.mjs",
+    "build:svelte": "yarn node ./utils/svgToSvelte.mjs",
     "build:svg": "svgo --recursive --folder src --output build/svg",
     "create:entryFiles": "yarn node ./utils/reactPostbuild.mjs",
-    "generate:react": "yarn node ./utils/svgToReact.mjs",
-    "generate:svelte": "yarn node ./utils/svgToSvelte.mjs",
     "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
   },
   "dependencies": {
