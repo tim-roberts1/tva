@@ -599,7 +599,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           '@pluralsight/headless-styles',
           'npm:0.0.0-experimental-dbd443-20220516',
         ],
-        ['@pluralsight/icons', 'npm:0.0.0-experimental-b5da4d-20220512'],
+        ['@pluralsight/icons', 'npm:0.0.0-alpha-607d0e'],
         ['@polka/url', 'npm:1.0.0-next.21'],
         ['@rollup/pluginutils', 'npm:4.2.0'],
         ['@sideway/address', 'npm:4.1.3'],
@@ -17356,6 +17356,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [
           '@pluralsight/icons',
           [
+            [
+              'npm:0.0.0-alpha-607d0e',
+              {
+                packageLocation:
+                  './.yarn/cache/@pluralsight-icons-npm-0.0.0-alpha-607d0e-3459e7a068-8af7f9aed1.zip/node_modules/@pluralsight/icons/',
+                packageDependencies: [
+                  ['@pluralsight/icons', 'npm:0.0.0-alpha-607d0e'],
+                  ['tslib', 'npm:2.3.1'],
+                ],
+                linkType: 'HARD',
+              },
+            ],
             [
               'npm:0.0.0-experimental-b5da4d-20220512',
               {
@@ -41122,6 +41134,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageDependencies: [
                   ['sandbox', 'workspace:packages/headless-styles/sandbox'],
                   ['@pluralsight/design-tokens', 'npm:0.0.0-alpha-ea49e7'],
+                  ['@pluralsight/icons', 'npm:0.0.0-alpha-607d0e'],
                   ['@vitejs/plugin-react', 'npm:1.2.0'],
                   ['css', 'npm:3.0.0'],
                   ['react', 'npm:18.0.0'],
