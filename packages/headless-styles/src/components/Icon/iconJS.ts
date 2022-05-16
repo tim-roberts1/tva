@@ -24,7 +24,7 @@ export function getJSIconProps(options?: IconOptions) {
   const jsStyles = styles[sizeKey as StyleKey]
 
   return {
-    ...getA11yIconProps(a11y),
+    a11yProps: getA11yIconProps(a11y),
     ...createJSProps(transformStyles(jsStyles), jsStyles),
   }
 }
