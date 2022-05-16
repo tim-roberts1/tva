@@ -20,12 +20,11 @@ export type StyleKey = keyof typeof styles
 
 export function getJSIconProps(options?: IconOptions) {
   const { size, ...a11y } = getDefaultIconOptions(options)
-  const a11yProps = getA11yIconProps(a11y)
   const sizeKey = `${size}IconSize`
   const jsStyles = styles[sizeKey as StyleKey]
 
   return {
-    a11yProps,
+    ...getA11yIconProps(a11y),
     ...createJSProps(transformStyles(jsStyles), jsStyles),
   }
 }
