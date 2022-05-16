@@ -1,0 +1,21 @@
+.gallery {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+}
+
+.example {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1em;
+}
+
+.example svg {
+  transition: all 0.25s ease-out;
+}
+
+.example:hover svg {
+  transform: scale(3);
+}
