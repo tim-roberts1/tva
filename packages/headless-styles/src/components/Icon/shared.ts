@@ -3,7 +3,7 @@ import type {
   IconA11yOptions,
   Size,
   Tech,
-  BooleanString,
+  A11yBoolean,
 } from './types'
 
 const a11yRole = 'img'
@@ -15,7 +15,7 @@ const a11yPropMap = {
 export const defaultIconOptions = {
   size: 'm' as Size,
   tech: '' as Tech,
-  ariaHidden: 'false' as BooleanString,
+  ariaHidden: 'false' as A11yBoolean,
 }
 
 export function getDefaultIconOptions(options?: IconOptions) {
