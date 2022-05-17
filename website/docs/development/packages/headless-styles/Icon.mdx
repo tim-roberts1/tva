@@ -112,6 +112,16 @@ getIconProps(options: IconOptions): IconProps
 
 The icon prop-getter takes in [IconOptions](#iconoptions) returns [IconProps](#iconprops) that contains all the a11y attributes needed along with all the styles for you to use in any fashion you like - or easily extend/overwrite when needed.
 
+## JS API
+
+### getJSIconProps
+
+```typescript
+getJSIconProps(options: IconOptions): JSIconProps
+```
+
+the CSS-in-JS prop-getter takes in the same [IconOptions](#iconoptions) as the CSS API and returns [JSIconProps](#jsiconprops) which caters to CSS Templates, StyleObject, and a11yProps.
+
 ## API
 
 | Name           | Argument Type                            | Default       | Description           |
@@ -136,14 +146,32 @@ export interface IconA11yOptions {
 }
 ```
 
+## IconA11yProps
+
+```typescript
+interface IconA11yProps {
+  'aria-label': string
+  'aria-hidden': boolean
+  role: 'img'
+}
+```
+
 ## IconProps
 
 ```typescript
 interface IconProps {
   className: string
-  'aria-label': string
-  'aria-hidden': 'true' | 'false'
-  role: 'img'
+  ...IconA11yProps
+}
+```
+
+## JSIconProps
+
+```typescript
+interface IconProps {
+  a11yProps: IconA11yProps
+  cssProps: TemplateLiteralArray
+  styles: Record<string, unknown>
 }
 ```
 
