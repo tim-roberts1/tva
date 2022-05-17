@@ -3,8 +3,10 @@ import { getButtonProps } from '../../src'
 import Button from './components/Button'
 import Badge from './components/Badge'
 import CircularProgress from './components/CircularProgress'
+import Icon from './components/Icon'
 import Progress from './components/Progress'
 import Skeleton from './components/Skeleton'
+import Switch from './components/Switch'
 import './App.css'
 
 function App() {
@@ -31,8 +33,10 @@ function App() {
       <Badge />
       <Button />
       <CircularProgress logJS />
+      <Icon logJS />
       <Progress />
       <Skeleton />
+      <Switch />
     </div>
   )
 }

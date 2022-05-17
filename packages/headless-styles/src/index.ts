@@ -14,11 +14,14 @@ export { getCircularProgressProps } from './components/CircularProgress/circular
 export { getJSCircularProgressProps } from './components/CircularProgress/circularProgressJS'
 
 export { getIconProps } from './components/Icon/iconCSS'
+export { getJSIconProps } from './components/Icon/iconJS'
 
 export { getProgressProps } from './components/Progress/progressCSS'
 export { getJSProgressProps, muiReset } from './components/Progress/progressJS'
 
 export { getSkeletonProps } from './components/Skeleton/skeletonCSS'
 export { getJSSkeletonProps } from './components/Skeleton/skeletonJS'
+
+export { getSwitchProps } from './components/Switch/switchCSS'
 
 export { chakraPSTheme } from './chakra'
