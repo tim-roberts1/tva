@@ -13,28 +13,36 @@ describe('icon JS', () => {
     l: '3rem',
   }
 
-  function testDimensions(size: Size) {
-    const props = getJSIconProps({ size: size })
-    expect(props.styles.height).toEqual(sizes[size])
-    expect(props.styles.width).toEqual(sizes[size])
-    expect(props.cssProps).toContain(`height: ${sizes[size]}`)
-    expect(props.cssProps).toContain(`width: ${sizes[size]}`)
-  }
-
   test('should return the appropriate dimensions for "xs" size', () => {
-    testDimensions('xs')
+    const props = getJSIconProps({ size: 'xs' })
+    expect(props.styles.height).toEqual(sizes['xs'])
+    expect(props.styles.width).toEqual(sizes['xs'])
+    expect(props.cssProps).toContain(`height: ${sizes['xs']}`)
+    expect(props.cssProps).toContain(`width: ${sizes['xs']}`)
   })
 
   test('should return the appropriate dimensions for "s" size', () => {
-    testDimensions('s')
+    const props = getJSIconProps({ size: 's' })
+    expect(props.styles.height).toEqual(sizes['s'])
+    expect(props.styles.width).toEqual(sizes['s'])
+    expect(props.cssProps).toContain(`height: ${sizes['s']}`)
+    expect(props.cssProps).toContain(`width: ${sizes['s']}`)
   })
 
   test('should return the appropriate dimensions for "m" size', () => {
-    testDimensions('m')
+    const props = getJSIconProps({ size: 'm' })
+    expect(props.styles.height).toEqual(sizes['m'])
+    expect(props.styles.width).toEqual(sizes['m'])
+    expect(props.cssProps).toContain(`height: ${sizes['m']}`)
+    expect(props.cssProps).toContain(`width: ${sizes['m']}`)
   })
 
   test('should return the appropriate dimensions for "l" size', () => {
-    testDimensions('l')
+    const props = getJSIconProps({ size: 'l' })
+    expect(props.styles.height).toEqual(sizes['l'])
+    expect(props.styles.width).toEqual(sizes['l'])
+    expect(props.cssProps).toContain(`height: ${sizes['l']}`)
+    expect(props.cssProps).toContain(`width: ${sizes['l']}`)
   })
 
   test('should accept a label', () => {
