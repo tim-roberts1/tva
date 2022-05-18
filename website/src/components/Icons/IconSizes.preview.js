@@ -3,8 +3,7 @@ import CodeBlock from '@theme/CodeBlock'
 
 export function IconSizesPreview() {
   return (
-    <CodeBlock>{`<StarIcon {...getIconProps({ size: 'xs' })} />
-<StarIcon {...getIconProps({ size: 's' })} />
+    <CodeBlock>{`<StarIcon {...getIconProps({ size: 's' })} />
 <StarIcon {...getIconProps({ size: 'm' })} />
 <StarIcon {...getIconProps({ size: 'l' })} />`}</CodeBlock>
   )
@@ -18,7 +17,6 @@ import { getIconProps } from '@pluralsight/headless-styles'
 export default function IconsSizes() {
   return (
     <div>
-      <StarIcon {...getIconProps({ size: 'xs' })} />
       <StarIcon {...getIconProps({ size: 's' })} />
       <StarIcon {...getIconProps({ size: 'm' })} />
       <StarIcon {...getIconProps({ size: 'l' })} />
