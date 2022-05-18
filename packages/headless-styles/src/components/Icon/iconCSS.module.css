@@ -2,29 +2,23 @@
   display: inline-block;
 }
 
-.xsIconSize,
 .sIconSize,
 .mIconSize,
 .lIconSize {
   composes: psIcon;
 }
 
-.xsIconSize {
+.sIconSize {
   height: 1rem;
   width: 1rem;
 }
 
-.sIconSize {
+.mIconSize {
   height: 1.25rem;
   width: 1.25rem;
 }
 
-.mIconSize {
+.lIconSize {
   height: 1.5rem;
   width: 1.5rem;
-}
-
-.lIconSize {
-  height: 3rem;
-  width: 3rem;
 }

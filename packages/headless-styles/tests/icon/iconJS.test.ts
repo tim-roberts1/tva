@@ -7,19 +7,10 @@ describe('icon JS', () => {
     role: 'img',
   }
   const sizes: Record<Size, string> = {
-    xs: '1rem',
-    s: '1.25rem',
-    m: '1.5rem',
-    l: '3rem',
+    s: '1rem',
+    m: '1.25rem',
+    l: '1.5rem',
   }
-
-  test('should return the appropriate dimensions for "xs" size', () => {
-    const props = getJSIconProps({ size: 'xs' })
-    expect(props.styles.height).toEqual(sizes['xs'])
-    expect(props.styles.width).toEqual(sizes['xs'])
-    expect(props.cssProps).toContain(`height: ${sizes['xs']}`)
-    expect(props.cssProps).toContain(`width: ${sizes['xs']}`)
-  })
 
   test('should return the appropriate dimensions for "s" size', () => {
     const props = getJSIconProps({ size: 's' })
