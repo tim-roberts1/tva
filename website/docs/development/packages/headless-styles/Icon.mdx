@@ -48,7 +48,7 @@ import { getIconProps } from '@pluralsight/headless-styles'
 
 ### Icon sizes
 
-Use the `size` options to change the size of an icon. The options are: `xs`, `s`, `m` (default), `l`.
+Use the `size` options to change the size of an icon. The options are: `s`, `m` (default), `l`.
 
 <IconSizes />
 <LiveExampleTabs
@@ -132,7 +132,7 @@ the CSS-in-JS prop-getter takes in the same [IconOptions](#iconoptions) as the C
 
 ```typescript
 export interface IconOptions extends IconA11yOptions {
-  size?: 'xs' | 's' | 'm' | 'l'
+  size?: 's' | 'm' | 'l'
   tech?: 'svelte'
 }
 ```
@@ -181,21 +181,17 @@ Here is an interface that gives the sizing guide.
 
 ```typescript title="Example interface - does not exist in types"
 interface IconSizeGuide {
-  xs: {
+  s: {
     height: '1rem'
     width: '1rem'
   }
-  s: {
+  m: {
     height: '1.25rem'
     width: '1.25rem'
   }
-  m: {
+  l: {
     height: '1.5rem'
     width: '1.5rem'
-  }
-  l: {
-    height: '3rem'
-    width: '3rem'
   }
 }
 ```
