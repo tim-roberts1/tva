@@ -18,10 +18,6 @@ describe('Icon CSS', () => {
         ...result,
         className: `${baseClass} sIconSize`,
       })
-      expect(getIconProps({ size: 'xs' })).toEqual({
-        ...result,
-        className: `${baseClass} xsIconSize`,
-      })
       expect(getIconProps({ size: 'm' })).toEqual(result)
       expect(getIconProps({ size: 'l' })).toEqual({
         ...result,

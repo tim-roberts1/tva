@@ -9,7 +9,6 @@ export const ChakraIcon = {
     size: 'm',
   },
   sizes: {
-    xs: styles.xsIconSize,
     s: styles.sIconSize,
     m: styles.mIconSize,
     l: styles.lIconSize,

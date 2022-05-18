@@ -10,6 +10,6 @@ export interface IconOptions extends IconA11yOptions {
 
 // types
 
-export type Size = 'xs' | 's' | 'm' | 'l'
+export type Size = 's' | 'm' | 'l'
 export type Tech = 'svelte' | ''
 export type A11yBoolean = 'true' | 'false'

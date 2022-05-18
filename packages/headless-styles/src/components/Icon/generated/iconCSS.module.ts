@@ -7,24 +7,19 @@ export default {
   psIcon: {
     display: 'inline-block',
   },
-  xsIconSize: {
+  sIconSize: {
     composes: 'psIcon',
     height: '1rem',
     width: '1rem',
   },
-  sIconSize: {
+  mIconSize: {
     composes: 'psIcon',
     height: '1.25rem',
     width: '1.25rem',
   },
-  mIconSize: {
+  lIconSize: {
     composes: 'psIcon',
     height: '1.5rem',
     width: '1.5rem',
-  },
-  lIconSize: {
-    composes: 'psIcon',
-    height: '3rem',
-    width: '3rem',
   },
 }
