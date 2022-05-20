@@ -1,15 +1,33 @@
 import { resolve, join } from 'path'
-import { copyFileSync, renameSync } from 'fs'
+import { copyFileSync, renameSync, readdirSync } from 'fs'
 import fse from 'fs-extra'
 
 const srcPath = join('build', 'generated')
 const buildPath = join('build')
-
-copyFileSync(resolve(srcPath, 'index.ts'), resolve(buildPath, 'wrapper.js'))
+const indexFileIn = 'index.ts'
+const indexFileOut = 'wrapper.js'
 
 fse.copySync(resolve(srcPath, 'svelte'), resolve(buildPath, 'svelte'))
 
 renameSync(
-  resolve(buildPath, 'svelte', 'index.ts'),
-  resolve(buildPath, 'svelte', 'wrapper.js')
+  resolve(buildPath, 'svelte', indexFileIn),
+  resolve(buildPath, 'svelte', indexFileOut)
 )
+
+function createModuleWrappers(currentPath) {
+  const files = readdirSync(currentPath, { withFileTypes: true })
+
+  files.forEach((file) => {
+    if (file.isDirectory()) {
+      createModuleWrappers(join(currentPath, file.name))
+    } else {
+      if (file.name === indexFileIn) {
+        copyFileSync(
+          resolve(currentPath, file.name),
+          resolve(currentPath.replace(srcPath, buildPath), indexFileOut)
+        )
+      }
+    }
+  })
+}
+createModuleWrappers(srcPath)

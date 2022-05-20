@@ -20,6 +20,11 @@ function formatAndWriteTsx(reactIconContent, varName, outputPath) {
 
   fs.writeFileSync(path.resolve(outputPath, outputFile), reactIconContent)
 
+  fs.appendFileSync(
+    path.resolve(outputPath, 'index.ts'),
+    `export { default as ${varName} } from './${varName}'\n`
+  )
+
   // JS import always uses '/', but system may be different
   const tsxUrl = path
     .relative(buildRoot, outputPath)
@@ -43,6 +48,11 @@ function buildTsxFiles(pathName) {
 
   files.forEach(async (file) => {
     if (file.isDirectory()) {
+      const dirIndexFile = path.resolve(outputPath, file.name, 'index.ts')
+      if (fs.existsSync(dirIndexFile)) {
+        fs.rmSync(dirIndexFile)
+      }
+
       svgToReact(path.join(pathName, file.name))
     } else if (/\.svg$/.test(file.name)) {
       const fileName = path.basename(file.name, '.svg')

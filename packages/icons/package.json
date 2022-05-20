@@ -10,7 +10,11 @@
       "import": "./build/wrapper.js",
       "require": "./build/index.js"
     },
-    "./react/": "./build/react/",
+    "./react/*": {
+      "import": "./build/react/*/wrapper.js",
+      "require": "./build/react/*/index.js"
+    },
+    "./react": "./build/react",
     "./svelte": {
       "import": "./build/svelte/wrapper.js",
       "require": "./build/svelte/index.js"
