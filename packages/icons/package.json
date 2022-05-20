@@ -11,10 +11,15 @@
       "require": "./build/index.js"
     },
     "./react/*": {
-      "import": "./build/react/*/wrapper.js",
-      "require": "./build/react/*/index.js"
+      "import": [
+        "./build/react/*/wrapper.js",
+        "./build/react/*"
+      ],
+      "require": [
+        "./build/react/*/index.js",
+        "./build/react/*"
+      ]
     },
-    "./react": "./build/react",
     "./svelte": {
       "import": "./build/svelte/wrapper.js",
       "require": "./build/svelte/index.js"
