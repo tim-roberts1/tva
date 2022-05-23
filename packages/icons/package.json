@@ -10,7 +10,16 @@
       "import": "./build/wrapper.js",
       "require": "./build/index.js"
     },
-    "./react/": "./build/react/",
+    "./react/*": {
+      "import": [
+        "./build/react/*/wrapper.js",
+        "./build/react/*"
+      ],
+      "require": [
+        "./build/react/*/index.js",
+        "./build/react/*"
+      ]
+    },
     "./svelte": {
       "import": "./build/svelte/wrapper.js",
       "require": "./build/svelte/index.js"
@@ -37,7 +46,7 @@
     "build:react": "yarn node ./utils/svgToReact.mjs",
     "build:svelte": "yarn node ./utils/svgToSvelte.mjs",
     "build:svg": "svgo --recursive --folder src --output build/svg",
-    "create:entryFiles": "yarn node ./utils/reactPostbuild.mjs",
+    "create:entryFiles": "yarn node ./utils/postbuild.mjs",
     "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
   },
   "dependencies": {
