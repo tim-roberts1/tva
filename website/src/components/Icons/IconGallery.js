@@ -1,27 +1,15 @@
-import React from 'react'
-import { getIconProps } from '@pluralsight/headless-styles'
+import React, { memo } from 'react'
 import styles from './IconGallery.module.css'
+import IconList from './IconList'
 
-function IconGallery(props) {
-  const { icons, size = 'l' } = props
-  const psIconProps = getIconProps({ size: size })
+const IconGallery = memo(function IconGallery(props) {
+  const { icons, size } = props
 
   return (
-    <div className={styles.gallery}>
-      {Object.keys(icons)
-        .sort()
-        .map((key) => {
-          const Icon = icons[key]
-
-          return (
-            <span className={styles.item}>
-              <Icon key={key} {...psIconProps} />
-              <span className={styles.label}>{key}</span>
-            </span>
-          )
-        })}
-    </div>
+    <ul className={styles.gallery}>
+      <IconList icons={icons} size={size} />
+    </ul>
   )
-}
+})
 
 export default IconGallery

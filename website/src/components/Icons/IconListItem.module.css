@@ -1,0 +1,11 @@
+.item {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+}
+
+.label {
+  margin-top: 1rem;
+}
