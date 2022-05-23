@@ -4584,20 +4584,20 @@ __metadata:
   linkType: soft
 
 "@pluralsight/icons@npm:alpha":
-  version: 0.0.0-alpha-607d0e
-  resolution: "@pluralsight/icons@npm:0.0.0-alpha-607d0e"
+  version: 0.0.0-alpha-db29fb
+  resolution: "@pluralsight/icons@npm:0.0.0-alpha-db29fb"
   dependencies:
     tslib: ^2.3.1
-  checksum: 8af7f9aed15dce7416e07f88198e900abbe135615889a7d9d0e259d7d942e0b2a8519e3c593770ae9645ad64fe0357b9059415dd234feb6b5b5d5f43ab3fc938
+  checksum: 63b7985700927771100fe5730f54266d4a50d1731429f4330ca844d2ea3f2c0c1db545cbca222e55a9359d9caec1dd32d0225b95d9acbaf98f2a7f31b578363e
   languageName: node
   linkType: hard
 
 "@pluralsight/icons@npm:experimental":
-  version: 0.0.0-experimental-b5da4d-20220512
-  resolution: "@pluralsight/icons@npm:0.0.0-experimental-b5da4d-20220512"
+  version: 0.0.0-experimental-db29fb-20220520
+  resolution: "@pluralsight/icons@npm:0.0.0-experimental-db29fb-20220520"
   dependencies:
     tslib: ^2.3.1
-  checksum: 31e43c7d70f72ab1d291f233656c58cfdd539430fb30437c3f7f93210675fd027120f55d2b6825b469fe6a5499eb02e63426f1f3d4b6848215205abb6d10b737
+  checksum: 98e6bb712ce2cf98335ee133388ab1768c99f2a69ff8023ca66bf4fba4acb3d6e38507cc0c4c520894a4e1aaa394255da157cdff3202c1831ae56e05e649f48a
   languageName: node
   linkType: hard
 
