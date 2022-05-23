@@ -20,7 +20,7 @@ const iconData = {
   Editor: editorIcons,
   Navigation: navigationIcons,
   Social: socialIcons,
-  'UI Action': uiIcons,
+  'UI Actions': uiIcons,
 }
 
 function IconListItem(props) {
@@ -67,7 +67,7 @@ const IconGallery = memo(function IconGallery() {
       {Object.keys(iconData)
         .sort()
         .map((category) => (
-          <IconSection category={category} />
+          <IconSection key={category} category={category} />
         ))}
     </div>
   )
