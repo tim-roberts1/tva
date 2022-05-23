@@ -4,7 +4,7 @@
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
 }
 
-.item {
+.example {
   align-items: center;
   display: flex;
   flex-direction: column;
