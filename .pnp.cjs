@@ -599,7 +599,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           '@pluralsight/headless-styles',
           'npm:0.0.0-experimental-6ff3db-20220519',
         ],
-        ['@pluralsight/icons', 'npm:0.0.0-alpha-db29fb'],
+        ['@pluralsight/icons', 'npm:0.0.0-alpha-5fed0c'],
         ['@polka/url', 'npm:1.0.0-next.21'],
         ['@rollup/pluginutils', 'npm:4.2.0'],
         ['@sideway/address', 'npm:4.1.3'],
@@ -17357,26 +17357,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           '@pluralsight/icons',
           [
             [
-              'npm:0.0.0-alpha-db29fb',
+              'npm:0.0.0-alpha-5fed0c',
               {
                 packageLocation:
-                  './.yarn/cache/@pluralsight-icons-npm-0.0.0-alpha-db29fb-28f39584ab-63b7985700.zip/node_modules/@pluralsight/icons/',
+                  './.yarn/cache/@pluralsight-icons-npm-0.0.0-alpha-5fed0c-95e4679f20-b59d0a0681.zip/node_modules/@pluralsight/icons/',
                 packageDependencies: [
-                  ['@pluralsight/icons', 'npm:0.0.0-alpha-db29fb'],
+                  ['@pluralsight/icons', 'npm:0.0.0-alpha-5fed0c'],
                   ['tslib', 'npm:2.3.1'],
                 ],
                 linkType: 'HARD',
               },
             ],
             [
-              'npm:0.0.0-experimental-db29fb-20220520',
+              'npm:0.0.0-experimental-5fed0c-20220523',
               {
                 packageLocation:
-                  './.yarn/cache/@pluralsight-icons-npm-0.0.0-experimental-db29fb-20220520-41f9775a1b-98e6bb712c.zip/node_modules/@pluralsight/icons/',
+                  './.yarn/cache/@pluralsight-icons-npm-0.0.0-experimental-5fed0c-20220523-d03885de02-16bdf2555f.zip/node_modules/@pluralsight/icons/',
                 packageDependencies: [
                   [
                     '@pluralsight/icons',
-                    'npm:0.0.0-experimental-db29fb-20220520',
+                    'npm:0.0.0-experimental-5fed0c-20220523',
                   ],
                   ['tslib', 'npm:2.3.1'],
                 ],
@@ -41134,7 +41134,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageDependencies: [
                   ['sandbox', 'workspace:packages/headless-styles/sandbox'],
                   ['@pluralsight/design-tokens', 'npm:0.0.0-alpha-ea49e7'],
-                  ['@pluralsight/icons', 'npm:0.0.0-alpha-db29fb'],
+                  ['@pluralsight/icons', 'npm:0.0.0-alpha-5fed0c'],
                   ['@vitejs/plugin-react', 'npm:1.2.0'],
                   ['css', 'npm:3.0.0'],
                   ['react', 'npm:18.0.0'],
@@ -45880,7 +45880,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ],
                   [
                     '@pluralsight/icons',
-                    'npm:0.0.0-experimental-db29fb-20220520',
+                    'npm:0.0.0-experimental-5fed0c-20220523',
                   ],
                   ['@svgr/webpack', 'npm:5.5.0'],
                   ['clsx', 'npm:1.1.1'],
