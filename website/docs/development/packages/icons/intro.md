@@ -7,7 +7,7 @@ tags: [Development, Usage, Intro, Icons]
 
 :::caution
 
-This is **unreleased** documentation for Pluralsight Design **icons** package.
+This is **experimental** documentation for Pluralsight Design **icons** package.
 
 :::
 

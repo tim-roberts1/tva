@@ -1,7 +1,5 @@
 'use strict'
 
-const path = require('path')
-
 const name = 'squareViewBox'
 const type = 'visitor'
 const active = true

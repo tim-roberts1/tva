@@ -7,7 +7,7 @@ tags: [Development, Usage, Getting Started, Mobile, Icons]
 
 :::caution
 
-This is **unreleased** documentation for Pluralsight Design **icons** package.
+This is **experimental** documentation for Pluralsight Design **icons** package.
 
 :::
 
