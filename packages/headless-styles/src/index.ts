@@ -4,6 +4,7 @@ export { getJSBadgeProps, muiLabelOverride } from './components/Badge/badgeJS'
 export {
   getButtonProps,
   getDangerButtonProps,
+  getIconButtonProps,
 } from './components/Button/buttonCSS'
 export {
   getJSButtonProps,
