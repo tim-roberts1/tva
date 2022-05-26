@@ -14,6 +14,11 @@ export interface DangerOptions extends ButtonOptions {
   kind?: DangerKind
 }
 
+export interface IconButtonOptions extends ButtonOptions {
+  ariaLabel: string
+  round?: boolean
+}
+
 // types
 
 export type ButtonType = 'button' | 'submit' | 'reset' | undefined

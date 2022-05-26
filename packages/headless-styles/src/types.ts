@@ -1,5 +1,8 @@
 export type { BadgeOptions } from './components/Badge/types'
-export type { ButtonOptions } from './components/Button/types'
+export type {
+  ButtonOptions,
+  IconButtonOptions,
+} from './components/Button/types'
 export type { CircularProgressOptions } from './components/CircularProgress/types'
 export type { FormControlOptions } from './components/FormControl/types'
 export type { FormLabelOptions } from './components/FormLabel/types'
