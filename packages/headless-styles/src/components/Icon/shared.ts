@@ -1,10 +1,5 @@
-import type {
-  IconOptions,
-  IconA11yOptions,
-  Size,
-  Tech,
-  A11yBoolean,
-} from './types'
+import type { IconOptions, IconA11yOptions, Tech, A11yBoolean } from './types'
+import { IconSize } from '../types'
 
 const a11yRole = 'img'
 const a11yPropMap = {
@@ -13,7 +8,7 @@ const a11yPropMap = {
 }
 
 export const defaultIconOptions = {
-  size: 'm' as Size,
+  size: 'm' as IconSize,
   tech: '' as Tech,
   ariaHidden: 'false' as A11yBoolean,
 }

@@ -4,3 +4,5 @@ export interface FieldOptions {
   readOnly?: boolean
   required?: boolean
 }
+
+export type IconSize = 's' | 'm' | 'l'
