@@ -1,8 +1,8 @@
-import { getDefaultIconButtonOptions } from './shared'
 import { createSvelteObj, createCSSObj } from '../../utils/helpers'
-import type { ButtonType, IconButtonOptions, Size, Tech } from './types'
-import styles from './buttonCSS.module.css'
 import type { IconSize } from '../types'
+import type { ButtonType, IconButtonOptions, Size, Tech } from './types'
+import { getDefaultIconButtonOptions } from './shared'
+import styles from './buttonCSS.module.css'
 
 interface ButtonClass {
   defaultClass: string
