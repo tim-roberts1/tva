@@ -4,6 +4,7 @@ export type {
   IconButtonOptions,
 } from './components/Button/types'
 export type { CircularProgressOptions } from './components/CircularProgress/types'
+export type { ErrorMessageOptions } from './components/ErrorMessage/types'
 export type { FormControlOptions } from './components/FormControl/types'
 export type { FormLabelOptions } from './components/FormLabel/types'
 export type { IconOptions } from './components/Icon/types'
