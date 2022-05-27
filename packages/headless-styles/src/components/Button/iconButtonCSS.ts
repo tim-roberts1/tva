@@ -31,16 +31,15 @@ const iconButtonSizeMap: Record<Size, IconSize> = {
 
 export function getIconButtonProps(options?: IconButtonOptions) {
   const defaultOptions = getDefaultIconButtonOptions(options)
-  const { kind, size, round, ariaLabel } = defaultOptions
+  const { kind, size, variant, ariaLabel } = defaultOptions
   const sizeClass = `${size}IconButton`
-  const shapeClass = round ? 'circle' : ''
 
   return {
     button: {
       'aria-label': ariaLabel,
       ...createButton(defaultOptions, {
-        defaultClass: `ps-icon-btn ${styles[kind]} ${styles[sizeClass]} ${styles[shapeClass]}`,
-        svelteClass: `base ${kind} ${sizeClass} ${shapeClass}`,
+        defaultClass: `ps-icon-btn ${styles[kind]} ${styles[sizeClass]} ${styles[variant]}`,
+        svelteClass: `base ${kind} ${sizeClass} ${variant}`,
       }),
     },
     iconOptions: {

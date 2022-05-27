@@ -114,7 +114,7 @@
   composes: base;
 }
 
-.circle {
+.round {
   border-radius: 50%;
 }
 

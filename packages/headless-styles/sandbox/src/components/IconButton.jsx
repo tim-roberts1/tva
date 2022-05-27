@@ -13,7 +13,7 @@ function PSIconButton(props) {
 
 export default function IconButton() {
   // if (props.logJS) {
-  //   console.log({ ...getJSIconButtonProps({ ariaLabel: 'button', kind: 'medium', size: 'xs', round: true }) })
+  //   console.log({ ...getJSIconButtonProps({ ariaLabel: 'button', kind: 'medium', size: 'xs', variant: 'round' }) })
   // }
 
   return (
@@ -34,36 +34,40 @@ export default function IconButton() {
       </div>
       <h3>Round Icon Button</h3>
       <div className="App-container">
-        <PSIconButton ariaLabel="default round" round={true} />
-        <PSIconButton ariaLabel="textWeak round" kind="textWeak" round={true} />
-        <PSIconButton ariaLabel="weak round" kind="weak" round={true} />
-        <PSIconButton ariaLabel="medium round" kind="medium" round={true} />
-        <PSIconButton ariaLabel="strong round" kind="strong" round={true} />
+        <PSIconButton ariaLabel="default round" variant="round" />
+        <PSIconButton
+          ariaLabel="textWeak round"
+          kind="textWeak"
+          variant="round"
+        />
+        <PSIconButton ariaLabel="weak round" kind="weak" variant="round" />
+        <PSIconButton ariaLabel="medium round" kind="medium" variant="round" />
+        <PSIconButton ariaLabel="strong round" kind="strong" variant="round" />
       </div>
       <div className="App-container">
         <PSIconButton
           ariaLabel="extra small round"
           kind="medium"
           size="xs"
-          round={true}
+          variant="round"
         />
         <PSIconButton
           ariaLabel="small round"
           kind="medium"
           size="s"
-          round={true}
+          variant="round"
         />
         <PSIconButton
           ariaLabel="medium round"
           kind="medium"
           size="m"
-          round={true}
+          variant="round"
         />
         <PSIconButton
           ariaLabel="large round"
           kind="medium"
           size="l"
-          round={true}
+          variant="round"
         />
       </div>
     </div>

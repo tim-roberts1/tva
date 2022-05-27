@@ -3,6 +3,7 @@ import type {
   DangerOptions,
   DangerKind,
   IconButtonOptions,
+  IconButtonVariant,
   Kind,
   Size,
   Tech,
@@ -40,7 +41,7 @@ export const defaultIconButtonOptions = {
   kind: 'text' as Kind,
   size: 'm' as Size,
   tech: '' as Tech,
-  round: false,
+  variant: 'default' as IconButtonVariant,
   ariaLabel: '',
 }
 
@@ -50,6 +51,6 @@ export function getDefaultIconButtonOptions(options?: IconButtonOptions) {
     size: options?.size ?? defaultIconButtonOptions.size,
     tech: options?.tech ?? defaultIconButtonOptions.tech,
     ariaLabel: options?.ariaLabel ?? defaultIconButtonOptions.ariaLabel,
-    round: options?.round ?? defaultIconButtonOptions.round,
+    variant: options?.variant ?? defaultIconButtonOptions.variant,
   }
 }
