@@ -1,20 +1,9 @@
-import {
-  getDefaultOptions,
-  getDefaultDangerOptions,
-  getDefaultIconButtonOptions,
-} from './shared'
+import { getDefaultOptions, getDefaultDangerOptions } from './shared'
 import { createSvelteObj } from '../../utils/helpers'
-import type {
-  ButtonOptions,
-  ButtonType,
-  DangerOptions,
-  IconButtonOptions,
-  Size,
-} from './types'
+import type { ButtonOptions, ButtonType, DangerOptions } from './types'
 import styles from './buttonCSS.module.css'
-import type { IconSize } from '../types'
 
-type AllButtonOptions = ButtonOptions | DangerOptions | IconButtonOptions
+type AllButtonOptions = ButtonOptions | DangerOptions
 
 interface ButtonClass {
   defaultClass: string
@@ -53,32 +42,4 @@ export function getButtonProps(options?: ButtonOptions) {
     defaultClass: `ps-btn ${styles[kind]} ${styles[size]}`,
     svelteClass: `base ${kind} ${size}`,
   })
-}
-
-const iconButtonSizeMap: Record<Size, IconSize> = {
-  xs: 's',
-  s: 'm',
-  m: 'm',
-  l: 'l',
-}
-
-export function getIconButtonProps(options?: IconButtonOptions) {
-  const defaultOptions = getDefaultIconButtonOptions(options)
-  const { kind, size, round, ariaLabel } = defaultOptions
-  const sizeClass = `${size}IconButton`
-  const shapeClass = round ? 'circle' : ''
-
-  return {
-    button: {
-      'aria-label': ariaLabel,
-      ...createButton(defaultOptions, {
-        defaultClass: `ps-icon-btn ${styles[kind]} ${styles[sizeClass]} ${styles[shapeClass]}`,
-        svelteClass: `base ${kind} ${sizeClass} ${shapeClass}`,
-      }),
-    },
-    iconOptions: {
-      ariaHidden: 'true',
-      size: iconButtonSizeMap[size],
-    },
-  }
 }
