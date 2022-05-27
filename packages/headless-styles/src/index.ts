@@ -24,6 +24,8 @@ export { getJSFormLabelProps } from './components/FormLabel/formLabelJS'
 export { getIconProps } from './components/Icon/iconCSS'
 export { getJSIconProps } from './components/Icon/iconJS'
 
+export { getIconButtonProps } from './components/Button/iconButtonCSS'
+
 export { getProgressProps } from './components/Progress/progressCSS'
 export { getJSProgressProps, muiReset } from './components/Progress/progressJS'
 

@@ -1,12 +1,12 @@
 import { getJSIconProps } from '../../src'
-import type { Size } from '../../src/components/Icon/types'
+import type { IconSize } from '../../src/components/types'
 
 describe('icon JS', () => {
   const baseA11yProps = {
     'aria-hidden': 'false',
     role: 'img',
   }
-  const sizes: Record<Size, string> = {
+  const sizes: Record<IconSize, string> = {
     s: '1rem',
     m: '1.25rem',
     l: '1.5rem',

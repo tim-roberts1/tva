@@ -3,6 +3,7 @@ import {
   createJSProps,
   createSvelteObj,
   transformStyles,
+  createClassProp,
 } from '../../src/utils/helpers'
 
 describe('helpers', () => {
@@ -74,5 +75,20 @@ describe('helpers', () => {
         .trim()
         .replace(/^ {2,12}/gm, '')
     )
+  })
+
+  test('should return a class prop based on tech', () => {
+    const classOptions = {
+      defaultClass: 'default',
+      svelteClass: 'svelte',
+    }
+
+    expect(createClassProp('', classOptions)).toEqual({
+      className: classOptions.defaultClass,
+    })
+
+    expect(createClassProp('svelte', classOptions)).toEqual({
+      class: classOptions.svelteClass,
+    })
   })
 })

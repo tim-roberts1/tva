@@ -1,4 +1,5 @@
 import kebabCase from 'kebab-case'
+import { Tech } from '../components/types'
 
 export type StyleProps = Record<string, unknown>
 export type NestedStyleValue = string | StyleProps
@@ -8,6 +9,11 @@ export interface StyleObject {
   styles: StyleProps
   keyframes?: Record<string, unknown>
   type?: 'submit' | 'reset' | 'button'
+}
+
+export interface ClassOptions {
+  defaultClass: string
+  svelteClass: string
 }
 
 function formatCSSPropName(propName: string) {
@@ -70,4 +76,12 @@ export function transformStyles(styleObject: StyleProps) {
     }, '')
     .trim()
     .replace(/^ {2,12}/gm, '')
+}
+
+export function createClassProp(tech: Tech, classes: ClassOptions) {
+  if (tech === 'svelte') {
+    return createSvelteObj(classes.svelteClass)
+  }
+
+  return createCSSObj(classes.defaultClass)
 }

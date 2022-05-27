@@ -1,10 +1,12 @@
+import type { Tech } from '../types'
 import type {
   ButtonOptions,
   DangerOptions,
   DangerKind,
+  IconButtonOptions,
   Kind,
   Size,
-  Tech,
+  Variant,
 } from './types'
 
 export const defaultButtonOptions = {
@@ -32,5 +34,23 @@ export function getDefaultDangerOptions(options?: DangerOptions) {
     kind: options?.kind ?? defaultDangerButtonOptions.kind,
     size: options?.size ?? defaultDangerButtonOptions.size,
     tech: options?.tech ?? defaultDangerButtonOptions.tech,
+  }
+}
+
+export const defaultIconButtonOptions = {
+  kind: 'text' as Kind,
+  size: 'm' as Size,
+  tech: '' as Tech,
+  variant: 'default' as Variant,
+  ariaLabel: '',
+}
+
+export function getDefaultIconButtonOptions(options?: IconButtonOptions) {
+  return {
+    kind: options?.kind ?? defaultIconButtonOptions.kind,
+    size: options?.size ?? defaultIconButtonOptions.size,
+    tech: options?.tech ?? defaultIconButtonOptions.tech,
+    ariaLabel: options?.ariaLabel ?? defaultIconButtonOptions.ariaLabel,
+    variant: options?.variant ?? defaultIconButtonOptions.variant,
   }
 }
