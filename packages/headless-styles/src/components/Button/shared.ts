@@ -1,3 +1,4 @@
+import type { Tech } from '../types'
 import type {
   ButtonOptions,
   DangerOptions,
@@ -5,7 +6,6 @@ import type {
   IconButtonOptions,
   Kind,
   Size,
-  Tech,
   Variant,
 } from './types'
 

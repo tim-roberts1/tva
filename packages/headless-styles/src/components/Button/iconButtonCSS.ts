@@ -1,21 +1,8 @@
-import { createSvelteObj, createCSSObj } from '../../utils/helpers'
+import { createClassProp } from '../../utils/helpers'
 import type { IconSize } from '../types'
-import type { ButtonType, IconButtonOptions, Size, Tech } from './types'
+import type { ButtonType, IconButtonOptions, Size } from './types'
 import { getDefaultIconButtonOptions } from './shared'
 import styles from './buttonCSS.module.css'
-
-interface ButtonClass {
-  defaultClass: string
-  svelteClass: string
-}
-
-function createClass(tech: Tech, classes: ButtonClass) {
-  if (tech === 'svelte') {
-    return createSvelteObj(classes.svelteClass)
-  }
-
-  return createCSSObj(classes.defaultClass)
-}
 
 // Public
 
@@ -35,7 +22,7 @@ export function getIconButtonProps(options?: IconButtonOptions) {
     button: {
       'aria-label': ariaLabel,
       type: 'button' as ButtonType,
-      ...createClass(tech, {
+      ...createClassProp(tech, {
         defaultClass: `ps-icon-btn ${styles[kind]} ${styles[sizeClass]} ${styles[variant]}`,
         svelteClass: `base ${kind} ${sizeClass} ${variant}`,
       }),

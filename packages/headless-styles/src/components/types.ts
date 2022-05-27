@@ -5,4 +5,5 @@ export interface FieldOptions {
   required?: boolean
 }
 
+export type Tech = 'svelte' | ''
 export type IconSize = 's' | 'm' | 'l'
