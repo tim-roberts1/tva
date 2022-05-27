@@ -3,10 +3,10 @@ import type {
   DangerOptions,
   DangerKind,
   IconButtonOptions,
-  IconButtonVariant,
   Kind,
   Size,
   Tech,
+  Variant,
 } from './types'
 
 export const defaultButtonOptions = {
@@ -41,7 +41,7 @@ export const defaultIconButtonOptions = {
   kind: 'text' as Kind,
   size: 'm' as Size,
   tech: '' as Tech,
-  variant: 'default' as IconButtonVariant,
+  variant: 'default' as Variant,
   ariaLabel: '',
 }
 

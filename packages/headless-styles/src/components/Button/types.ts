@@ -16,7 +16,7 @@ export interface DangerOptions extends ButtonOptions {
 
 export interface IconButtonOptions extends ButtonOptions {
   ariaLabel: string
-  variant?: IconButtonVariant
+  variant?: Variant
 }
 
 // types
@@ -26,4 +26,4 @@ export type Kind = 'text' | 'textWeak' | 'weak' | 'medium' | 'strong'
 export type DangerKind = 'text' | 'medium' | 'strong'
 export type Size = 'xs' | 's' | 'm' | 'l'
 export type Tech = 'svelte' | ''
-export type IconButtonVariant = 'default' | 'round'
+export type Variant = 'default' | 'round'
