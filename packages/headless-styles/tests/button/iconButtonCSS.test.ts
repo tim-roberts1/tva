@@ -100,6 +100,7 @@ describe('Icon Button CSS', () => {
       ).toEqual({
         button: {
           'aria-label': 'button',
+          type: 'button',
           class: 'base text mIconButton default',
         },
         iconOptions: result.iconOptions,
