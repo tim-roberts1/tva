@@ -6,6 +6,7 @@ import CircularProgress from './components/CircularProgress'
 import FormControl from './components/FormControl'
 import FormLabel from './components/FormLabel'
 import Icon from './components/Icon'
+import IconButton from './components/IconButton'
 import Progress from './components/Progress'
 import Radio from './components/Radio'
 import Skeleton from './components/Skeleton'
@@ -39,6 +40,7 @@ function App() {
       <FormControl />
       <FormLabel />
       <Icon />
+      <IconButton />
       <Progress />
       <Radio />
       <Skeleton />
