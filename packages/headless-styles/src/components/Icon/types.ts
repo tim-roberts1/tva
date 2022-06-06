@@ -1,7 +1,7 @@
 import { IconSize } from '../types'
 
 export interface IconA11yOptions {
-  label?: string
+  ariaLabel?: string
   ariaHidden?: boolean
 }
 

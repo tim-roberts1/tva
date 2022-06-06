@@ -34,8 +34,8 @@ describe('Icon CSS', () => {
       })
     })
 
-    test('should accept a label', () => {
-      expect(getIconProps({ label: 'my label' })).toEqual({
+    test('should accept an ariaLabel', () => {
+      expect(getIconProps({ ariaLabel: 'my label' })).toEqual({
         ...result,
         'aria-label': 'my label',
       })

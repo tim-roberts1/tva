@@ -36,13 +36,15 @@ describe('icon JS', () => {
     expect(props.cssProps).toContain(`width: ${sizes['l']}`)
   })
 
-  test('should accept a label', () => {
+  test('should accept an ariaLabel', () => {
     const customLabel = 'custom label'
     const a11yProps = {
       ...baseA11yProps,
       'aria-label': customLabel,
     }
-    expect(getJSIconProps({ label: customLabel }).a11yProps).toEqual(a11yProps)
+    expect(getJSIconProps({ ariaLabel: customLabel }).a11yProps).toEqual(
+      a11yProps
+    )
   })
 
   test('should accept an ariaHidden flag', () => {

@@ -4,7 +4,7 @@ import { IconSize } from '../types'
 const a11yRole = 'img'
 const a11yPropMap = {
   ariaHidden: 'aria-hidden',
-  label: 'aria-label',
+  ariaLabel: 'aria-label',
 }
 
 export const defaultIconOptions = {
@@ -18,14 +18,16 @@ export function getDefaultIconOptions(options?: IconOptions) {
     size: options?.size ?? defaultIconOptions.size,
     tech: options?.tech ?? defaultIconOptions.tech,
     ariaHidden: options?.ariaHidden ?? defaultIconOptions.ariaHidden,
-    label: options?.label,
+    ariaLabel: options?.ariaLabel,
   }
 }
 
 export function getA11yIconProps(a11yOptions?: IconA11yOptions) {
   return {
     [a11yPropMap.ariaHidden]: a11yOptions?.ariaHidden,
-    ...(a11yOptions?.label && { [a11yPropMap.label]: a11yOptions.label }),
+    ...(a11yOptions?.ariaLabel && {
+      [a11yPropMap.ariaLabel]: a11yOptions.ariaLabel,
+    }),
     role: a11yRole,
   }
 }
