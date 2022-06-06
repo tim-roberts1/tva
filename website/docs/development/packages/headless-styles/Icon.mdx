@@ -80,7 +80,7 @@ The icon is purely cosmetic and conveys no real semantic meaning.
 In this case, the icon should be hidden from assistive technology.
 
 ```javascript
-const briefcaseIconProps = getIconProps({ ariaHidden: 'true' })
+const briefcaseIconProps = getIconProps({ ariaHidden: true })
 ```
 
 ### Interactive icons
@@ -142,7 +142,7 @@ export interface IconOptions extends IconA11yOptions {
 ```typescript
 export interface IconA11yOptions {
   label?: string
-  ariaHidden?: 'true' | 'false'
+  ariaHidden?: boolean
 }
 ```
 

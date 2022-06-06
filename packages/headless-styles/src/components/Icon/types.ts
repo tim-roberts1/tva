@@ -1,8 +1,8 @@
 import { IconSize } from '../types'
 
 export interface IconA11yOptions {
-  label?: string
-  ariaHidden?: A11yBoolean
+  ariaLabel?: string
+  ariaHidden?: boolean
 }
 
 export interface IconOptions extends IconA11yOptions {
@@ -13,4 +13,3 @@ export interface IconOptions extends IconA11yOptions {
 // types
 
 export type Tech = 'svelte' | ''
-export type A11yBoolean = 'true' | 'false'

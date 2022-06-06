@@ -11,7 +11,7 @@ describe('Icon Button CSS', () => {
       },
       iconOptions: {
         size: 'm',
-        ariaHidden: 'true',
+        ariaHidden: true,
       },
     }
 

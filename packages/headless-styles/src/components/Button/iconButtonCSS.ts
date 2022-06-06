@@ -28,7 +28,7 @@ export function getIconButtonProps(options?: IconButtonOptions) {
       }),
     },
     iconOptions: {
-      ariaHidden: 'true',
+      ariaHidden: true,
       size: iconButtonSizeMap[size],
     },
   }

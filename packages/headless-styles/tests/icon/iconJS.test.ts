@@ -3,7 +3,7 @@ import type { IconSize } from '../../src/components/types'
 
 describe('icon JS', () => {
   const baseA11yProps = {
-    'aria-hidden': 'false',
+    'aria-hidden': false,
     role: 'img',
   }
   const sizes: Record<IconSize, string> = {
@@ -36,20 +36,22 @@ describe('icon JS', () => {
     expect(props.cssProps).toContain(`width: ${sizes['l']}`)
   })
 
-  test('should accept a label', () => {
+  test('should accept an ariaLabel', () => {
     const customLabel = 'custom label'
     const a11yProps = {
       ...baseA11yProps,
       'aria-label': customLabel,
     }
-    expect(getJSIconProps({ label: customLabel }).a11yProps).toEqual(a11yProps)
+    expect(getJSIconProps({ ariaLabel: customLabel }).a11yProps).toEqual(
+      a11yProps
+    )
   })
 
   test('should accept an ariaHidden flag', () => {
     const a11yProps = {
       ...baseA11yProps,
-      'aria-hidden': 'true',
+      'aria-hidden': true,
     }
-    expect(getJSIconProps({ ariaHidden: 'true' }).a11yProps).toEqual(a11yProps)
+    expect(getJSIconProps({ ariaHidden: true }).a11yProps).toEqual(a11yProps)
   })
 })
