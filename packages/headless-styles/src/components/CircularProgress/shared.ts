@@ -33,17 +33,30 @@ function getDashArray(nowValue: number) {
 // public
 
 export const VIEWBOX = '0 0 100 100'
-export const baseCircleProps = {
-  cx: '50',
-  cy: '50',
-  r: '42',
-  strokeWidth: '12px',
+export function getBaseCircleProps(tech: Tech) {
+  const strokeWidthProp = tech === 'svelte' ? 'stroke-width' : 'strokeWidth'
+
+  return {
+    cx: '50',
+    cy: '50',
+    r: '42',
+    [strokeWidthProp]: '12px',
+  }
 }
 
-export function getStrokeProps(now: number) {
+export function getStrokeProps(now: number, tech: Tech) {
+  const dashArray = getDashArray(now)
+
+  if (tech === 'svelte') {
+    return {
+      'stroke-dashoffset': DASH_OFFSET,
+      'stroke-dasharray': dashArray,
+    }
+  }
+
   return {
     strokeDashoffset: DASH_OFFSET,
-    strokeDasharray: getDashArray(now),
+    strokeDasharray: dashArray,
   }
 }
 
