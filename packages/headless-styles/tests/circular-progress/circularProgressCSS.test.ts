@@ -71,7 +71,9 @@ describe('CircularProgress CSS', () => {
         'stroke-width': '12px',
       }
 
-      expect(getCircularProgressProps({ tech: 'svelte', now: 60 })).toEqual({
+      expect(
+        getCircularProgressProps({ tech: 'svelte', now: 60, size: 'xs' })
+      ).toEqual({
         containerProps: {
           'aria-valuemax': 100,
           'aria-valuemin': 0,
@@ -80,7 +82,7 @@ describe('CircularProgress CSS', () => {
           class: `${baseClass} base`,
         },
         svgBoxProps: {
-          class: `${baseClass}-box box mSize determinate`,
+          class: `${baseClass}-box box xsSize determinate`,
           viewBox: '0 0 100 100',
         },
         baseCircleProps: {
