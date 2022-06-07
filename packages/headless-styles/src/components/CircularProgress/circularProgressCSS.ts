@@ -29,7 +29,7 @@ export function getCircularProgressProps(options?: CircularProgressOptions) {
     },
     svgBoxProps: {
       ...createClassProp(tech, {
-        svelteClass: `${CIRC_PROGRESS}-box box ${styles[sizeClass]} ${kind}`,
+        svelteClass: `${CIRC_PROGRESS}-box box ${sizeClass} ${kind}`,
         defaultClass: `${CIRC_PROGRESS}-box ${styles[sizeClass]} ${styles[kind]}`,
       }),
       viewBox: VIEWBOX,
