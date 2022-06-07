@@ -1,4 +1,4 @@
-import { createCSSObj, createSvelteObj } from '../../utils/helpers'
+import { createClassProp } from '../../utils/helpers'
 import {
   baseCircleProps,
   getA11yCircularProgressProps,
@@ -19,58 +19,41 @@ export function getCircularProgressProps(options?: CircularProgressOptions) {
   const now = a11y.now
   const value = `${now}%`
 
-  if (tech === 'svelte') {
-    return {
-      containerProps: {
-        ...a11yProps,
-        ...createSvelteObj(`${CIRC_PROGRESS} base`),
-      },
-      svgBoxProps: {
-        ...createSvelteObj(
-          `${CIRC_PROGRESS}-box box ${styles[sizeClass]} ${kind}`
-        ),
-        viewBox: VIEWBOX,
-      },
-      baseCircleProps: {
-        ...baseCircleProps,
-        ...createSvelteObj(`${CIRC_PROGRESS}-base circle`),
-      },
-      nowCircleProps: {
-        ...baseCircleProps,
-        ...createSvelteObj(`${CIRC_PROGRESS}-now circleNow ${kind}`),
-        ...getStrokeProps(now),
-      },
-      labelProps: {
-        ...createSvelteObj(`${CIRC_PROGRESS}-label text`),
-        value,
-      },
-    }
-  }
-
   return {
     containerProps: {
       ...a11yProps,
-      ...createCSSObj(`${CIRC_PROGRESS} ${styles.base}`),
+      ...createClassProp(tech, {
+        svelteClass: `${CIRC_PROGRESS} base`,
+        defaultClass: `${CIRC_PROGRESS} ${styles.base}`,
+      }),
     },
     svgBoxProps: {
-      ...createCSSObj(
-        `${CIRC_PROGRESS}-box ${styles[sizeClass]} ${styles[kind]}`
-      ),
+      ...createClassProp(tech, {
+        svelteClass: `${CIRC_PROGRESS}-box box ${styles[sizeClass]} ${kind}`,
+        defaultClass: `${CIRC_PROGRESS}-box ${styles[sizeClass]} ${styles[kind]}`,
+      }),
       viewBox: VIEWBOX,
     },
     baseCircleProps: {
       ...baseCircleProps,
-      ...createCSSObj(`${CIRC_PROGRESS}-base ${styles.circle}`),
+      ...createClassProp(tech, {
+        svelteClass: `${CIRC_PROGRESS}-base circle`,
+        defaultClass: `${CIRC_PROGRESS}-base ${styles.circle}`,
+      }),
     },
     nowCircleProps: {
       ...baseCircleProps,
-      ...createCSSObj(
-        `${CIRC_PROGRESS}-now ${styles.circleNow} ${styles[kind]}`
-      ),
+      ...createClassProp(tech, {
+        svelteClass: `${CIRC_PROGRESS}-now circleNow ${kind}`,
+        defaultClass: `${CIRC_PROGRESS}-now ${styles.circleNow} ${styles[kind]}`,
+      }),
       ...getStrokeProps(now),
     },
     labelProps: {
-      ...createCSSObj(`${CIRC_PROGRESS}-label ${styles.text}`),
+      ...createClassProp(tech, {
+        svelteClass: `${CIRC_PROGRESS}-label text`,
+        defaultClass: `${CIRC_PROGRESS}-label ${styles.text}`,
+      }),
       value,
     },
   }
