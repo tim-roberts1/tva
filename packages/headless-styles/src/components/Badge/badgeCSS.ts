@@ -1,16 +1,15 @@
-import { createSvelteObj } from '../../utils/helpers'
+import { createClassProp } from '../../utils/helpers'
 import { getDefaultBadgeOptions } from './shared'
 import styles from './badgeCSS.module.css'
-import { BadgeOptions } from './types'
+import type { BadgeOptions } from './types'
 
 export function getBadgeProps(options?: BadgeOptions) {
   const { kind, tech } = getDefaultBadgeOptions(options)
 
-  if (tech === 'svelte') {
-    return createSvelteObj(`ps-badge psBadgeBase ${kind}`)
-  }
-
   return {
-    className: `ps-badge ${styles[kind]}`,
+    ...createClassProp(tech, {
+      svelteClass: `ps-badge psBadgeBase ${kind}`,
+      defaultClass: `ps-badge ${styles[kind]}`,
+    }),
   }
 }
