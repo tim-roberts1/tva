@@ -1,22 +1,13 @@
+import type { ClassOptions } from '../../utils/helpers'
+import { createClassProp } from '../../utils/helpers'
+import type { Tech } from '../types'
 import { getDefaultOptions, getDefaultDangerOptions } from './shared'
-import { createSvelteObj } from '../../utils/helpers'
 import type { ButtonOptions, ButtonType, DangerOptions } from './types'
 import styles from './buttonCSS.module.css'
 
-type AllButtonOptions = ButtonOptions | DangerOptions
-
-interface ButtonClass {
-  defaultClass: string
-  svelteClass: string
-}
-
-function createButton(options: AllButtonOptions, classes: ButtonClass) {
-  if (options.tech === 'svelte') {
-    return createSvelteObj(classes.svelteClass)
-  }
-
+function createButton(tech: Tech, classes: ClassOptions) {
   return {
-    className: classes.defaultClass,
+    ...createClassProp(tech, classes),
     type: 'button' as ButtonType,
   }
 }
@@ -28,7 +19,7 @@ export function getDangerButtonProps(options?: DangerOptions) {
   const { kind, size } = defaultOptions
   const dangerKind = `${kind}Danger`
 
-  return createButton(defaultOptions, {
+  return createButton(defaultOptions.tech, {
     defaultClass: `ps-danger-btn ${styles[dangerKind]} ${styles[size]}`,
     svelteClass: `base ${kind}Danger ${size}`,
   })
@@ -38,7 +29,7 @@ export function getButtonProps(options?: ButtonOptions) {
   const defaultOptions = getDefaultOptions(options)
   const { kind, size } = defaultOptions
 
-  return createButton(defaultOptions, {
+  return createButton(defaultOptions.tech, {
     defaultClass: `ps-btn ${styles[kind]} ${styles[size]}`,
     svelteClass: `base ${kind} ${size}`,
   })
