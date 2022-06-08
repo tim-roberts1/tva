@@ -1,10 +1,12 @@
 import {
   createA11yProps,
   createCSSObj,
+  createClassProp,
   createJSProps,
   createSvelteObj,
+  getSyntaxType,
   transformStyles,
-  createClassProp,
+  transformCasing,
 } from '../../src/utils/helpers'
 
 describe('helpers', () => {
@@ -111,5 +113,18 @@ describe('helpers', () => {
     expect(createClassProp('svelte', classOptions)).toEqual({
       class: classOptions.svelteClass,
     })
+  })
+
+  test('getSyntaxType returns syntax based on tech', () => {
+    expect(getSyntaxType('svelte')).toEqual('html')
+    expect(getSyntaxType('')).toEqual('jsx')
+  })
+
+  test('transformCasing converts camel to kebab case when syntax is "html"', () => {
+    expect(transformCasing('ariaLabel', 'html')).toEqual('aria-label')
+  })
+
+  test('transformCasing performs no transformation when syntax is "jsx"', () => {
+    expect(transformCasing('ariaLabel', 'jsx')).toEqual('ariaLabel')
   })
 })

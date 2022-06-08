@@ -107,6 +107,6 @@ export function getSyntaxType(tech: Tech) {
   return tech === 'svelte' ? 'html' : 'jsx'
 }
 
-export function transformCasing(jsxAttr: string, standard: Syntax) {
-  return standard === 'html' ? kebabCase(jsxAttr) : jsxAttr
+export function transformCasing(jsxAttr: string, syntax: Syntax) {
+  return syntax === 'html' ? kebabCase(jsxAttr) : jsxAttr
 }
