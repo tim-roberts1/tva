@@ -100,3 +100,13 @@ export function transformStyles(styleObject: StyleProps) {
     .trim()
     .replace(/^ {2,12}/gm, '')
 }
+
+export type AttributeStandard = 'jsx' | 'html'
+
+export function getAttributeStandard(tech: Tech) {
+  return tech === 'svelte' ? 'html' : 'jsx'
+}
+
+export function getAttribute(jsxAttr: string, standard: AttributeStandard) {
+  return standard === 'html' ? kebabCase(jsxAttr) : jsxAttr
+}
