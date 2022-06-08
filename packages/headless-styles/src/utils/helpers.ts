@@ -100,3 +100,13 @@ export function transformStyles(styleObject: StyleProps) {
     .trim()
     .replace(/^ {2,12}/gm, '')
 }
+
+type Syntax = 'jsx' | 'html'
+
+export function getSyntaxType(tech: Tech) {
+  return tech === 'svelte' ? 'html' : 'jsx'
+}
+
+export function transformCasing(jsxAttr: string, syntax: Syntax) {
+  return syntax === 'html' ? kebabCase(jsxAttr) : jsxAttr
+}

@@ -1,7 +1,7 @@
 import { createClassProp } from '../../utils/helpers'
 import {
-  baseCircleProps,
   getA11yCircularProgressProps,
+  getBaseCircleProps,
   getDefaultCircularProgressOptions,
   getStrokeProps,
   VIEWBOX,
@@ -29,25 +29,25 @@ export function getCircularProgressProps(options?: CircularProgressOptions) {
     },
     svgBoxProps: {
       ...createClassProp(tech, {
-        svelteClass: `${CIRC_PROGRESS}-box box ${styles[sizeClass]} ${kind}`,
+        svelteClass: `${CIRC_PROGRESS}-box box ${sizeClass} ${kind}`,
         defaultClass: `${CIRC_PROGRESS}-box ${styles[sizeClass]} ${styles[kind]}`,
       }),
       viewBox: VIEWBOX,
     },
     baseCircleProps: {
-      ...baseCircleProps,
+      ...getBaseCircleProps(tech),
       ...createClassProp(tech, {
         svelteClass: `${CIRC_PROGRESS}-base circle`,
         defaultClass: `${CIRC_PROGRESS}-base ${styles.circle}`,
       }),
     },
     nowCircleProps: {
-      ...baseCircleProps,
+      ...getBaseCircleProps(tech),
       ...createClassProp(tech, {
         svelteClass: `${CIRC_PROGRESS}-now circleNow ${kind}`,
         defaultClass: `${CIRC_PROGRESS}-now ${styles.circleNow} ${styles[kind]}`,
       }),
-      ...getStrokeProps(now),
+      ...getStrokeProps(now, tech),
     },
     labelProps: {
       ...createClassProp(tech, {

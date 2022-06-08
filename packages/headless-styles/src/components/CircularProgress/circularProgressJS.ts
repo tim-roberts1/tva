@@ -1,7 +1,7 @@
 import { createJSProps, transformStyles } from '../../utils/helpers'
 import {
-  baseCircleProps,
   getA11yCircularProgressProps,
+  getBaseCircleProps,
   getDefaultCircularProgressOptions,
   getStrokeProps,
   VIEWBOX,
@@ -12,7 +12,8 @@ import styles from './generated/circularProgressCSS.module'
 export type StyleKey = keyof typeof styles
 
 export function getJSCircularProgressProps(options?: CircularProgressOptions) {
-  const { kind, size, ...a11y } = getDefaultCircularProgressOptions(options)
+  const { kind, size, tech, ...a11y } =
+    getDefaultCircularProgressOptions(options)
   const a11yProps = getA11yCircularProgressProps(a11y, kind)
   const isIndeterminate = kind === 'indeterminate'
   const kindKey = styles[kind]
@@ -45,14 +46,14 @@ export function getJSCircularProgressProps(options?: CircularProgressOptions) {
       },
     },
     baseCircleProps: {
-      svgProps: baseCircleProps,
+      svgProps: getBaseCircleProps(tech),
       ...createJSProps(transformStyles(styles.circle), styles.circle),
     },
     nowCircleProps: {
       keyframes: styles.keyframesLoading['@keyframes loading'],
       svgProps: {
-        ...baseCircleProps,
-        ...getStrokeProps(now),
+        ...getBaseCircleProps(tech),
+        ...getStrokeProps(now, tech),
       },
       ...createJSProps(transformStyles(nowStyles), nowStyles),
     },
