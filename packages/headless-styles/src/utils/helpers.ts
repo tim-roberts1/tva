@@ -103,7 +103,7 @@ export function transformStyles(styleObject: StyleProps) {
 
 type Syntax = 'jsx' | 'html'
 
-export function getSyntaxStandard(tech: Tech) {
+export function getSyntaxType(tech: Tech) {
   return tech === 'svelte' ? 'html' : 'jsx'
 }
 
