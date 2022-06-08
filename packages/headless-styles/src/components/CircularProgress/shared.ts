@@ -1,4 +1,4 @@
-import { getAttribute, getAttributeStandard } from '../../utils/helpers'
+import { transformCasing, getSyntaxStandard } from '../../utils/helpers'
 import type { Tech } from '../types'
 import type {
   CircularProgressA11yOptions,
@@ -35,7 +35,7 @@ function getDashArray(nowValue: number) {
 
 export const VIEWBOX = '0 0 100 100'
 export function getBaseCircleProps(tech: Tech) {
-  const strokeWidth = getAttribute('strokeWidth', getAttributeStandard(tech))
+  const strokeWidth = transformCasing('strokeWidth', getSyntaxStandard(tech))
 
   return {
     cx: '50',
@@ -47,13 +47,13 @@ export function getBaseCircleProps(tech: Tech) {
 
 export function getStrokeProps(now: number, tech: Tech) {
   const dashArray = getDashArray(now)
-  const strokeDashoffset = getAttribute(
+  const strokeDashoffset = transformCasing(
     'strokeDashoffset',
-    getAttributeStandard(tech)
+    getSyntaxStandard(tech)
   )
-  const strokeDasharray = getAttribute(
+  const strokeDasharray = transformCasing(
     'strokeDasharray',
-    getAttributeStandard(tech)
+    getSyntaxStandard(tech)
   )
 
   return {

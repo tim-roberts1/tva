@@ -101,12 +101,12 @@ export function transformStyles(styleObject: StyleProps) {
     .replace(/^ {2,12}/gm, '')
 }
 
-export type AttributeStandard = 'jsx' | 'html'
+type Syntax = 'jsx' | 'html'
 
-export function getAttributeStandard(tech: Tech) {
+export function getSyntaxStandard(tech: Tech) {
   return tech === 'svelte' ? 'html' : 'jsx'
 }
 
-export function getAttribute(jsxAttr: string, standard: AttributeStandard) {
+export function transformCasing(jsxAttr: string, standard: Syntax) {
   return standard === 'html' ? kebabCase(jsxAttr) : jsxAttr
 }
