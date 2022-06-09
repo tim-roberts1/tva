@@ -1,5 +1,5 @@
+import { createClassProp } from '../../utils/helpers'
 import { getDefaultIconOptions, getA11yIconProps } from './shared'
-import { createCSSObj, createSvelteObj } from '../../utils/helpers'
 import type { IconOptions } from './types'
 import styles from './iconCSS.module.css'
 
@@ -11,14 +11,11 @@ export function getIconProps(options?: IconOptions) {
   const a11yProps = getA11yIconProps(a11y)
   const sizeClass = `${size}IconSize`
 
-  if (tech === 'svelte') {
-    return {
-      ...a11yProps,
-      ...createSvelteObj(`${ICON} psIcon ${sizeClass}`),
-    }
-  }
-
   return {
-    ...createCSSObj(`${ICON} ${styles[sizeClass]}`, a11yProps),
+    ...a11yProps,
+    ...createClassProp(tech, {
+      svelteClass: `${ICON} psIcon ${sizeClass}`,
+      defaultClass: `${ICON} ${styles[sizeClass]}`,
+    }),
   }
 }
