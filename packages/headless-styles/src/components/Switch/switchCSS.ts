@@ -1,7 +1,7 @@
 import { createClassProp } from '../../utils/helpers'
 import { getA11yProps, getDefaultSwitchOptions } from './shared'
 import styles from './switchCSS.module.css'
-import { SwitchOptions } from './types'
+import type { SwitchOptions } from './types'
 
 const SWITCH = 'ps-switch'
 
