@@ -107,6 +107,18 @@ export function getSyntaxType(tech: Tech) {
   return tech === 'svelte' ? 'html' : 'jsx'
 }
 
-export function transformCasing(jsxAttr: string, syntax: Syntax) {
-  return syntax === 'html' ? kebabCase(jsxAttr) : jsxAttr
+export function transformCasing(jsxProp: string, syntax: Syntax) {
+  return syntax === 'html' ? kebabCase(jsxProp) : jsxProp
+}
+
+const propertyMap: Record<Syntax, Record<string, string>> = {
+  html: {
+    htmlFor: 'for',
+  },
+  jsx: {},
+}
+
+export function transformProperty(jsxProp: string, tech: Tech) {
+  const syntax = getSyntaxType(tech)
+  return propertyMap[syntax][jsxProp] ?? jsxProp
 }
