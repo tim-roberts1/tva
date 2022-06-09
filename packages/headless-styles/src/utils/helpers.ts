@@ -3,6 +3,7 @@ import type { FieldOptions, Tech } from '../components/types'
 
 export type StyleProps = Record<string, unknown>
 export type NestedStyleValue = string | StyleProps
+type Syntax = 'jsx' | 'html'
 
 export interface StyleObject {
   cssProps: string
@@ -37,6 +38,14 @@ function transformValue(style: NestedStyleValue): NestedStyleValue {
   }, ``)
 
   return `{${psuedoStyles}}`
+}
+
+function isSvelte(tech: Tech) {
+  return tech === 'svelte'
+}
+
+const propertyMap: Record<string, string> = {
+  htmlFor: 'for',
 }
 
 // Public
@@ -101,8 +110,6 @@ export function transformStyles(styleObject: StyleProps) {
     .replace(/^ {2,12}/gm, '')
 }
 
-type Syntax = 'jsx' | 'html'
-
 export function getSyntaxType(tech: Tech) {
   return tech === 'svelte' ? 'html' : 'jsx'
 }
@@ -111,14 +118,6 @@ export function transformCasing(jsxProp: string, syntax: Syntax) {
   return syntax === 'html' ? kebabCase(jsxProp) : jsxProp
 }
 
-const propertyMap: Record<Syntax, Record<string, string>> = {
-  html: {
-    htmlFor: 'for',
-  },
-  jsx: {},
-}
-
 export function transformProperty(jsxProp: string, tech: Tech) {
-  const syntax = getSyntaxType(tech)
-  return propertyMap[syntax][jsxProp] ?? jsxProp
+  return isSvelte(tech) ? propertyMap[jsxProp] ?? jsxProp : jsxProp
 }
