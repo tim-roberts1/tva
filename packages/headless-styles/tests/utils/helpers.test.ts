@@ -5,8 +5,9 @@ import {
   createJSProps,
   createSvelteObj,
   getSyntaxType,
-  transformStyles,
   transformCasing,
+  transformProperty,
+  transformStyles,
 } from '../../src/utils/helpers'
 
 describe('helpers', () => {
@@ -122,9 +123,16 @@ describe('helpers', () => {
 
   test('transformCasing converts camel to kebab case when syntax is "html"', () => {
     expect(transformCasing('ariaLabel', 'html')).toEqual('aria-label')
+    expect(transformCasing('aria-label', 'html')).toEqual('aria-label')
+
+    expect(transformCasing('ariaLabel', 'jsx')).toEqual('ariaLabel')
+    expect(transformCasing('aria-label', 'jsx')).toEqual('aria-label')
   })
 
-  test('transformCasing performs no transformation when syntax is "jsx"', () => {
-    expect(transformCasing('ariaLabel', 'jsx')).toEqual('ariaLabel')
+  test('transformProperty returns the html equivalent of the jsx input when known', () => {
+    expect(transformProperty('htmlFor', 'svelte')).toEqual('for')
+    expect(transformProperty('htmlFor', '')).toEqual('htmlFor')
+    expect(transformProperty('for', 'svelte')).toEqual('')
+    expect(transformProperty('for', '')).toEqual('for')
   })
 })
