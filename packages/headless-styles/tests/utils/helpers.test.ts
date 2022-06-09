@@ -129,10 +129,10 @@ describe('helpers', () => {
     expect(transformCasing('aria-label', 'jsx')).toEqual('aria-label')
   })
 
-  test('transformProperty returns the html equivalent of the jsx input', () => {
+  test('transformProperty returns the html equivalent of the jsx input when known', () => {
     expect(transformProperty('htmlFor', 'svelte')).toEqual('for')
     expect(transformProperty('htmlFor', '')).toEqual('htmlFor')
-    expect(transformProperty('for', 'svelte')).toEqual('for')
+    expect(transformProperty('for', 'svelte')).toEqual('')
     expect(transformProperty('for', '')).toEqual('for')
   })
 })

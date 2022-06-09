@@ -1,8 +1,8 @@
 import kebabCase from 'kebab-case'
 import type { FieldOptions, Tech } from '../components/types'
 
-export type StyleProps = Record<string, unknown>
 export type NestedStyleValue = string | StyleProps
+export type StyleProps = Record<string, unknown>
 export type Syntax = 'jsx' | 'html'
 
 export interface StyleObject {
@@ -119,5 +119,6 @@ export function transformCasing(jsxProp: string, syntax: Syntax) {
 }
 
 export function transformProperty(jsxProp: string, tech: Tech) {
-  return isSvelte(tech) ? propertyMap[jsxProp] ?? jsxProp : jsxProp
+  const htmlAttr = propertyMap[jsxProp] ?? ''
+  return isSvelte(tech) ? htmlAttr : jsxProp
 }
