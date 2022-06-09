@@ -3,7 +3,7 @@ import type { FieldOptions, Tech } from '../components/types'
 
 export type StyleProps = Record<string, unknown>
 export type NestedStyleValue = string | StyleProps
-type Syntax = 'jsx' | 'html'
+export type Syntax = 'jsx' | 'html'
 
 export interface StyleObject {
   cssProps: string
