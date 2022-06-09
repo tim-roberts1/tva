@@ -1,4 +1,4 @@
-import { createCSSObj, createSvelteObj } from '../../utils/helpers'
+import { createClassProp } from '../../utils/helpers'
 import { getA11yProgressProps, getDefaultProgressOptions } from './shared'
 import type { ProgressOptions } from './types'
 import styles from './progressCSS.module.css'
@@ -13,25 +13,18 @@ export function getProgressProps(options?: ProgressOptions) {
     width: `${a11y.now}%`,
   }
 
-  if (tech === 'svelte') {
-    return {
-      bar: {
-        ...a11yProps,
-        ...createSvelteObj(`${PROGRESS} bar ${sizeClass} ${kind}`),
-        style,
-      },
-      wrapper: createSvelteObj(`${PROGRESS} wrapper ${sizeClass} ${kind}`),
-    }
-  }
-
   return {
     bar: {
       ...a11yProps,
-      ...createCSSObj(`${PROGRESS} ${styles[sizeClass]} ${styles[kind]}`),
+      ...createClassProp(tech, {
+        svelteClass: `${PROGRESS} bar ${sizeClass} ${kind}`,
+        defaultClass: `${PROGRESS} ${styles[sizeClass]} ${styles[kind]}`,
+      }),
       style,
     },
-    wrapper: createCSSObj(
-      `${PROGRESS} ${styles.wrapper} ${styles[sizeClass]} ${styles[kind]}`
-    ),
+    wrapper: createClassProp(tech, {
+      svelteClass: `${PROGRESS} wrapper ${sizeClass} ${kind}`,
+      defaultClass: `${PROGRESS} ${styles.wrapper} ${styles[sizeClass]} ${styles[kind]}`,
+    }),
   }
 }
