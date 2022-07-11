@@ -9,7 +9,7 @@ tags: [Development, Getting Started, Migration, PSDS Classic]
   Learn how to migrate from <a href="https://github.com/pluralsight/design-system" target="_blank" rel="noopener noreferrer">PSDS Classic</a>.
 </p>
 
-Any major release or new framework has its breaking changes and PD isn't the exception. However, since this is a completely different design it should be easy to transition on your own terms - no matter the size or complexity of your project. To make this process more efficient we've listed below the recommended migrations steps, along with soutions for the most common problems you might face.
+Any major release or new framework has its breaking changes and PD isn't the exception. However, since this is a completely different design it should be easy to transition on your own terms - no matter the size or complexity of your project. To make this process more efficient, we've listed below the recommended migration steps, along with solutions for the most common problems you might face.
 
 ## Why should you migrate?
 
