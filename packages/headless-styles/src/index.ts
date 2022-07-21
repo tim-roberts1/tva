@@ -4,6 +4,8 @@ export { getJSAlertDialogProps } from './components/AlertDialog/alertDialogJS'
 export { getAlertProps } from './components/Alert/alertCSS'
 export { getJSAlertProps } from './components/Alert/alertJS'
 
+export { getAvatarProps } from './components/Avatar/avatarCSS'
+
 export { getBadgeProps } from './components/Badge/badgeCSS'
 export { getJSBadgeProps, muiLabelOverride } from './components/Badge/badgeJS'
 
