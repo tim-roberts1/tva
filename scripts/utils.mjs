@@ -60,6 +60,10 @@ export async function getReleaseDate() {
   return dateString
 }
 
+export function isExperimentalRelease(channel) {
+  return channel === 'experimental'
+}
+
 export function isStableRelease(channel) {
   const stableReleaseChannels = ['stable', 'next', nextChannelLabel]
   return stableReleaseChannels.includes(channel)
