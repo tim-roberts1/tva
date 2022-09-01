@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url'
 import { exec } from 'child-process-promise'
 import prompt from 'prompt-promise'
 import createLogger from 'progress-estimator'
-import { nextChannelLabel } from '../../versions.mjs'
+import { nextChannelLabel } from '../versions.mjs'
 import { error, warning as themeWarning } from './theme.mjs'
 
 export function __dirname(metaURL) {
