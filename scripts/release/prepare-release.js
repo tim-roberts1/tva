@@ -17,6 +17,7 @@ import { info } from '../theme.mjs'
 
 async function run() {
   const params = parseParams()
+  const { release } = params
   const versions = {
     DesignVersion,
     experimentalPackages,
@@ -25,11 +26,11 @@ async function run() {
   }
 
   warning(
-    isExperimentalRelease(params.releaseChannel),
+    isExperimentalRelease(release),
     'Prepare release script is only for experimental packages. If you would like to prepare a stable release, please run prepare-release-from-npm'
   )
 
-  console.log(info('\n👷‍♀️  Preparing ' + params.release + ' release...'))
+  console.log(info('\n👷‍♀️  Preparing ' + release + ' release...'))
   await buildPackages(experimentalPackages, params.ci)
   await updatePackageVersions(experimentalPackages, {
     ...versions,
@@ -37,7 +38,7 @@ async function run() {
   })
 
   if (!params.ci) {
-    printPrereleaseSummary(!isExperimentalRelease())
+    printPrereleaseSummary(!isExperimentalRelease(release))
   }
 }
 
