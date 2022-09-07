@@ -7,9 +7,6 @@ jobs:
   build-packages:
     runs-on: ubuntu-latest
     name: 👷‍♀️ Build all packages
-    env:
-      RELEASE_CHANNEL: 'experimental'
-      MENU_API: true
     steps:
       - uses: actions/checkout@v3.0.2
       - uses: actions/setup-node@v3
@@ -29,6 +26,8 @@ jobs:
     runs-on: ubuntu-latest
     name: 🚀 Publish experimental release
     needs: build-packages
+    env:
+      RELEASE_CHANNEL: 'experimental'
     steps:
       - uses: actions/checkout@v3.0.2
       - uses: actions/setup-node@v3
