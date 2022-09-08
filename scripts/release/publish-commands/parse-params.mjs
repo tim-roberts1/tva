@@ -30,12 +30,6 @@ const paramDefinitions = [
     type: String,
     description: `Release channel (${channelList})`,
   },
-  {
-    name: 'run',
-    type: String,
-    description: `Github workflow run-id.`,
-    defaultValue: null,
-  },
 ]
 
 function parseParams() {

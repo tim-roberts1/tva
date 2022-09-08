@@ -6,7 +6,12 @@ import { exec } from 'child-process-promise'
 import { getPackagePath } from '../../utils.mjs'
 import { info, error } from '../../theme.mjs'
 
-async function buildPackages(packageList) {
+async function buildPackages(packageList, ci) {
+  if (ci) {
+    console.log(info`\n🛠  Using package artifacts...`)
+    return
+  }
+
   console.log(info`\n🛠  Building public packages...`)
 
   try {

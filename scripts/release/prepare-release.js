@@ -17,7 +17,7 @@ import { info } from '../theme.mjs'
 
 async function run() {
   const params = parseParams()
-  const { release } = params
+  const { ci, release } = params
   const versions = {
     DesignVersion,
     experimentalPackages,
@@ -36,15 +36,13 @@ async function run() {
 
   console.log(info('\n👷‍♀️  Preparing ' + release + ' release...'))
 
-  // TODO: if CI, skip buildPackages and use artifact in updatePackageVersions
-
-  await buildPackages(packagesList, params.ci)
+  await buildPackages(packagesList, ci)
   await updatePackageVersions(packagesList, {
     ...versions,
     ...params,
   })
 
-  if (!params.ci) {
+  if (!ci) {
     printPrereleaseSummary(!isPreReleaseChannel(release))
   }
 }

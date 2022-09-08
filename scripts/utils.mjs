@@ -43,6 +43,13 @@ export async function execRead(command, options) {
   }
 }
 
+export function getArtifactPackagePath(packageName, channel) {
+  return resolve(
+    __dirname(import.meta.url),
+    `../${channel}_packages/${packageName}`
+  )
+}
+
 export function getPackagePath(packageName) {
   return resolve(__dirname(import.meta.url), `../packages/${packageName}`)
 }

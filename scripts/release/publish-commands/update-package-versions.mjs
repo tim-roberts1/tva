@@ -4,7 +4,11 @@
 
 import { join } from 'node:path'
 import pkg from 'fs-extra'
-import { getReleaseDate, getPackagePath } from '../../utils.mjs'
+import {
+  getReleaseDate,
+  getPackagePath,
+  getArtifactPackagePath,
+} from '../../utils.mjs'
 import { info } from '../../theme.mjs'
 
 function getPrereleaseVersion(version, date) {
@@ -42,7 +46,9 @@ async function updatePackageVersions(packageList, versionData) {
   packageList.forEach((packageName) => {
     console.log(info('\n📝  Updating version for ' + packageName))
 
-    const packagePath = getPackagePath(packageName)
+    const packagePath = versionData.ci
+      ? getArtifactPackagePath(packageName, versionData.release)
+      : getPackagePath(packageName)
     const origPackageInfo = readJsonSync(join(packagePath, 'package.json'))
     let newVersion = `${versionData.DesignVersion}`
 
