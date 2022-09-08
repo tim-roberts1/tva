@@ -2,7 +2,7 @@
 
 'use strict'
 
-import { dirname, resolve } from 'node:path'
+import { dirname, resolve, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { exec } from 'child-process-promise'
 import prompt from 'prompt-promise'
@@ -87,13 +87,9 @@ export function isStableRelease(channel) {
 }
 
 // https://www.npmjs.com/package/progress-estimator#configuration
-const logger = createLogger({
-  storagePath: resolve(__dirname(import.meta.url), '.progress-estimator'),
+export const logger = createLogger({
+  storagePath: join(__dirname(import.meta.url), '.progress-estimator'),
 })
-
-export async function logPromise(promise, text, estimate) {
-  logger(promise, text, { estimate })
-}
 
 // Convert an array param (expected format "--foo bar baz")
 // to also accept comma input (e.g. "--foo bar,baz")

@@ -2,8 +2,9 @@
 
 'use strict'
 
-import { error, info } from '../../theme.mjs'
-import { execRead, logPromise } from '../../utils.mjs'
+import chalk from 'chalk'
+import { error } from '../../theme.mjs'
+import { execRead, logger } from '../../utils.mjs'
 
 async function checkNPMPermissions(packages) {
   const currentUser = await execRead('yarn npm whoami')
@@ -20,10 +21,13 @@ async function checkNPMPermissions(packages) {
     }
   }
 
-  await logPromise(
+  await logger(
     Promise.all(packages.map(checkProject)),
-    info('Checking NPM permissions for ' + currentUser + '.')
+    `Checking NPM permissions for ${chalk.bold(currentUser)}`,
+    { estimate: 10000 }
   )
+
+  console.log('')
 
   if (failedProjects.length) {
     console.error(

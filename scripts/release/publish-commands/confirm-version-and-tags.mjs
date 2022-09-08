@@ -8,24 +8,18 @@ import { info, success } from '../../theme.mjs'
 import { confirm, getPackagePath } from '../../utils.mjs'
 
 async function confirmVersionAndTags({ packages, tags, ci }) {
+  const baseMessage =
+    '✅  You are about the publish the following packages under the tag'
+
   console.clear()
 
   if (tags.length === 0) {
     console.error('Expected at least one tag.')
     process.exit(1)
   } else if (tags.length === 1) {
-    console.log(
-      success(
-        '✅  You are about the publish the following packages under the tag: ' +
-          tags
-      )
-    )
+    console.log(success(`${baseMessage}: ${tags}`))
   } else {
-    console.log(
-      success`✅  You are about the publish the following packages under the tags ${tags.join(
-        ' '
-      )}:`
-    )
+    console.log(success`${baseMessage}s ${tags.join(' ')}:`)
   }
 
   packages.forEach(async (packageName) => {

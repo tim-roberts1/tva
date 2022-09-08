@@ -5,6 +5,7 @@
 import { join } from 'node:path'
 import { exec } from 'child-process-promise'
 import pkg from 'fs-extra'
+import chalk from 'chalk'
 import { error, success } from '../../theme.mjs'
 import { confirm, execRead, getPackagePath } from '../../utils.mjs'
 
@@ -57,15 +58,30 @@ async function publishToNPM({ dry, tags, ci }, packageName) {
       await confirm('Is this expected?')
     }
   } else {
-    console.log(success`{spinnerSuccess ✓} Publishing {package ${packageName}}`)
+    try {
+      // Publish the package and tag it.
+      await exec(`yarn npm publish --tag=${tags[0]}`, {
+        cwd: packagePath,
+      })
+      console.log(
+        success(`\n✅ Successfully Publsihed ${chalk.bold(packageName)}`)
+      )
+    } catch (err) {
+      console.error(
+        error(`Yarn npm publish failed to ship ${chalk.bold(packageName)}`)
+      )
+      console.error(err)
+    }
 
-    // Publish the package and tag it.
-    await exec(`yarn npm publish --tag=${tags[0]}`, {
-      cwd: packagePath,
-    })
+    console.log(info('Adding tags to npm'))
 
-    await addDistTags({ dry, tags, version }, packageName, packagePath)
-    await addUntaggedTags({ dry, tags }, packageName)
+    try {
+      await addDistTags({ dry, tags, version }, packageName, packagePath)
+      await addUntaggedTags({ dry, tags }, packageName)
+    } catch (err) {
+      console.error(error(`Unable to add tags for ${packageName}`))
+      console.error(err)
+    }
   }
 }
 
