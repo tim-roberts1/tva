@@ -73,7 +73,7 @@ async function publishToNPM({ dry, tags, ci }, packageName) {
       console.error(err)
     }
 
-    console.log(info('Adding tags to npm'))
+    console.log('Adding tags to npm')
 
     try {
       await addDistTags({ dry, tags, version }, packageName, packagePath)
