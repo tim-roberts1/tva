@@ -30,7 +30,7 @@ async function confirmVersionAndTags({ packages, tags, ci }) {
 
   packages.forEach(async (packageName) => {
     const { readJson } = pkg
-    const packagePath = getPackagePath(packageName)
+    const packagePath = getPackagePath({ packageName, ci, release: tags[0] })
     const packageJSONPath = join(packagePath, 'package.json')
     const packageJSON = await readJson(packageJSONPath)
     console.log(

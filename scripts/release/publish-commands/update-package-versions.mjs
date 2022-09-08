@@ -46,9 +46,11 @@ async function updatePackageVersions(packageList, versionData) {
   packageList.forEach((packageName) => {
     console.log(info('\n📝  Updating version for ' + packageName))
 
-    const packagePath = versionData.ci
-      ? getArtifactPackagePath(packageName, versionData.release)
-      : getPackagePath(packageName)
+    const packagePath = getPackagePath({
+      packageName,
+      ci: versionData.ci,
+      release: versionData.release,
+    })
     const origPackageInfo = readJsonSync(join(packagePath, 'package.json'))
     let newVersion = `${versionData.DesignVersion}`
 

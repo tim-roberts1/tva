@@ -35,7 +35,7 @@ async function addUntaggedTags({ dry, tags }, packageName) {
 
 async function publishToNPM({ dry, tags, ci }, packageName) {
   const { readJsonSync } = pkg
-  const packagePath = getPackagePath(packageName)
+  const packagePath = getPackagePath({ packageName, ci, release: tags[0] })
   const { version } = readJsonSync(join(packagePath, 'package.json'))
   // Check if this package version has already been published.
   // If so we might be resuming from a previous run.

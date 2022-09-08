@@ -46,12 +46,22 @@ export async function execRead(command, options) {
 export function getArtifactPackagePath(packageName, channel) {
   return resolve(
     __dirname(import.meta.url),
-    `../${channel}_packages/${packageName}`
+    `../${channel}_packages/packages/${packageName}`
   )
 }
 
-export function getPackagePath(packageName) {
+export function getLocalPackagePath(packageName) {
   return resolve(__dirname(import.meta.url), `../packages/${packageName}`)
+}
+
+export function getPackagePath(options) {
+  const { packageName } = options
+
+  if (options.ci) {
+    return getArtifactPackagePath(packageName, options.release)
+  }
+
+  return getLocalPackagePath(packageName)
 }
 
 export async function getReleaseDate() {

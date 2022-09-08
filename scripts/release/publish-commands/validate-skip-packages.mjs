@@ -9,7 +9,11 @@ import { execRead, getPackagePath } from '../../utils.mjs'
 
 const readPackageJSON = async (name) => {
   const { readJson } = pkg
-  const packagePath = getPackagePath(name)
+  const packagePath = getPackagePath({
+    packageName: name,
+    ci: true,
+    release: process.env.RELEASE_CHANNEL,
+  })
   const packageJSONPath = join(packagePath, 'package.json')
   return await readJson(packageJSONPath)
 }

@@ -16,7 +16,7 @@ async function buildPackages(packageList, ci) {
 
   try {
     await packageList.forEach(async (packageName) => {
-      const cwd = getPackagePath(packageName)
+      const cwd = getPackagePath({ packageName })
       await exec('yarn build', { cwd })
     })
   } catch (err) {

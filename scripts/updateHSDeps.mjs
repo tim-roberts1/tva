@@ -5,7 +5,11 @@ import { info, error } from './theme.mjs'
 
 async function run() {
   const channel = process.env.RELEASE_CHANNEL ?? ''
-  const headlessPath = getPackagePath('headless-styles')
+  const headlessPath = getPackagePath({
+    packageName: 'headless-styles',
+    ci: true,
+    release: channel,
+  })
   const packageJsonPath = join(headlessPath, 'package.json')
 
   warning(
