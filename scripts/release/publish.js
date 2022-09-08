@@ -2,14 +2,12 @@
 
 'use strict'
 
-import { join } from 'node:path'
 import {
   experimentalPackages,
   stablePackages,
   DesignVersion,
 } from '../../versions.mjs'
 import { error } from '../theme.mjs'
-import { __dirname } from '../utils.mjs'
 import parseParams from './publish-commands/parse-publish-params.mjs'
 import validateTags from './publish-commands/validate-tags.mjs'
 import confirmSkippedPackages from './publish-commands/confirm-skipped-packages.mjs'
@@ -21,7 +19,6 @@ import printFollowUpInstructions from './publish-commands/print-follow-up-instru
 
 async function run() {
   const params = await parseParams()
-  params.cwd = join(__dirname(import.meta.url), '..', '..')
   const packages = [...experimentalPackages, ...Object.keys(stablePackages)]
 
   // Pre-filter any skipped packages to simplify the following commands.
@@ -41,15 +38,15 @@ async function run() {
 
   // Validate everything
 
-  const paramsWithPackages = { ...params, packages }
-  await validateTags(paramsWithPackages)
+  const paramsAndPackages = { ...params, packages }
+  await validateTags(paramsAndPackages)
 
   if (!params.ci) {
     await confirmSkippedPackages(params)
   }
 
-  await confirmVersionAndTags(paramsWithPackages)
-  await validateSkipPackages(paramsWithPackages)
+  await confirmVersionAndTags(paramsAndPackages)
+  await validateSkipPackages(paramsAndPackages)
   await checkNPMPermissions(packages)
 
   // Publish

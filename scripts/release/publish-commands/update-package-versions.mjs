@@ -4,11 +4,7 @@
 
 import { join } from 'node:path'
 import pkg from 'fs-extra'
-import {
-  getReleaseDate,
-  getPackagePath,
-  getArtifactPackagePath,
-} from '../../utils.mjs'
+import { getReleaseDate, getPackagePath } from '../../utils.mjs'
 import { info } from '../../theme.mjs'
 
 function getPrereleaseVersion(version, date) {
