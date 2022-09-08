@@ -44,7 +44,7 @@ jobs:
           path: ./experimental_packages
       - run: |
           tar -xf ${{steps.download.outputs.download-path}}/experimental_packages.tar
-          ls -la
+          ls -la experimental_packages
           yarn config set -H 'npmAuthToken' "${{ secrets.NPM_TOKEN }}"
           yarn prepare:release --release experimental --commit=$GITHUB_SHA --ci
           yarn publish:packages --ci --tags experimental
