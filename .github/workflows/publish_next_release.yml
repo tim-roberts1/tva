@@ -40,9 +40,8 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: next_packages
-          path: ~/next_packages
       - run: |
-          tar -xf ~/next_packages/next_packages.tar
+          tar -xf ./next_packages.tar
           yarn config set -H 'npmAuthToken' "${{ secrets.NPM_TOKEN }}"
           yarn prepare:release --release next --commit=$GITHUB_SHA --ci
           yarn publish:packages --ci --tags next
