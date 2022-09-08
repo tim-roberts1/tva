@@ -12,7 +12,7 @@ export function getWorkspacePath() {
 
 export function warning(trueCondition, warningMessage) {
   if (!trueCondition) {
-    console(error(warningMessage))
+    console.log(error(warningMessage))
     process.exit(1)
   }
 }
