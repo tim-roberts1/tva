@@ -3,18 +3,22 @@
 'use strict'
 
 import chalk from 'chalk'
-import { error } from '../../theme.mjs'
 import { execRead, logger } from '../../utils.mjs'
+import { error, info } from '../../theme.mjs'
 
 async function checkNPMPermissions(packages) {
-  const currentUser = await execRead('yarn npm whoami')
   const failedProjects = []
+  const currentUser = await execRead('yarn npm whoami')
+
+  console.log(info(`Current User: ${currentUser}`))
 
   const checkProject = async (project) => {
     const owners = (await execRead(`npm owner ls @pluralsight/${project}`))
       .split('\n')
       .filter((owner) => owner)
       .map((owner) => owner.split(' ')[0])
+
+    console.log(info(`${owners} is the owner of ${project}.`))
 
     if (!owners.includes(currentUser)) {
       failedProjects.push(project)
