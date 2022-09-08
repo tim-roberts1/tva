@@ -18,7 +18,7 @@ import publishToNPM from './publish-commands/publish-to-npm.mjs'
 import printFollowUpInstructions from './publish-commands/print-follow-up-instructions.mjs'
 
 async function run() {
-  const params = await parseParams()
+  const params = parseParams()
   const packages = [...experimentalPackages, ...Object.keys(stablePackages)]
 
   // Pre-filter any skipped packages to simplify the following commands.
@@ -56,13 +56,12 @@ async function run() {
     packages.forEach(async (packageName) => {
       try {
         await publishToNPM(params, packageName, null)
-      } catch (error) {
+      } catch (err) {
         failed = true
-        console.error(error.message)
-        console.log()
         console.log(
           error`Publish failed. Will attempt to publish remaining packages.`
         )
+        console.error(error(err))
       }
     })
 
