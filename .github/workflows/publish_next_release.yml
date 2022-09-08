@@ -41,6 +41,7 @@ jobs:
         with:
           name: next_packages
       - run: |
+          tar -xf next_packages.tar -C ./next_packages
           yarn config set -H 'npmAuthToken' "${{ secrets.NPM_TOKEN }}"
           yarn prepare:release --release next --commit=$GITHUB_SHA --ci
           yarn publish:packages --ci --tags next
