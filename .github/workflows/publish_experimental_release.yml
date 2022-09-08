@@ -18,7 +18,6 @@ jobs:
       - run: |
           yarn install
           yarn prepare:flags
-          yarn prepare:release --release experimental --commit=$GITHUB_SHA --ci --run=$GITHUB_RUN_ID
           yarn build:packages
           tar -cvf packages_dist.tar packages
       - name: Archive production artifacts

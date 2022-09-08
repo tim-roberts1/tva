@@ -38,7 +38,7 @@ const skillsSources = [
 const data = {
   transformGroup: 'js',
   transforms: jsTransforms,
-  buildPath: `${BUILD_PATH}/meta/`,
+  buildPath: `${BUILD_PATH}meta/`,
   files: [
     {
       ...baseFileConfig,
@@ -61,7 +61,7 @@ const data = {
 const dataTypeDefs = {
   transformGroup: 'ts',
   transforms: jsTransforms,
-  buildPath: `${BUILD_PATH}/meta/`,
+  buildPath: `${BUILD_PATH}meta/`,
   files: [
     {
       ...jsFileConfig,
