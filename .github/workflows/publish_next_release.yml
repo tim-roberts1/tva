@@ -20,12 +20,12 @@ jobs:
           yarn install
           yarn prepare:flags
           yarn build:packages
-          tar -cvf next_packages.tar packages
-      - name: Archive production artifacts
+          tar -czvf next_packages.tar.gz packages
+      - name: 🗃 Archive next packages
         uses: actions/upload-artifact@v3
         with:
           name: next_packages
-          path: next_packages.tar
+          path: next_packages.tar.gz
 
   next-release:
     runs-on: ubuntu-latest
@@ -42,7 +42,7 @@ jobs:
           name: next_packages
           path: ./next_packages
       - run: |
-          tar -xf ${{steps.download.outputs.download-path}}/next_packages.tar
+          tar -xzvf ${{steps.download.outputs.download-path}}/next_packages.tar.gz
           yarn config set -H 'npmAuthToken' "${{ secrets.NPM_TOKEN }}"
           yarn prepare:release --release next --commit=$GITHUB_SHA --ci
           yarn publish:packages --ci --tags next

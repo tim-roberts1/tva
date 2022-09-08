@@ -20,12 +20,12 @@ jobs:
           yarn install
           yarn prepare:flags
           yarn build:packages
-          tar -cvf experimental_packages.tar packages
-      - name: Archive production artifacts
+          tar -czvf experimental_packages.tar.gz packages
+      - name: 🗃 Archive experimental packages
         uses: actions/upload-artifact@v3
         with:
           name: experimental_packages
-          path: experimental_packages.tar
+          path: experimental_packages.tar.gz
 
   experimental-release:
     runs-on: ubuntu-latest
@@ -43,7 +43,7 @@ jobs:
           name: experimental_packages
           path: ./experimental_packages
       - run: |
-          tar -xf ${{steps.download.outputs.download-path}}/experimental_packages.tar
+          tar -xzvf ${{steps.download.outputs.download-path}}/experimental_packages.tar.gz
           ls -la experimental_packages
           yarn config set -H 'npmAuthToken' "${{ secrets.NPM_TOKEN }}"
           yarn prepare:release --release experimental --commit=$GITHUB_SHA --ci
