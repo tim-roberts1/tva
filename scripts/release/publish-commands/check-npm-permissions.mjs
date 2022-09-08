@@ -8,9 +8,12 @@ import { error } from '../../theme.mjs'
 
 async function checkNPMPermissions(packages) {
   const failedProjects = []
-  const currentUser = await execRead('npm whoami')
+  const currentUser = await execRead('yarn npm whoami')
 
   const checkProject = async (project) => {
+    const owner = await execRead(`yarn npm info @pluralsight/${project}`)
+
+    console.log(owner)
     console.log(currentUser)
 
     if (currentUser !== 'pluralsight') {
@@ -20,8 +23,7 @@ async function checkNPMPermissions(packages) {
 
   await logPromise(
     Promise.all(packages.map(checkProject)),
-    `Checking NPM permissions for ${chalk.bold(currentUser)}`,
-    10000
+    `Checking NPM permissions for ${chalk.bold(currentUser)}`
   )
 
   if (failedProjects.length) {
