@@ -13,8 +13,7 @@ async function checkNPMPermissions(packages) {
   const checkProject = async (project) => {
     const projectInfo = await execRead(`yarn npm info @pluralsight/${project}`)
 
-    console.log(projectInfo.maintainers)
-    console.log(currentUser)
+    console.log(projectInfo)
 
     if (currentUser !== 'pluralsight') {
       failedProjects.push(project)
