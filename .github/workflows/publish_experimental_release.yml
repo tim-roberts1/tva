@@ -3,12 +3,13 @@ on:
     branches:
       - main
 
+env:
+  RELEASE_CHANNEL: 'experimental'
+
 jobs:
   build-packages:
     runs-on: ubuntu-latest
-    name: 👷‍♀️ Build all packages
-    env:
-      RELEASE_CHANNEL: 'experimental'
+    name: 👷‍♀️ Build experimental packages
     steps:
       - uses: actions/checkout@v3.0.2
       - uses: actions/setup-node@v3
@@ -19,19 +20,17 @@ jobs:
           yarn install
           yarn prepare:flags
           yarn build:packages
-          tar -cvf packages_dist.tar packages
+          tar -cvf packages_experimental.tar packages
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: packages
-          path: packages_dist.tar
+          name: experimental_packages
+          path: packages_experimental.tar
 
   experimental-release:
     runs-on: ubuntu-latest
     name: 🚀 Publish experimental release
     needs: build-packages
-    env:
-      RELEASE_CHANNEL: 'experimental'
     steps:
       - uses: actions/checkout@v3.0.2
       - uses: actions/setup-node@v3
@@ -40,7 +39,7 @@ jobs:
           cache: 'yarn'
       - uses: actions/download-artifact@v3
         with:
-          name: packages
+          name: experimental_packages
           path: dist
       - run: |
           yarn config set -H 'npmAuthToken' "${{ secrets.NPM_TOKEN }}"

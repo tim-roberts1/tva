@@ -3,10 +3,13 @@ on:
     branches:
       - main
 
+env:
+  RELEASE_CHANNEL: 'next'
+
 jobs:
   build-packages:
     runs-on: ubuntu-latest
-    name: 👷‍♀️ Build all packages
+    name: 👷‍♀️ Build next packages
     steps:
       - uses: actions/checkout@v3.0.2
       - uses: actions/setup-node@v3
@@ -15,19 +18,19 @@ jobs:
           cache: 'yarn'
       - run: |
           yarn install
+          yarn prepare:flags
           yarn build:packages
+          tar -cvf packages_next.tar packages
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: packages
-          path: packages/**/build
+          name: next_packages
+          path: packages_next.tar
 
   next-release:
     runs-on: ubuntu-latest
     name: 🚀 Publish next release
     needs: build-packages
-    env:
-      RELEASE_CHANNEL: 'next'
     steps:
       - uses: actions/checkout@v3.0.2
       - uses: actions/setup-node@v3
