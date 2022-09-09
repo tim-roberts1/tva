@@ -6,8 +6,10 @@ import { exec } from 'child-process-promise'
 import { getArtifactPackagePath, getLocalPackagePath } from '../../utils.mjs'
 import { info, error } from '../../theme.mjs'
 
-async function buildPackages(packageList, ci) {
-  if (ci) {
+async function buildPackages(options) {
+  const { packageList } = options
+
+  if (options.ci) {
     console.log(
       info`\n🛠  Copying package build artifacts to local workspaces...`
     )
@@ -17,8 +19,10 @@ async function buildPackages(packageList, ci) {
         return
       }
 
-      const artifactPath = getArtifactPackagePath(packageName)
+      const artifactPath = getArtifactPackagePath(packageName, options.release)
       const localPath = getLocalPackagePath(packageName)
+
+      console.log(info(`Copying ${artifactPath} to ${localPath}...`))
       await exec(`cp -r ${artifactPath} ${localPath}`)
     })
 

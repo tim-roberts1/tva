@@ -36,7 +36,7 @@ async function run() {
 
   console.log(info('\n👷‍♀️  Preparing ' + release + ' release...'))
 
-  await buildPackages(packagesList, ci)
+  await buildPackages({ packagesList, ci, release })
   await updatePackageVersions(packagesList, {
     ...versions,
     ...params,
