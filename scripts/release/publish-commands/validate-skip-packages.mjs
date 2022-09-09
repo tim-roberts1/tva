@@ -5,15 +5,11 @@
 import { join } from 'node:path'
 import pkg from 'fs-extra'
 import { error } from '../../theme.mjs'
-import { execRead, getPackagePath } from '../../utils.mjs'
+import { execRead, getLocalPackagePath } from '../../utils.mjs'
 
 const readPackageJSON = async (name) => {
   const { readJson } = pkg
-  const packagePath = getPackagePath({
-    packageName: name,
-    ci: true,
-    release: process.env.RELEASE_CHANNEL,
-  })
+  const packagePath = getLocalPackagePath(name)
   const packageJSONPath = join(packagePath, 'package.json')
   return await readJson(packageJSONPath)
 }

@@ -5,7 +5,7 @@
 import { join } from 'node:path'
 import pkg from 'fs-extra'
 import { info, success } from '../../theme.mjs'
-import { confirm, getPackagePath } from '../../utils.mjs'
+import { confirm, getLocalPackagePath } from '../../utils.mjs'
 
 async function confirmVersionAndTags({ packages, tags, ci }) {
   const baseMessage =
@@ -24,7 +24,7 @@ async function confirmVersionAndTags({ packages, tags, ci }) {
 
   packages.forEach(async (packageName) => {
     const { readJson } = pkg
-    const packagePath = getPackagePath({ packageName, ci, release: tags[0] })
+    const packagePath = getLocalPackagePath(packageName)
     const packageJSONPath = join(packagePath, 'package.json')
     const packageJSON = await readJson(packageJSONPath)
     console.log(

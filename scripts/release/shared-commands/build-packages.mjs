@@ -3,12 +3,25 @@
 'use strict'
 
 import { exec } from 'child-process-promise'
-import { getPackagePath } from '../../utils.mjs'
+import { getArtifactPackagePath, getLocalPackagePath } from '../../utils.mjs'
 import { info, error } from '../../theme.mjs'
 
 async function buildPackages(packageList, ci) {
   if (ci) {
-    console.log(info`\n🛠  Using package artifacts...`)
+    console.log(
+      info`\n🛠  Copying package build artifacts to local workspaces...`
+    )
+
+    await packageList.forEach(async (packageName) => {
+      if (packageName === 'shared') {
+        return
+      }
+
+      const artifactPath = getArtifactPackagePath(packageName)
+      const localPath = getLocalPackagePath(packageName)
+      await exec(`cp -r ${artifactPath} ${localPath}`)
+    })
+
     return
   }
 
@@ -16,7 +29,7 @@ async function buildPackages(packageList, ci) {
 
   try {
     await packageList.forEach(async (packageName) => {
-      const cwd = getPackagePath({ packageName })
+      const cwd = getLocalPackagePath(packageName)
       await exec('yarn build', { cwd })
     })
   } catch (err) {

@@ -7,7 +7,7 @@ import { exec } from 'child-process-promise'
 import pkg from 'fs-extra'
 import chalk from 'chalk'
 import { error, success } from '../../theme.mjs'
-import { confirm, execRead, getPackagePath } from '../../utils.mjs'
+import { confirm, execRead, getLocalPackagePath } from '../../utils.mjs'
 
 async function addDistTags({ dry, tags, version }, packageName, packagePath) {
   if (dry) {
@@ -36,7 +36,7 @@ async function addUntaggedTags({ dry, tags }, packageName) {
 
 async function publishToNPM({ dry, tags, ci }, packageName) {
   const { readJsonSync } = pkg
-  const packagePath = getPackagePath({ packageName, ci, release: tags[0] })
+  const packagePath = getLocalPackagePath(packageName)
   const { version } = readJsonSync(join(packagePath, 'package.json'))
   // Check if this package version has already been published.
   // If so we might be resuming from a previous run.

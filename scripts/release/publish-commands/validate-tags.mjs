@@ -4,7 +4,7 @@
 
 import { join } from 'node:path'
 import pkg from 'fs-extra'
-import { warning, getPackagePath } from '../../utils.mjs'
+import { warning, getLocalPackagePath } from '../../utils.mjs'
 import { error, info } from '../../theme.mjs'
 
 function tagError(message) {
@@ -29,12 +29,7 @@ async function validateTags(options) {
   // Prevent a "next" release from ever being published as @latest
   // All canaries share a version number, so it's okay to check any of them.
   const arbitraryPackageName = packages[0]
-  const packagePath = getPackagePath({
-    packageName: arbitraryPackageName,
-    ci: options.ci,
-    release: options.tags[0],
-  })
-
+  const packagePath = getLocalPackagePath(arbitraryPackageName)
   const { version } = await pkg.readJsonSync(join(packagePath, 'package.json'))
   const isExperimentalVersion = version.includes('experimental')
   const isPrerelease = version.includes('-')
