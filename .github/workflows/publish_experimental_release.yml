@@ -20,7 +20,7 @@ jobs:
           yarn install
           yarn prepare:flags
           yarn build:packages
-          tar -czvf experimental_packages.tar.gz packages
+          tar -czvf experimental_packages.tar.gz packages/*/build
       - name: 🗃 Archive experimental packages
         uses: actions/upload-artifact@v3
         with:
