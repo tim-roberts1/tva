@@ -7,14 +7,14 @@ import { getArtifactPackagePath, getLocalPackagePath } from '../../utils.mjs'
 import { info, error } from '../../theme.mjs'
 
 async function buildPackages(options) {
-  const { packageList } = options
+  const { packagesList } = options
 
   if (options.ci) {
     console.log(
       info`\n🛠  Copying package build artifacts to local workspaces...`
     )
 
-    await packageList.forEach(async (packageName) => {
+    await packagesList.forEach(async (packageName) => {
       if (packageName === 'shared') {
         return
       }
@@ -32,7 +32,7 @@ async function buildPackages(options) {
   console.log(info`\n🛠  Building public packages...`)
 
   try {
-    await packageList.forEach(async (packageName) => {
+    await packagesList.forEach(async (packageName) => {
       const cwd = getLocalPackagePath(packageName)
       await exec('yarn build', { cwd })
     })
