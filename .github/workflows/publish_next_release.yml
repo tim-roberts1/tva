@@ -18,6 +18,7 @@ jobs:
           cache: 'yarn'
       - run: |
           yarn install
+          yarn workspace @pluralsight/headless-styles up @pluralsight/shared@next
           yarn build:packages
           tar -czvf next_packages.tar.gz packages/*/build
       - name: 🗃 Archive next packages
