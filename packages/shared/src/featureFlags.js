@@ -2,7 +2,7 @@ const __EXPERIMENTAL__ = process.env.RELEASE_CHANNEL === 'experimental' ?? false
 // const __NEXT__ = process.env.RELEASE_CHANNEL === 'next' ?? false
 
 // -----------------------------------------------------------------------------
-// Land or remove (zero effort) - already released - should remove flag logic
+// Land or remove (zero effort) - ready for public - should remove flag logic
 //
 // Flags that can likely be deleted or landed without consequences
 // -----------------------------------------------------------------------------
