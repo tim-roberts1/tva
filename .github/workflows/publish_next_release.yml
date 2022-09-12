@@ -18,7 +18,6 @@ jobs:
           cache: 'yarn'
       - run: |
           yarn install
-          yarn workspace @pluralsight/headless-styles up @pluralsight/shared@next
           yarn build:packages
           tar -czvf next_packages.tar.gz packages/*/build
       - name: 🗃 Archive next packages
@@ -44,6 +43,7 @@ jobs:
           path: ./next_packages
       - run: |
           tar -xzvf ${{steps.download.outputs.download-path}}/next_packages.tar.gz -C next_packages
+          yarn workspace @pluralsight/headless-styles up @pluralsight/shared@next
           yarn prepare:flags
           yarn config set -H 'npmAuthToken' "${{ secrets.NPM_TOKEN }}"
           yarn prepare:release --release next --commit=$GITHUB_SHA --ci
