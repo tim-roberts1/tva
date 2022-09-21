@@ -4,7 +4,7 @@
 const lightCodeTheme = require('prism-react-renderer/themes/nightOwlLight')
 const darkCodeTheme = require('prism-react-renderer/themes/nightOwl')
 const startPath = 'start/get-started'
-const designPath = 'design/intro'
+const designPath = 'design/color'
 const devPath = 'development/getting-started/installation'
 const psIconPngPath = '/img/ps-icon.png'
 
