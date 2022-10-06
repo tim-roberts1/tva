@@ -44,7 +44,7 @@ async function run() {
     })
   } else {
     console.log(info('\n No packages to ship in ' + release + 'channel.'))
-    process.exit(1)
+    process.exit(0)
   }
 
   if (!ci) {
