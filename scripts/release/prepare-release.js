@@ -43,7 +43,7 @@ async function run() {
       ...params,
     })
   } else {
-    console.log(info('\n No packages to ship in ' + release + 'channel.'))
+    console.log(info('\nNo packages to ship in ' + release + ' channel.'))
     process.exit(0)
   }
 
