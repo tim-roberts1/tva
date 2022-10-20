@@ -32,6 +32,8 @@ export const tabsHook = true
 // likely to include in an upcoming release.
 // -----------------------------------------------------------------------------
 
+export const select = __EXPERIMENTAL__
+
 // -----------------------------------------------------------------------------
 // Chopping Block
 //

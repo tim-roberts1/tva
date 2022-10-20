@@ -1,0 +1,44 @@
+.selectFieldWrapper {
+  width: 100%;
+}
+
+.selectWrapper {
+  composes: inputWrapper from '../Input/inputCSS.module.css';
+}
+
+.selectBase {
+  composes: inputBase from '../Input/inputCSS.module.css';
+  padding-inline-end: 2.25rem;
+  padding-inline-start: 1rem;
+}
+
+.selectBase[multiple] {
+  height: auto;
+}
+
+.selectIcon {
+  color: var(--ps-text-strong);
+  composes: inputIcon from '../Input/inputCSS.module.css';
+  right: 0.5rem;
+  top: 1rem;
+}
+
+.mSelectIcon {
+  composes: selectIcon;
+}
+
+.lSelectIcon {
+  composes: selectIcon;
+  top: 1.5rem;
+}
+
+/* sizes */
+
+.mSelectBase {
+  composes: mInputBase from '../Input/inputCSS.module.css';
+}
+
+.lSelectBase {
+  composes: lInputBase from '../Input/inputCSS.module.css';
+  padding-inline-end: 2.25rem;
+}
