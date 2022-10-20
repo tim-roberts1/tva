@@ -69,8 +69,8 @@ export { getJSSwitchProps } from './src/components/Switch/switchJS'
 export { getTabProps } from './src/components/Tab/tabCSS'
 export { getJSTabProps } from './src/components/Tab/tabJS'
 
-export { getTableProps as unstable_getTableProps } from './src/components/Table/tableCSS'
-export { getJSTableProps as unstable_getJSTableProps } from './src/components/Table/tableJS'
+export { getTableProps } from './src/components/Table/tableCSS'
+export { getJSTableProps } from './src/components/Table/tableJS'
 
 export { getTagProps } from './src/components/Tag/tagCSS'
 export { getJSTagProps } from './src/components/Tag/tagJS'
@@ -81,7 +81,7 @@ export { getJSTextareaProps } from './src/components/Textarea/textareaJS'
 export { getTextLinkProps } from './src/components/TextLink/textLinkCSS'
 export { getJSTextLinkProps } from './src/components/TextLink/textLinkJS'
 
-export { getTooltipProps as unstable_getTooltipProps } from './src/components/Tooltip/tooltipCSS'
-export { getJSTooltipProps as unstable_getJSTooltipProps } from './src/components/Tooltip/tooltipJS'
+export { getTooltipProps } from './src/components/Tooltip/tooltipCSS'
+export { getJSTooltipProps } from './src/components/Tooltip/tooltipJS'
 
 export { chakraPSTheme } from './src/chakra'

@@ -5,7 +5,7 @@
 // -----------------------------------------------------------------------------
 
 // -----------------------------------------------------------------------------
-// Land or remove (moderate effort) - next release
+// Land or remove (moderate effort) - available in next release
 //
 // Flags that can be probably deleted or landed, but might require extra effort
 // like removing flag logic in public packages, etc.
@@ -14,6 +14,7 @@
 export const menu = true
 export const modal = true
 export const preloadImgHook = true
+export const table = true
 export const tabs = true
 export const tabsHook = true
 
@@ -32,7 +33,6 @@ export const tabsHook = true
 // -----------------------------------------------------------------------------
 
 export const select = __EXPERIMENTAL__
-export const table = __EXPERIMENTAL__
 
 // -----------------------------------------------------------------------------
 // Chopping Block
