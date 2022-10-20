@@ -73,7 +73,7 @@ title: Button
   - Use a link when you're navigating to another page or location. Examples include breadcrumb links, content links to other pages, and lists of links to related pages.
     - Styles for links will deviate when placed in a global header and footer, or other navigation-type of element such as Tabs or Menus. This is to allow for a larger tap target and hierarchical presentation.
   - Use buttons when performing an action, such as: "Submit," "Add a row," "Cancel," "Upload," etc.
-  - An action is almost always on the same page
+  - An action is almost always on the same page.
 
 ### Best practices
 
