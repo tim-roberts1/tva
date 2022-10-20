@@ -30,12 +30,7 @@ const ERROR = 'error'
 const globalRules = {
   'default-case': ERROR,
   'default-case-last': ERROR,
-  'dot-notation': [
-    ERROR,
-    {
-      allowKeywords: false,
-    },
-  ],
+  'dot-notation': ERROR,
   'no-confusing-arrow': ERROR,
   'no-duplicate-imports': ERROR,
   'no-empty-function': ERROR,
@@ -49,7 +44,7 @@ const globalRules = {
 }
 
 module.exports = [
-  ...compat.extends(
+  ...compat['extends'](
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
