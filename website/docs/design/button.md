@@ -42,7 +42,7 @@ title: Button
 
 - Take actions and make choices that are clearly indicated by a single icon
 - Circle
-  - Use when alone, as a floating action button or
+  - Use when alone, as a floating action button
 - Square
   - Reserved for buttons that are used alongside of form fields or links
 
@@ -101,6 +101,7 @@ title: Button
 - Expected actions for assistive technologies
   - Ensure your label will make sense when spoken aloud with screen readers
   - Prioritize using validation and errors over disabled buttons, as the latter do not provide feedback.
+  - Button labels should make sense independent of their context, to support users with screen readers that may skip to actions.
 
 ## States
 
