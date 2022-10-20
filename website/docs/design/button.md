@@ -1,5 +1,5 @@
 ---
-tags: [Design, Button, CTA]
+tags: [Design, Button, CTA, Icon button]
 title: Button
 ---
 
@@ -9,9 +9,11 @@ title: Button
 
 ## Anatomy/Structure
 
-- Icon-placeholder (leading)
-- Label
-- Icon-placeholder (trailing)
+![Identifying parts of a button](/img/button-anatomy.png)
+
+1. Icon-placeholder (leading)
+2. Label
+3. Icon-placeholder (trailing)
 
 ## Usage
 
@@ -26,33 +28,29 @@ title: Button
 - Default
   - Lower emphasis actions that are optional or secondary to the primary action
   - Actions that are important but not primary
-  - Alternative, secondary action
   - Use for something that happens on the current page
 - Danger
   - For use on any destructive action, leading to loss of data or progress for the user.
-
-### Style
-
-- Outline
-  - Default style used for buttons that are not the primary action.
 - Text
   - Lowest priority actions
   - Don't distract from nearby content
   - Use for the lowest emphasis
   - Use alone where content must be emphasized
   - Use when multiple actions appear and a low-emphasis action is needed
-- Icon
-  - Take actions and make choices that are clearly indicated by a single icon
-  - Circle
-    - Use when alone, as a floating action button or
-  - Square
-    - Reserved for buttons that are used alongside of form fields or links
+
+### Icon buttons
+
+- Take actions and make choices that are clearly indicated by a single icon
+- Circle
+  - Use when alone, as a floating action button or
+- Square
+  - Reserved for buttons that are used alongside of form fields or links
 
 ### Sizes
 
 - L (default)
   - The default button size conforms to standard tap target sizes without a larger interactive area needed surrounding it.
-- M
+- S
   - Use in condensed areas and smaller widgets when aligned with adjacent medium-sized form controls.
 
 ### Use cases
@@ -64,7 +62,7 @@ title: Button
 
 ### Dos and Don'ts
 
-- Do not use too many buttons, only use for discrete actions
+- Do not use too many buttons. Stick to no more than 3 buttons with discrete actions in any group.
 - Do not use buttons as styled links. Use linked text for navigation to other pages or sites.
 - Action buttons should represent the main action in a button group. Do not use more than one action button in a group.
 - Use the same size button in groups. Do not use different sized buttons together in the same row.
@@ -79,7 +77,7 @@ title: Button
 
 ### Best practices
 
-- Buttons can be set to full-width in some situations.
+- Buttons can be set to full-width in some situations, including mobile screens and smaller-width areas such as sidebars.
 - Not all features need to have primary actions, sometimes the actions are secondary to the content and are all of equal importance.
 
 ## Content guidance
@@ -132,6 +130,6 @@ title: Button
 
 - Space buttons apart by `16px/1em`
 
-## Figma properties/options
+<!-- ## Figma properties/options
 
-## Feedback on this component/Status
+## Feedback on this component/Status -->
