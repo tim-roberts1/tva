@@ -128,7 +128,7 @@ title: Button
 
 ### Spacing and arrangement
 
-- Space buttons apart by `16px/1em`
+- Space buttons apart by `16px/1rem`
 
 <!-- ## Figma properties/options
 
