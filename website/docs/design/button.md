@@ -77,7 +77,7 @@ title: Button
 
 ### Best practices
 
-- Buttons can be set to full-width in some situations, including mobile screens and smaller-width areas such as sidebars.
+- Buttons can be set to full width in some situations, including mobile screens and smaller-width areas such as sidebars.
 - Not all features need to have primary actions, sometimes the actions are secondary to the content and are all of equal importance.
 
 ## Content guidance
