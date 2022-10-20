@@ -9,7 +9,7 @@ title: Button
 
 ## Anatomy/Structure
 
-![Identifying parts of a button](/img/button-anatomy.png)
+[View the part of a button in Figma](https://www.figma.com/file/T6b7uFqGkQO1hSpNLNGrNf/Untitled?node-id=1%3A369)
 
 1. Icon-placeholder (leading)
 2. Label
