@@ -1,0 +1,146 @@
+---
+tags: [Development, Packages, Components, Headless Styles, Pagination]
+---
+
+<!-- TODO: As of 2.0.0-beta.17 live-codeblock do not support imports. -->
+<!-- Keep an eye out so we can kill the components we are importing in. -->
+<!-- https://docusaurus.io/docs/markdown-features/code-blocks#imports -->
+
+import CodeBlock from '@theme/CodeBlock'
+import BasicAvatar from '@site/src/components/Avatar/BasicAvatar'
+import {
+  BasicAvatarPreview,
+  BasicAvatarFullPreview,
+} from '@site/src/components/Avatar/BasicAvatar.preview'
+import AvatarSizes from '@site/src/components/Avatar/AvatarSizes'
+import {
+  AvatarSizesPreview,
+  AvatarSizesFullPreview,
+} from '@site/src/components/Avatar/AvatarSizes.preview'
+import ViewSourceLink from '@site/src/components/ViewSourceLink/ViewSourceLink'
+import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
+
+Pagination actions help users navigate between large lists of data.
+
+<ViewSourceLink
+  icon="github"
+  href="https://github.com/pluralsight/tva/tree/main/packages/headless-styles/src/components/Pagination"
+>
+  View source
+</ViewSourceLink>
+
+## Import
+
+```javascript
+import { getPaginationProps } from '@pluralsight/headless-styles'
+```
+
+## Usage
+
+### Basic Pagination
+
+The `getAvatarProps` helper has two kinds to change the visual color of the avatar fallback that directly correlate to our [design-tokens](../tokens/intro.md#naming-convention). You can use `default` and `action`.
+
+<BasicAvatar />
+<LiveExampleTabs
+  fullCode={<BasicAvatarFullPreview />}
+  sandboxList={{
+    chakra: 'basic-avatar-react-chakra-tvxvqs',
+    joy: 'basic-avatar-mui-uv5bks',
+    styled: 'basic-avatar-css-in-js-sc-jb5imx',
+    svelte: 'basic-avatar-svelte-t60wvw',
+  }}
+>
+  <BasicAvatarPreview />
+</LiveExampleTabs>
+
+### Two Button Pagination
+
+To change the size of an Avatar, use the `size` option.
+The options are: `xs`, `s`, `m` (default), `l`, and `xl`.
+
+<AvatarSizes />
+<LiveExampleTabs
+  fullCode={<AvatarSizesFullPreview />}
+  sandboxList={{
+    chakra: 'basic-avatar-react-chakra-tvxvqs',
+    joy: 'basic-avatar-mui-uv5bks',
+    styled: 'basic-avatar-css-in-js-sc-jb5imx',
+    svelte: 'basic-avatar-svelte-t60wvw',
+  }}
+>
+  <AvatarSizesPreview />
+</LiveExampleTabs>
+
+### Pagination Bar
+
+The DS Avatars have three different states to display to the user. Each state has a different purpose for usage and should follow the guides below.
+
+## API
+
+| Name                   | Argument Type                                        | Default         | Description                            |
+| ---------------------- | ---------------------------------------------------- | --------------- | -------------------------------------- |
+| `getPaginationProps`   | **options**: [PaginationOptions](#paginationOptions) | cols: 1         | Get CSS styles for pagination actions. |
+| `getJSPaginationProps` | **options**: [PaginationOptions](#paginationOptions) | same as CSS API | CSS-in-JS API                          |
+
+## Options
+
+### PaginationOptions
+
+This interface is available as an `import` for use.
+
+```typescript
+export interface PaginationOptions {
+  cols: number
+  tech?: 'svelte' | ''
+}
+```
+
+```typescript title="Import example"
+import type { PaginationOptions } from '@pluralsight/headless-styles/types'
+```
+
+## Props
+
+### PaginationProps
+
+```typescript
+interface PaginationProps {
+  container: {
+    className: string
+    style: Record<CSSProps, string>
+  }
+  newer: {
+    className: string
+  }
+  older: {
+    className: string
+  }
+  text: {
+    className: string
+  }
+}
+```
+
+### JSAvatarProps
+
+```typescript
+interface JSAvatarProps {
+  container: {
+    cssProps: TemplateLiteralStringArray | string
+    styles: Record<CSSProps, string>
+  }
+  newer: {
+    cssProps: TemplateLiteralStringArray | string
+    styles: Record<CSSProps, string>
+  }
+  older: {
+    cssProps: TemplateLiteralStringArray | string
+    styles: Record<CSSProps, string>
+  }
+  text: {
+    cssProps: TemplateLiteralStringArray | string
+    styles: Record<CSSProps, string>
+  }
+}
+```
