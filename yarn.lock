@@ -6331,11 +6331,11 @@ __metadata:
   linkType: soft
 
 "@pluralsight/headless-styles@npm:next":
-  version: 0.1.2-beta-a9c57b
-  resolution: "@pluralsight/headless-styles@npm:0.1.2-beta-a9c57b"
+  version: 0.1.2-beta-a93dd9
+  resolution: "@pluralsight/headless-styles@npm:0.1.2-beta-a93dd9"
   dependencies:
     tslib: latest
-  checksum: 320b96a1049401de3f53bddbf5b95c55628ab9faf588ac3072f4db40a1e7b530753a87394ebe4f2da6440e4ec70a430f25b69d5a90612252ecfb0f12cd54ff75
+  checksum: 71183c288181f3d9e0f56882f1d2f712e1ab528775513733efdac76a997e5a08fc0bb8a4db72dfbe0ae1091c0c9db716cdb04d184baca41d62ca6d5105325e9a
   languageName: node
   linkType: hard
 
