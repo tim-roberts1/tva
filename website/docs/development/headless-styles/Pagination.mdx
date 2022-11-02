@@ -80,16 +80,49 @@ For an approach that allows filering, page naviation, and text information, use 
 
 ```jsx live
 function PaginationActions() {
+  const [rowOption, setRowOption] = useState('')
+  const selectStyles = getSelectProps({
+    id: 'row-count',
+    name: 'row_count',
+    placeholder: 'Choose row count',
+    size: 'm',
+    value: rowOption,
+  })
   const styles = getPaginationProps({ cols: 3 })
+  const iconProps = getIconProps(selectStyles.iconOptions)
+
+  function handleSelectChange(e) {
+    setRowOption(e.target.value)
+  }
 
   return (
-    <div {...styles.container}>
+    <div
+      {...styles.container}
+      style={{
+        gridTemplateColumns: '1fr 1fr auto',
+      }}
+    >
       <div>
         <small {...styles.text}>
           <strong>1-25</strong> of 1,2345
         </small>
       </div>
-      <div>Search placeholder</div>
+      <div>
+        <div {...selectStyles.fieldWrapper}>
+          <select
+            {...selectStyles.select}
+            onChange={handleSelectChange}
+            style={{ marginTop: 'initial' }}
+          >
+            <option value="5">5 Rows</option>
+            <option value="10">10 Rows</option>
+            <option value="25">25 Rows</option>
+          </select>
+          <span {...selectStyles.iconWrapper}>
+            <ChevronDownIcon {...iconProps} />
+          </span>
+        </div>
+      </div>
       <div>
         <button {...styles.newer} data-disabled>
           Newer

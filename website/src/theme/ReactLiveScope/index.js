@@ -3,8 +3,9 @@ import {
   getButtonProps,
   getIconProps,
   unstable_getPaginationProps as getPaginationProps,
+  unstable_getSelectProps as getSelectProps,
 } from '@pluralsight/headless-styles'
-import { PlaceholderIcon } from '@pluralsight/icons'
+import { ChevronDownIcon, PlaceholderIcon } from '@pluralsight/icons'
 
 const ReactLiveScope = {
   React,
@@ -12,6 +13,8 @@ const ReactLiveScope = {
   getButtonProps,
   getIconProps,
   getPaginationProps,
+  getSelectProps,
+  ChevronDownIcon,
   PlaceholderIcon,
 }
 
