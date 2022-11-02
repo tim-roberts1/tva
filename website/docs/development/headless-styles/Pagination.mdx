@@ -109,18 +109,20 @@ function PaginationActions() {
       </div>
       <div>
         <div {...selectStyles.fieldWrapper}>
-          <select
-            {...selectStyles.select}
-            onChange={handleSelectChange}
-            style={{ marginTop: 'initial' }}
-          >
-            <option value="5">5 Rows</option>
-            <option value="10">10 Rows</option>
-            <option value="25">25 Rows</option>
-          </select>
-          <span {...selectStyles.iconWrapper}>
-            <ChevronDownIcon {...iconProps} />
-          </span>
+          <div {...selectStyles.selectWrapper}>
+            <select
+              {...selectStyles.select}
+              onChange={handleSelectChange}
+              style={{ marginTop: 'initial' }}
+            >
+              <option value="5">5 Rows</option>
+              <option value="10">10 Rows</option>
+              <option value="25">25 Rows</option>
+            </select>
+            <span {...selectStyles.iconWrapper}>
+              <ChevronDownIcon {...iconProps} />
+            </span>
+          </div>
         </div>
       </div>
       <div>
