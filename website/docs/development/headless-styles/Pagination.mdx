@@ -39,42 +39,67 @@ import { getPaginationProps } from '@pluralsight/headless-styles'
 
 ### Basic Pagination
 
-The `getAvatarProps` helper has two kinds to change the visual color of the avatar fallback that directly correlate to our [design-tokens](../tokens/intro.md#naming-convention). You can use `default` and `action`.
+For a simple approach to pagination using a "hybrid lazy" approach. Just use a the [Button API](./Button.mdx) to trigger your Fetch that loads more data into the page.
 
-<BasicAvatar />
-<LiveExampleTabs
-  fullCode={<BasicAvatarFullPreview />}
-  sandboxList={{
-    chakra: 'basic-avatar-react-chakra-tvxvqs',
-    joy: 'basic-avatar-mui-uv5bks',
-    styled: 'basic-avatar-css-in-js-sc-jb5imx',
-    svelte: 'basic-avatar-svelte-t60wvw',
-  }}
->
-  <BasicAvatarPreview />
-</LiveExampleTabs>
+```jsx live
+function PaginatedList() {
+  return <button {...getButtonProps().button}>Show more</button>
+}
+```
+
+:::caution
+
+**Chakra** and **MUI** do not support Pagination. We recommend using the native Headless-styles API we provide on this page.
+
+:::
 
 ### Two Button Pagination
 
-To change the size of an Avatar, use the `size` option.
-The options are: `xs`, `s`, `m` (default), `l`, and `xl`.
+For an approach similar to Github, that allows users to navigate to "newer" or "older" content. Use the default `getPaginationProps` helper.
 
-<AvatarSizes />
-<LiveExampleTabs
-  fullCode={<AvatarSizesFullPreview />}
-  sandboxList={{
-    chakra: 'basic-avatar-react-chakra-tvxvqs',
-    joy: 'basic-avatar-mui-uv5bks',
-    styled: 'basic-avatar-css-in-js-sc-jb5imx',
-    svelte: 'basic-avatar-svelte-t60wvw',
-  }}
->
-  <AvatarSizesPreview />
-</LiveExampleTabs>
+```jsx live
+function PaginationButtons() {
+  const styles = getPaginationProps()
+
+  return (
+    <div {...styles.container}>
+      <div>
+        <button {...styles.newer} data-disabled>
+          Newer
+        </button>
+        <button {...styles.older}>Older</button>
+      </div>
+    </div>
+  )
+}
+```
 
 ### Pagination Bar
 
-The DS Avatars have three different states to display to the user. Each state has a different purpose for usage and should follow the guides below.
+For an approach that allows filering, page naviation, and text information, use the `getPaginationProps` helper with the `cols` option set to the amount of information you would like to display.
+
+```jsx live
+function PaginationActions() {
+  const styles = getPaginationProps({ cols: 3 })
+
+  return (
+    <div {...styles.container}>
+      <div>
+        <small {...styles.text}>
+          <strong>1-25</strong> of 1,2345
+        </small>
+      </div>
+      <div>Search placeholder</div>
+      <div>
+        <button {...styles.newer} data-disabled>
+          Newer
+        </button>
+        <button {...styles.older}>Older</button>
+      </div>
+    </div>
+  )
+}
+```
 
 ## API
 
