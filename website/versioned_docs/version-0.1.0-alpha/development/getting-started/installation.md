@@ -10,9 +10,9 @@ title: Installation
   </p>
 </strong>
 
-Pluralsight Design is available as a set of multiple npm packages for web and our `design-tokens` package is also compatable with iOS, Swift, Android, and Kotlin.
+Pluralsight Design is available as a set of multiple npm packages for web and our `design-tokens` package is also compatible with iOS, Swift, Android, and Kotlin.
 
-Each package has a different purpose in terms of flexibility. You will _rarely_ need all of them and probably only just one or two most.
+Each package has a different purpose in terms of flexibility. You will _rarely_ need all of them and probably only just one or two at most.
 
 - **Maximum Flexibility:** use [Design Tokens](../tokens/intro.md), our foundational package that delivers our color themes and is used internally in Headless-styles.
 - **Most Flexibility:** use [Headless Styles](../headless-styles/intro.mdx), our package which delivers component styles & accessibility helpers for **any** component or UI library combination.
@@ -60,7 +60,7 @@ Our packages were developed with PS TT Commons (Pluralsight brand font) in mind.
 />
 ```
 
-Our `fonts.css` file declares both the **brand and a code font**. We are only preloading the brand font since it's the most common used font across all of our products and teams. This will help boost performance and prevent FOUC.
+Our `fonts.css` file declares both the **brand and a code font**. We are only preloading the brand font since it's the most commonly used font across all of our products and teams. This will help boost performance and prevent FOUC.
 
 Additionally, each Headless-style helper uses a [variable font](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide) property to provide all weights programmatically. **IE 11 does not support variable fonts**, so any IE users will get the sans-serif fallback.
 
