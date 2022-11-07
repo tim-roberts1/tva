@@ -299,6 +299,7 @@ function addLeadingZeroForYear(value: number, fullYearMode: boolean) {
 }
 
 function getISOFormatDate(value: string) {
+  // TODO: Figure out a way to make this feel less "stiff"
   return value.replace(/^([0-9]{2})([0-9]{2})(.*)$/, '$1/$2/$3')
 }
 
