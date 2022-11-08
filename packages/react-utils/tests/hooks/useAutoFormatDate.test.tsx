@@ -1,7 +1,7 @@
 import { render, screen, userEvent } from 'test-utils'
 import { useAutoFormatDate } from '../../src'
 
-describe('useTabs', () => {
+describe('useAutoFormatDate', () => {
   function Input() {
     const props = useAutoFormatDate()
     return (
