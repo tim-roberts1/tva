@@ -2,6 +2,7 @@ import * as flags from '../../src/featureFlags'
 
 describe('stable feature flags', () => {
   test('should be true for stable features', () => {
+    expect(flags.dateHook).toEqual(true)
     expect(flags.menu).toEqual(true)
     expect(flags.pagination).toEqual(true)
     expect(flags.preloadImgHook).toEqual(true)

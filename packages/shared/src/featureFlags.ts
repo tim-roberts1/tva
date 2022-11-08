@@ -11,6 +11,7 @@
 // like removing flag logic in public packages, etc.
 // -----------------------------------------------------------------------------
 
+export const dateHook = true
 export const menu = true
 export const modal = true
 export const pagination = true

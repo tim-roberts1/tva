@@ -9,6 +9,7 @@ import {
   getIconProps,
   getJSInputProps,
 } from '../../../src'
+import { useAutoFormatDate } from '../../../../react-utils/src/index.ts'
 
 function InputField(props) {
   const { onChange, ...options } = props
@@ -59,6 +60,24 @@ function InputField(props) {
         </span>
       )}
     </div>
+  )
+}
+
+function DateInput() {
+  const props = useAutoFormatDate()
+
+  return (
+    <InputField
+      htmlFor="birthday"
+      id="birthday"
+      onChange={props.onChange}
+      placeholder={props.placeholder}
+      name="birthday"
+      label="Birthday"
+      required
+      type="text"
+      value={props.value}
+    />
   )
 }
 
@@ -139,6 +158,7 @@ export default function Input({ logJS }) {
           type="email"
           invalid
         />
+        <DateInput />
       </div>
     </div>
   )
