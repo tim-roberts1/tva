@@ -24,7 +24,7 @@ A compact representation of metadata.
 
 ### Types
 
-- **Subdued (default):** The subdued type of Badge should be the default use, and should represent the theme’s default color theme. Use this type when listing a category or similar classification. This type should also be used when presented on an image or pattern background.
+- **Subdued (default):** The subdued type of Badge should be the default use, and should represent the theme’s default color. Use this type when listing a category or similar classification. This type should also be used when presented on an image or pattern background.
 - **Solid:** Use a solid style to represent status, e.g. Beta, Under construction, etc. Can also be used to represent the most prominent category in a group, such as a "featured" or "recommended" choice.
 - **Outline:** Outline type of Badges should be used as a low priority category indicator when presented on a page background, or when surrounded with other higher priority options.
 
