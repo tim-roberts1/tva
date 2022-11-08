@@ -9,11 +9,14 @@ A small list of multi-select options.
 
 ## Anatomy/Structure
 
-- Checkbox-group
-  - Checkbox
-    - Checkbox-target
-    - Label
-      - Optional flag
+- Container
+  - Label
+  - Checkbox-group
+    - Checkbox
+     - Checkbox-target
+      - Label
+        - Optional flag
+  - Helper text
 
 ## Usage
 
