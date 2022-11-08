@@ -12,7 +12,7 @@ title: Installation
 
 Pluralsight Design is available as a set of multiple npm packages for web and our `design-tokens` package is also compatable with iOS, Swift, Android, and Kotlin.
 
-Each package has a different purpose in terms of flexibility. You will _rarely_ need all of them and probably only just one or two most.
+Each package has a different purpose in terms of flexibility. You will _rarely_ need all of them and probably only just one or two at most.
 
 - **Maximum Flexibility:** use [Design Tokens](../tokens/intro.md), our foundational package that delivers our color themes and is used internally in Headless-styles.
 - **Most Flexibility:** use [Headless Styles](../headless-styles/intro.mdx), our package which delivers component styles & accessibility helpers for **any** component or UI library combination.
