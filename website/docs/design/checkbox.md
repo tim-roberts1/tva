@@ -34,6 +34,7 @@ A small list of multi-select options.
 - Do always provide an accompanying label and, in many cases, accompanying helper text as part of the checkbox-group as well.
 - Do always stack Checkboxes in a group to provide better scannability for the user.
 - Do not use Checkboxes as UI for showing or hiding content. Instead consider using a Switch or other control.
+- Do not include links inside of checkbox labels, they are not allowed and will not work properly. Place supplementary content adjacent to the checkbox element.
 
 ### Best practices
 
