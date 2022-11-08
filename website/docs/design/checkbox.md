@@ -24,7 +24,7 @@ A small list of multi-select options.
 - Checkbox can be used as a stand-alone option, e.g. when asking a user to agree to certain services or statements.
 - Checkboxes are used as part of a checkbox-group, and have a group Label and optional helper text assigned to them.
 - If necessary, use a Legend to provide further context to multiple groups of Checkboxes or the choices available within a group.
-- By default, in most occasions, leave all Checkboxes unchecked. A scenarios where checked-by-default make sense includes viewing preselected options in a profile.
+- By default, in most occasions, leave all Checkboxes unchecked. A scenario where checked-by-default makes sense includes viewing preselected options in a profile.
 - Labels always trail the Checkbox-target. For similar situations where the UI dictates a left-aligned label - and the option is not part of a larger, related list - consider using a switch.
 - Note that the label will be interactive and will trigger the checkbox as well, providing a larger tap target for the user.
 
