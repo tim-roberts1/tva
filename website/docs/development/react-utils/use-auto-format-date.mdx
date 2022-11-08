@@ -26,8 +26,13 @@ import { useAutoFormatDate } from '@pluralsight/react-utils'
 
 To use `useAutoFormatDate` you can either call it with no options or add the options.
 
-```javascript title="Default result"
-useAutoFormatDate()
+```typescript
+interface Options {
+  pattern?: ['m', 'd', 'Y'] | ['d', 'm', 'Y']
+  value?: string
+}
+
+useAutoFormatDate(options?: Options)
 ```
 
 This hook supports two different values for `pattern` of either `['m', 'd', 'Y']` (default) or `['d', 'm', 'Y']`.
@@ -41,9 +46,15 @@ useAutoFormatDate({
 })
 ```
 
+:::tip
+
+We recommend using [Luxon](https://moment.github.io/luxon/#/) for a verbose and light-weight Date library if you need something outside of what the native Javascript Date API provides for tasks like formatting.
+
+:::
+
 ## Return Value
 
-The `useAutoFormatDate` hook returns a placeholder string, value string, and onChange memoized callback.
+The `useAutoFormatDate` hook returns an Object with properties of `placeholder`, `value`, and an `onChange` memoized callback.
 
 ```jsx title="useAutoFormat return value"
 {
@@ -59,6 +70,7 @@ Here is an example of how you might use `useAutoFormatDate` for a form input tha
 
 ```jsx
 function DateInput(props) {
+  // highlight-next-line
   const inputFormatProps = useAutoFormateDate()
   const { fieldOptions } = getFormControlProps(props)
   const inputProps = getInputProps({
