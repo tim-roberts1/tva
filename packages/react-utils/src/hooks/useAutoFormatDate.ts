@@ -97,15 +97,11 @@ function sanitizeDate(options: SanitizeOptions) {
 
 function formatValue(value: string, formatOptions: SanitizeOptions) {
   const { blocks, pattern } = formatOptions
-  const { result, formattedValue } = getFormattedMonthDay(
-    value,
-    blocks,
-    pattern
-  )
+  const result = getFormattedMonthDay(value, blocks, pattern)
 
-  return getFixedDateString(result, {
+  return getFixedDateString({
     ...formatOptions,
-    value: formattedValue,
+    value: result,
   })
 }
 
@@ -149,13 +145,11 @@ function getFormattedMonthDay(value: string, blocks: Blocks, pattern: Pattern) {
     }
   })
 
-  return {
-    result,
-    formattedValue: value,
-  }
+  return result
 }
 
-function getFixedDateString(value: string, options: SanitizeOptions) {
+function getFixedDateString(options: SanitizeOptions) {
+  const { value } = options
   const datePattern = options.pattern
   const { date, fullYearDone } = getDateValues(value, datePattern)
 
@@ -166,7 +160,8 @@ function getFixedDateString(value: string, options: SanitizeOptions) {
           pattern: options.pattern,
           date,
           fullYearDone,
-        })
+        }),
+    datePattern
   )
 }
 
@@ -255,13 +250,13 @@ function isLeapYear(year: number) {
   return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0
 }
 
-export interface DatePatterOptions {
+export interface DatePatternOptions {
   pattern: Pattern
   date: number[]
   fullYearDone: boolean
 }
 
-function createDateFromPattern(options: DatePatterOptions) {
+function createDateFromPattern(options: DatePatternOptions) {
   const { date } = options
 
   return options.pattern.reduce((prev, current) => {
@@ -298,9 +293,24 @@ function addLeadingZeroForYear(value: number, fullYearMode: boolean) {
   return `${value < 10 ? '0' : ''}${value}`
 }
 
-function getISOFormatDate(value: string) {
-  // TODO: Figure out a way to make this feel less "stiff"
-  return value.replace(/^([0-9]{2})([0-9]{2})(.*)$/, '$1/$2/$3')
+function getISOFormatDate(value: string, pattern: Pattern) {
+  const blocks = getBlocks(pattern)
+  const delimeter = '/'
+  const first = value.slice(0, 2)
+  const second = value.slice(2, 4)
+  const last = value.slice(blocks[2])
+
+  if (value.length) {
+    if (first && !second) {
+      return `${first}${delimeter}`
+    } else if (second && !last) {
+      return `${first}${delimeter}${second}${delimeter}`
+    } else {
+      return `${first}${delimeter}${second}${delimeter}${last}`
+    }
+  }
+
+  return ''
 }
 
 function ShowInvalidOptionError() {
