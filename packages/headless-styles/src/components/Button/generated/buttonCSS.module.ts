@@ -8,7 +8,7 @@ export default {
     alignItems: 'center',
     appearance: 'none',
     border: 'none',
-    borderRadius: '22px',
+    borderRadius: '6px',
     cursor: 'pointer',
     display: 'inline-flex',
     fontFamily: 'inherit',
@@ -29,7 +29,7 @@ export default {
     verticalAlign: 'middle',
     whiteSpace: 'nowrap',
     '&:focus': {
-      outline: '3px solid var(--ps-info-border)',
+      outline: '3px solid var(--ps-action-border-focus)',
       outlineOffset: '2px',
     },
     '&:focus:not(:focus-visible)': {
@@ -104,7 +104,7 @@ export default {
     paddingInlineStart: '1.125rem',
   },
   lButton: {
-    height: '2.75rem',
+    height: '3rem',
     paddingInlineEnd: '2.156rem',
     paddingInlineStart: '2.156rem',
   },

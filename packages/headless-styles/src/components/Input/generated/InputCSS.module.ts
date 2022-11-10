@@ -10,7 +10,7 @@ export default {
   },
   inputBase: {
     appearance: 'none',
-    background: 'inherit',
+    background: 'var(--ps-surface-weak)',
     borderColor: 'var(--ps-border)',
     borderImage: 'initial',
     borderRadius: '6px',
@@ -39,7 +39,7 @@ export default {
     },
     '&:focus': {
       boxShadow: 'none',
-      outline: '3px solid var(--ps-info-border)',
+      outline: '3px solid var(--ps-action-border-focus)',
     },
     '&:focus:not(:focus-visible)': {
       boxShadow: 'none',
@@ -48,7 +48,7 @@ export default {
   },
   '': {
     '&::placeholder': {
-      color: 'var(--ps-border)',
+      color: 'var(--ps-text-weak)',
       opacity: '1',
     },
   },

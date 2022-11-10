@@ -1,6 +1,6 @@
 .textareaBase {
   appearance: none;
-  background: transparent;
+  background: var(--ps-surface-weak);
   border-color: var(--ps-border);
   border-image: initial;
   border-radius: 6px;
@@ -53,7 +53,7 @@
 
 .textareaBase:focus {
   box-shadow: none;
-  outline: 3px solid var(--ps-info-border);
+  outline: 3px solid var(--ps-action-border-focus);
   outline-offset: 2px;
 }
 

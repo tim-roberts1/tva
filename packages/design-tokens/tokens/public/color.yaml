@@ -96,6 +96,10 @@ ps:
     value: '{color.action.border.dark.value}'
     attributes:
       category: color
+  action-border-focus:
+    value: '{color.action.border-focus.dark.value}'
+    attributes:
+      category: color
   action-navigation:
     value: '{color.action.navigation.dark.value}'
     attributes:

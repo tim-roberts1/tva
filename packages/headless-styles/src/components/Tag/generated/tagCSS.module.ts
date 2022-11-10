@@ -8,8 +8,8 @@ export default {
     alignItems: 'center',
     appearance: 'none',
     backgroundColor: 'transparent',
-    border: '1px solid var(--ps-border-strong)',
-    borderRadius: '16px',
+    border: '1px solid var(--ps-border)',
+    borderRadius: '6px',
     color: 'var(--ps-action-navigation)',
     display: 'inline-flex',
     fontFamily: 'inherit',
@@ -36,7 +36,7 @@ export default {
     },
     '&:focus': {
       boxShadow: 'none',
-      outline: '3px solid var(--ps-info-border)',
+      outline: '3px solid var(--ps-action-border-focus)',
       outlineOffset: '2px',
       textDecoration: 'none',
     },
@@ -53,7 +53,6 @@ export default {
   },
   sTag: {
     composes: 'baseTag',
-    borderRadius: '12px',
     fontSize: '0.75rem',
     height: '1.5rem',
     paddingInlineEnd: '0.5rem',
