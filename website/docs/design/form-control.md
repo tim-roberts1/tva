@@ -58,7 +58,7 @@ Form control uses embedded input, textarea or select components.
 
 - Do stack form fields when displaying a set. This allows users to better scan down the list of fields.
 - Do not use a Form Control with a Select for less than 5 options. Instead, use a Radio Group.
-- Do display an asterisk on all required fields. Though potentially redundant, this helps to eliminate cognitive load for users.
+- Do display a required flag on all required fields. Though potentially redundant, this helps to eliminate cognitive load for users.
 
 ### Best practices
 
