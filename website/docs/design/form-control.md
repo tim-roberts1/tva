@@ -10,7 +10,7 @@ A combination of label, input, and caption to collect or manipulate data.
 ## Anatomy/Structure
 
 - Label
-  - Required asterisk
+  - Required flag
   - Optional flag
   - Info icon
 - Input type (text, textarea, select)
