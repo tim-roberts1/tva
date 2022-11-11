@@ -21,7 +21,7 @@ A combination of label, input, and caption to collect or manipulate data.
 Form control uses embedded input, textarea or select components.
 
 - Required fields will use an asterisk following the label text.
-- Optional fields will show "(optional)" following the label.
+- Optional fields will only include the label.
 - An info icon can be placed after the Label to trigger a tooltip explaining the Form Control in more detail.
 
 ### State
