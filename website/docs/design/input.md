@@ -80,7 +80,3 @@ Note: Required and invalid messaging will be represented in form-control.
   - Textareas will only overflow and scroll vertically as needed.
 - Resizing (textarea)
   - Textarea elements should be allowed to be resized at least vertically by the user, to allow for a larger area to enter or manipulate data. Ensure that surrounding elements or layouts will not be affected by this.
-
-## Figma usage
-
-## Feedback on this component
