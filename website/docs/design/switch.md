@@ -1,5 +1,5 @@
 ---
-tags: [toggle, form, control]
+tags: [design, toggle, form, control]
 title: Switch
 ---
 
