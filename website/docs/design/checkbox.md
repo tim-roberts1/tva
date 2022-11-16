@@ -72,6 +72,5 @@ A small list of multi-select options.
 - Checkbox labels should be clear and concise. If a full sentence is needed, keep it short (approx. 40-50 characters, or 10 words).
 - Frame labels positively, e.g. “Turn on notifications” rather than “Turn off notifications”.
 
-## Figma usage
 
 ## Feedback on this component
