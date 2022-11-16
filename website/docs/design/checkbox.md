@@ -73,4 +73,3 @@ A small list of multi-select options.
 - Frame labels positively, e.g. “Turn on notifications” rather than “Turn off notifications”.
 
 
-## Feedback on this component
