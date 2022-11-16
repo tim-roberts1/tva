@@ -50,6 +50,5 @@ A compact representation of metadata.
 - Use acronyms if possible and if they will be understood in context by users.
 - It is recommended to use a shortened version of the represented word, e.g. "Admin" for Administrator, or 'Mod" for Moderator. Use this over single letters such as "A" and "M", respectively.
 
-## Figma usage
 
 ## Feedback on this component
