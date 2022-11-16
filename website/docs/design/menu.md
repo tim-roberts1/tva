@@ -14,11 +14,7 @@ A list of interactive actions, options, or navigable locations.
      - Icon/Select
      - Label
        - Text
-       - Sublabel
      - Caret
-     - Menu-extra
-     - Heading
-     - Divider
 
 ## Usage
 
@@ -30,8 +26,6 @@ A list of interactive actions, options, or navigable locations.
 ### Best practices
 
 - When listing site sections, use leading icons for important and top-level menu items to help with scannability.
-  - Leading icons may not be necessary in all contexts. Do not repeat icons for nested menus.
-- Use menu-extras such as headings and dividers to separate logical chunks of menu-items to enhance legibility and compartmentalization for the user. Consider using dividers when utilizing sublabels.
 
 ### Dos and Don'ts
 
