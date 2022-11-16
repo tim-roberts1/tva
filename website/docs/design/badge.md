@@ -51,4 +51,3 @@ A compact representation of metadata.
 - It is recommended to use a shortened version of the represented word, e.g. "Admin" for Administrator, or 'Mod" for Moderator. Use this over single letters such as "A" and "M", respectively.
 
 
-## Feedback on this component
