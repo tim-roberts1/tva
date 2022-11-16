@@ -30,7 +30,7 @@ A set of related text-only content.
 - **Definition** (term and description pairs)
   - Used to list key/value and term/definition types of information.
 
-### Best practices
+### Best practices and use
 
 - Definition list terms can have multiple definitions, also displayed vertically in a list view.
 - Definition list descriptions can be aligned to the leading or trailing edge of the descriptions column.
