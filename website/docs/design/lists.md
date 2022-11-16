@@ -28,11 +28,12 @@ A set of related text-only content.
 - **Ordered** (numbered)
   - Used to list items when an inherent order, priority, or sequence needs to be communicated
 - **Definition** (term and description pairs)
-
   - Used to list key/value and term/definition types of information.
 
+### Best practices
+
 - Definition list terms can have multiple definitions, also displayed vertically in a list view.
-  - Definition list descriptions can be aligned to the leading or trailing edge of the descriptions column.
+- Definition list descriptions can be aligned to the leading or trailing edge of the descriptions column.
 - Unordered and ordered lists can be nested, but should be limited to one nested level.
 - Unordered list bullets (when displayed) will size according to the list content font-size. Bullets will be approximately 50% of the font-size value (though this may vary by browser and/or platform, as this is using the native browser bullet sizing).
 
