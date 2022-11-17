@@ -49,5 +49,3 @@ A compact representation of metadata.
 - Badge text should be one word in most cases, if possible. If multiple words are needed, ensure that the shortest possible combination is used.
 - Use acronyms if possible and if they will be understood in context by users.
 - It is recommended to use a shortened version of the represented word, e.g. "Admin" for Administrator, or 'Mod" for Moderator. Use this over single letters such as "A" and "M", respectively.
-
-
