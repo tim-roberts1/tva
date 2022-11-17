@@ -13,9 +13,9 @@ A small list of multi-select options.
   - Label
   - Checkbox-group
     - Checkbox
-     - Checkbox-target
-      - Label
-        - Optional flag
+    - Checkbox-target
+    - Label
+      - Optional flag
   - Helper text
 
 ## Usage
@@ -71,5 +71,3 @@ A small list of multi-select options.
 
 - Checkbox labels should be clear and concise. If a full sentence is needed, keep it short (approx. 40-50 characters, or 10 words).
 - Frame labels positively, e.g. “Turn on notifications” rather than “Turn off notifications”.
-
-
