@@ -9,18 +9,18 @@ title: Migration
   </p>
 </strong>
 
-Any major release or new framework has its breaking changes and PD isn't an exception. However, since this is a completely different design it should be easy to transition on your own terms - no matter the size or complexity of your project. To make this process more efficient we've listed the recommended migrations steps, along with solutions for the most common problems you might face.
+Any major release or new framework has its breaking changes and PD isn't an exception. However, since this is a completely different design it should be easy to transition on your own terms—no matter the size or complexity of your project. To make this process more efficient, we've listed the recommended migration steps, along with solutions for the most common problems you might face.
 
 ## Why should you migrate?
 
-In a few words, upgrading to PD is critical to a fast and stable UI experience. Numerous bugs are naturally fixed since Classic, and we no longer expect to build new features in it. **Even if you don't plan to use the entire PD suite** your projects will still get benefits from the upgrade.
+In a few words, upgrading to PD is critical to a fast and stable UI experience. Numerous bugs are naturally fixed since Classic, and we no longer expect to build new features in it. **Even if you don't plan to use the entire PD suite**, your projects will still get benefits from the upgrade.
 
-- Small components (Button, etc.) will provide an improved experience to both your projects and customer experiences
-- A renewed focus on accessbility, performance, and good practices
+- Small style helpers (Button, etc.) will provide an improved experience to both your projects and customer experiences
+- A renewed focus on accessbility, performance, and best practices
 - Improved user experience for various projects (scalable APIs)
-- New capabilities (can work with any tech stack so you can pivot easier)
+- New capabilities (can work with any tech stack, so you can pivot easier)
 
-And of course a very active and safe development cycle.
+... And of course a very active and safe development cycle.
 
 ## Step by step
 
@@ -32,11 +32,11 @@ Don't worry if your team or project isn't quite ready for the full PD takeover j
 
 The biggest benefit of PD is that it _only owns styles and accessbility_ and _is not a component library_ which means you can scale or customize to whatever your situation/features may require.
 
-Below we'll look at migrating the Button component which will be the same pattern you can use for all the PD use cases.
+Below we'll look at migrating the Button component, which will be the same pattern you can use for all the PD use cases.
 
 ### Step 0 - Add the setup
 
-To make sure we get the intended visual result of Headless-styles, replace the Classic font/normalize with our **new** font and normalize setup in your project HTML `head`:
+To make sure we get the intended visual result of Headless Styles, replace the Classic font/normalize with our **new** font and normalize setup in your project HTML `head`:
 
 :::note
 
@@ -87,11 +87,11 @@ All of our packages are lightweight because they don't rely on a laundry list of
 
 ### Step 2 - Create
 
-Since Headless-styles is not a component library, you will create a new Button component in your project. This will allow you to have full control of your implementation while PD provides the styles and accessibility needs.
+Since Headless Styles is not a component library, you will create a new Button component in your project. This will allow you to have full control of your implementation while PD provides the styles and accessibility needs.
 
 :::tip
 
-It is considered a React/Component best practice to create components with a **single responsibility**. An example would be to create an "EditButton" or "CancelButton". This helps to create a component which **by nature will have less risk of bugs and code impact.**
+It is considered a React/Component best practice to create components with a **single responsibility**. An example would be to create an "EditButton" or "CancelButton." This helps to create a component which **by nature will have less risk of bugs and code impact.**
 
 :::
 
@@ -230,11 +230,11 @@ Headless Styles delivers a multi-theme experience by default. To learn more abou
 
 ### Migrate slowly
 
-At the end of the day, all migration is tech-debt. Don't overwhelm yourself or your team by approaching a mass migration unless you have too.
+At the end of the day, all migration is tech-debt. Don't overwhelm yourself or your team by approaching a mass migration unless you have to.
 
-**We recommend creating a new branch and if possible, slowly migrate each component when you are able to make time** without forcing a frankenstiened Classic/v2 experience which will just cause more issues.
+**We recommend creating a new branch and if possible, slowly migrate each component when you are able to make time** without forcing a Frankensteined Classic/v2 experience which will just cause more issues.
 
-For example, here is a possible work-flow within a real world scenario:
+For example, here is a possible workflow within a real world scenario:
 
 #### Sprint 1
 
@@ -256,11 +256,11 @@ For example, here is a possible work-flow within a real world scenario:
 
 Every project is different and part of the biggest benefit of PD is the flexibility. All of our docs will provide examples for our packages but only **your team** knows what is best migration path for your project.
 
-When your team is preparing for your migration, use our examples as that - examples - and do what makes the most sense in your project (for maintainability and scalability).
+When your team is preparing for your migration, use our examples as that—examples—and do what makes the most sense in your project (for maintainability and scalability).
 
 :::tip
 
-Only use 3rd-party libraries with Headless Styles if you are _already using them_. Adding an additional library to Headless Styles as a choice only creates more work for your team and doesn't guarantee a fully accessbile and performant UI (which our native API does).
+Only use 3rd-party libraries with Headless Styles if you are _already using them_. Adding an additional library to Headless Styles as a choice only creates more work for your team and doesn't guarantee a fully accessbile and performant UI (our native API does).
 
 :::
 
