@@ -2,6 +2,7 @@ import { render, screen, userEvent } from 'test-utils'
 import { useTheme } from '../../src'
 
 describe('useTheme', () => {
+  // Todo: getting act warnings
   beforeEach(() => {
     localStorage.clear()
   })
@@ -67,5 +68,45 @@ describe('useTheme', () => {
     document.documentElement.setAttribute('ps-theme', 'invalid')
     render(<TestComponent />)
     expect(document.documentElement).toHaveAttribute('ps-theme', 'light')
+  })
+
+  test('should be dark theme if the useTheme hook is provided an inital value of dark', () => {
+    const TestComponent = () => {
+      const { theme } = useTheme('dark')
+      return (
+        <div>
+          <div data-testid="theme">{theme}</div>
+        </div>
+      )
+    }
+    render(<TestComponent />)
+    expect(screen.getByTestId('theme')).toHaveTextContent('dark')
+  })
+
+  test('should be light theme if the useTheme hook is provided an inital value of light', () => {
+    const TestComponent = () => {
+      const { theme } = useTheme('light')
+      return (
+        <div>
+          <div data-testid="theme">{theme}</div>
+        </div>
+      )
+    }
+    render(<TestComponent />)
+    expect(screen.getByTestId('theme')).toHaveTextContent('light')
+  })
+
+  test('should be light theme if the useTheme hook is provided an inital value that is invalid', () => {
+    const TestComponent = () => {
+      // @ts-expect-error
+      const { theme } = useTheme('invalid')
+      return (
+        <div>
+          <div data-testid="theme">{theme}</div>
+        </div>
+      )
+    }
+    render(<TestComponent />)
+    expect(screen.getByTestId('theme')).toHaveTextContent('light')
   })
 })
