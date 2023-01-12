@@ -7,6 +7,7 @@ export default {
   defaultFormLabel: {
     display: 'block',
     fontFamily: 'inherit',
+    fontSize: '1rem',
     marginBottom: '0',
     marginInlineEnd: '0',
     opacity: '1',
