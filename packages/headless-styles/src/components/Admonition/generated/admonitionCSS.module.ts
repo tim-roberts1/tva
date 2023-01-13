@@ -3,6 +3,8 @@
 //
 // Manual changes will be lost - proceed with caution!
 
+import type { GeneratedStyles } from '../../../utils/types'
+
 export default {
   admonitionWrapper: {
     alignItems: 'flex-start',
@@ -198,4 +200,4 @@ export default {
     flexDirection: 'column',
     color: 'var(--ps-danger-text)',
   },
-}
+} satisfies GeneratedStyles

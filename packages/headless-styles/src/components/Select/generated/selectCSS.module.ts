@@ -3,6 +3,7 @@
 //
 // Manual changes will be lost - proceed with caution!
 
+import type { GeneratedStyles } from '../../../utils/types'
 import inputCSS from '../../Input/generated/inputCSS.module'
 
 export default {
@@ -33,4 +34,4 @@ export default {
     ...inputCSS.lInputBase,
     paddingInlineEnd: '2.25rem',
   },
-}
+} satisfies GeneratedStyles

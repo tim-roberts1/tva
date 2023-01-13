@@ -3,6 +3,8 @@
 //
 // Manual changes will be lost - proceed with caution!
 
+import type { GeneratedStyles } from '../../../utils/types'
+
 export default {
   topPosition: {
     bottom: '100%',
@@ -232,4 +234,4 @@ export default {
       transform: 'translateX(-0.5em) rotateZ(45deg)',
     },
   },
-}
+} satisfies GeneratedStyles
