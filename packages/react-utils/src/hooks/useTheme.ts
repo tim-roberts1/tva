@@ -1,42 +1,22 @@
 import { useEffect, useState, useCallback } from 'react'
-import { isThemeValid } from '../hooks/menu/utils'
 
-const cachedTheme = localStorage.getItem('ps-theme')
+const THEME_KEY = 'data-theme'
+const cachedTheme = localStorage.getItem(THEME_KEY)
 
-export function useTheme(preferredTheme?: 'light' | 'dark') {
-  const themes = {
-    light: 'light',
-    dark: 'dark',
-  }
+type Themes = 'light' | 'dark'
 
-  const getInitialTheme = () => {
-    if (
-      preferredTheme &&
-      isThemeValid(preferredTheme) &&
-      cachedTheme === null
-    ) {
-      return themes[preferredTheme]
-    }
-    return cachedTheme || themes.light
-  }
-
-  const initialTheme = getInitialTheme()
-  const [theme, setTheme] = useState(initialTheme)
-  const { documentElement } = document
-
-  if (documentElement.getAttribute('ps-theme') === null && theme !== null) {
-    documentElement.setAttribute('ps-theme', theme)
-  }
+export function useTheme(preferredTheme?: Themes) {
+  const [theme, setTheme] = useState(cachedTheme ?? preferredTheme)
 
   useEffect(() => {
-    if (isThemeValid(theme)) {
-      document.documentElement.setAttribute('ps-theme', theme)
-      localStorage.setItem('ps-theme', theme)
+    if (theme) {
+      document.documentElement.setAttribute(THEME_KEY, theme)
+      localStorage.setItem(THEME_KEY, theme)
     }
   }, [theme])
 
   const toggleTheme = useCallback(() => {
-    setTheme((prev: string) => {
+    setTheme((prev) => {
       if (prev === 'dark') {
         return 'light'
       }
