@@ -36,11 +36,3 @@ export function elementInMenu(
     element && (menuElement?.contains(element) || element === triggerElement)
   )
 }
-
-export const isThemeValid = (theme: string) => {
-  return !!(
-    (theme === 'dark' || theme === 'light') &&
-    theme !== null &&
-    theme !== undefined
-  )
-}
