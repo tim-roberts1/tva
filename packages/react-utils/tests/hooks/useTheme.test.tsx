@@ -2,7 +2,6 @@ import { render, screen, userEvent } from 'test-utils'
 import { useTheme } from '../../src'
 
 describe('useTheme', () => {
-  // Todo: getting act warnings
   beforeEach(() => {
     localStorage.clear()
   })
