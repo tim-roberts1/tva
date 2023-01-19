@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState, useCallback, useMemo } from 'react'
 
 const THEME_KEY = 'data-theme'
 const cachedTheme = localStorage.getItem(THEME_KEY)
@@ -6,7 +6,7 @@ const cachedTheme = localStorage.getItem(THEME_KEY)
 type Themes = 'light' | 'dark'
 
 export function useTheme(preferredTheme?: Themes) {
-  const [theme, setTheme] = useState(cachedTheme ?? preferredTheme)
+  const [theme, setTheme] = useState(() => cachedTheme ?? preferredTheme)
 
   useEffect(() => {
     if (theme) {
@@ -24,5 +24,11 @@ export function useTheme(preferredTheme?: Themes) {
     })
   }, [])
 
-  return { theme, toggleTheme }
+  return useMemo(
+    () => ({
+      theme,
+      toggleTheme,
+    }),
+    [theme, toggleTheme]
+  )
 }
