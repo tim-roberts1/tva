@@ -1,4 +1,4 @@
-import { render, screen, userEvent } from 'test-utils'
+import { render, screen, userEvent, waitFor } from 'test-utils'
 import { useTheme } from '../../src'
 
 describe('useTheme', () => {
@@ -28,28 +28,28 @@ describe('useTheme', () => {
 
   test('should set the theme to dark', async () => {
     const { user, button } = setup()
-    await user.click(button)
+    await waitFor(() => user.click(button))
     expect(document.documentElement).toHaveAttribute(KEY, 'dark')
   })
 
   test('should set the theme back to light when it is already set to dark', async () => {
     const { user, button } = setup()
-    await user.click(button)
-    await user.click(button)
+    await waitFor(() => user.click(button))
+    await waitFor(() => user.click(button))
     expect(document.documentElement).toHaveAttribute(KEY, 'light')
   })
 
   test('should persist the theme in local storage when it is changed to dark', async () => {
     const { user, button } = setup()
-    await user.click(button)
+    await waitFor(() => user.click(button))
     expect(localStorage.getItem(KEY)).toBe('dark')
     expect(document.documentElement).toHaveAttribute(KEY, 'dark')
   })
 
   test('should persist the theme in local storage when it is changed to light', async () => {
     const { user, button } = setup()
-    await user.click(button)
-    await user.click(button)
+    await waitFor(() => user.click(button))
+    await waitFor(() => user.click(button))
     expect(localStorage.getItem(KEY)).toBe('light')
     expect(document.documentElement).toHaveAttribute(KEY, 'light')
   })
