@@ -30,11 +30,16 @@ export default {
     textAlign: 'start',
   },
   bodyCell: {
-    composes: 'headCell',
     backgroundColor: 'var(--ps-surface-weak)',
     borderBottom: 'none',
+    fontSize: '0.875rem',
     fontVariationSettings: "'wght' 500",
     fontWeight: '500',
+    paddingBottom: '0.875rem',
+    paddingInlineEnd: '1rem',
+    paddingInlineStart: '1rem',
+    paddingTop: '0.875rem',
+    textAlign: 'start',
   },
   tableRow: {
     '&:hover .bodyCell': {

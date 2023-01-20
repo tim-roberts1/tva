@@ -10,7 +10,8 @@
 
 .sSize,
 .xsSize {
-  composes: bar;
+  background-color: var(--ps-text-strong);
+  width: 0;
 }
 
 .wrapper {
@@ -25,6 +26,10 @@
 
 .inset {
   border-radius: initial;
+}
+
+.sSize{
+  height: 0.5rem;
 }
 
 .xsSize {

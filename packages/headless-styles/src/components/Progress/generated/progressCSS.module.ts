@@ -13,10 +13,13 @@ export default {
     borderRadius: '20px',
   },
   sSize: {
-    composes: 'bar',
+    backgroundColor: 'var(--ps-text-strong)',
+    width: '0',
+    height: '0.5rem',
   },
   xsSize: {
-    composes: 'bar',
+    backgroundColor: 'var(--ps-text-strong)',
+    width: '0',
     height: '0.25rem',
   },
   wrapper: {

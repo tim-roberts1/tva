@@ -3,9 +3,12 @@
 //
 // Manual changes will be lost - proceed with caution!
 
+import inputCSS from '../../Input/generated/inputCSS.module'
+import { extract } from '../../../utils/helpers'
+
 export default {
   textareaBase: {
-    composes: "defaultInput from '../Input/inputCSS.module.css'",
+    ...inputCSS.defaultInput,
     height: '5rem',
     lineHeight: 'inherit',
     minHeight: '5rem',
@@ -18,45 +21,228 @@ export default {
     transitionProperty: 'border, box-shadow, outline',
     verticalAlign: 'top',
     '&:active': {
+      ...extract(inputCSS.defaultInput, '&:active'),
       boxShadow: 'none',
       outline: 'none',
     },
     '&:hover': {
+      ...extract(inputCSS.defaultInput, '&:hover'),
       boxShadow: 'var(--ps-border-strong) 0 0 0 1px',
     },
     '&:focus': {
+      ...extract(inputCSS.defaultInput, '&:focus'),
       boxShadow: 'none',
       outline: '3px solid var(--ps-action-border-focus)',
       outlineOffset: '2px',
     },
     '&:focus:not(:focus-visible)': {
+      ...extract(inputCSS.defaultInput, '&:focus:not(:focus-visible)'),
       boxShadow: 'none',
       outline: 'none',
     },
     "&[data-disabled='true']": {
+      ...extract(inputCSS.defaultInput, "&[data-disabled='true']"),
       cursor: 'not-allowed',
     },
     "&[data-invalid='true']": {
+      ...extract(inputCSS.defaultInput, "&[data-invalid='true']"),
       borderColor: 'var(--ps-danger-border)',
       boxShadow: 'var(--ps-danger-border) 0 0 0 2px',
     },
     "&[data-readonly='true']": {
+      ...extract(inputCSS.defaultInput, "&[data-readonly='true']"),
       cursor: 'not-allowed',
     },
   },
   initialTextarea: {
-    composes: 'textareaBase',
+    ...inputCSS.defaultInput,
+    height: '5rem',
+    lineHeight: 'inherit',
+    minHeight: '5rem',
+    minWidth: '0',
+    paddingBottom: '8px',
+    paddingInlineStart: '1rem',
+    paddingInlineEnd: '1rem',
+    paddingTop: '8px',
+    position: 'relative',
+    transitionProperty: 'border, box-shadow, outline',
+    verticalAlign: 'top',
+    '&:active': {
+      ...extract(inputCSS.defaultInput, '&:active'),
+      boxShadow: 'none',
+      outline: 'none',
+    },
+    '&:hover': {
+      ...extract(inputCSS.defaultInput, '&:hover'),
+      boxShadow: 'var(--ps-border-strong) 0 0 0 1px',
+    },
+    '&:focus': {
+      ...extract(inputCSS.defaultInput, '&:focus'),
+      boxShadow: 'none',
+      outline: '3px solid var(--ps-action-border-focus)',
+      outlineOffset: '2px',
+    },
+    '&:focus:not(:focus-visible)': {
+      ...extract(inputCSS.defaultInput, '&:focus:not(:focus-visible)'),
+      boxShadow: 'none',
+      outline: 'none',
+    },
+    "&[data-disabled='true']": {
+      ...extract(inputCSS.defaultInput, "&[data-disabled='true']"),
+      cursor: 'not-allowed',
+    },
+    "&[data-invalid='true']": {
+      ...extract(inputCSS.defaultInput, "&[data-invalid='true']"),
+      borderColor: 'var(--ps-danger-border)',
+      boxShadow: 'var(--ps-danger-border) 0 0 0 2px',
+    },
+    "&[data-readonly='true']": {
+      ...extract(inputCSS.defaultInput, "&[data-readonly='true']"),
+      cursor: 'not-allowed',
+    },
   },
   noneTextarea: {
-    composes: 'textareaBase',
+    ...inputCSS.defaultInput,
+    height: '5rem',
+    lineHeight: 'inherit',
+    minHeight: '5rem',
+    minWidth: '0',
+    paddingBottom: '8px',
+    paddingInlineStart: '1rem',
+    paddingInlineEnd: '1rem',
+    paddingTop: '8px',
+    position: 'relative',
+    transitionProperty: 'border, box-shadow, outline',
+    verticalAlign: 'top',
+    '&:active': {
+      ...extract(inputCSS.defaultInput, '&:active'),
+      boxShadow: 'none',
+      outline: 'none',
+    },
+    '&:hover': {
+      ...extract(inputCSS.defaultInput, '&:hover'),
+      boxShadow: 'var(--ps-border-strong) 0 0 0 1px',
+    },
+    '&:focus': {
+      ...extract(inputCSS.defaultInput, '&:focus'),
+      boxShadow: 'none',
+      outline: '3px solid var(--ps-action-border-focus)',
+      outlineOffset: '2px',
+    },
+    '&:focus:not(:focus-visible)': {
+      ...extract(inputCSS.defaultInput, '&:focus:not(:focus-visible)'),
+      boxShadow: 'none',
+      outline: 'none',
+    },
+    "&[data-disabled='true']": {
+      ...extract(inputCSS.defaultInput, "&[data-disabled='true']"),
+      cursor: 'not-allowed',
+    },
+    "&[data-invalid='true']": {
+      ...extract(inputCSS.defaultInput, "&[data-invalid='true']"),
+      borderColor: 'var(--ps-danger-border)',
+      boxShadow: 'var(--ps-danger-border) 0 0 0 2px',
+    },
+    "&[data-readonly='true']": {
+      ...extract(inputCSS.defaultInput, "&[data-readonly='true']"),
+      cursor: 'not-allowed',
+    },
     resize: 'none',
   },
   horizontalTextarea: {
-    composes: 'textareaBase',
+    ...inputCSS.defaultInput,
+    height: '5rem',
+    lineHeight: 'inherit',
+    minHeight: '5rem',
+    minWidth: '0',
+    paddingBottom: '8px',
+    paddingInlineStart: '1rem',
+    paddingInlineEnd: '1rem',
+    paddingTop: '8px',
+    position: 'relative',
+    transitionProperty: 'border, box-shadow, outline',
+    verticalAlign: 'top',
+    '&:active': {
+      ...extract(inputCSS.defaultInput, '&:active'),
+      boxShadow: 'none',
+      outline: 'none',
+    },
+    '&:hover': {
+      ...extract(inputCSS.defaultInput, '&:hover'),
+      boxShadow: 'var(--ps-border-strong) 0 0 0 1px',
+    },
+    '&:focus': {
+      ...extract(inputCSS.defaultInput, '&:focus'),
+      boxShadow: 'none',
+      outline: '3px solid var(--ps-action-border-focus)',
+      outlineOffset: '2px',
+    },
+    '&:focus:not(:focus-visible)': {
+      ...extract(inputCSS.defaultInput, '&:focus:not(:focus-visible)'),
+      boxShadow: 'none',
+      outline: 'none',
+    },
+    "&[data-disabled='true']": {
+      ...extract(inputCSS.defaultInput, "&[data-disabled='true']"),
+      cursor: 'not-allowed',
+    },
+    "&[data-invalid='true']": {
+      ...extract(inputCSS.defaultInput, "&[data-invalid='true']"),
+      borderColor: 'var(--ps-danger-border)',
+      boxShadow: 'var(--ps-danger-border) 0 0 0 2px',
+    },
+    "&[data-readonly='true']": {
+      ...extract(inputCSS.defaultInput, "&[data-readonly='true']"),
+      cursor: 'not-allowed',
+    },
     resize: 'horizontal',
   },
   verticalTextarea: {
-    composes: 'textareaBase',
+    ...inputCSS.defaultInput,
+    height: '5rem',
+    lineHeight: 'inherit',
+    minHeight: '5rem',
+    minWidth: '0',
+    paddingBottom: '8px',
+    paddingInlineStart: '1rem',
+    paddingInlineEnd: '1rem',
+    paddingTop: '8px',
+    position: 'relative',
+    transitionProperty: 'border, box-shadow, outline',
+    verticalAlign: 'top',
+    '&:active': {
+      ...extract(inputCSS.defaultInput, '&:active'),
+      boxShadow: 'none',
+      outline: 'none',
+    },
+    '&:hover': {
+      ...extract(inputCSS.defaultInput, '&:hover'),
+      boxShadow: 'var(--ps-border-strong) 0 0 0 1px',
+    },
+    '&:focus': {
+      ...extract(inputCSS.defaultInput, '&:focus'),
+      boxShadow: 'none',
+      outline: '3px solid var(--ps-action-border-focus)',
+      outlineOffset: '2px',
+    },
+    '&:focus:not(:focus-visible)': {
+      ...extract(inputCSS.defaultInput, '&:focus:not(:focus-visible)'),
+      boxShadow: 'none',
+      outline: 'none',
+    },
+    "&[data-disabled='true']": {
+      ...extract(inputCSS.defaultInput, "&[data-disabled='true']"),
+      cursor: 'not-allowed',
+    },
+    "&[data-invalid='true']": {
+      ...extract(inputCSS.defaultInput, "&[data-invalid='true']"),
+      borderColor: 'var(--ps-danger-border)',
+      boxShadow: 'var(--ps-danger-border) 0 0 0 2px',
+    },
+    "&[data-readonly='true']": {
+      ...extract(inputCSS.defaultInput, "&[data-readonly='true']"),
+      cursor: 'not-allowed',
+    },
     resize: 'vertical',
   },
   textareaBase_data_disabled__true: {
