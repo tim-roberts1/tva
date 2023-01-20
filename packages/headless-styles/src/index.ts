@@ -71,7 +71,7 @@ export { getSwitchProps } from './components/Switch/switchCSS'
 export { getJSSwitchProps } from './components/Switch/switchJS'
 
 export { getTabsProps } from './components/Tabs/tabsCSS'
-export { getJSTabsProps } from './components/Tabs/tabJS'
+export { getJSTabsProps } from './components/Tabs/tabsJS'
 
 export { getTableProps } from './components/Table/tableCSS'
 export { getJSTableProps } from './components/Table/tableJS'
