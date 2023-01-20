@@ -7,16 +7,16 @@ export default {
   keyframesLoading: {
     '@keyframes loading': {
       '0%': {
-        'stroke-dasharray': '1, 400',
-        'stroke-dashoffset': '0',
+        strokeDasharray: '1, 400',
+        strokeDashoffset: '0',
       },
       '50%': {
-        'stroke-dasharray': '400, 400',
-        'stroke-dashoffset': '-100',
+        strokeDasharray: '400, 400',
+        strokeDashoffset: '-100',
       },
       '100%': {
-        'stroke-dasharray': '400, 400',
-        'stroke-dashoffset': '-260',
+        strokeDasharray: '400, 400',
+        strokeDashoffset: '-260',
       },
     },
   },
@@ -63,7 +63,8 @@ export default {
     width: '100%',
   },
   determinate: {
-    composes: 'box',
+    height: '3rem',
+    width: '3rem',
   },
   indeterminate_box: {
     animationDirection: 'normal',
@@ -84,10 +85,10 @@ export default {
     animationTimingFunction: 'linear',
   },
   mSize: {
-    composes: 'box',
+    height: '3rem',
+    width: '3rem',
   },
   xsSize: {
-    composes: 'box',
     height: '1.25rem',
     width: '1.25rem',
   },

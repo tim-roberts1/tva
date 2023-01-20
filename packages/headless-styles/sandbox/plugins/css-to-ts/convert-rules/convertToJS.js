@@ -52,15 +52,53 @@ const convertRules = (rules, res = {}) => {
   return result
 }
 
-const convertToJS = (input) => {
+export default function convertToJS(input) {
   // Parse CSS string into rules array
   try {
     const parsedCss = css.parse(input)
     const { rules } = parsedCss.stylesheet
-    return convertRules(rules)
+    const initial = convertRules(rules)
+
+    return applyCompositions(initial)
   } catch (err) {
     throw new Error(`Invalid CSS input: ${err}`)
   }
 }
 
-export default convertToJS
+function applyCompositions(obj) {
+  for (const [className, value] of Object.entries(obj)) {
+    if (typeof value !== 'object') {
+      obj[className] = value
+      continue
+    }
+    const { composes, ...overrides } = value
+    obj[className] = {}
+    if (composes) {
+      if (composes in obj) {
+        deepMerge(obj[className], obj[composes])
+      } else if (composes.includes(' from ')) {
+        // Ignore here, will be appended in later step
+        deepMerge(obj[className], value)
+      } else {
+        composes.split(/\s+/).forEach((otherKey) => {
+          deepMerge(obj[className], obj[otherKey])
+        })
+      }
+    }
+    deepMerge(obj[className], overrides)
+  }
+  return obj
+}
+
+function deepMerge(source, target) {
+  for (const [key, value] of Object.entries(target)) {
+    // Overwrite primitive values, merge objects together
+    if (key in source && typeof value === 'object') {
+      deepMerge(source[key], deepMerge)
+    } else if (typeof value === 'object') {
+      source[key] = { ...value }
+    } else {
+      source[key] = value
+    }
+  }
+}

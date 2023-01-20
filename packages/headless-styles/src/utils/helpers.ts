@@ -1,6 +1,7 @@
 import type { FieldStates } from '../components/types'
 import type {
   CSSObj,
+  ExtractedObject,
   NestedGeneratedStyles,
   NestedStyleValue,
   Syntax,
@@ -27,12 +28,15 @@ function transformValue(style: NestedStyleValue) {
     return `${style.trim()};`
   }
 
-  const psuedoStyles = Object.keys(style).reduce((prev, current) => {
-    return `
+  const psuedoStyles = Object.entries(style).reduce(
+    (prev, [current, currentValue]) => {
+      return `
       ${prev.trim()}
-      ${kebabCase(current)}: ${style[current]};
+      ${kebabCase(current)}: ${currentValue};
     `
-  }, ``)
+    },
+    ``
+  )
 
   return `{${psuedoStyles}}`
 }
@@ -54,8 +58,8 @@ export function createA11yProps(options: FieldStates) {
   }
 }
 
-export function createClassNameProp(className: string) {
-  return { className }
+export function createClassNameProp(...classNames: string[]) {
+  return { className: classNames.join(' ') }
 }
 
 export function createJSProps(styles: NestedGeneratedStyles) {
@@ -76,9 +80,20 @@ export function transformStyles(styleObject: NestedGeneratedStyles) {
 
       return `
       ${prev.trim()}
-      ${propName} ${transformValue(currentValue as NestedStyleValue)}
+      ${propName} ${transformValue(currentValue)}
     `
     }, '')
     .trim()
     .replace(/^ {2,12}/gm, '') as unknown as TemplateStringsArray
+}
+
+export function extract<
+  T extends Record<string, unknown>,
+  Property extends string
+>(obj: T, property: Property) {
+  if (property in obj && typeof obj === 'object') {
+    return obj[property] as ExtractedObject<T, Property>
+  }
+
+  return {} as ExtractedObject<T, Property>
 }

@@ -20757,9 +20757,11 @@ __metadata:
     "@pluralsight/react-utils": next
     "@tanstack/react-router": beta
     "@tanstack/react-router-devtools": beta
+    "@types/prettier": ^2
     "@types/react-table": ^7
     "@vitejs/plugin-react": ^1.0.7
     css: latest
+    prettier: ^2.7.1
     react: 18.2.0
     react-dom: 18.2.0
     react-table: ^7.8.0

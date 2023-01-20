@@ -3,6 +3,9 @@
 //
 // Manual changes will be lost - proceed with caution!
 
+import buttonCSS from '../../Button/generated/buttonCSS.module'
+import { extract } from '../../../utils/helpers'
+
 export default {
   paginationContainer: {
     alignItems: 'center',
@@ -15,7 +18,7 @@ export default {
     width: '100%',
   },
   paginationBtn: {
-    composes: "btnBase from '../Button/buttonCSS.module.css'",
+    ...buttonCSS.btnBase,
     backgroundColor: 'var(--ps-background)',
     borderRadius: '6px',
     color: 'var(--ps-text)',
@@ -24,22 +27,67 @@ export default {
     paddingInlineEnd: '1rem',
     paddingInlineStart: '1rem',
     '&:hover': {
+      ...extract(buttonCSS.btnBase, '&:hover'),
       backgroundColor: 'var(--ps-background-hover)',
     },
     '&:focus': {
+      ...extract(buttonCSS.btnBase, '&:focus'),
       outline: '3px solid var(--ps-action-border-focus)',
       outlineOffset: '2px',
     },
     '&:focus:not(:focus-visible)': {
+      ...extract(buttonCSS.btnBase, '&:focus:not(:focus-visible)'),
       boxShadow: 'none',
       outline: 'none',
     },
   },
   paginationNewer: {
-    composes: 'paginationBtn',
+    ...buttonCSS.btnBase,
+    backgroundColor: 'var(--ps-background)',
+    borderRadius: '6px',
+    color: 'var(--ps-text)',
+    height: '2rem',
+    minWidth: 'initial',
+    paddingInlineEnd: '1rem',
+    paddingInlineStart: '1rem',
+    '&:hover': {
+      ...extract(buttonCSS.btnBase, '&:hover'),
+      backgroundColor: 'var(--ps-background-hover)',
+    },
+    '&:focus': {
+      ...extract(buttonCSS.btnBase, '&:focus'),
+      outline: '3px solid var(--ps-action-border-focus)',
+      outlineOffset: '2px',
+    },
+    '&:focus:not(:focus-visible)': {
+      ...extract(buttonCSS.btnBase, '&:focus:not(:focus-visible)'),
+      boxShadow: 'none',
+      outline: 'none',
+    },
   },
   paginationOlder: {
-    composes: 'paginationBtn',
+    ...buttonCSS.btnBase,
+    backgroundColor: 'var(--ps-background)',
+    borderRadius: '6px',
+    color: 'var(--ps-text)',
+    height: '2rem',
+    minWidth: 'initial',
+    paddingInlineEnd: '1rem',
+    paddingInlineStart: '1rem',
+    '&:hover': {
+      ...extract(buttonCSS.btnBase, '&:hover'),
+      backgroundColor: 'var(--ps-background-hover)',
+    },
+    '&:focus': {
+      ...extract(buttonCSS.btnBase, '&:focus'),
+      outline: '3px solid var(--ps-action-border-focus)',
+      outlineOffset: '2px',
+    },
+    '&:focus:not(:focus-visible)': {
+      ...extract(buttonCSS.btnBase, '&:focus:not(:focus-visible)'),
+      boxShadow: 'none',
+      outline: 'none',
+    },
     marginLeft: '0.5rem',
   },
   paginationText: {
