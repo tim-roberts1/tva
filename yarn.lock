@@ -6587,11 +6587,11 @@ __metadata:
   linkType: soft
 
 "@pluralsight/headless-styles@npm:next":
-  version: 0.3.1-rc-e4b9de
-  resolution: "@pluralsight/headless-styles@npm:0.3.1-rc-e4b9de"
+  version: 0.3.1-rc-8fbb74
+  resolution: "@pluralsight/headless-styles@npm:0.3.1-rc-8fbb74"
   dependencies:
     tslib: latest
-  checksum: fcde7ae90936f5af13d09e266b2e839c19db45df52f2511e9e04b827121fa527bca0ca2986228981a702058449f48c73c18977344bcba2e3edfa7b2df4df2de6
+  checksum: a37962b393ac283cbc1f1eee8327ac75042b0b15c5fd022a23138b2b5fcebbedb3decb041736622dc9bf61d7b3dda445a9bb57798f2a1a8dbc523d450a9cda9e
   languageName: node
   linkType: hard
 
