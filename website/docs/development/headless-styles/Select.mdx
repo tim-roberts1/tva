@@ -36,7 +36,10 @@ The `getSelectProps` helper is used to allow the user to select from one of a li
 ## Import
 
 ```javascript
-import { getSelectProps } from '@pluralsight/headless-styles'
+import {
+  getSelectProps,
+  getSelectOptionProps,
+} from '@pluralsight/headless-styles'
 ```
 
 ## Usage
@@ -81,8 +84,8 @@ A Select should only ever be `invalid` when it is required and an empty "placeho
 
 ```javascript
 getSelectProps({
-  //highlight-next-line
   id: 'invalid-select',
+  //highlight-next-line
   invalid: true,
   name: 'invalid-select',
   required: true,
