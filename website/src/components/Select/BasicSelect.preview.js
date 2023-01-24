@@ -12,9 +12,9 @@ const selectProps = getSelectProps({
   value: ''
 })
 
-<div {...selectProps.fieldWrapper>
-  <div {...selectProps.selectWrapper>
-    <select {...selectProps.select} onChange={handleCheck}>
+<div {...selectProps.fieldWrapper}>
+  <div {...selectProps.selectWrapper}>
+    <select {...selectProps.select}>
       <option {...getSelectOptionProps({value: 'option1'})}>Option 1</option>
       <option {...getSelectOptionProps({value: 'option2'})}>Option 2</option>
     </select>
