@@ -199,10 +199,12 @@ const selectProps = getSelectProps({
 
 ## API
 
-| Name               | Argument Type                                | Default         | Description                      |
-| ------------------ | -------------------------------------------- | --------------- | -------------------------------- |
-| `getSelectProps`   | **options**: [SelectOptions](#selectoptions) | **size**: 'l'   | Get select styles for CSS usage. |
-| `getJSSelectProps` | **options**: [SelectOptions](#selectoptions) | same as CSS API | CSS-in-JS API                    |
+| Name                     | Argument Type                                            | Default         | Description                      |
+| ------------------------ | -------------------------------------------------------- | --------------- | -------------------------------- |
+| `getSelectProps`         | **options**: [SelectOptions](#selectoptions)             | **size**: 'l'   | Get select styles for CSS usage. |
+| `getJSSelectProps`       | **options**: [SelectOptions](#selectoptions)             | same as CSS API | CSS-in-JS API                    |
+| `getSelectOptionProps`   | **options**: [SelectOptionOptions](#selectoptionoptions) |                 | Get option styles for CSS usage. |
+| `getJSSelectOptionProps` | **options**: [SelectOptionOptions](#selectoptionoptions) |                 | CSS-in-JS API                    |
 
 ## Options
 
@@ -233,6 +235,20 @@ interface FieldOptions {
   readOnly?: boolean
   required?: boolean
 }
+```
+
+### SelectOptionOptions
+
+This interface is available as an `import` for use.
+
+```typescript
+interface SelectOptionOptions {
+  value?: string
+}
+```
+
+```typescript title="Import example"
+import type { SelectOptionOptions } from '@pluralsight/headless-styles/types'
 ```
 
 ## Props
@@ -307,6 +323,29 @@ interface JSSelectProps {
     cssProps: TemplateLiteralString
   }
   selectWrapper: {
+    styles: Record<string, unknown>
+    cssProps: TemplateLiteralString
+  }
+}
+```
+
+### SelectOptionProps
+
+```typescript
+interface SelectOptionProps {
+  className: string
+  value: string
+}
+```
+
+### JSSelectProps
+
+```typescript
+interface JSSelectOptionProps {
+  option: {
+    a11yProps: {
+      value: string
+    }
     styles: Record<string, unknown>
     cssProps: TemplateLiteralString
   }
