@@ -78,7 +78,7 @@ The `getSelectProps` helper comes with two sizes: `m` and `l` (default).
 
 ### Invalid
 
-A Select should only ever be `invalid` when it is required and an empty "placeholder" option is selected.
+A Select should only ever be `invalid` when it is required and an empty-value option is selected.
 
 <InvalidSelect />
 
@@ -92,21 +92,6 @@ getSelectProps({
   value: '',
 })
 ```
-
-:::tip
-
-Since `select` does not have a placeholder, you can approximate this with some HTML attributes on the `option` element.
-
-```html
-<select>
-  <option hidden disabled selected value="">-- select an option --</option>
-  <option>Option 1</option>
-  <option>Option 2</option>
-  <option>Option 3</option>
-</select>
-```
-
-:::
 
 ### Disabled
 

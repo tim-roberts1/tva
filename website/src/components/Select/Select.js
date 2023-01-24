@@ -44,9 +44,6 @@ function Select(props) {
       <label {...selectLabel}>{selectLabel.value}</label>
       <div {...selectProps.selectWrapper}>
         <select {...selectProps.select} onChange={props.onChange}>
-          {props.placeholder && (
-            <Option hidden disabled value="" label={props.placeholder} />
-          )}
           {props.options.map((value) => (
             <Option key={value} value={value} label={value} />
           ))}
