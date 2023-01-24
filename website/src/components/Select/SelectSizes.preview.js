@@ -29,10 +29,10 @@ const selectProps = getSelectProps({
 })
 
 <label {...mLabelProps}>{mLabel}</label>
-<select {...mSelectProps.select} onChange={handleCheck} />
+<select {...mSelectProps.select} />
 
 <label {...lLabelProps}>{lLabel}</label>
-<select {...selectProps.select} onChange={handleCheck} />`}</CodeBlock>
+<select {...selectProps.select} />`}</CodeBlock>
   )
 }
 
