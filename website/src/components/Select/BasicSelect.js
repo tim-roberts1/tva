@@ -3,6 +3,7 @@ import Container from '../Container/Container'
 import Select from './Select'
 
 const options = [
+  '',
   'apple',
   'orange',
   'banana',
