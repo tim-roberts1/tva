@@ -1,6 +1,10 @@
 import { useEffect } from 'react'
 import { PlaceholderIcon } from '@pluralsight/icons'
-import { getIconProps, getButtonProps, getJSButtonProps } from '../../../src'
+import {
+  getIconProps,
+  getButtonProps,
+  getJSButtonProps,
+} from '@pluralsight/headless-styles'
 
 function ButtonEl(props) {
   const { children, ...btnOptions } = props
@@ -133,6 +137,16 @@ export default function Button(props) {
           Default
         </JSButton>
         <JSButton sentiment="danger" disabled>
+          Danger
+        </JSButton>
+      </div>
+
+      <div className="App-container">
+        <JSButton size="m">Action</JSButton>
+        <JSButton sentiment="default" size="m">
+          Default
+        </JSButton>
+        <JSButton sentiment="danger" size="m">
           Danger
         </JSButton>
       </div>

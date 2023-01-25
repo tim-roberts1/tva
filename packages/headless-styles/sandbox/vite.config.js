@@ -1,7 +1,7 @@
 import { resolve } from 'node:path'
 import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
-import transformCSStoTS from './plugins/transformCSStoTS'
+import { transformCSStoTS } from './plugins/transformCSStoTS'
 
 const cssRegex = /\/components\/.*\.css$/
 
@@ -10,19 +10,26 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
 
   return {
-    plugins: [react(), transformCSStoTS(cssRegex)],
-    server: {
-      port: 3000,
+    define: {
+      'process.env': { ...env },
+      __EXPERIMENTAL__: true,
     },
+
+    plugins: [react(), transformCSStoTS(cssRegex)],
+
     resolve: {
       alias: {
+        '@pluralsight/headless-styles': resolve(__dirname, '../src/index.ts'),
+        '@pluralsight/react-utils': resolve(
+          __dirname,
+          '../../react-utils/src/index.ts'
+        ),
         '@pluralsight/shared': resolve(__dirname, '../../shared/src/index.ts'),
       },
     },
 
-    define: {
-      'process.env': { ...env },
-      __EXPERIMENTAL__: true,
+    server: {
+      port: 3000,
     },
   }
 })

@@ -20754,7 +20754,6 @@ __metadata:
   dependencies:
     "@pluralsight/design-tokens": next
     "@pluralsight/icons": next
-    "@pluralsight/react-utils": next
     "@tanstack/react-router": beta
     "@tanstack/react-router-devtools": beta
     "@types/prettier": ^2
