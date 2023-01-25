@@ -16,10 +16,8 @@ export default {
       },
     },
   },
-  '': {
-    '&:root': {
-      '--ps-backdrop': 'rgba(0 0 0 / 65%)',
-    },
+  ':root': {
+    '--ps-backdrop': 'rgba(0 0 0 / 65%)',
   },
   html: {
     "&[data-theme='light']": {

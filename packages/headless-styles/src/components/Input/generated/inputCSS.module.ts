@@ -56,11 +56,9 @@ export default {
       cursor: 'not-allowed',
     },
   },
-  '': {
-    '&::placeholder': {
-      color: 'var(--ps-text-weak)',
-      opacity: '1',
-    },
+  '::placeholder': {
+    color: 'var(--ps-text-weak)',
+    opacity: '1',
   },
   inputIcon: {
     display: 'inline-block',
