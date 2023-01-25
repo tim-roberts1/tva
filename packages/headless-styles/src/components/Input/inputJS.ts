@@ -17,7 +17,7 @@ export function getJSInputProps(options?: InputOptions) {
     ...styles.defaultInput,
     ...styles[`${defaultOptions.size}InputBase`],
     ['&::placeholder']: {
-      ...styles['']['&::placeholder'],
+      ...styles['::placeholder'],
     },
     ['&[data-disabled="true"]:hover']: {
       ...styles.defaultInput_data_disabled__true['&:hover'],
