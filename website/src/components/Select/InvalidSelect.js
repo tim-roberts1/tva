@@ -3,6 +3,7 @@ import Container from '../Container/Container'
 import Select from './Select'
 
 const options = [
+  '',
   'apple',
   'orange',
   'banana',
@@ -27,7 +28,6 @@ function InvalidSelect() {
         name="fruit"
         value={fruit}
         options={options}
-        placeholder="-- Choose a fruit --"
         required={true}
         invalid={fruit === ''}
         onChange={handleChange}

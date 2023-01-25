@@ -36,7 +36,10 @@ The `getSelectProps` helper is used to allow the user to select from one of a li
 ## Import
 
 ```javascript
-import { getSelectProps } from '@pluralsight/headless-styles'
+import {
+  getSelectProps,
+  getSelectOptionProps,
+} from '@pluralsight/headless-styles'
 ```
 
 ## Usage
@@ -75,35 +78,20 @@ The `getSelectProps` helper comes with two sizes: `m` and `l` (default).
 
 ### Invalid
 
-A Select should only ever be `invalid` when it is required and an empty "placeholder" option is selected.
+A Select should only ever be `invalid` when it is required and an empty-value option is selected.
 
 <InvalidSelect />
 
-```javascript
+```javascript showLineNumbers
 getSelectProps({
-  //highlight-next-line
   id: 'invalid-select',
+  //highlight-next-line
   invalid: true,
   name: 'invalid-select',
   required: true,
   value: '',
 })
 ```
-
-:::tip
-
-Since `select` does not have a placeholder, you can approximate this with some HTML attributes on the `option` element.
-
-```html
-<select>
-  <option hidden disabled selected value="">-- select an option --</option>
-  <option>Option 1</option>
-  <option>Option 2</option>
-  <option>Option 3</option>
-</select>
-```
-
-:::
 
 ### Disabled
 
@@ -112,7 +100,7 @@ If the Select cannot be interacted with, it should be omitted instead.
 
 <DisabledSelect />
 
-```javascript
+```javascript showLineNumbers
 getSelectProps({
   //highlight-next-line
   disabled: true
@@ -196,10 +184,12 @@ const selectProps = getSelectProps({
 
 ## API
 
-| Name               | Argument Type                                | Default         | Description                      |
-| ------------------ | -------------------------------------------- | --------------- | -------------------------------- |
-| `getSelectProps`   | **options**: [SelectOptions](#selectoptions) | **size**: 'l'   | Get select styles for CSS usage. |
-| `getJSSelectProps` | **options**: [SelectOptions](#selectoptions) | same as CSS API | CSS-in-JS API                    |
+| Name                     | Argument Type                                            | Default         | Description                      |
+| ------------------------ | -------------------------------------------------------- | --------------- | -------------------------------- |
+| `getSelectProps`         | **options**: [SelectOptions](#selectoptions)             | **size**: 'l'   | Get select styles for CSS usage. |
+| `getJSSelectProps`       | **options**: [SelectOptions](#selectoptions)             | same as CSS API | CSS-in-JS API                    |
+| `getSelectOptionProps`   | **options**: [SelectOptionOptions](#selectoptionoptions) |                 | Get option styles for CSS usage. |
+| `getJSSelectOptionProps` | **options**: [SelectOptionOptions](#selectoptionoptions) |                 | CSS-in-JS API                    |
 
 ## Options
 
@@ -230,6 +220,20 @@ interface FieldOptions {
   readOnly?: boolean
   required?: boolean
 }
+```
+
+### SelectOptionOptions
+
+This interface is available as an `import` for use.
+
+```typescript
+interface SelectOptionOptions {
+  value?: string
+}
+```
+
+```typescript title="Import example"
+import type { SelectOptionOptions } from '@pluralsight/headless-styles/types'
 ```
 
 ## Props
@@ -304,6 +308,29 @@ interface JSSelectProps {
     cssProps: TemplateLiteralString
   }
   selectWrapper: {
+    styles: Record<string, unknown>
+    cssProps: TemplateLiteralString
+  }
+}
+```
+
+### SelectOptionProps
+
+```typescript
+interface SelectOptionProps {
+  className: string
+  value: string
+}
+```
+
+### JSSelectProps
+
+```typescript
+interface JSSelectOptionProps {
+  option: {
+    a11yProps: {
+      value: string
+    }
     styles: Record<string, unknown>
     cssProps: TemplateLiteralString
   }

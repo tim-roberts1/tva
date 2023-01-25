@@ -3,9 +3,21 @@ import {
   getFormControlProps,
   getFormLabelProps,
   getSelectProps,
+  getSelectOptionProps,
   getIconProps,
 } from '@pluralsight/headless-styles'
 import { ChevronDownIcon } from '@pluralsight/icons'
+
+export function Option(props) {
+  const { value, label, ...restProps } = props
+  const optionProps = getSelectOptionProps({ value })
+
+  return (
+    <option {...restProps} {...optionProps}>
+      {label}
+    </option>
+  )
+}
 
 function Select(props) {
   const { fieldOptions } = getFormControlProps({
@@ -32,15 +44,8 @@ function Select(props) {
       <label {...selectLabel}>{selectLabel.value}</label>
       <div {...selectProps.selectWrapper}>
         <select {...selectProps.select} onChange={props.onChange}>
-          {props.placeholder && (
-            <option hidden disabled selected value="">
-              {props.placeholder}
-            </option>
-          )}
           {props.options.map((value) => (
-            <option key={value} value={value}>
-              {value}
-            </option>
+            <Option key={value} value={value} label={value} />
           ))}
         </select>
         <span {...selectProps.iconWrapper}>

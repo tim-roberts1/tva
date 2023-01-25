@@ -3,6 +3,7 @@ import Container from '../Container/Container'
 import Select from './Select'
 
 const options = [
+  '',
   'apple',
   'orange',
   'banana',
@@ -13,7 +14,7 @@ const options = [
 ]
 
 function DisabledSelect() {
-  const [fruit, setFruit] = useState('')
+  const [fruit, setFruit] = useState('apple')
 
   function handleChange(e) {
     setFruit(e.target.value)
