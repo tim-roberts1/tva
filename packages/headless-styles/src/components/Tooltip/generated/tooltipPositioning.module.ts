@@ -164,72 +164,88 @@ export default {
     '&::after': {
       bottom: '0',
       transform: 'translateY(0.5em) rotateZ(-45deg)',
+      left: '50%',
+      translate: '-50% 0',
     },
   },
   topStartContent: {
     '&::after': {
       bottom: '0',
       transform: 'translateY(0.5em) rotateZ(-45deg)',
+      left: '1em',
     },
   },
   topEndContent: {
     '&::after': {
       bottom: '0',
       transform: 'translateY(0.5em) rotateZ(-45deg)',
+      right: '0.5rem',
     },
   },
   bottomContent: {
     '&::after': {
       top: '0',
       transform: 'translateY(-0.5em) rotateZ(-225deg)',
+      left: '50%',
+      translate: '-50% 0',
     },
   },
   bottomStartContent: {
     '&::after': {
       top: '0',
       transform: 'translateY(-0.5em) rotateZ(-225deg)',
+      left: '1em',
     },
   },
   bottomEndContent: {
     '&::after': {
       top: '0',
       transform: 'translateY(-0.5em) rotateZ(-225deg)',
+      right: '0.5rem',
     },
   },
   leftContent: {
     '&::after': {
       right: '0',
       transform: 'translateX(0.5em) rotateZ(-135deg)',
+      top: '50%',
+      translate: '0 -50%',
     },
   },
   leftStartContent: {
     '&::after': {
       right: '0',
       transform: 'translateX(0.5em) rotateZ(-135deg)',
+      top: '0.5rem',
     },
   },
   leftEndContent: {
     '&::after': {
       right: '0',
       transform: 'translateX(0.5em) rotateZ(-135deg)',
+      bottom: '0.5rem',
     },
   },
   rightContent: {
     '&::after': {
       left: '0',
       transform: 'translateX(-0.5em) rotateZ(45deg)',
+      top: '50%',
+      translate: '0 -50%',
     },
   },
   rightStartContent: {
     '&::after': {
       left: '0',
       transform: 'translateX(-0.5em) rotateZ(45deg)',
+      top: '0.5rem',
     },
   },
   rightEndContent: {
     '&::after': {
       left: '0',
       transform: 'translateX(-0.5em) rotateZ(45deg)',
+      bottom: '0.5rem',
     },
   },
 }
