@@ -22,6 +22,26 @@ function ButtonEl(props) {
   )
 }
 
+function JSButton(props) {
+  const { children, ...btnOptions } = props
+  const btnProps = getJSButtonProps(btnOptions)
+  const icon = btnOptions.icon
+
+  return (
+    <button style={btnProps.button.styles}>
+      {icon === 'start' && (
+        <PlaceholderIcon {...getIconProps(btnProps.iconOptions)} />
+      )}
+
+      {children}
+
+      {icon === 'end' && (
+        <PlaceholderIcon {...getIconProps(btnProps.iconOptions)} />
+      )}
+    </button>
+  )
+}
+
 export default function Button(props) {
   useEffect(() => {
     if (props.logJS) {
@@ -98,6 +118,23 @@ export default function Button(props) {
         <ButtonEl icon="start" sentiment="danger" size="m">
           Danger
         </ButtonEl>
+      </div>
+
+      <h3>JS API</h3>
+      <div className="App-container">
+        <JSButton>Action</JSButton>
+        <JSButton sentiment="default">Default</JSButton>
+        <JSButton sentiment="danger">Danger</JSButton>
+      </div>
+
+      <div className="App-container">
+        <JSButton disabled>Action</JSButton>
+        <JSButton sentiment="default" disabled>
+          Default
+        </JSButton>
+        <JSButton sentiment="danger" disabled>
+          Danger
+        </JSButton>
       </div>
     </div>
   )
