@@ -60,3 +60,7 @@ h3 {
   margin-block-end: 1em;
   margin-block-start: 1em;
 }
+
+br {
+  margin-block-start: 1rem;
+}
