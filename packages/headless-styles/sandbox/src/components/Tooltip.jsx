@@ -37,8 +37,8 @@ function TooltipEl(props) {
 
 function TooltipJS(props) {
   const [disabled, setDisabled] = useState(false)
-  const [tooltipStyle, setTooltipStyle] = useState({})
-  const [triggerStyle, setTriggerStyle] = useState({})
+  const [hovering, setHovering] = useState(false)
+  const [focused, setFocused] = useState(false)
 
   const tooltipProps = getJSTooltipProps({
     id: props.id,
@@ -54,60 +54,61 @@ function TooltipJS(props) {
     setDisabled(false)
   }
 
-  function show() {
-    if (!disabled) {
-      setTooltipStyle({
-        ...tooltipProps.tooltip.styles,
-        ...tooltipProps.tooltip.styles["&:not([data-disabled='true']):hover"],
-        opacity: 1,
-      })
-    }
+  function handleHover() {
+    setHovering(true)
   }
 
-  function hide() {
-    if (!disabled) {
-      setTooltipStyle(tooltipProps.tooltip.styles)
-    }
+  function handleHoverEnd() {
+    setHovering(false)
   }
 
-  function focus() {
-    show()
-    setTriggerStyle({
-      ...tooltipProps.trigger.styles,
-      ...tooltipProps.trigger.styles['&:focus'],
-    })
+  function handleFocus() {
+    enable()
+    setFocused(true)
   }
 
-  function blur() {
-    hide()
-    setTriggerStyle(tooltipProps.trigger.styles)
+  function handleBlur() {
+    setFocused(false)
   }
 
   useEscToClose(disable)
 
-  useEffect(() => {
-    setTooltipStyle(tooltipProps.tooltip.styles)
-    setTriggerStyle(tooltipProps.trigger.styles)
-  }, [])
-
   return (
     <div
-      style={tooltipProps.wrapper.styles}
       onMouseEnter={enable}
-      onFocus={enable}
-      onMouseOver={show}
-      onMouseLeave={hide}
+      onMouseOver={handleHover}
+      onMouseOut={handleHoverEnd}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
       {...tooltipProps.wrapper.a11yProps}
+      style={{
+        ...tooltipProps.wrapper.styles,
+      }}
     >
       <div
-        style={triggerStyle}
-        onFocus={focus}
-        onBlur={blur}
+        style={{
+          ...tooltipProps.trigger.styles,
+          ...(focused && {
+            ...tooltipProps.trigger.styles['&:focus'],
+          }),
+        }}
         {...tooltipProps.trigger.a11yProps}
       >
         {props.children}
       </div>
-      <div style={tooltipStyle} {...tooltipProps.tooltip.a11yProps}>
+      <div
+        style={{
+          ...tooltipProps.tooltip.styles,
+          ...(!disabled &&
+            (hovering || focused) && {
+              ...tooltipProps.tooltip.styles[
+                "&:not([data-disabled='true']):hover"
+              ],
+              opacity: 1,
+            }),
+        }}
+        {...tooltipProps.tooltip.a11yProps}
+      >
         <div
           style={tooltipProps.tooltipContent.styles}
           {...tooltipProps.tooltipContent.a11yProps}
