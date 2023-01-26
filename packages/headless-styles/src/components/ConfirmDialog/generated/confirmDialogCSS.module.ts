@@ -16,7 +16,7 @@ export default {
       },
     },
   },
-  ':root': {
+  root: {
     '--ps-backdrop': 'rgba(0 0 0 / 65%)',
   },
   html: {

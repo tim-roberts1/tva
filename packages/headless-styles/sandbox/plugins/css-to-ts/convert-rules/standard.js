@@ -42,9 +42,11 @@ const standard = (rule, result) => {
       if (name) {
         retObj = addProperty(result, name, pseudoObj)
       } else {
+        const pseudoSelectorWithoutColon = pseudoSelector.replace(/^:+/, '')
+
         retObj = addProperty(
           result,
-          `${pseudoSelector}${secondarySelector}`,
+          `${pseudoSelectorWithoutColon}${secondarySelector}`,
           obj
         )
       }
