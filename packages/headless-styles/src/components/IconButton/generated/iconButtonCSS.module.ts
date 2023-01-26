@@ -3,12 +3,18 @@
 //
 // Manual changes will be lost - proceed with caution!
 
-import buttonCSS from '../../Button/generated/buttonCSS.module'
+import button from '../../shared/generated/button.module'
 import { extract } from '../../../utils/helpers'
 
 export default {
   iconBtnBase: {
-    ...buttonCSS.btnBase,
+    ...button.pandoBtn,
+  },
+  iconBtntnDefaultBorder: {
+    ...button.pandoBtnBorder,
+  },
+  iconBtnDefaultRadius: {
+    ...button.pandoBtnRadius,
   },
   actionIconButton: {
     backgroundColor: 'var(--ps-action-background)',
@@ -31,20 +37,20 @@ export default {
     },
   },
   squareIconButton: {
-    ...buttonCSS.btnBase,
+    ...button.pandoBtnRadius,
     borderRadius: '6px',
   },
   roundIconButton: {
-    ...buttonCSS.btnBase,
+    ...button.pandoBtnBorder,
     borderRadius: '50%',
   },
   textIconButton: {
-    ...buttonCSS.btnBase,
+    ...button.pandoBtnRadius,
     backgroundColor: 'transparent',
     color: 'var(--ps-action-text-inverse)',
     transition: 'transform 150ms ease-in-out',
     '&:hover:not(:disabled)': {
-      ...extract(buttonCSS.btnBase, '&:hover:not(:disabled)'),
+      ...extract(button.pandoBtnRadius, '&:hover:not(:disabled)'),
       backgroundColor: 'transparent',
     },
   },

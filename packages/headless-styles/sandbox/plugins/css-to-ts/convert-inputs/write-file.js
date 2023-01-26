@@ -50,9 +50,7 @@ const writeToFile = (outPath, convertedCss, outputType) => {
     } else {
       // Case: "File": Export input object to file
       const { imports, output } = buildComposedOutput(convertedCss.contents)
-
       const prettierOptions = prettier.resolveConfig.sync(fileOutPath)
-
       const fileContents =
         generatedDisclaimer + imports + '\nexport default' + output
 
@@ -69,6 +67,8 @@ const writeToFile = (outPath, convertedCss, outputType) => {
 
 export default writeToFile
 
+// By this time, the composes setup should be complete for this function
+// to finish the job by adding the remaining file imports to the TS file
 function buildComposedOutput(body) {
   const importMap = new Map()
   let output = '{\n'
