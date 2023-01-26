@@ -62,5 +62,6 @@ function checkForNestedSelectors(propToCheck) {
   if (typeof propToCheck === 'string') {
     return propToCheck
   }
+
   return findAndReplaceVars(propToCheck)
 }
