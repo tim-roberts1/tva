@@ -49,8 +49,8 @@ export function getJSSelectOptionProps(options?: SelectOptionOptions) {
   const props = createSelectOptionProps(defaultOptions)
 
   return {
-    a11yProps: { ...props },
     option: {
+      a11yProps: { ...props },
       ...createJSProps(styles.selectOption),
     },
   }
