@@ -12,16 +12,6 @@ export default {
   linear: {
     borderRadius: '20px',
   },
-  sSize: {
-    backgroundColor: 'var(--ps-text-strong)',
-    width: '0',
-    height: '0.5rem',
-  },
-  xsSize: {
-    backgroundColor: 'var(--ps-text-strong)',
-    width: '0',
-    height: '0.25rem',
-  },
   wrapper: {
     backgroundColor: 'var(--ps-border)',
     height: '0.5rem',
@@ -31,5 +21,11 @@ export default {
   },
   inset: {
     borderRadius: 'initial',
+  },
+  sSize: {
+    height: '0.5rem',
+  },
+  xsSize: {
+    height: '0.25rem',
   },
 }
