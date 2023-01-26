@@ -56,7 +56,7 @@ export default {
       cursor: 'not-allowed',
     },
   },
-  '::placeholder': {
+  placeholder: {
     color: 'var(--ps-text-weak)',
     opacity: '1',
   },
