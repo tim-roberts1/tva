@@ -32,4 +32,11 @@ describe('progress JS', () => {
       getJSProgressProps({ ariaLabel }).bar.a11yProps['aria-label']
     ).toEqual(ariaLabel)
   })
+
+  test('should return a full-width wrapper', () => {
+    const progressProps = getJSProgressProps()
+
+    expect(progressProps.wrapper.cssProps).toContain('width: 100%')
+    expect(progressProps.wrapper.styles.width).toEqual('100%')
+  })
 })

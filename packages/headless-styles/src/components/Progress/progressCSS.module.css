@@ -8,12 +8,6 @@
   border-radius: 20px;
 }
 
-.sSize,
-.xsSize {
-  background-color: var(--ps-text-strong);
-  width: 0;
-}
-
 .wrapper {
   background-color: var(--ps-border);
   height: 0.5rem;
@@ -28,7 +22,7 @@
   border-radius: initial;
 }
 
-.sSize{
+.sSize {
   height: 0.5rem;
 }
 
