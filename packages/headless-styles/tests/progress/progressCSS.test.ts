@@ -14,7 +14,7 @@ describe('Progress CSS', () => {
     const result = {
       bar: {
         ...a11yProps,
-        className: `${baseClass} sSize linear`,
+        className: `${baseClass} bar sSize linear`,
         style: {
           width: '0%',
         },
@@ -40,7 +40,7 @@ describe('Progress CSS', () => {
           style: {
             width: '80%',
           },
-          className: `${baseClass} sSize inset`,
+          className: `${baseClass} bar sSize inset`,
         },
         wrapper: {
           className: `${baseClass} wrapper sSize inset`,
