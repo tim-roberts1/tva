@@ -17,6 +17,12 @@ export function getJSButtonProps(options?: ButtonOptions) {
     ...styles[sentimentClass],
     ...styles[usageClass],
     ...styles[sizeClass],
+    '&:is(.defaultButton, .outlineButton):active:not(:disabled)': {
+      ...styles['is(.defaultButton, .outlineButton):active:not(:disabled)'],
+    },
+    '&:is(.defaultButton, .outlineButton):hover:not(:disabled)': {
+      ...styles['is(.defaultButton, .outlineButton):hover:not(:disabled)'],
+    },
   }
 
   return {

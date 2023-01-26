@@ -88,12 +88,10 @@ export default {
     paddingInlineEnd: '2.156rem',
     paddingInlineStart: '2.156rem',
   },
-  '': {
-    '&:is(.defaultButton, .outlineButton):hover:not(:disabled)': {
-      backgroundColor: 'var(--ps-background-hover)',
-    },
-    '&:is(.defaultButton, .outlineButton):active:not(:disabled)': {
-      backgroundColor: 'var(--ps-background-active)',
-    },
+  'is(.defaultButton, .outlineButton):hover:not(:disabled)': {
+    backgroundColor: 'var(--ps-background-hover)',
+  },
+  'is(.defaultButton, .outlineButton):active:not(:disabled)': {
+    backgroundColor: 'var(--ps-background-active)',
   },
 }

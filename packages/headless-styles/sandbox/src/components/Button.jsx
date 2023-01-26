@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useMemo } from 'react'
 import { PlaceholderIcon } from '@pluralsight/icons'
 import {
   getIconProps,
@@ -27,12 +27,22 @@ function ButtonEl(props) {
 }
 
 function JSButton(props) {
-  const { children, ...btnOptions } = props
+  const { children, disabled, ...btnOptions } = props
   const btnProps = getJSButtonProps(btnOptions)
   const icon = btnOptions.icon
+  const styles = useMemo(() => {
+    if (disabled) {
+      return {
+        ...btnProps.button.styles,
+        ...btnProps.button.styles['&:disabled'],
+      }
+    }
+
+    return btnProps.button.styles
+  }, [btnProps.button.styles, disabled])
 
   return (
-    <button style={btnProps.button.styles}>
+    <button style={styles} disabled={disabled}>
       {icon === 'start' && (
         <PlaceholderIcon {...getIconProps(btnProps.iconOptions)} />
       )}
