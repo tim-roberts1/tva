@@ -27,7 +27,7 @@
   width: 100%;
 }
 
-::placeholder {
+.defaultInput::placeholder {
   color: var(--ps-text-weak);
   opacity: 1;
 }

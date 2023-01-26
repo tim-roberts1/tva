@@ -38,7 +38,18 @@ const standard = (rule, result) => {
       pseudoObj[`&${pseudoSelector}${secondarySelector}`] = obj
 
       name = sanitize(primarySelector.trim())
-      retObj = addProperty(result, name, pseudoObj)
+
+      if (name) {
+        retObj = addProperty(result, name, pseudoObj)
+      } else {
+        const pseudoSelectorWithoutColon = pseudoSelector.replace(/^:+/, '')
+
+        retObj = addProperty(
+          result,
+          `${pseudoSelectorWithoutColon}${secondarySelector}`,
+          obj
+        )
+      }
     } else if (attributeSelectorIndex !== -1 && attributeSelectorIndex > 0) {
       // Split selector
       const primarySelector = selector.slice(0, attributeSelectorIndex)
