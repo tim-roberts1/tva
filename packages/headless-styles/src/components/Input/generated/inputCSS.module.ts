@@ -30,6 +30,10 @@ export default {
     transitionDuration: '150ms',
     transitionProperty: 'box-shadow, opacity, transform',
     width: '100%',
+    '&::placeholder': {
+      color: 'var(--ps-text-weak)',
+      opacity: '1',
+    },
     '&:active': {
       boxShadow: 'none',
       outline: 'none',
@@ -55,10 +59,6 @@ export default {
     "&[data-readonly='true']": {
       cursor: 'not-allowed',
     },
-  },
-  placeholder: {
-    color: 'var(--ps-text-weak)',
-    opacity: '1',
   },
   inputIcon: {
     display: 'inline-block',
@@ -106,6 +106,10 @@ export default {
     transitionDuration: '150ms',
     transitionProperty: 'box-shadow, opacity, transform',
     width: '100%',
+    '&::placeholder': {
+      color: 'var(--ps-text-weak)',
+      opacity: '1',
+    },
     '&:active': {
       boxShadow: 'none',
       outline: 'none',
@@ -153,6 +157,10 @@ export default {
     transitionDuration: '150ms',
     transitionProperty: 'box-shadow, opacity, transform',
     width: '100%',
+    '&::placeholder': {
+      color: 'var(--ps-text-weak)',
+      opacity: '1',
+    },
     '&:active': {
       boxShadow: 'none',
       outline: 'none',
@@ -200,6 +208,10 @@ export default {
     transitionDuration: '150ms',
     transitionProperty: 'box-shadow, opacity, transform',
     width: '100%',
+    '&::placeholder': {
+      color: 'var(--ps-text-weak)',
+      opacity: '1',
+    },
     '&:active': {
       boxShadow: 'none',
       outline: 'none',
