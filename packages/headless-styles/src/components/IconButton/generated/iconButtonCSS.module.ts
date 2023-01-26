@@ -37,19 +37,26 @@ export default {
     },
   },
   squareIconButton: {
+    ...button.pandoBtn,
+    ...button.pandoBtnBorder,
     ...button.pandoBtnRadius,
     borderRadius: '6px',
   },
   roundIconButton: {
+    ...button.pandoBtn,
     ...button.pandoBtnBorder,
     borderRadius: '50%',
   },
   textIconButton: {
+    ...button.pandoBtn,
+    ...button.pandoBtnBorder,
     ...button.pandoBtnRadius,
     backgroundColor: 'transparent',
     color: 'var(--ps-action-text-inverse)',
     transition: 'transform 150ms ease-in-out',
     '&:hover:not(:disabled)': {
+      ...extract(button.pandoBtn, '&:hover:not(:disabled)'),
+      ...extract(button.pandoBtnBorder, '&:hover:not(:disabled)'),
       ...extract(button.pandoBtnRadius, '&:hover:not(:disabled)'),
       backgroundColor: 'transparent',
     },

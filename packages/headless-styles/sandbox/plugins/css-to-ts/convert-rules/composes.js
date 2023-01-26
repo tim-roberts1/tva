@@ -12,7 +12,8 @@ export default function composes(styleObj) {
       if (composes in styleObj) {
         deepMerge(styleObj[className], styleObj[composes])
       } else if (composes.includes(' from ')) {
-        // Need to extract this Object and merge here not later.
+        // Preserve value as array for later
+        value.composes = [composes]
         deepMerge(styleObj[className], value)
       } else {
         composes.split(/\s+/).forEach((otherKey) => {
@@ -29,12 +30,26 @@ export default function composes(styleObj) {
 function deepMerge(source, target) {
   for (const [key, value] of Object.entries(target)) {
     // Overwrite primitive values, merge objects together
-    if (key in source && typeof value === 'object') {
+    if (key in source && isObject(value)) {
       deepMerge(source[key], value)
-    } else if (typeof value === 'object') {
+    } else if (isObject(value)) {
       source[key] = { ...value }
+    } else if (Array.isArray(value)) {
+      source[key] = mergeArrays(source[key], value)
     } else {
       source[key] = value
     }
   }
+}
+
+function isObject(item) {
+  return item && typeof item === 'object' && !Array.isArray(item)
+}
+
+function mergeArrays(source, target) {
+  if (Array.isArray(source)) {
+    return [...source, ...target]
+  }
+
+  return target
 }

@@ -92,33 +92,21 @@ function buildComposedOutput(body) {
 function handleNestedProperties(value, importMap) {
   const classEntry = {
     directEntries: {},
-    externalEntry: null,
+    externalEntries: [],
   }
 
   for (const [innerSelector, innerValue] of Object.entries(value)) {
-    if (typeof innerValue === 'string') {
-      const match =
-        innerSelector === 'composes' && innerValue.match(/(.+) from '(.+)'/)
+    if (innerSelector === 'composes' && Array.isArray(innerValue)) {
+      innerValue.forEach((composeValue) => {
+        const externalCompose = getExternalComposeFileAndValue(composeValue)
 
-      if (match) {
-        classEntry.hasExternalComposition = true
-        const [, valueName, file] = match
-        const moduleReg = /(\.?\.\/)+(.+)\/(.+)\.module\.css/
-        let generatedImportFileName = file.replace(
-          moduleReg,
-          '../$1$2/generated/$3.module'
-        )
-
-        let importName
-        if (importMap.has(generatedImportFileName)) {
-          importName = importMap.get(generatedImportFileName)
-        } else {
-          importName = file.match(moduleReg)[3]
-          importMap.set(generatedImportFileName, importName)
+        if (externalCompose) {
+          classEntry.externalEntries.push(
+            getExternalEntry(externalCompose, importMap)
+          )
         }
-        classEntry.externalEntry = `${importName}.${valueName}`
-        continue
-      }
+      })
+      continue
     }
 
     classEntry.directEntries[innerSelector] = innerValue
@@ -126,26 +114,64 @@ function handleNestedProperties(value, importMap) {
   return classEntry
 }
 
+function getExternalComposeFileAndValue(composes) {
+  const match = composes.match(/(.+) from '(.+)'/)
+  if (match) {
+    const [, valueName, file] = match
+
+    return { valueName, file }
+  }
+
+  return null
+}
+
+function getExternalEntry(externalCompose, importMap) {
+  const { valueName, file } = externalCompose
+  const moduleReg = /(\.?\.\/)+(.+)\/(.+)\.module\.css/
+  let generatedImportFileName = file.replace(
+    moduleReg,
+    '../$1$2/generated/$3.module'
+  )
+
+  let importName
+  if (importMap.has(generatedImportFileName)) {
+    importName = importMap.get(generatedImportFileName)
+  } else {
+    importName = file.match(moduleReg)[3]
+    importMap.set(generatedImportFileName, importName)
+  }
+
+  return `${importName}.${valueName}`
+}
+
 function buildTopLevelSelectorOutput(className, value, importMap) {
   const classEntry = handleNestedProperties(value, importMap)
   let output = `${JSON.stringify(className)}:`
 
-  if (classEntry.externalEntry) {
-    output += `{\n...${classEntry.externalEntry},\n`
+  if (classEntry.externalEntries) {
+    output += classEntry.externalEntries.reduce(
+      (prev, current) => (prev += `...${current},\n`),
+      '{\n'
+    )
   } else {
     output += '{\n'
   }
 
   for (const [property, value] of Object.entries(classEntry.directEntries)) {
     const stringifiedPropName = JSON.stringify(property)
-    if (classEntry.externalEntry && typeof value === 'object') {
+
+    if (classEntry.externalEntries.length && typeof value === 'object') {
       output += `${stringifiedPropName}:{\n`
 
       if (!importMap.has('../../../utils/helpers')) {
         importMap.set('../../../utils/helpers', '{ extract }')
       }
 
-      output += `...extract(${classEntry.externalEntry}, ${stringifiedPropName}),\n`
+      output += classEntry.externalEntries.reduce(
+        (prev, current) =>
+          (prev += `...extract(${current}, ${stringifiedPropName}),\n`),
+        ''
+      )
 
       for (const [innerKey, innerValue] of Object.entries(value)) {
         output += `${JSON.stringify(innerKey)}: ${JSON.stringify(
