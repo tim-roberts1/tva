@@ -1,6 +1,16 @@
 .iconBtnBase {
-  composes: btnBase from '../Button/buttonCSS.module.css';
+  composes: pandoBtn from '../shared/button.module.css';
 }
+
+.iconBtntnDefaultBorder {
+  composes: pandoBtnBorder from '../shared/button.module.css';
+}
+
+.iconBtnDefaultRadius {
+  composes: pandoBtnRadius from '../shared/button.module.css';
+}
+
+/* sentiment (optional) */
 
 .actionIconButton {
   background-color: var(--ps-action-background);
@@ -12,20 +22,20 @@
   color: var(--ps-text);
 }
 
-/* usage */
+/* usage (required) */
 
 .squareIconButton {
-  composes: iconBtnBase;
+  composes: iconBtnBase iconBtntnDefaultBorder iconBtnDefaultRadius;
   border-radius: 6px;
 }
 
 .roundIconButton {
-  composes: iconBtnBase;
+  composes: iconBtnBase iconBtntnDefaultBorder;
   border-radius: 50%;
 }
 
 .textIconButton {
-  composes: iconBtnBase;
+  composes: iconBtnBase iconBtntnDefaultBorder iconBtnDefaultRadius;
   background-color: transparent;
   color: var(--ps-action-text-inverse);
   transition: transform 150ms ease-in-out;
