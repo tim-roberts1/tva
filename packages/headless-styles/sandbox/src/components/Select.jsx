@@ -49,7 +49,7 @@ function ErrorMessage(props) {
 }
 
 function SelectField(props) {
-  const { onChange, ...options } = props
+  const { onChange, placeholder, ...options } = props
   const { fieldOptions } = getFormControlProps(options)
   const errorMessageId = 'select-errorMessage'
   const helpMessageId = 'select-helpMessage'
@@ -66,6 +66,11 @@ function SelectField(props) {
       </Label>
       <div {...selectProps.selectWrapper}>
         <select {...selectProps.select} onChange={onChange} value={props.value}>
+          {placeholder && (
+            <option {...getSelectOptionProps({ placeholder })}>
+              {placeholder}
+            </option>
+          )}
           <SelectOptions options={props.options} {...selectProps.option} />
         </select>
         <span {...selectProps.iconWrapper}>
@@ -125,6 +130,7 @@ export default function Select({ logJS }) {
           onChange={handleCharacterClassChange}
           name="characterClass-1"
           label="Choose your character class"
+          placeholder="Choose wisely"
           required
           value={characterClass}
           options={selectOptions}
@@ -136,6 +142,7 @@ export default function Select({ logJS }) {
           onChange={handleCharacterClassChange}
           name="characterClass-2"
           label="Disabled Select"
+          placeholder="Choose wisely"
           value={characterClass}
           options={selectOptions}
         />
@@ -147,6 +154,7 @@ export default function Select({ logJS }) {
           onChange={handleCharacterClassChange}
           name="characterClass-3"
           label="Invalid Select"
+          placeholder="Choose wisely"
           value={characterClass}
           options={selectOptions}
         />
@@ -156,6 +164,7 @@ export default function Select({ logJS }) {
           name="characterClass-4"
           onChange={handleCharacterClassChange}
           label="Medium Select"
+          placeholder="Choose wisely"
           size="m"
           invalid
           value={characterClass}
