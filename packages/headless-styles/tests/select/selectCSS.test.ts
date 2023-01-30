@@ -85,5 +85,14 @@ describe('Select CSS', () => {
         value: optionValue,
       })
     })
+
+    test('should accept a placeholder option', () => {
+      expect(getSelectOptionProps({ placeholder: 'placeholder' })).toEqual({
+        ...result,
+        disabled: true,
+        hidden: true,
+        value: '',
+      })
+    })
   })
 })
