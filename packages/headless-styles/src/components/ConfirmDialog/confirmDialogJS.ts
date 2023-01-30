@@ -16,7 +16,6 @@ export function getJSConfirmDialogProps(options?: ConfirmDialogOptions) {
   }
   const btnGroupStyles = {
     ...styles.confirmDialogBtnGroup,
-    ...styles.confirmDialogBtnGroup_button,
   }
   const iconProps = createConfirmDialogIconProps(defaultOptions)
 
