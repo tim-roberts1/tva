@@ -7,6 +7,7 @@ export interface SelectOptions extends FieldOptions {
 }
 
 export interface SelectOptionOptions {
+  placeholder?: string
   value?: string
 }
 

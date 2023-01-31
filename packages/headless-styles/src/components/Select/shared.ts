@@ -55,12 +55,17 @@ export function createSelectProps(options: SelectOptions) {
 
 export function getDefaultSelectOptionOptions(options?: SelectOptionOptions) {
   return {
+    placeholder: options?.placeholder ?? '',
     value: options?.value ?? '',
   }
 }
 
 export function createSelectOptionProps(options: SelectOptionOptions) {
   return {
+    ...(options.placeholder && {
+      disabled: true,
+      hidden: true,
+    }),
     value: options.value,
   }
 }
