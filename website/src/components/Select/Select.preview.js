@@ -47,6 +47,13 @@ export default function Select(props) {
       <label {...selectLabel}>{selectLabel.value}</label>
       <div {...selectProps.selectWrapper}>
         <select {...selectProps.select} onChange={props.onChange}>
+          {props.placeholder && (
+            <option
+              {...getSelectOptionProps({ placeholder: props.placeholder })}
+            >
+              {props.placeholder}
+            </option>
+          )}
           {props.options.map((value) => (
             <Option key={value} value={value} label={value} />
           ))}
