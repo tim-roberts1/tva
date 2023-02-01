@@ -161,6 +161,7 @@ The placeholder option is not a replacement for a label, so be sure to include o
 
 ```jsx live showLineNumbers
 function placeholderOption() {
+  // Placeholder option selected by default
   const [value, setValue] = useState('')
   const placeholder = '-- Make a selection --'
   const selectId = 'placeholder-example'
@@ -179,6 +180,7 @@ function placeholderOption() {
     <div {...selectProps.selectWrapper}>
       <label {...selectLabel}>{selectLabel.value}</label>
       <select {...selectProps.select} onChange={handleChange}>
+        {/* Placeholder option */}
         <option {...getSelectOptionProps({ placeholder })}>
           {placeholder}
         </option>
