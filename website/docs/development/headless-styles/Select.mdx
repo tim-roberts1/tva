@@ -148,6 +148,62 @@ The `optgroup` element can be used to group and label related options when more 
 </select>
 ```
 
+### Placeholder option
+
+A placeholder option is a special option that cannot be selected by the user and is only displayed when selected by the system.
+This is different from a _blank_ option, which presents a valid choice.
+
+To get the props for a placeholder option tag, just pass in the `placeholder` option to the helper.
+
+:::caution
+
+The placeholder option is not a replacement for a label, so be sure to include one using [getFormLabelProps](./FormControl.mdx).
+
+:::
+
+```jsx live showLineNumbers
+function placeholderOption() {
+  // Placeholder option selected by default
+  const [value, setValue] = useState('')
+  const placeholder = '-- Make a selection --'
+  const selectId = 'placeholder-example'
+  const selectProps = getSelectProps({ id: selectId, required: true, value })
+  const selectLabel = getFormLabelProps({
+    htmlFor: selectId,
+    kind: 'hidden',
+    value: 'Select field placeholder example',
+  })
+
+  function handleChange(e) {
+    setValue(e.target.value)
+  }
+
+  return (
+    <div {...selectProps.selectWrapper}>
+      <label {...selectLabel}>{selectLabel.value}</label>
+      <select {...selectProps.select} onChange={handleChange}>
+        {/* Placeholder option */}
+        <option {...getSelectOptionProps({ placeholder })}>
+          {placeholder}
+        </option>
+        <option {...getSelectOptionProps({ value: 'option1' }).option}>
+          Option 1
+        </option>
+        <option {...getSelectOptionProps({ value: 'option2' }).option}>
+          Option 2
+        </option>
+        <option {...getSelectOptionProps({ value: 'option3' }).option}>
+          Option 3
+        </option>
+      </select>
+      <span {...selectProps.iconWrapper}>
+        <ChevronDownIcon {...getIconProps(selectProps.iconOptions)} />
+      </span>
+    </div>
+  )
+}
+```
+
 ## Accessibility and messages
 
 When displaying [Error Messages](./FormControl.mdx#error-messasge) or [Help Text](./FormControl.mdx#help-text) it is required to pass the `options.id` value to the `SelectOptions.describedBy` field. This will add an [aria-describedby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby) attribute to the `select` which establishes a relationship between the `select` and message you are displaying.
@@ -228,6 +284,7 @@ This interface is available as an `import` for use.
 
 ```typescript
 interface SelectOptionOptions {
+  placeholder?: string
   value?: string
 }
 ```
@@ -319,6 +376,8 @@ interface JSSelectProps {
 ```typescript
 interface SelectOptionProps {
   className: string
+  disabled: boolean
+  hidden: boolean
   value: string
 }
 ```
@@ -329,6 +388,8 @@ interface SelectOptionProps {
 interface JSSelectOptionProps {
   option: {
     a11yProps: {
+      disabled: boolean
+      hidden: boolean
       value: string
     }
     styles: Record<string, unknown>
