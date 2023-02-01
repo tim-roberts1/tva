@@ -153,6 +153,12 @@ The `optgroup` element can be used to group and label related options when more 
 A placeholder option is a special option that cannot be selected by the user and is only displayed when selected by the system.
 This is different from a _blank_ option, which presents a valid choice.
 
+:::caution
+
+The placeholder option is not a replacement for a label, so be sure to include one using [getFormLabelProps](./FormControl.mdx).
+
+:::
+
 ```jsx live showLineNumbers
 function placeholderOption() {
   const [value, setValue] = useState('')
@@ -193,13 +199,6 @@ function placeholderOption() {
   )
 }
 ```
-
-:::danger
-
-The placeholder option is not a replacement for a label.
-A label is _always_ required for every form element.
-
-:::
 
 ## Accessibility and messages
 
