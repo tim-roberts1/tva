@@ -97,22 +97,30 @@ function handleNestedProperties(value, importMap) {
   }
 
   for (const [innerSelector, innerValue] of Object.entries(value)) {
-    if (innerSelector === 'composes' && Array.isArray(innerValue)) {
-      innerValue.forEach((composeValue) => {
-        const externalCompose = getExternalComposeFileAndValue(composeValue)
-
-        if (externalCompose) {
-          classEntry.externalEntries.push(
-            getExternalEntry(externalCompose, importMap)
-          )
-        }
-      })
-      continue
+    if (innerSelector === 'composes') {
+      if (Array.isArray(innerValue)) {
+        innerValue.forEach((composeValue) => {
+          tryPushExternalComposeValue(classEntry, importMap, composeValue)
+        })
+      } else {
+        tryPushExternalComposeValue(classEntry, importMap, innerValue)
+      }
+    } else {
+      classEntry.directEntries[innerSelector] = innerValue
     }
-
-    classEntry.directEntries[innerSelector] = innerValue
   }
+
   return classEntry
+}
+
+function tryPushExternalComposeValue(classEntry, importMap, composeValue) {
+  const externalCompose = getExternalComposeFileAndValue(composeValue)
+
+  if (externalCompose) {
+    classEntry.externalEntries.push(
+      getExternalEntry(externalCompose, importMap)
+    )
+  }
 }
 
 function getExternalComposeFileAndValue(composes) {

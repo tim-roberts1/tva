@@ -8,7 +8,7 @@ import button from '../../shared/generated/button.module'
 
 export default {
   paginationBtn: {
-    composes: "pandoBtnRadius from '../shared/button.module.css'",
+    ...button.pandoBtnRadius,
     backgroundColor: 'var(--ps-background)',
     borderRadius: '6px',
     color: 'var(--ps-text)',
@@ -17,6 +17,8 @@ export default {
     paddingInlineEnd: '1rem',
     paddingInlineStart: '1rem',
     '&:hover': {
+      // @ts-ignore
+      ...button.pandoBtnRadius['&:hover'],
       backgroundColor: 'var(--ps-background-hover)',
     },
   },
@@ -37,7 +39,7 @@ export default {
     width: '100%',
   },
   paginationNewer: {
-    composes: "pandoBtnRadius from '../shared/button.module.css'",
+    ...button.pandoBtnRadius,
     backgroundColor: 'var(--ps-background)',
     borderRadius: '6px',
     color: 'var(--ps-text)',
@@ -46,11 +48,13 @@ export default {
     paddingInlineEnd: '1rem',
     paddingInlineStart: '1rem',
     '&:hover': {
+      // @ts-ignore
+      ...button.pandoBtnRadius['&:hover'],
       backgroundColor: 'var(--ps-background-hover)',
     },
   },
   paginationOlder: {
-    composes: "pandoBtnRadius from '../shared/button.module.css'",
+    ...button.pandoBtnRadius,
     backgroundColor: 'var(--ps-background)',
     borderRadius: '6px',
     color: 'var(--ps-text)',
@@ -59,6 +63,8 @@ export default {
     paddingInlineEnd: '1rem',
     paddingInlineStart: '1rem',
     '&:hover': {
+      // @ts-ignore
+      ...button.pandoBtnRadius['&:hover'],
       backgroundColor: 'var(--ps-background-hover)',
     },
     marginLeft: '0.5rem',
