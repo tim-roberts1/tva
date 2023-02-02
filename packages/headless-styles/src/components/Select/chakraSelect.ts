@@ -9,7 +9,7 @@ const baseSelectStyles = {
     ...selectBase['&:focus'],
   },
   _hover: {
-    ...selectBase["&:not(:disabled, [data-readonly='true']):hover"],
+    ...selectBase["&:not(:disabled, [dataReadonly='true']):hover"],
   },
   _focus: {
     ...selectBase['&:focus'],
@@ -22,7 +22,7 @@ const baseSelectStyles = {
     },
   },
   _invalid: {
-    ...selectBase["&[data-invalid='true']"],
+    ...selectBase["&[dataInvalid='true']"],
   },
 }
 
