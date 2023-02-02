@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "@pluralsight/icons": "next",
-    "@pluralsight/react-utils": "next",
     "@tanstack/react-router": "beta",
     "css": "latest",
     "prettier": "^2.8.0",

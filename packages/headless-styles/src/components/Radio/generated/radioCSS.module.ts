@@ -19,7 +19,7 @@ export default {
     '&[disabled]': {
       cursor: 'not-allowed',
     },
-    "&[data-readonly='true']": {
+    "&[dataReadonly='true']": {
       cursor: 'not-allowed',
     },
   },
@@ -37,7 +37,7 @@ export default {
       outline: '3px solid var(--ps-action-border-focus)',
       outlineOffset: '2px',
     },
-    '&:focus:not(:focus-visible) + .radioControl': {
+    '&:focus:not(:focusVisible) + .radioControl': {
       boxShadow: 'none',
       outline: 'none',
     },
@@ -62,7 +62,7 @@ export default {
     '&:not([disabled]):hover': {
       background: 'var(--ps-background-hover)',
     },
-    "&[data-checked='true']": {
+    "&[dataChecked='true']": {
       background: 'var(--ps-action-background)',
       borderColor: 'var(--ps-action-background)',
       borderWidth: 'initial',
@@ -71,7 +71,7 @@ export default {
       background: 'var(--ps-background)',
       borderColor: 'var(--ps-background)',
     },
-    "&[data-invalid='true']": {
+    "&[dataInvalid='true']": {
       background: 'var(--ps-danger-surface)',
       borderColor: 'var(--ps-danger-surface)',
     },

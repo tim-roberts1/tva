@@ -4,44 +4,17 @@
 // Manual changes will be lost - proceed with caution!
 
 import type { GeneratedStyles } from '../../../utils/types'
+import button from '../../shared/generated/button.module'
 
 export default {
   btnBase: {
-    alignItems: 'center',
-    appearance: 'none',
-    border: 'none',
-    borderRadius: '6px',
-    cursor: 'pointer',
-    display: 'inline-flex',
-    fontFamily: 'inherit',
-    fontSize: 'inherit',
-    fontVariationSettings: "'wght' 600",
-    fontWeight: '600',
-    gap: '0.5rem',
-    justifyContent: 'center',
-    lineHeight: '0',
-    minWidth: '2.5rem',
-    outline: 'none',
-    position: 'relative',
-    textAlign: 'center',
-    textDecoration: 'none',
-    textTransform: 'none',
-    transition: 'background-color 250ms ease-in-out, color 250ms ease-in-out',
-    userSelect: 'none',
-    verticalAlign: 'middle',
-    whiteSpace: 'nowrap',
-    '&:disabled': {
-      cursor: 'not-allowed',
-      opacity: '0.5',
-    },
-    '&:focus': {
-      outline: '3px solid var(--ps-action-border-focus)',
-      outlineOffset: '2px',
-    },
-    '&:focus:not(:focus-visible)': {
-      boxShadow: 'none',
-      outline: 'none',
-    },
+    ...button.pandoBtn,
+  },
+  btnDefaultBorder: {
+    ...button.pandoBtnBorder,
+  },
+  btnDefaultRadius: {
+    ...button.pandoBtnRadius,
   },
   actionButton: {
     backgroundColor: 'var(--ps-action-background)',
@@ -56,12 +29,6 @@ export default {
   defaultButton: {
     backgroundColor: 'var(--ps-background)',
     color: 'var(--ps-text)',
-    '&:hover:not(:disabled)': {
-      backgroundColor: 'var(--ps-background-hover)',
-    },
-    '&:active:not(:disabled)': {
-      backgroundColor: 'var(--ps-background-active)',
-    },
   },
   dangerButton: {
     backgroundColor: 'var(--ps-danger-background)',
@@ -74,131 +41,42 @@ export default {
     },
   },
   filledButton: {
-    alignItems: 'center',
-    appearance: 'none',
-    border: 'none',
-    borderRadius: '6px',
-    cursor: 'pointer',
-    display: 'inline-flex',
-    fontFamily: 'inherit',
-    fontSize: 'inherit',
-    fontVariationSettings: "'wght' 600",
-    fontWeight: '600',
-    gap: '0.5rem',
-    justifyContent: 'center',
-    lineHeight: '0',
-    minWidth: '2.5rem',
-    outline: 'none',
-    position: 'relative',
-    textAlign: 'center',
-    textDecoration: 'none',
-    textTransform: 'none',
-    transition: 'background-color 250ms ease-in-out, color 250ms ease-in-out',
-    userSelect: 'none',
-    verticalAlign: 'middle',
-    whiteSpace: 'nowrap',
-    '&:disabled': {
-      cursor: 'not-allowed',
-      opacity: '0.5',
-    },
-    '&:focus': {
-      outline: '3px solid var(--ps-action-border-focus)',
-      outlineOffset: '2px',
-    },
-    '&:focus:not(:focus-visible)': {
-      boxShadow: 'none',
-      outline: 'none',
-    },
+    ...button.pandoBtn,
+    ...button.pandoBtnRadius,
+    ...button.pandoBtnBorder,
   },
   outlineButton: {
-    alignItems: 'center',
-    appearance: 'none',
-    border: '2px solid var(--ps-border-strong)',
-    borderRadius: '6px',
-    cursor: 'pointer',
-    display: 'inline-flex',
-    fontFamily: 'inherit',
-    fontSize: 'inherit',
-    fontVariationSettings: "'wght' 600",
-    fontWeight: '600',
-    gap: '0.5rem',
-    justifyContent: 'center',
-    lineHeight: '0',
-    minWidth: '2.5rem',
-    outline: 'none',
-    position: 'relative',
-    textAlign: 'center',
-    textDecoration: 'none',
-    textTransform: 'none',
-    transition: 'background-color 250ms ease-in-out, color 250ms ease-in-out',
-    userSelect: 'none',
-    verticalAlign: 'middle',
-    whiteSpace: 'nowrap',
-    '&:disabled': {
-      cursor: 'not-allowed',
-      opacity: '0.5',
-    },
-    '&:focus': {
-      outline: '3px solid var(--ps-action-border-focus)',
-      outlineOffset: '2px',
-    },
-    '&:focus:not(:focus-visible)': {
-      boxShadow: 'none',
-      outline: 'none',
-    },
+    ...button.pandoBtn,
+    ...button.pandoBtnRadius,
     backgroundColor: 'transparent',
+    border: '2px solid var(--ps-border-strong)',
     color: 'var(--ps-text)',
-    '&:hover:not(:disabled)': {
-      backgroundColor: 'var(--ps-background-hover)',
-    },
-    '&:active:not(:disabled)': {
-      backgroundColor: 'var(--ps-background-active)',
-    },
   },
   textButton: {
-    alignItems: 'center',
-    appearance: 'none',
-    border: 'none',
-    borderRadius: '6px',
-    cursor: 'pointer',
-    display: 'inline-flex',
-    fontFamily: 'inherit',
-    fontSize: 'inherit',
-    fontVariationSettings: "'wght' 600",
-    fontWeight: '600',
-    gap: '0.5rem',
-    justifyContent: 'center',
-    lineHeight: '0',
-    minWidth: '2.5rem',
-    outline: 'none',
-    position: 'relative',
-    textAlign: 'center',
-    textDecoration: 'underline',
-    textTransform: 'none',
-    transition: 'background-color 250ms ease-in-out, color 250ms ease-in-out',
-    userSelect: 'none',
-    verticalAlign: 'middle',
-    whiteSpace: 'nowrap',
-    '&:disabled': {
-      cursor: 'not-allowed',
-      opacity: '0.5',
-    },
-    '&:focus': {
-      outline: '3px solid var(--ps-action-border-focus)',
-      outlineOffset: '2px',
-    },
-    '&:focus:not(:focus-visible)': {
-      boxShadow: 'none',
-      outline: 'none',
-    },
+    ...button.pandoBtn,
+    ...button.pandoBtnRadius,
+    ...button.pandoBtnBorder,
     backgroundColor: 'transparent',
     color: 'var(--ps-action-navigation)',
+    textDecoration: 'underline',
     '&:hover:not(:disabled)': {
+      // @ts-ignore
+      ...button.pandoBtn['&:hover:not(:disabled)'],
+      // @ts-ignore
+      ...button.pandoBtnRadius['&:hover:not(:disabled)'],
+      // @ts-ignore
+      ...button.pandoBtnBorder['&:hover:not(:disabled)'],
       backgroundColor: 'transparent',
       color: 'var(--ps-action-navigation-hover)',
       textDecoration: 'none',
     },
     '&:active:not(:disabled)': {
+      // @ts-ignore
+      ...button.pandoBtn['&:active:not(:disabled)'],
+      // @ts-ignore
+      ...button.pandoBtnRadius['&:active:not(:disabled)'],
+      // @ts-ignore
+      ...button.pandoBtnBorder['&:active:not(:disabled)'],
       backgroundColor: 'transparent',
       color: 'var(--ps-action-navigation-visited)',
     },
@@ -206,12 +84,20 @@ export default {
   mButton: {
     fontSize: '0.875rem',
     height: '2rem',
+    minWidth: '2.5rem',
     paddingInlineEnd: '1.125rem',
     paddingInlineStart: '1.125rem',
   },
   lButton: {
     height: '3rem',
+    minWidth: '2.5rem',
     paddingInlineEnd: '2.156rem',
     paddingInlineStart: '2.156rem',
+  },
+  'is(.defaultButton, .outlineButton):hover:not(:disabled)': {
+    backgroundColor: 'var(--ps-background-hover)',
+  },
+  'is(.defaultButton, .outlineButton):active:not(:disabled)': {
+    backgroundColor: 'var(--ps-background-active)',
   },
 } satisfies GeneratedStyles

@@ -18,14 +18,12 @@ export function getInputProps(options?: InputOptions) {
   const props = createInputProps(defaultOptions)
   const leadingIconProps = createInputLeadingIconProps(defaultOptions, {
     iconWrapper: {
-      ...createClassNameProp(
-        `${INPUT}-leading-icon ${styles.inputLeadingIcon}`
-      ),
+      ...createClassNameProp(`${INPUT}-leading-icon`, styles.inputLeadingIcon),
     },
   })
   const invalidIconProps = createInputInvalidIconProps(defaultOptions, {
     invalidIconWrapper: {
-      ...createClassNameProp(`${INPUT}-icon ${styles.inputIcon}`),
+      ...createClassNameProp(`${INPUT}-icon`, styles.inputIcon),
     },
   })
 
@@ -35,13 +33,11 @@ export function getInputProps(options?: InputOptions) {
     ...leadingIconProps,
     input: {
       ...props.input,
-      ...createClassNameProp(
-        `${INPUT} ${styles[kindClass]} ${styles[baseSizeClass]}`
-      ),
+      ...createClassNameProp(INPUT, styles[kindClass], styles[baseSizeClass]),
     },
     inputWrapper: {
       ...props.inputWrapper,
-      ...createClassNameProp(`${INPUT}-wrapper ${styles.inputWrapper}`),
+      ...createClassNameProp(`${INPUT}-wrapper`, styles.inputWrapper),
     },
   }
 }

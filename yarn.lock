@@ -6587,11 +6587,11 @@ __metadata:
   linkType: soft
 
 "@pluralsight/headless-styles@npm:next":
-  version: 0.3.1-rc-33cc5a
-  resolution: "@pluralsight/headless-styles@npm:0.3.1-rc-33cc5a"
+  version: 0.3.1-rc-0bcae4
+  resolution: "@pluralsight/headless-styles@npm:0.3.1-rc-0bcae4"
   dependencies:
     tslib: latest
-  checksum: 85c3e7f3c69eead3823135e1f3332481cacbec705f95638bbf3baf56a0e4068ade7bca57bfd7d4c4c506d896ac636b6ccd7edc28136ab40ec154fd81cac1df69
+  checksum: a7296643d4959ff74a2bdf55bc72c7294c12bfc57d0e57a82930c3bffe9e7e1071df305570c7f657d0149a8c60b28552711f5cb0a761b12d1786280884e30b56
   languageName: node
   linkType: hard
 
@@ -20754,7 +20754,6 @@ __metadata:
   dependencies:
     "@pluralsight/design-tokens": next
     "@pluralsight/icons": next
-    "@pluralsight/react-utils": next
     "@tanstack/react-router": beta
     "@tanstack/react-router-devtools": beta
     "@types/prettier": ^2
@@ -22875,9 +22874,9 @@ __metadata:
   linkType: hard
 
 "ua-parser-js@npm:^0.7.30":
-  version: 0.7.31
-  resolution: "ua-parser-js@npm:0.7.31"
-  checksum: e2f8324a83d1715601576af85b2b6c03890699aaa7272950fc77ea925c70c5e4f75060ae147dc92124e49f7f0e3d6dd2b0a91e7f40d267e92df8894be967ba8b
+  version: 0.7.33
+  resolution: "ua-parser-js@npm:0.7.33"
+  checksum: 1510e9ec26fcaf0d8c6ae8f1078a8230e8816f083e1b5f453ea19d06b8ef2b8a596601c92148fd41899e8b3e5f83fa69c42332bd5729b931a721040339831696
   languageName: node
   linkType: hard
 

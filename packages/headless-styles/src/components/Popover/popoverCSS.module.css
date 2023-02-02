@@ -1,9 +1,9 @@
 .popoverWrapper {
-  composes: tooltipWrapper from '../Tooltip/tooltipCSS.module.css';
+  composes: pandoTooltipWrapper from '../shared/tooltip.module.css';
 }
 
 .popover {
-  composes: tooltipBase from '../Tooltip/tooltipCSS.module.css';
+  composes: pandoTooltipBase from '../shared/tooltip.module.css';
   animation-delay: 100ms;
   max-width: none;
   min-width: 17.5em;
@@ -12,7 +12,7 @@
 }
 
 .popoverContent {
-  composes: tooltipContentBase from '../Tooltip/tooltipCSS.module.css';
+  composes: pandoTooltipContentBase from '../shared/tooltip.module.css';
   background-color: var(--ps-surface-weak);
   border-color: var(--ps-border);
   border-radius: 6px;
@@ -34,11 +34,16 @@
 }
 
 .popoverContent::after {
+  content: '';
   background-color: var(--ps-surface-weak);
   border-color: transparent transparent var(--ps-border) var(--ps-border);
   border-style: solid;
   border-width: 1px;
+  display: block;
   font-size: 0.75rem;
+  height: 1em;
+  position: absolute;
+  width: 1em;
   z-index: 1500;
 }
 
@@ -62,25 +67,14 @@
 }
 
 .popoverTrigger {
+  composes: pandoTooltipTrigger from '../shared/tooltip.module.css';
   appearance: none;
   background: none;
   border: none;
   border-radius: 6px;
   color: var(--ps-text);
-  cursor: pointer;
-  display: inline-block;
   font-family: inherit;
   font-size: inherit;
-  outline: none;
-}
-
-.popoverTrigger:focus {
-  outline: 3px solid var(--ps-action-border-focus);
-  outline-offset: 2px;
-}
-
-.popoverTrigger:focus:not(:focus-visible) {
-  box-shadow: none;
   outline: none;
 }
 

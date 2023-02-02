@@ -4,27 +4,27 @@
 // Manual changes will be lost - proceed with caution!
 
 import type { GeneratedStyles } from '../../../utils/types'
-import tooltipCSS from '../../Tooltip/generated/tooltipCSS.module'
-import { extract } from '../../../utils/helpers'
+import tooltip from '../../shared/generated/tooltip.module'
 
 export default {
   popoverWrapper: {
-    ...tooltipCSS.tooltipWrapper,
+    ...tooltip.pandoTooltipWrapper,
   },
   popover: {
-    ...tooltipCSS.tooltipBase,
+    ...tooltip.pandoTooltipBase,
     animationDelay: '100ms',
     maxWidth: 'none',
     minWidth: '17.5em',
     textAlign: 'start',
     zIndex: '1500',
-    "&[data-expanded='true']": {
-      ...extract(tooltipCSS.tooltipBase, "&[data-expanded='true']"),
+    "&[dataExpanded='true']": {
+      // @ts-ignore
+      ...tooltip.pandoTooltipBase["&[dataExpanded='true']"],
       display: 'inline-block',
     },
   },
   popoverContent: {
-    ...tooltipCSS.tooltipContentBase,
+    ...tooltip.pandoTooltipContentBase,
     backgroundColor: 'var(--ps-surface-weak)',
     borderColor: 'var(--ps-border)',
     borderRadius: '6px',
@@ -40,17 +40,23 @@ export default {
     lineHeight: '1.25',
     padding: '1rem 2.5rem 1rem 1rem',
     '&::after': {
-      ...extract(tooltipCSS.tooltipContentBase, '&::after'),
+      // @ts-ignore
+      ...tooltip.pandoTooltipContentBase['&::after'],
+      content: "''",
       backgroundColor: 'var(--ps-surface-weak)',
       borderColor: 'transparent transparent var(--ps-border) var(--ps-border)',
       borderStyle: 'solid',
       borderWidth: '1px',
+      display: 'block',
       fontSize: '0.75rem',
+      height: '1em',
+      position: 'absolute',
+      width: '1em',
       zIndex: '1500',
     },
   },
   popoverContentWithHeading: {
-    ...tooltipCSS.tooltipContentBase,
+    ...tooltip.pandoTooltipContentBase,
     backgroundColor: 'var(--ps-surface-weak)',
     borderColor: 'var(--ps-border)',
     borderRadius: '6px',
@@ -66,12 +72,18 @@ export default {
     lineHeight: '1.25',
     padding: '1rem 2.5rem 1rem 1rem',
     '&::after': {
-      ...extract(tooltipCSS.tooltipContentBase, '&::after'),
+      // @ts-ignore
+      ...tooltip.pandoTooltipContentBase['&::after'],
+      content: "''",
       backgroundColor: 'var(--ps-surface-weak)',
       borderColor: 'transparent transparent var(--ps-border) var(--ps-border)',
       borderStyle: 'solid',
       borderWidth: '1px',
+      display: 'block',
       fontSize: '0.75rem',
+      height: '1em',
+      position: 'absolute',
+      width: '1em',
       zIndex: '1500',
     },
     paddingTop: '0',
@@ -94,25 +106,18 @@ export default {
     zIndex: '1501',
   },
   popoverTrigger: {
+    ...tooltip.pandoTooltipTrigger,
     appearance: 'none',
     background: 'none',
     border: 'none',
     borderRadius: '6px',
     color: 'var(--ps-text)',
-    cursor: 'pointer',
-    display: 'inline-block',
     fontFamily: 'inherit',
     fontSize: 'inherit',
     outline: 'none',
-    '&:focus': {
-      outline: '3px solid var(--ps-action-border-focus)',
-      outlineOffset: '2px',
-    },
-    '&:focus:not(:focus-visible)': {
-      boxShadow: 'none',
-      outline: 'none',
-    },
-    "&[aria-expanded='true'] + [data-popover]": {
+    "&[ariaExpanded='true'] + [dataPopover]": {
+      // @ts-ignore
+      ...tooltip.pandoTooltipTrigger["&[ariaExpanded='true'] + [dataPopover]"],
       display: 'inline-block',
     },
   },

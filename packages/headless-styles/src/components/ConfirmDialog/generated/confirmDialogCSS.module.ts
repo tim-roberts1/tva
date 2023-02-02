@@ -18,13 +18,11 @@ export default {
       },
     },
   },
-  '': {
-    '&:root': {
-      '--ps-backdrop': 'rgba(0 0 0 / 65%)',
-    },
+  root: {
+    '--ps-backdrop': 'rgba(0 0 0 / 65%)',
   },
   html: {
-    "&[data-theme='light']": {
+    "&[dataTheme='light']": {
       '--ps-backdrop': 'rgba(255 255 255 / 65%)',
     },
   },
@@ -41,13 +39,10 @@ export default {
     zIndex: '1300',
   },
   confirmDialogBtnGroup: {
+    display: 'flex',
+    gap: '1rem',
+    justifyContent: 'flex-end',
     marginTop: '1.5rem',
-    textAlign: 'right',
-  },
-  confirmDialogBtnGroup_button: {
-    '&:first-of-type': {
-      marginRight: '1rem',
-    },
   },
   confirmDialogCancelBtn: {
     marginRight: '1rem',

@@ -1,0 +1,29 @@
+.pandoTooltipWrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.pandoTooltipBase {
+  composes: pandoFadeIn from './keyframes.module.css';
+  display: none;
+  opacity: 0;
+  position: absolute;
+}
+
+.pandoTooltipContentBase {
+  position: relative;
+}
+
+.pandoTooltipTrigger {
+  composes: pandoDefaultStates from './states.module.css';
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* states */
+
+.pandoTooltipBase:not([disabled]):hover,
+.pandoTooltipWrapper:is(:hover, :focus-within)
+  > [data-tooltip]:not([disabled]) {
+  display: inline-block;
+}

@@ -12,11 +12,10 @@ export function getJSConfirmDialogProps(options?: ConfirmDialogOptions) {
   const props = createConfirmDialogProps(defaultOptions)
   const backdropStyles = {
     ...styles.confirmDialogBackdrop,
-    background: styles['']['&:root']['--ps-backdrop'],
+    background: styles.root['--ps-backdrop'],
   }
   const btnGroupStyles = {
     ...styles.confirmDialogBtnGroup,
-    ...styles.confirmDialogBtnGroup_button,
   }
   const iconProps = createConfirmDialogIconProps(defaultOptions)
 

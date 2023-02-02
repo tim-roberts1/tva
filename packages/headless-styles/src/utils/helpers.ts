@@ -1,7 +1,6 @@
 import type { FieldStates } from '../components/types'
 import type {
   AllCSSProperties,
-  ExtractedObject,
   NestedGeneratedStyles,
   NestedStyleValue,
   Syntax,
@@ -9,7 +8,7 @@ import type {
 
 function formatCSSPropName(propName: string) {
   if (propName.includes('&')) {
-    return propName
+    return `${kebabCase(propName)}`
   }
 
   return `${kebabCase(propName)}:`
@@ -48,7 +47,6 @@ export function createA11yProps(options: FieldStates) {
 
   return {
     ['aria-invalid']: invalid,
-    ['data-disabled']: disabled,
     ['data-invalid']: invalid,
     ['data-readonly']: readOnly,
     ['data-required']: required,
@@ -85,15 +83,4 @@ export function transformStyles(styleObject: NestedGeneratedStyles) {
     }, '')
     .trim()
     .replace(/^ {2,12}/gm, '') as unknown as TemplateStringsArray
-}
-
-export function extract<
-  T extends Record<string, unknown>,
-  Property extends string
->(obj: T, property: Property) {
-  if (property in obj && typeof obj === 'object') {
-    return obj[property] as ExtractedObject<T, Property>
-  }
-
-  return {} as ExtractedObject<T, Property>
 }

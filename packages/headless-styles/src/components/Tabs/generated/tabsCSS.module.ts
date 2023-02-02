@@ -11,7 +11,7 @@ export default {
   },
   tabList: {
     backgroundImage:
-      'linear-gradient(\n    to top,\n    transparent 0,\n    transparent 1rem,\n    var(--ps-border-weak) 1.0625rem,\n    var(--ps-border-weak) 1.125rem,\n    transparent 1.1875rem,\n    transparent 100%\n  )',
+      'linear-gradient(\r\n    to top,\r\n    transparent 0,\r\n    transparent 1rem,\r\n    var(--ps-border-weak) 1.0625rem,\r\n    var(--ps-border-weak) 1.125rem,\r\n    transparent 1.1875rem,\r\n    transparent 100%\r\n  )',
     borderRadius: '6px',
     display: 'flex',
     WebkitOverflowScrolling: 'touch',
@@ -22,7 +22,7 @@ export default {
       outline: '3px solid var(--ps-action-border-focus)',
       outlineOffset: '2px',
     },
-    '&:focus:not(:focus-visible)': {
+    '&:focus:not(:focusVisible)': {
       boxShadow: 'none',
       outline: 'none',
     },
@@ -61,14 +61,14 @@ export default {
     '&:hover::after': {
       height: '0.25rem',
     },
-    "&[aria-selected='true']": {
+    "&[ariaSelected='true']": {
       color: 'var(--ps-action-text-inverse)',
     },
     '&:focus': {
       outline: '3px solid var(--ps-action-border-focus)',
       outlineOffset: '2px',
     },
-    '&:focus:not(:focus-visible)': {
+    '&:focus:not(:focusVisible)': {
       boxShadow: 'none',
       outline: 'none',
     },
@@ -107,14 +107,14 @@ export default {
     '&:hover::after': {
       height: '0.25rem',
     },
-    "&[aria-selected='true']": {
+    "&[ariaSelected='true']": {
       color: 'var(--ps-action-text-inverse)',
     },
     '&:focus': {
       outline: '3px solid var(--ps-action-border-focus)',
       outlineOffset: '2px',
     },
-    '&:focus:not(:focus-visible)': {
+    '&:focus:not(:focusVisible)': {
       boxShadow: 'none',
       outline: 'none',
     },
@@ -143,7 +143,7 @@ export default {
       display: 'block',
       height: '0',
       left: '0',
-      marginTop: '1.125rem',
+      marginTop: '0.72rem',
       position: 'absolute',
       right: '0',
       transition:
@@ -153,14 +153,14 @@ export default {
     '&:hover::after': {
       height: '0.25rem',
     },
-    "&[aria-selected='true']": {
+    "&[ariaSelected='true']": {
       color: 'var(--ps-action-text-inverse)',
     },
     '&:focus': {
       outline: '3px solid var(--ps-action-border-focus)',
       outlineOffset: '2px',
     },
-    '&:focus:not(:focus-visible)': {
+    '&:focus:not(:focusVisible)': {
       boxShadow: 'none',
       outline: 'none',
     },
@@ -174,14 +174,14 @@ export default {
   tabPanel: {
     borderRadius: '6px',
     width: '100%',
-    "&[aria-hidden='true']": {
+    "&[ariaHidden='true']": {
       display: 'none',
     },
     '&:focus': {
       outline: '3px solid var(--ps-action-border-focus)',
       outlineOffset: '2px',
     },
-    '&:focus:not(:focus-visible)': {
+    '&:focus:not(:focusVisible)': {
       boxShadow: 'none',
       outline: 'none',
     },

@@ -1,16 +1,18 @@
 import { createJSProps } from '../../utils/helpers'
-import { getTooltipPositionStyles } from '../Tooltip/tooltipJS'
-import tooltipStyles from '../Tooltip/generated/tooltipCSS.module'
+import { CSSObj } from '../../utils/types'
+import { getTooltipClasses } from '../shared/helpers/tooltipHelpers'
+import keyframes from '../shared/generated/keyframes.module'
+import positionStyles from '../shared/generated/position.module'
+import styles from './generated/popoverCSS.module'
 import { createPopoverProps, getDefaultPopoverOptions } from './shared'
 import type { PopoverOptions } from './types'
-import styles from './generated/popoverCSS.module'
 
 export function getJSPopoverProps(options?: PopoverOptions) {
   const defaultOptions = getDefaultPopoverOptions(options)
   const props = createPopoverProps(defaultOptions)
-  const { positionStyles, contentPositionStyles } = getTooltipPositionStyles(
-    defaultOptions.position
-  )
+  const { positionClass, contentPositionClass } =
+    getTooltipClasses<typeof positionStyles>(defaultOptions)
+  const contentPositionStyles = positionStyles[contentPositionClass]
   const baseProps = {
     ...props,
     trigger: {
@@ -28,22 +30,21 @@ export function getJSPopoverProps(options?: PopoverOptions) {
   }
   const jsStyles = {
     wrapper: {
-      ...tooltipStyles.tooltipWrapper,
       ...styles.popoverWrapper,
     },
     trigger: styles.popoverTrigger,
     popover: {
-      ...tooltipStyles.tooltipBase,
       ...styles.popover,
-      ...positionStyles,
+      ...positionStyles[positionClass],
     },
     content: {
       ...styles.popoverContent,
       ...(options?.headerId && styles.popoverContentWithHeading),
       ['&::after']: {
-        ...tooltipStyles.tooltipContentBase['&::after'],
         ...styles.popoverContent['&::after'],
-        ...contentPositionStyles['&::after'],
+        ...(contentPositionStyles[
+          '&::after' as keyof typeof contentPositionStyles
+        ] as CSSObj),
       },
     },
     header: styles.popoverHeader,
@@ -62,7 +63,7 @@ export function getJSPopoverProps(options?: PopoverOptions) {
     },
     popover: {
       ...baseProps.popover,
-      keyframes: createJSProps(tooltipStyles.keyframesFadeIn),
+      keyframes: createJSProps(keyframes.pandoFadeIn),
       ...createJSProps(jsStyles.popover),
     },
     content: {

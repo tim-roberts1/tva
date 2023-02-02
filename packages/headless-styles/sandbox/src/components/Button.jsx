@@ -1,6 +1,10 @@
-import { useEffect } from 'react'
+import { useEffect, useMemo } from 'react'
 import { PlaceholderIcon } from '@pluralsight/icons'
-import { getIconProps, getButtonProps, getJSButtonProps } from '../../../src'
+import {
+  getIconProps,
+  getButtonProps,
+  getJSButtonProps,
+} from '@pluralsight/headless-styles'
 
 function ButtonEl(props) {
   const { children, ...btnOptions } = props
@@ -9,6 +13,36 @@ function ButtonEl(props) {
 
   return (
     <button {...btnProps.button}>
+      {icon === 'start' && (
+        <PlaceholderIcon {...getIconProps(btnProps.iconOptions)} />
+      )}
+
+      {children}
+
+      {icon === 'end' && (
+        <PlaceholderIcon {...getIconProps(btnProps.iconOptions)} />
+      )}
+    </button>
+  )
+}
+
+function JSButton(props) {
+  const { children, disabled, ...btnOptions } = props
+  const btnProps = getJSButtonProps(btnOptions)
+  const icon = btnOptions.icon
+  const styles = useMemo(() => {
+    if (disabled) {
+      return {
+        ...btnProps.button.styles,
+        ...btnProps.button.styles['&:disabled'],
+      }
+    }
+
+    return btnProps.button.styles
+  }, [btnProps.button.styles, disabled])
+
+  return (
+    <button style={styles} disabled={disabled}>
       {icon === 'start' && (
         <PlaceholderIcon {...getIconProps(btnProps.iconOptions)} />
       )}
@@ -98,6 +132,33 @@ export default function Button(props) {
         <ButtonEl icon="start" sentiment="danger" size="m">
           Danger
         </ButtonEl>
+      </div>
+
+      <h3>JS API</h3>
+      <div className="App-container">
+        <JSButton>Action</JSButton>
+        <JSButton sentiment="default">Default</JSButton>
+        <JSButton sentiment="danger">Danger</JSButton>
+      </div>
+
+      <div className="App-container">
+        <JSButton disabled>Action</JSButton>
+        <JSButton sentiment="default" disabled>
+          Default
+        </JSButton>
+        <JSButton sentiment="danger" disabled>
+          Danger
+        </JSButton>
+      </div>
+
+      <div className="App-container">
+        <JSButton size="m">Action</JSButton>
+        <JSButton sentiment="default" size="m">
+          Default
+        </JSButton>
+        <JSButton sentiment="danger" size="m">
+          Danger
+        </JSButton>
       </div>
     </div>
   )

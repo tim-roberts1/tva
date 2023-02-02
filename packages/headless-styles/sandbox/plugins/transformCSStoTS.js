@@ -12,7 +12,7 @@ function compileFileToTS(id) {
   return undefined
 }
 
-export default function transformCSStoTS(regexPath) {
+export function transformCSStoTS(regexPath) {
   return {
     name: 'transform-css-to-js',
 
@@ -22,7 +22,7 @@ export default function transformCSStoTS(regexPath) {
       if (fileRegex.test(id)) {
         return {
           code: compileFileToTS(id),
-          map: null, // provide source map if available
+          map: null,
         }
       }
     },

@@ -13,7 +13,6 @@ describe('Input CSS', () => {
   const result = {
     input: {
       ['aria-invalid']: false,
-      ['data-disabled']: false,
       ['data-invalid']: false,
       ['data-readonly']: false,
       ['data-required']: false,
@@ -41,6 +40,7 @@ describe('Input CSS', () => {
         name: '',
         placeholder: 'Enter text',
         type: 'text',
+        value: '',
       },
     })
   })

@@ -1,12 +1,12 @@
-import type { FieldOptions, Size } from '../types'
+import type { InputFieldOptions, Size } from '../types'
 
-export interface SelectOptions extends FieldOptions {
-  describedBy?: string
+export interface SelectOptions
+  extends Exclude<InputFieldOptions, 'placeholder'> {
   size?: SelectSize
-  value?: string
 }
 
 export interface SelectOptionOptions {
+  placeholder?: string
   value?: string
 }
 

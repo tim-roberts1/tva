@@ -36,8 +36,17 @@ describe('Select JS', () => {
     test('should accept a value', () => {
       const optionValue = 'test value'
       expect(
-        getJSSelectOptionProps({ value: optionValue }).a11yProps.value
+        getJSSelectOptionProps({ value: optionValue }).option.a11yProps.value
       ).toEqual(optionValue)
+    })
+
+    test('should accept a placeholder option', () => {
+      const { option } = getJSSelectOptionProps({
+        placeholder: 'placeholder',
+      })
+
+      expect(option.a11yProps.disabled).toEqual(true)
+      expect(option.a11yProps.hidden).toEqual(true)
     })
   })
 })

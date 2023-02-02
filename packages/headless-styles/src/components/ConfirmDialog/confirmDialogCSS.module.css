@@ -30,12 +30,10 @@ html[data-theme='light'],
 }
 
 .confirmDialogBtnGroup {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
   margin-top: 1.5rem;
-  text-align: right;
-}
-
-.confirmDialogBtnGroup button:first-of-type {
-  margin-right: 1rem;
 }
 
 .confirmDialogCancelBtn {

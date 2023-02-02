@@ -18,7 +18,7 @@ export const ChakraCheckbox = {
         ...styles.checkboxInput['&:focus + .checkboxControl'],
       },
       _checked: {
-        ...styles.checkboxControl["&[data-checked='true']"],
+        ...styles.checkboxControl["&[dataChecked='true']"],
         color: 'white',
         _hover: {
           ...styles.checkboxControl_data_checked__true['&:hover'],
@@ -28,7 +28,7 @@ export const ChakraCheckbox = {
         ...styles.checkboxControl['&[disabled]'],
       },
       _invalid: {
-        ...styles.checkboxControl["&[data-invalid='true']"],
+        ...styles.checkboxControl["&[dataInvalid='true']"],
         _hover: {
           ...styles.checkboxControl_data_invalid__true['&:hover'],
         },

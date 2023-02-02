@@ -1,30 +1,16 @@
 .btnBase {
-  align-items: center;
-  appearance: none;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: inherit;
-  font-variation-settings: 'wght' 600;
-  font-weight: 600;
-  gap: 0.5rem;
-  justify-content: center;
-  line-height: 0;
-  min-width: 2.5rem;
-  outline: none;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  text-transform: none;
-  transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
+  composes: pandoBtn from '../shared/button.module.css';
 }
 
-/* sentiment - this must be before usage */
+.btnDefaultBorder {
+  composes: pandoBtnBorder from '../shared/button.module.css';
+}
+
+.btnDefaultRadius {
+  composes: pandoBtnRadius from '../shared/button.module.css';
+}
+
+/* sentiment (optional) - this must be before usage */
 
 .actionButton {
   background-color: var(--ps-action-background);
@@ -41,37 +27,39 @@
   color: var(--ps-danger-text-inverse);
 }
 
-/* usage */
+/* usage (required) */
 
 .filledButton {
-  composes: btnBase;
+  composes: btnBase btnDefaultRadius btnDefaultBorder;
 }
 
 .outlineButton {
-  composes: btnBase;
+  composes: btnBase btnDefaultRadius;
   background-color: transparent;
   border: 2px solid var(--ps-border-strong);
   color: var(--ps-text);
 }
 
 .textButton {
-  composes: btnBase;
+  composes: btnBase btnDefaultRadius btnDefaultBorder;
   background-color: transparent;
   color: var(--ps-action-navigation);
   text-decoration: underline;
 }
 
-/* size */
+/* size (optional) */
 
 .mButton {
   font-size: 0.875rem;
   height: 2rem;
+  min-width: 2.5rem;
   padding-inline-end: 1.125rem;
   padding-inline-start: 1.125rem;
 }
 
 .lButton {
   height: 3rem;
+  min-width: 2.5rem;
   padding-inline-end: 2.156rem;
   padding-inline-start: 2.156rem;
 }
@@ -82,8 +70,7 @@
   background-color: var(--ps-action-background-hover);
 }
 
-.defaultButton:hover:not(:disabled),
-.outlineButton:hover:not(:disabled) {
+:is(.defaultButton, .outlineButton):hover:not(:disabled) {
   background-color: var(--ps-background-hover);
 }
 
@@ -97,21 +84,13 @@
   text-decoration: none;
 }
 
-/* disabled */
-
-.btnBase:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
 /* active */
 
 .actionButton:active:not(:disabled) {
   background-color: var(--ps-action-background-active);
 }
 
-.defaultButton:active:not(:disabled),
-.outlineButton:active:not(:disabled) {
+:is(.defaultButton, .outlineButton):active:not(:disabled) {
   background-color: var(--ps-background-active);
 }
 
@@ -122,16 +101,4 @@
 .textButton:active:not(:disabled) {
   background-color: transparent;
   color: var(--ps-action-navigation-visited);
-}
-
-/* focus */
-
-.btnBase:focus {
-  outline: 3px solid var(--ps-action-border-focus);
-  outline-offset: 2px;
-}
-
-.btnBase:focus:not(:focus-visible) {
-  box-shadow: none;
-  outline: none;
 }

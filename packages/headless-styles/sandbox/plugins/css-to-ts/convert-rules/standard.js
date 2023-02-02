@@ -35,17 +35,31 @@ const standard = (rule, result) => {
       )
 
       const pseudoObj = {}
-      pseudoObj[`&${pseudoSelector}${secondarySelector}`] = obj
+      pseudoObj[`&${camelize(pseudoSelector)}${camelize(secondarySelector)}`] =
+        obj
 
       name = sanitize(primarySelector.trim())
-      retObj = addProperty(result, name, pseudoObj)
+
+      if (name) {
+        retObj = addProperty(result, name, pseudoObj)
+      } else {
+        const pseudoSelectorWithoutColon = pseudoSelector.replace(/^:+/, '')
+
+        retObj = addProperty(
+          result,
+          `${camelize(pseudoSelectorWithoutColon)}${camelize(
+            secondarySelector
+          )}`,
+          obj
+        )
+      }
     } else if (attributeSelectorIndex !== -1 && attributeSelectorIndex > 0) {
       // Split selector
       const primarySelector = selector.slice(0, attributeSelectorIndex)
       const attributeSelector = selector.slice(attributeSelectorIndex)
 
       const attrObj = {}
-      attrObj[`&${attributeSelector}`] = obj
+      attrObj[`&${camelize(attributeSelector)}`] = obj
 
       name = sanitize(primarySelector.trim())
       retObj = addProperty(result, name, attrObj)
