@@ -28,7 +28,7 @@ export default {
     top: '50%',
     transform: 'translateY(-50%)',
     zIndex: '50',
-    "&[data-invalid='true']": {
+    "&[dataInvalid='true']": {
       color: 'var(--ps-danger-text-weak)',
     },
   },
@@ -40,7 +40,7 @@ export default {
     top: '50%',
     transform: 'translateY(-50%)',
     zIndex: '50',
-    "&[data-invalid='true']": {
+    "&[dataInvalid='true']": {
       color: 'var(--ps-danger-text-weak)',
     },
     left: '0.798rem',
