@@ -8,7 +8,7 @@ const chakraInputStyle = {
       ...baseInputStyles['&:focus'],
     },
     _hover: {
-      ...baseInputStyles["&:not(:disabled, [data-readonly='true']):hover"],
+      ...baseInputStyles["&:not(:disabled, [dataReadonly='true']):hover"],
     },
     _focus: {
       ...baseInputStyles['&:focus'],
@@ -20,12 +20,12 @@ const chakraInputStyle = {
       },
     },
     _invalid: {
-      ...baseInputStyles["&[data-invalid='true']"],
+      ...baseInputStyles["&[dataInvalid='true']"],
     },
     _readOnly: {
-      ...baseInputStyles["&:is(:disabled, [data-readonly='true'])"],
+      ...baseInputStyles["&:is(:disabled, [dataReadonly='true'])"],
       _hover: {
-        ...baseInputStyles["&:is(:disabled, [data-readonly='true'])"],
+        ...baseInputStyles["&:is(:disabled, [dataReadonly='true'])"],
       },
     },
   },

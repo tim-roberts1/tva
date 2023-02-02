@@ -45,7 +45,7 @@ export default {
       color: 'var(--ps-action-navigation-visited)',
       outline: 'none',
     },
-    '&:focus:not(:focus-visible)': {
+    '&:focus:not(:focusVisible)': {
       boxShadow: 'none',
       color: 'var(--ps-action-navigation-visited)',
       outline: 'none',
@@ -92,7 +92,7 @@ export default {
       color: 'var(--ps-action-navigation-visited)',
       outline: 'none',
     },
-    '&:focus:not(:focus-visible)': {
+    '&:focus:not(:focusVisible)': {
       boxShadow: 'none',
       color: 'var(--ps-action-navigation-visited)',
       outline: 'none',
@@ -139,7 +139,7 @@ export default {
       color: 'var(--ps-action-navigation-visited)',
       outline: 'none',
     },
-    '&:focus:not(:focus-visible)': {
+    '&:focus:not(:focusVisible)': {
       boxShadow: 'none',
       color: 'var(--ps-action-navigation-visited)',
       outline: 'none',

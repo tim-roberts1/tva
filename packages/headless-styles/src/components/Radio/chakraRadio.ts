@@ -18,7 +18,7 @@ export const ChakraRadio = {
         ...styles.radioInput['&:focus + .radioControl'],
       },
       _checked: {
-        ...styles.radioControl["&[data-checked='true']"],
+        ...styles.radioControl["&[dataChecked='true']"],
         _before: {
           ...styles.radioControl_data_checked__true['&::before'],
         },
@@ -30,7 +30,7 @@ export const ChakraRadio = {
         ...styles.radioContainer['&[disabled]'],
       },
       _invalid: {
-        ...styles.radioControl["&[data-invalid='true']"],
+        ...styles.radioControl["&[dataInvalid='true']"],
         _hover: {
           ...styles.radioControl_data_invalid__true['&:hover'],
         },

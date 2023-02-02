@@ -20,7 +20,7 @@ export default {
     '--ps-backdrop': 'rgba(0 0 0 / 65%)',
   },
   html: {
-    "&[data-theme='light']": {
+    "&[dataTheme='light']": {
       '--ps-backdrop': 'rgba(255 255 255 / 65%)',
     },
   },

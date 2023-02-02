@@ -8,7 +8,7 @@ import type {
 
 function formatCSSPropName(propName: string) {
   if (propName.includes('&')) {
-    return propName
+    return `${kebabCase(propName)}`
   }
 
   return `${kebabCase(propName)}:`

@@ -138,7 +138,7 @@ function TabJS(props) {
       style={{
         ...tabPropsJS.tab.styles,
         ...(data['aria-selected'] &&
-          tabPropsJS.tab.styles["&[aria-selected='true']"]),
+          tabPropsJS.tab.styles["&[ariaSelected='true']"]),
         ...(focused && tabPropsJS.tab.styles['&:focus']),
       }}
     >
@@ -147,7 +147,7 @@ function TabJS(props) {
         style={{
           ...tabPropsJS.tab.styles['&::after'],
           ...(data['aria-selected'] &&
-            tabPropsJS.tab.styles["&[aria-selected='true']::after"]),
+            tabPropsJS.tab.styles["&[ariaSelected='true']::after"]),
           ...(hovering && tabPropsJS.tab.styles['&:hover::after']),
         }}
       />
@@ -197,7 +197,7 @@ function TabPanelJS(props) {
       style={{
         ...tabPropsJS.tabPanel.styles,
         ...(data['aria-hidden'] &&
-          tabPropsJS.tabPanel.styles["&[aria-hidden='true']"]),
+          tabPropsJS.tabPanel.styles["&[ariaHidden='true']"]),
       }}
     >
       {data.id}
