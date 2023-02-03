@@ -8,7 +8,7 @@ const chakraTextareaStyle = {
     ...baseTextareaStyles['&:focus'],
   },
   _hover: {
-    ...baseTextareaStyles["&:not(:disabled, [dataReadonly='true']):hover"],
+    ...baseTextareaStyles["&:not(:disabled, [data-readonly='true']):hover"],
   },
   _focus: {
     ...baseTextareaStyles['&:focus'],
@@ -21,12 +21,12 @@ const chakraTextareaStyle = {
     },
   },
   _invalid: {
-    ...styles.textareaBase["&[dataInvalid='true']"],
+    ...styles.textareaBase["&[data-invalid='true']"],
   },
   _readOnly: {
-    ...styles.textareaBase["&:is(:disabled, [dataReadonly='true'])"],
+    ...styles.textareaBase["&:is(:disabled, [data-readonly='true'])"],
     _hover: {
-      ...styles.textareaBase["&:is(:disabled, [dataReadonly='true'])"],
+      ...styles.textareaBase["&:is(:disabled, [data-readonly='true'])"],
     },
   },
 }
