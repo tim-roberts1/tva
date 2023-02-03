@@ -31,7 +31,7 @@ export default {
       outline: '3px solid var(--ps-action-border-focus)',
       outlineOffset: '2px',
     },
-    '&:focus:not(:focusVisible) + .track': {
+    '&:focus:not(:focus-visible) + .track': {
       boxShadow: 'none',
       outline: 'none',
     },
@@ -43,7 +43,7 @@ export default {
     transitionDuration: '200ms',
     transitionProperty: 'transform',
     width: 'var(--ps-thumb-size)',
-    "&[dataChecked='true']": {
+    "&[data-checked='true']": {
       transform:
         'translateX(calc(var(--ps-track-width) - var(--ps-track-height)))',
     },
@@ -64,21 +64,21 @@ export default {
     transitionDuration: '150ms',
     transitionProperty: 'background, background-color, border-color, transform',
     width: 'var(--ps-track-width)',
-    "&:is([disabled], [dataReadonly='true'])": {
+    "&:is([disabled], [data-readonly='true'])": {
       cursor: 'not-allowed',
     },
-    "&:not([disabled], [dataReadonly='true']):hover": {
+    "&:not([disabled], [data-readonly='true']):hover": {
       background: 'var(--ps-background-hover)',
     },
-    "&[dataChecked='true']": {
+    "&[data-checked='true']": {
       background: 'var(--ps-action-background)',
     },
-    "&[dataInvalid='true']": {
+    "&[data-invalid='true']": {
       background: 'var(--ps-danger-surface)',
     },
   },
   track_data_checked__true: {
-    "&:not([disabled], [dataReadonly='true']):hover": {
+    "&:not([disabled], [data-readonly='true']):hover": {
       background: 'var(--ps-action-background-hover)',
     },
   },
@@ -103,16 +103,16 @@ export default {
     transitionDuration: '150ms',
     transitionProperty: 'background, background-color, border-color, transform',
     width: 'var(--ps-track-width)',
-    "&:is([disabled], [dataReadonly='true'])": {
+    "&:is([disabled], [data-readonly='true'])": {
       cursor: 'not-allowed',
     },
-    "&:not([disabled], [dataReadonly='true']):hover": {
+    "&:not([disabled], [data-readonly='true']):hover": {
       background: 'var(--ps-background-hover)',
     },
-    "&[dataChecked='true']": {
+    "&[data-checked='true']": {
       background: 'var(--ps-action-background)',
     },
-    "&[dataInvalid='true']": {
+    "&[data-invalid='true']": {
       background: 'var(--ps-danger-surface)',
     },
   },
@@ -132,16 +132,16 @@ export default {
     transitionDuration: '150ms',
     transitionProperty: 'background, background-color, border-color, transform',
     width: 'var(--ps-track-width)',
-    "&:is([disabled], [dataReadonly='true'])": {
+    "&:is([disabled], [data-readonly='true'])": {
       cursor: 'not-allowed',
     },
-    "&:not([disabled], [dataReadonly='true']):hover": {
+    "&:not([disabled], [data-readonly='true']):hover": {
       background: 'var(--ps-background-hover)',
     },
-    "&[dataChecked='true']": {
+    "&[data-checked='true']": {
       background: 'var(--ps-action-background)',
     },
-    "&[dataInvalid='true']": {
+    "&[data-invalid='true']": {
       background: 'var(--ps-danger-surface)',
     },
   },

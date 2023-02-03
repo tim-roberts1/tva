@@ -22,7 +22,7 @@ export default {
       outline: '3px solid var(--ps-action-border-focus)',
       outlineOffset: '2px',
     },
-    '&:focus:not(:focusVisible)': {
+    '&:focus:not(:focus-visible)': {
       boxShadow: 'none',
       outline: 'none',
     },
@@ -61,14 +61,14 @@ export default {
     '&:hover::after': {
       height: '0.25rem',
     },
-    "&[ariaSelected='true']": {
+    "&[aria-selected='true']": {
       color: 'var(--ps-action-text-inverse)',
     },
     '&:focus': {
       outline: '3px solid var(--ps-action-border-focus)',
       outlineOffset: '2px',
     },
-    '&:focus:not(:focusVisible)': {
+    '&:focus:not(:focus-visible)': {
       boxShadow: 'none',
       outline: 'none',
     },
@@ -107,14 +107,14 @@ export default {
     '&:hover::after': {
       height: '0.25rem',
     },
-    "&[ariaSelected='true']": {
+    "&[aria-selected='true']": {
       color: 'var(--ps-action-text-inverse)',
     },
     '&:focus': {
       outline: '3px solid var(--ps-action-border-focus)',
       outlineOffset: '2px',
     },
-    '&:focus:not(:focusVisible)': {
+    '&:focus:not(:focus-visible)': {
       boxShadow: 'none',
       outline: 'none',
     },
@@ -153,14 +153,14 @@ export default {
     '&:hover::after': {
       height: '0.25rem',
     },
-    "&[ariaSelected='true']": {
+    "&[aria-selected='true']": {
       color: 'var(--ps-action-text-inverse)',
     },
     '&:focus': {
       outline: '3px solid var(--ps-action-border-focus)',
       outlineOffset: '2px',
     },
-    '&:focus:not(:focusVisible)': {
+    '&:focus:not(:focus-visible)': {
       boxShadow: 'none',
       outline: 'none',
     },
@@ -174,14 +174,14 @@ export default {
   tabPanel: {
     borderRadius: '6px',
     width: '100%',
-    "&[ariaHidden='true']": {
+    "&[aria-hidden='true']": {
       display: 'none',
     },
     '&:focus': {
       outline: '3px solid var(--ps-action-border-focus)',
       outlineOffset: '2px',
     },
-    '&:focus:not(:focusVisible)': {
+    '&:focus:not(:focus-visible)': {
       boxShadow: 'none',
       outline: 'none',
     },

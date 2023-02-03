@@ -15,7 +15,7 @@ export default {
     '&[disabled]': {
       cursor: 'not-allowed',
     },
-    "&[dataReadonly='true']": {
+    "&[data-readonly='true']": {
       cursor: 'not-allowed',
     },
   },
@@ -34,7 +34,7 @@ export default {
       outline: '3px solid var(--ps-action-border-focus)',
       outlineOffset: '2px',
     },
-    '&:focus:not(:focusVisible) + .checkboxControl': {
+    '&:focus:not(:focus-visible) + .checkboxControl': {
       boxShadow: 'none',
       outline: 'none',
     },
@@ -62,7 +62,7 @@ export default {
       background: 'var(--ps-background-hover)',
       borderColor: 'var(--ps-background-hover)',
     },
-    "&[dataChecked='true']": {
+    "&[data-checked='true']": {
       background: 'var(--ps-action-background)',
       borderColor: 'var(--ps-action-background)',
     },
@@ -70,7 +70,7 @@ export default {
       background: 'var(--ps-background)',
       borderColor: 'var(--ps-background)',
     },
-    "&[dataInvalid='true']": {
+    "&[data-invalid='true']": {
       background: 'var(--ps-danger-surface)',
       borderColor: 'var(--ps-danger-surface)',
       color: 'var(--ps-danger-text)',

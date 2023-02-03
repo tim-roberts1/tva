@@ -37,21 +37,21 @@ export default {
       background: 'var(--ps-background)',
       borderColor: 'var(--ps-background)',
     },
-    "&:is(:disabled, [dataReadonly='true'])": {
+    "&:is(:disabled, [data-readonly='true'])": {
       // @ts-ignore
-      ...states.pandoDefaultStates["&:is(:disabled, [dataReadonly='true'])"],
+      ...states.pandoDefaultStates["&:is(:disabled, [data-readonly='true'])"],
       cursor: 'not-allowed',
     },
-    "&:not(:disabled, [dataReadonly='true']):hover": {
+    "&:not(:disabled, [data-readonly='true']):hover": {
       // @ts-ignore
       ...states.pandoDefaultStates[
-        "&:not(:disabled, [dataReadonly='true']):hover"
+        "&:not(:disabled, [data-readonly='true']):hover"
       ],
       boxShadow: 'var(--ps-border-strong) 0 0 0 1px',
     },
-    "&[dataInvalid='true']": {
+    "&[data-invalid='true']": {
       // @ts-ignore
-      ...states.pandoDefaultStates["&[dataInvalid='true']"],
+      ...states.pandoDefaultStates["&[data-invalid='true']"],
       borderColor: 'var(--ps-danger-border)',
       boxShadow: 'var(--ps-danger-border) 0 0 0 1px',
     },
