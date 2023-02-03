@@ -37,7 +37,7 @@ export default {
     position: 'absolute',
     width: '14rem',
     zIndex: '1000',
-    "&[dataExpanded='true']": {
+    "&[data-expanded='true']": {
       display: 'block',
     },
   },
@@ -86,7 +86,7 @@ export default {
     transition: 'background-color 250ms ease-in-out, color 250ms ease-in-out',
     whiteSpace: 'nowrap',
     width: '100%',
-    '&:anyLink': {
+    '&:any-link': {
       appearance: 'none',
       background: 'transparent',
       border: '0',
@@ -115,10 +115,10 @@ export default {
       top: '0',
       zIndex: '1010',
     },
-    "&[ariaExpanded='true'] ~ .menu": {
+    "&[aria-expanded='true'] ~ .menu": {
       display: 'block',
     },
-    "&[ariaExpanded='true']": {
+    "&[aria-expanded='true']": {
       background: 'var(--ps-action-background)',
       color: 'var(--ps-action-text)',
     },
@@ -126,15 +126,15 @@ export default {
       background: 'var(--ps-action-background)',
       color: 'var(--ps-action-text)',
     },
-    "&:hover:not([ariaExpanded='true'])": {
+    "&:hover:not([aria-expanded='true'])": {
       background: 'var(--ps-background-hover)',
       color: 'var(--ps-text)',
     },
-    "&:focus:not([ariaExpanded='true'])": {
+    "&:focus:not([aria-expanded='true'])": {
       outline: '3px solid var(--ps-action-border-focus)',
       outlineOffset: '2px',
     },
-    '&:focus:not(:focusVisible)': {
+    '&:focus:not(:focus-visible)': {
       boxShadow: 'none',
       outline: 'none',
     },

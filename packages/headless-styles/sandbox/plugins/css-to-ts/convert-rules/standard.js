@@ -35,8 +35,7 @@ const standard = (rule, result) => {
       )
 
       const pseudoObj = {}
-      pseudoObj[`&${camelize(pseudoSelector)}${camelize(secondarySelector)}`] =
-        obj
+      pseudoObj[`&${pseudoSelector}${secondarySelector}`] = obj
 
       name = sanitize(primarySelector.trim())
 
@@ -47,9 +46,7 @@ const standard = (rule, result) => {
 
         retObj = addProperty(
           result,
-          `${camelize(pseudoSelectorWithoutColon)}${camelize(
-            secondarySelector
-          )}`,
+          `${pseudoSelectorWithoutColon}${secondarySelector}`,
           obj
         )
       }
@@ -59,7 +56,7 @@ const standard = (rule, result) => {
       const attributeSelector = selector.slice(attributeSelectorIndex)
 
       const attrObj = {}
-      attrObj[`&${camelize(attributeSelector)}`] = obj
+      attrObj[`&${attributeSelector}`] = obj
 
       name = sanitize(primarySelector.trim())
       retObj = addProperty(result, name, attrObj)

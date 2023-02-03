@@ -16,9 +16,9 @@ export default {
     minWidth: '17.5em',
     textAlign: 'start',
     zIndex: '1500',
-    "&[dataExpanded='true']": {
+    "&[data-expanded='true']": {
       // @ts-ignore
-      ...tooltip.pandoTooltipBase["&[dataExpanded='true']"],
+      ...tooltip.pandoTooltipBase["&[data-expanded='true']"],
       display: 'inline-block',
     },
   },
@@ -114,9 +114,11 @@ export default {
     fontFamily: 'inherit',
     fontSize: 'inherit',
     outline: 'none',
-    "&[ariaExpanded='true'] + [dataPopover]": {
+    "&[aria-expanded='true'] + [data-popover]": {
       // @ts-ignore
-      ...tooltip.pandoTooltipTrigger["&[ariaExpanded='true'] + [dataPopover]"],
+      ...tooltip.pandoTooltipTrigger[
+        "&[aria-expanded='true'] + [data-popover]"
+      ],
       display: 'inline-block',
     },
   },

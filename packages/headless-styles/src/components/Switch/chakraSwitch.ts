@@ -13,7 +13,7 @@ const baseTrackStyles = {
   width: mTrackWidth,
 }
 
-const checkedAttr = "&[dataChecked='true']"
+const checkedAttr = "&[data-checked='true']"
 
 export const ChakraSwitch = {
   baseStyle: {
@@ -30,22 +30,22 @@ export const ChakraSwitch = {
     track: {
       ...baseTrackStyles,
       _hover: {
-        ...track["&:not([disabled], [dataReadonly='true']):hover"],
+        ...track["&:not([disabled], [data-readonly='true']):hover"],
       },
       _checked: {
         ...styles.track[checkedAttr],
         _hover: {
-          ...styles.track["&:not([disabled], [dataReadonly='true']):hover"],
+          ...styles.track["&:not([disabled], [data-readonly='true']):hover"],
         },
       },
       _disabled: {
-        ...styles.track["&:is([disabled], [dataReadonly='true'])"],
+        ...styles.track["&:is([disabled], [data-readonly='true'])"],
         _hover: {
-          ...styles.track["&:is([disabled], [dataReadonly='true'])"],
+          ...styles.track["&:is([disabled], [data-readonly='true'])"],
         },
       },
       _invalid: {
-        ...styles.track["&[dataInvalid='true']"],
+        ...styles.track["&[data-invalid='true']"],
         _hover: {
           ...styles.track_data_invalid__true['&:hover'],
         },
