@@ -68,6 +68,8 @@ export type NestedStyleObject =
   | CSSKeyframes
 export type NestedStyleValue = string | GeneratedStyles
 
+export type RenderedGeneratedStyles<T> = Omit<AllCSSProperties, keyof T> & T
+
 export type StyleObject = OptionProps & PropsObj
 export type StyleProps = keyof CSS.Properties
 export type Syntax = 'jsx' | 'html'
