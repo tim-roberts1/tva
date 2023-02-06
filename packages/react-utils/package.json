@@ -2,13 +2,13 @@
   "name": "@pluralsight/react-utils",
   "version": "0.0.0",
   "description": "A set of React custom hooks for Pluralsight.",
-  "main": "npm/index.js",
-  "module": "npm/browser.js",
+  "main": "npm/node/index.js",
+  "module": "npm/browser/index.js",
   "types": "npm/types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./npm/browser.js",
-      "require": "./npm/index.js"
+      "import": "./npm/browser/index.js.js",
+      "require": "./npm/node/index.js"
     },
     "./types": {
       "types": "./npm/types/types.d.ts"
@@ -26,7 +26,7 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "build": "yarn clean && yarn bundle && yarn clean:allUnused",
+    "build": "yarn clean && yarn compile:types && yarn bundle && yarn clean:allUnused",
     "bundle": "rollup --config rollup.config.mjs",
     "clean": "yarn clean:bundles && yarn clean:types",
     "clean:bundles": "rm -rf ./npm/browser && rm -rf ./npm/node",
@@ -36,6 +36,7 @@
     "clean:unusedDirs": "yarn clean:unusedDirs:ru && yarn clean:unusedDirs:shared",
     "clean:unusedDirs:ru": "rm -rf npm/types/react-utils",
     "clean:unusedDirs:shared": "rm -rf npm/types/shared",
+    "compile:types": "tsc --project tsconfig.build.json",
     "lint:ts": "tsc --project tsconfig.json --noEmit",
     "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
   },
@@ -52,7 +53,6 @@
     "@rollup/plugin-commonjs": "^23.0.0",
     "@rollup/plugin-node-resolve": "^15.0.0",
     "@rollup/plugin-replace": "^5.0.0",
-    "@rollup/plugin-typescript": "^9.0.1",
     "@testing-library/dom": "^8.17.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
@@ -68,8 +68,6 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "rollup": "^3.2.2",
-    "rollup-plugin-dts": "^5.0.0",
-    "rollup-plugin-terser": "^7.0.2",
     "typescript": "latest"
   },
   "peerDependencies": {
