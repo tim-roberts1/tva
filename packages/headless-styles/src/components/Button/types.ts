@@ -1,28 +1,11 @@
-import type { ButtonHTMLAttributes, DetailedHTMLProps } from 'react'
 import type { Sentiment, Size, Usage } from '../types'
 
-export interface ButtonOptions
-  extends DetailedHTMLProps<
-    ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-  > {
+export interface ButtonOptions {
   disabled?: boolean
   sentiment?: ButtonSentiment
   usage?: ButtonUsage
   size?: ButtonSize
   icon?: ButtonIcon
-}
-
-export interface DefaultButtonOptions
-  extends DetailedHTMLProps<
-    ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-  > {
-  disabled: boolean
-  sentiment: ButtonSentiment
-  usage: ButtonUsage
-  size: ButtonSize
-  icon: ButtonIcon
 }
 
 // types

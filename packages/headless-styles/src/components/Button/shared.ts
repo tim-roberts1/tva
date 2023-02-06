@@ -1,5 +1,5 @@
 import type { IconOptions } from '../Icon/types'
-import type { ButtonOptions, ButtonSize, DefaultButtonOptions } from './types'
+import type { ButtonOptions, ButtonSize } from './types'
 
 function getIconBtnSize(size?: ButtonSize) {
   switch (size) {
@@ -20,7 +20,9 @@ function createBtnClass<T extends string>(name: T) {
 
 // public
 
-export function getDefaultButtonOptions(options?: ButtonOptions) {
+export function getDefaultButtonOptions(
+  options?: ButtonOptions
+): Required<ButtonOptions> {
   return {
     disabled: options?.disabled ?? false,
     icon: options?.icon ?? '',
@@ -30,7 +32,7 @@ export function getDefaultButtonOptions(options?: ButtonOptions) {
   }
 }
 
-export function getButtonClasses(options: DefaultButtonOptions) {
+export function getButtonClasses(options: Required<ButtonOptions>) {
   return {
     sentimentClass: createBtnClass(options.sentiment),
     sizeClass: createBtnClass(options.size),
