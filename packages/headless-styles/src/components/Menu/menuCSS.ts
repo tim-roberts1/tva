@@ -14,19 +14,20 @@ const MENU = 'ps-menu'
 export function getMenuProps(options?: MenuOptions) {
   const defaultOptions = getDefaultMenuOptions(options)
   const props = createMenuProps(defaultOptions)
-  const { menuPositionClass } =
-    getMenuPositionClasses<typeof positionStyles>(defaultOptions)
+  const { menuPositionClass } = getMenuPositionClasses(defaultOptions)
 
   return {
     ...props,
     wrapper: {
       ...props.wrapper,
-      ...createClassNameProp(`${MENU}-wrapper ${styles.menuWrapper}`),
+      ...createClassNameProp(`${MENU}-wrapper`, styles.menuWrapper),
     },
     menu: {
       ...props.menu,
       ...createClassNameProp(
-        `${MENU} ${styles.menu} ${positionStyles[menuPositionClass]}`
+        MENU,
+        styles.menu,
+        positionStyles[menuPositionClass]
       ),
     },
   }
@@ -39,19 +40,19 @@ export function getMenuItemProps() {
     ...props,
     divider: {
       ...props.divider,
-      ...createClassNameProp(`${MENU}-divider ${styles.menuDivider}`),
+      ...createClassNameProp(`${MENU}-divider`, styles.menuDivider),
     },
     menuItemText: {
       ...props.menuItemText,
-      ...createClassNameProp(`${MENU}-text ${styles.menuItemText}`),
+      ...createClassNameProp(`${MENU}-text`, styles.menuItemText),
     },
     menuListItem: {
       ...props.menuListItem,
-      ...createClassNameProp(`${MENU}-listItem ${styles.menuListItem}`),
+      ...createClassNameProp(`${MENU}-listItem`, styles.menuListItem),
     },
     menuItem: {
       ...props.menuItem,
-      ...createClassNameProp(`${MENU}-item ${styles.menuItem}`),
+      ...createClassNameProp(`${MENU}-item`, styles.menuItem),
     },
   }
 }

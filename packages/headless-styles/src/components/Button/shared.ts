@@ -1,12 +1,5 @@
-import type { StyleKey } from '../types'
 import type { IconOptions } from '../Icon/types'
-import type {
-  ButtonOptions,
-  ButtonSentiment,
-  ButtonSize,
-  ButtonUsage,
-  DefaultButtonOptions,
-} from './types'
+import type { ButtonOptions, ButtonSize, DefaultButtonOptions } from './types'
 
 function getIconBtnSize(size?: ButtonSize) {
   switch (size) {
@@ -22,9 +15,7 @@ function getIconBtnSize(size?: ButtonSize) {
 }
 
 function createBtnClass<T extends string>(name: T) {
-  const KEY = 'Button'
-
-  return `${name}${KEY}`
+  return `${name}Button` as const
 }
 
 // public
@@ -39,31 +30,11 @@ export function getDefaultButtonOptions(options?: ButtonOptions) {
   }
 }
 
-type SentimentClass = `${ButtonSentiment}Button`
-type SizeClass = `${ButtonSize}Button`
-type UsageClass = `${ButtonUsage}Button`
-
-interface ButtonStyleKeys<SM> {
-  sentimentClass: Extract<StyleKey<SM>, SentimentClass>
-  sizeClass: Extract<StyleKey<SM>, SizeClass>
-  usageClass: Extract<StyleKey<SM>, UsageClass>
-}
-
-export function getButtonClasses<StyleModule>(
-  options: DefaultButtonOptions
-): ButtonStyleKeys<StyleModule> {
+export function getButtonClasses(options: DefaultButtonOptions) {
   return {
-    sentimentClass: createBtnClass<ButtonSentiment>(
-      options.sentiment
-    ) as Extract<StyleKey<StyleModule>, SentimentClass>,
-    sizeClass: createBtnClass<ButtonSize>(options.size) as Extract<
-      StyleKey<StyleModule>,
-      SizeClass
-    >,
-    usageClass: createBtnClass<ButtonUsage>(options.usage) as Extract<
-      StyleKey<StyleModule>,
-      UsageClass
-    >,
+    sentimentClass: createBtnClass(options.sentiment),
+    sizeClass: createBtnClass(options.size),
+    usageClass: createBtnClass(options.usage),
   }
 }
 

@@ -12,8 +12,7 @@ import positionStyles from './generated/menuPositioning.module'
 export function getJSMenuProps(options?: MenuOptions) {
   const defaultOptions = getDefaultMenuOptions(options)
   const props = createMenuProps(defaultOptions)
-  const { menuPositionClass } =
-    getMenuPositionClasses<typeof positionStyles>(defaultOptions)
+  const { menuPositionClass } = getMenuPositionClasses(defaultOptions)
 
   const baseProps = {
     ...props,
