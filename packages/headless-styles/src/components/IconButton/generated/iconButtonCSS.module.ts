@@ -35,6 +35,16 @@ export default {
       backgroundColor: 'var(--ps-background-active)',
     },
   },
+  dangerIconButton: {
+    backgroundColor: 'var(--ps-danger-background)',
+    color: 'var(--ps-danger-text-inverse)',
+    '&:hover:not(:disabled)': {
+      backgroundColor: 'var(--ps-danger-background-hover)',
+    },
+    '&:active:not(:disabled)': {
+      backgroundColor: 'var(--ps-danger-background-active)',
+    },
+  },
   squareIconButton: {
     ...button.pandoBtn,
     ...button.pandoBtnBorder,

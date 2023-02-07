@@ -13,8 +13,7 @@ const INPUT = 'ps-input'
 
 export function getInputProps(options?: InputOptions) {
   const defaultOptions = getDefaultInputOptions(options)
-  const { baseSizeClass, kindClass } =
-    createInputClasses<typeof styles>(defaultOptions)
+  const { baseSizeClass, kindClass } = createInputClasses(defaultOptions)
   const props = createInputProps(defaultOptions)
   const leadingIconProps = createInputLeadingIconProps(defaultOptions, {
     iconWrapper: {

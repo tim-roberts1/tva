@@ -15,7 +15,7 @@ export function getJSCircularProgressProps(options?: CircularProgressOptions) {
   const a11yProps = getA11yCircularProgressProps(a11y, kind)
   const isIndeterminate = kind === 'indeterminate'
   const kindKey = styles[kind]
-  const { sizeClass } = createCircularProgressClasses<typeof styles>({
+  const { sizeClass } = createCircularProgressClasses({
     size,
   })
   const now = a11y.now

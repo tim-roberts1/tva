@@ -22,6 +22,11 @@
   color: var(--ps-text);
 }
 
+.dangerIconButton {
+  background-color: var(--ps-danger-background);
+  color: var(--ps-danger-text-inverse);
+}
+
 /* usage (required) */
 
 .squareIconButton {
@@ -65,6 +70,10 @@
   background-color: var(--ps-background-hover);
 }
 
+.dangerIconButton:hover:not(:disabled) {
+  background-color: var(--ps-danger-background-hover);
+}
+
 .textIconButton:hover:not(:disabled) {
   background-color: transparent;
   transform: scale(1.1);
@@ -78,6 +87,10 @@
 
 .defaultIconButton:active:not(:disabled) {
   background-color: var(--ps-background-active);
+}
+
+.dangerIconButton:active:not(:disabled) {
+  background-color: var(--ps-danger-background-active);
 }
 
 .textIconButton:hover:not(:disabled) {

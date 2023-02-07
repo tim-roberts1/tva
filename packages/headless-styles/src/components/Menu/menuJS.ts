@@ -53,8 +53,7 @@ function getPositionClasses(side: Side, axis: Axis, alignment: Alignment) {
 export function getJSMenuProps(options?: MenuOptions) {
   const defaultOptions = getDefaultMenuOptions(options)
   const props = createMenuProps(defaultOptions)
-  const { menuPositionClass } =
-    getMenuPositionClasses<typeof styles>(defaultOptions)
+  const { menuPositionClass } = getMenuPositionClasses(defaultOptions)
   const side = getSide(defaultOptions.position)
   const positionClasses = getPositionClasses(
     side,
@@ -75,7 +74,7 @@ export function getJSMenuProps(options?: MenuOptions) {
     menu: {
       ...positionStyles[positionClasses.sideClass],
       ...positionStyles[positionClasses.alignmentClass],
-      ...styles[menuPositionClass],
+      ...positionStyles[menuPositionClass],
       ...styles.menu,
     },
   }

@@ -16,9 +16,9 @@ type WrapperSentimentKey =
 export function getJSAdmonitionProps(options?: AdmonitionOptions) {
   const defaultOptions = getDefaultAdmonitionOptions(options)
   const props = createAdmonitionProps()
-  const { sentimentClass, iconClass, textClass } = getAdmonitionClasses<
-    typeof styles
-  >(defaultOptions.sentiment)
+  const { sentimentClass, iconClass, textClass } = getAdmonitionClasses(
+    defaultOptions.sentiment
+  )
   const descStyles = {
     ...styles.admonitionText,
     ...styles.admonitionDescription,

@@ -8,7 +8,7 @@ const FORM_CONTROL = 'ps-form-control'
 export function getFormControlProps(options?: FormControlOptions) {
   const { groupType, direction, ...fieldOptions } =
     getDefaultFormControlOptions(options)
-  const { directionClass } = getFormControlClasses<typeof styles>(direction)
+  const { directionClass } = getFormControlClasses(direction)
   const role = {
     role: groupType,
   }

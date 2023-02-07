@@ -1,4 +1,3 @@
-import type { StyleKey } from '../types'
 import type { TabsSize, TabsOptions } from './types'
 
 export function getDefaultTabsOptions(options?: TabsOptions) {
@@ -7,15 +6,9 @@ export function getDefaultTabsOptions(options?: TabsOptions) {
   }
 }
 
-interface TabStyleKeys<SM> {
-  sizeClass: StyleKey<SM>
-}
-
-export function createTabsClasses<StyleModule>(
-  size: TabsSize
-): TabStyleKeys<StyleModule> {
+export function createTabsClasses(size: TabsSize) {
   return {
-    sizeClass: `${size}Tab` as StyleKey<StyleModule>,
+    sizeClass: `${size}Tab` as const,
   }
 }
 

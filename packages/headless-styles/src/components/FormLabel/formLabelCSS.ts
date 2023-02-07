@@ -13,7 +13,7 @@ export function getFormLabelProps(options?: FormLabelOptions) {
   const { htmlFor, value, ...defaultOptions } =
     getDefaultFormLabelOptions(options)
   const label = getFormValue(value, defaultOptions.required)
-  const { labelClass } = getFormLabelClasses<typeof styles>(defaultOptions.kind)
+  const { labelClass } = getFormLabelClasses(defaultOptions.kind)
 
   return {
     htmlFor,

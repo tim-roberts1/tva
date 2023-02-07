@@ -12,7 +12,7 @@ const ADMONITION = 'ps-admonition'
 export function getAdmonitionProps(options?: AdmonitionOptions) {
   const { sentiment } = getDefaultAdmonitionOptions(options)
   const { sentimentClass, iconClass, textClass } =
-    getAdmonitionClasses<typeof styles>(sentiment)
+    getAdmonitionClasses(sentiment)
   const props = createAdmonitionProps()
 
   return {

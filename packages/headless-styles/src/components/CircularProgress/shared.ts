@@ -1,4 +1,3 @@
-import type { StyleKey } from '../types'
 import type {
   CircularProgressA11yOptions,
   CircularProgressOptions,
@@ -42,16 +41,11 @@ export function getStrokeProps(now: number) {
   }
 }
 
-interface CircularProgressStyleKeys<SM> {
-  sizeClass: StyleKey<SM>
-}
-
-export function createCircularProgressClasses<StyleModule>(
+export function createCircularProgressClasses(
   options: Pick<DefaultCircularProgressOptions, 'size'>
-): CircularProgressStyleKeys<StyleModule> {
-  const SIZE = 'Size'
+) {
   return {
-    sizeClass: `${options.size}${SIZE}` as StyleKey<StyleModule>,
+    sizeClass: `${options.size}Size` as const,
   }
 }
 

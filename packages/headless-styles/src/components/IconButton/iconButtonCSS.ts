@@ -13,7 +13,7 @@ export function getIconButtonProps(options?: IconButtonOptions) {
   const defaultOptions = getDefaultIconButtonOptions(options)
   const props = createIconButtonProps(defaultOptions)
   const { sentimentClass, sizeClass, usageClass } =
-    getIconButtonClasses<typeof styles>(defaultOptions)
+    getIconButtonClasses(defaultOptions)
 
   return {
     ...props,

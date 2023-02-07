@@ -9,9 +9,7 @@ import styles from './generated/tagCSS.module'
 
 export function getJSTagProps(options?: TagOptions) {
   const defaultOptions = getDefaultTagOptions(options)
-  const { sizeClass } = createTagSelectorClasses<typeof styles>(
-    defaultOptions.size
-  )
+  const { sizeClass } = createTagSelectorClasses(defaultOptions.size)
   const props = createTagProps(defaultOptions)
   const JsStyles = {
     ...styles.baseTag,

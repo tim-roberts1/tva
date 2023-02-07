@@ -1,4 +1,3 @@
-import type { StyleKey } from '../types'
 import type { IconOptions } from '../Icon/types'
 import type { ButtonOptions, ButtonSize, DefaultButtonOptions } from './types'
 
@@ -15,9 +14,8 @@ function getIconBtnSize(size?: ButtonSize) {
   }
 }
 
-function createBtnClass(name: string) {
-  const KEY = 'Button'
-  return `${name}${KEY}`
+function createBtnClass<Name extends string>(name: Name) {
+  return `${name}Button` as const
 }
 
 // public
@@ -32,19 +30,11 @@ export function getDefaultButtonOptions(options?: ButtonOptions) {
   }
 }
 
-interface ButtonStyleKeys<SM> {
-  sentimentClass: StyleKey<SM>
-  sizeClass: StyleKey<SM>
-  usageClass: StyleKey<SM>
-}
-
-export function getButtonClasses<StyleModule>(
-  options: DefaultButtonOptions
-): ButtonStyleKeys<StyleModule> {
+export function getButtonClasses(options: DefaultButtonOptions) {
   return {
-    sentimentClass: createBtnClass(options.sentiment) as StyleKey<StyleModule>,
-    sizeClass: createBtnClass(options.size) as StyleKey<StyleModule>,
-    usageClass: createBtnClass(options.usage) as StyleKey<StyleModule>,
+    sentimentClass: createBtnClass(options.sentiment),
+    sizeClass: createBtnClass(options.size),
+    usageClass: createBtnClass(options.usage),
   }
 }
 

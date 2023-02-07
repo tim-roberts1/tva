@@ -12,8 +12,7 @@ import type { InputOptions } from './types'
 export function getJSInputProps(options?: InputOptions) {
   const defaultOptions = getDefaultInputOptions(options)
   const props = createInputProps(defaultOptions)
-  const { baseSizeClass, kindClass } =
-    createInputClasses<typeof styles>(defaultOptions)
+  const { baseSizeClass, kindClass } = createInputClasses(defaultOptions)
   const invalidIconProps = createInputInvalidIconProps(defaultOptions)
   const leadingIconProps = createInputLeadingIconProps(defaultOptions)
   const jsStyles = {

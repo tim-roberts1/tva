@@ -1,7 +1,6 @@
 import { createA11yProps } from '../../utils/helpers'
 import type { IconOptions } from '../../types'
 import { getDefaultInputFieldOptions } from '../shared/defaultOptions'
-import type { StyleKey } from '../types'
 import type { DefaultInputOptions, InputOptions } from './types'
 
 const inputIconMap = {
@@ -20,18 +19,11 @@ export function getDefaultInputOptions(options?: InputOptions) {
   }
 }
 
-interface InputStyleKeys<SM> {
-  kindClass: StyleKey<SM>
-  baseSizeClass: StyleKey<SM>
-}
-
-export function createInputClasses<StyleModule>(
-  options: DefaultInputOptions
-): InputStyleKeys<StyleModule> {
+export function createInputClasses(options: DefaultInputOptions) {
   const { size } = options
   return {
-    kindClass: `${options.kind}Input` as StyleKey<StyleModule>,
-    baseSizeClass: `${size}InputBase` as StyleKey<StyleModule>,
+    kindClass: `${options.kind}Input` as const,
+    baseSizeClass: `${size}InputBase` as const,
   }
 }
 

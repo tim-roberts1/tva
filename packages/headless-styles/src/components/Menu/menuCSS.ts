@@ -14,8 +14,7 @@ const MENU = 'ps-menu'
 export function getMenuProps(options?: MenuOptions) {
   const defaultOptions = getDefaultMenuOptions(options)
   const props = createMenuProps(defaultOptions)
-  const { menuPositionClass } =
-    getMenuPositionClasses<typeof positionStyles>(defaultOptions)
+  const { menuPositionClass } = getMenuPositionClasses(defaultOptions)
 
   return {
     ...props,

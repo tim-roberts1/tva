@@ -1,4 +1,4 @@
-import type { IconSize, StyleKey } from '../types'
+import type { IconSize } from '../types'
 import type { AvatarOptions, AvatarSize, AvatarSentiment } from './types'
 
 export function getDefaultAvatarOptions(options?: AvatarOptions) {
@@ -18,20 +18,14 @@ export const iconSizeMap: Record<AvatarSize, string> = {
   xl: '8rem',
 }
 
-interface AvatarStyleKeys<SM> {
-  labelClass: StyleKey<SM>
-  sentimentClass: StyleKey<SM>
-  sizeClass: StyleKey<SM>
-}
-
-export function createAvatarSelectorClasses<StyleModule>(
+export function createAvatarSelectorClasses(
   sentiment: AvatarSentiment,
   size: AvatarSize
-): AvatarStyleKeys<StyleModule> {
+) {
   return {
-    labelClass: `${size}AvatarLabel` as StyleKey<StyleModule>,
-    sentimentClass: `${sentiment}Avatar` as StyleKey<StyleModule>,
-    sizeClass: `${size}Avatar` as StyleKey<StyleModule>,
+    labelClass: `${size}AvatarLabel` as const,
+    sentimentClass: `${sentiment}Avatar` as const,
+    sizeClass: `${size}Avatar` as const,
   }
 }
 

@@ -9,9 +9,10 @@ import styles from './generated/avatarCSS.module'
 
 export function getJSAvatarProps(options?: AvatarOptions) {
   const defaultOptions = getDefaultAvatarOptions(options)
-  const { labelClass, sentimentClass, sizeClass } = createAvatarSelectorClasses<
-    typeof styles
-  >(defaultOptions.sentiment, defaultOptions.size)
+  const { labelClass, sentimentClass, sizeClass } = createAvatarSelectorClasses(
+    defaultOptions.sentiment,
+    defaultOptions.size
+  )
   const props = createAvatarProps(defaultOptions)
   const avatarStyles = {
     ...styles.baseAvatar,

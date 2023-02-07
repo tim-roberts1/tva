@@ -6,7 +6,7 @@ import styles from './generated/formControlCSS.module'
 export function getJSFormControlProps(options?: FormControlOptions) {
   const { groupType, direction, ...fieldOptions } =
     getDefaultFormControlOptions(options)
-  const { directionClass } = getFormControlClasses<typeof styles>(direction)
+  const { directionClass } = getFormControlClasses(direction)
 
   return {
     a11yProps: {

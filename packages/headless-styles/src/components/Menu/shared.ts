@@ -1,5 +1,4 @@
 import type { MenuOptions } from './types'
-import type { StyleKey } from '../types'
 
 export function getDefaultMenuOptions(options?: MenuOptions) {
   return {
@@ -9,15 +8,9 @@ export function getDefaultMenuOptions(options?: MenuOptions) {
   }
 }
 
-interface MenuStyleKeys<SM> {
-  menuPositionClass: StyleKey<SM>
-}
-
-export function getMenuPositionClasses<StyleModule>(
-  options: Required<MenuOptions>
-): MenuStyleKeys<StyleModule> {
+export function getMenuPositionClasses(options: Required<MenuOptions>) {
   return {
-    menuPositionClass: `${options.position}Menu` as StyleKey<StyleModule>,
+    menuPositionClass: `${options.position}Menu` as const,
   }
 }
 

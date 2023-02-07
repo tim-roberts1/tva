@@ -1,4 +1,4 @@
-import type { IconSize, StyleKey } from '../types'
+import type { IconSize } from '../types'
 import type { IconOptions, IconA11yOptions } from './types'
 
 export function getDefaultIconOptions(options?: IconOptions) {
@@ -10,19 +10,12 @@ export function getDefaultIconOptions(options?: IconOptions) {
   }
 }
 
-interface IconStyleKeys<SM> {
-  sizeClass: StyleKey<SM>
-}
-
-export function createIconSelectorClasses<StyleModule>(
-  size?: IconSize,
-  customSize?: string
-): IconStyleKeys<StyleModule> {
+export function createIconSelectorClasses(size: IconSize, customSize?: string) {
   const sizeSuffix = 'IconSize'
-  const sizeClass = customSize ? `custom${sizeSuffix}` : `${size}${sizeSuffix}`
-
   return {
-    sizeClass: sizeClass as StyleKey<StyleModule>,
+    sizeClass: customSize
+      ? (`custom${sizeSuffix}` as const)
+      : (`${size}${sizeSuffix}` as const),
   }
 }
 

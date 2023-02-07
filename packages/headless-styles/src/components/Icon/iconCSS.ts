@@ -13,7 +13,7 @@ export function getIconProps(options?: IconOptions) {
   const defaultOptions = getDefaultIconOptions(options)
   const { size, ...a11y } = defaultOptions
   const a11yProps = getA11yIconProps(a11y)
-  const { sizeClass } = createIconSelectorClasses<typeof styles>(
+  const { sizeClass } = createIconSelectorClasses(
     size,
     defaultOptions.customSize
   )
