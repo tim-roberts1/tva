@@ -1,9 +1,9 @@
 import { useEffect, useState, useCallback, useMemo } from 'react'
 import { getCachedTheme, setCachedTheme } from '../helpers/themeHelpers'
-import type { Themes } from '../types'
+import type { CustomThemes } from '../types'
 
-export function useTheme(initialTheme?: Themes) {
-  const [theme, setTheme] = useState<Themes>(() => {
+export function useTheme<T extends string>(initialTheme?: CustomThemes<T>) {
+  const [theme, setTheme] = useState<CustomThemes<T>>(() => {
     return initialTheme ?? getCachedTheme()
   })
 
@@ -11,7 +11,7 @@ export function useTheme(initialTheme?: Themes) {
     setCachedTheme(theme)
   }, [theme])
 
-  const updateTheme = useCallback((theme: Themes) => {
+  const updateTheme = useCallback((theme: CustomThemes<T>) => {
     setTheme(theme)
   }, [])
 

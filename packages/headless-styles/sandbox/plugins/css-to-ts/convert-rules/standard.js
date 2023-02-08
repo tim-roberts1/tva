@@ -9,7 +9,7 @@ const standard = (rule, result) => {
   let retObj = {}
   rule.declarations.forEach((declaration) => {
     const cssProperty = camelize(declaration.property)
-    obj[cssProperty] = declaration.value
+    obj[cssProperty] = sanitizeWhitespace(declaration.value)
   })
   rule.selectors.forEach((selector) => {
     let name
