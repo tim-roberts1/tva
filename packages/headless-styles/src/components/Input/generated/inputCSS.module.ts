@@ -3,6 +3,7 @@
 //
 // Manual changes will be lost - proceed with caution!
 
+import type { GeneratedStyles } from '../../../utils/types'
 import input from '../../shared/generated/input.module'
 
 export default {
@@ -63,4 +64,4 @@ export default {
     fontSize: '1rem',
     height: '3rem',
   },
-}
+} satisfies GeneratedStyles

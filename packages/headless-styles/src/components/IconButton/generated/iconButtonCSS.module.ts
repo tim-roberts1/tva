@@ -3,6 +3,7 @@
 //
 // Manual changes will be lost - proceed with caution!
 
+import type { GeneratedStyles } from '../../../utils/types'
 import button from '../../shared/generated/button.module'
 
 export default {
@@ -73,4 +74,4 @@ export default {
     minWidth: 'initial',
     width: '3rem',
   },
-}
+} satisfies GeneratedStyles

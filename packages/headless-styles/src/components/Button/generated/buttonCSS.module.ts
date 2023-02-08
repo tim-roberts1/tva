@@ -3,6 +3,7 @@
 //
 // Manual changes will be lost - proceed with caution!
 
+import type { GeneratedStyles } from '../../../utils/types'
 import button from '../../shared/generated/button.module'
 
 export default {
@@ -99,4 +100,4 @@ export default {
   'is(.defaultButton, .outlineButton):active:not(:disabled)': {
     backgroundColor: 'var(--ps-background-active)',
   },
-}
+} satisfies GeneratedStyles

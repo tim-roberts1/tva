@@ -3,6 +3,7 @@
 //
 // Manual changes will be lost - proceed with caution!
 
+import type { GeneratedStyles } from '../../../utils/types'
 import input from '../../shared/generated/input.module'
 
 export default {
@@ -73,4 +74,4 @@ export default {
     verticalAlign: 'top',
     resize: 'vertical',
   },
-}
+} satisfies GeneratedStyles

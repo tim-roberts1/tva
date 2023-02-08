@@ -3,6 +3,8 @@
 //
 // Manual changes will be lost - proceed with caution!
 
+import type { GeneratedStyles } from '../../../utils/types'
+
 export default {
   pandoDefaultStates: {
     fontFamily: 'inherit',
@@ -20,4 +22,4 @@ export default {
       outline: 'none',
     },
   },
-}
+} satisfies GeneratedStyles

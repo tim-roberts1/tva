@@ -3,6 +3,7 @@
 //
 // Manual changes will be lost - proceed with caution!
 
+import type { GeneratedStyles } from '../../../utils/types'
 import states from '.././generated/states.module'
 
 export default {
@@ -35,4 +36,4 @@ export default {
   pandoBtnRadius: {
     borderRadius: '6px',
   },
-}
+} satisfies GeneratedStyles

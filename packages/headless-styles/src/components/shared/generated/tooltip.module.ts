@@ -3,6 +3,7 @@
 //
 // Manual changes will be lost - proceed with caution!
 
+import type { GeneratedStyles } from '../../../utils/types'
 import keyframes from '.././generated/keyframes.module'
 import states from '.././generated/states.module'
 
@@ -33,4 +34,4 @@ export default {
     cursor: 'pointer',
     display: 'inline-block',
   },
-}
+} satisfies GeneratedStyles

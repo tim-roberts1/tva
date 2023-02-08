@@ -1,8 +1,8 @@
 import type { FieldStates } from '../components/types'
 import type {
-  AllCSSProperties,
   NestedGeneratedStyles,
   NestedStyleValue,
+  RenderedGeneratedStyles,
   Syntax,
 } from './types'
 
@@ -60,10 +60,10 @@ export function createClassNameProp(...classNames: string[]) {
   return { className: classNames.join(' ') }
 }
 
-export function createJSProps(styles: NestedGeneratedStyles) {
+export function createJSProps<T extends NestedGeneratedStyles>(styles: T) {
   return {
     cssProps: transformStyles(styles),
-    styles: styles as unknown as AllCSSProperties,
+    styles: styles as RenderedGeneratedStyles<T>,
   }
 }
 

@@ -3,6 +3,7 @@
 //
 // Manual changes will be lost - proceed with caution!
 
+import type { GeneratedStyles } from '../../../utils/types'
 import tooltip from '../../shared/generated/tooltip.module'
 
 export default {
@@ -46,4 +47,4 @@ export default {
     ...tooltip.pandoTooltipTrigger,
     borderRadius: '4px',
   },
-}
+} satisfies GeneratedStyles
