@@ -33,11 +33,11 @@ export default {
     position: 'absolute',
     whiteSpace: 'nowrap',
     width: '1px',
-    '&:focus + .radioControl': {
+    '&:focus + [data-control]': {
       outline: '3px solid var(--ps-action-border-focus)',
       outlineOffset: '2px',
     },
-    '&:focus:not(:focus-visible) + .radioControl': {
+    '&:focus:not(:focus-visible) + [data-control]': {
       boxShadow: 'none',
       outline: 'none',
     },
@@ -52,8 +52,8 @@ export default {
     color: 'var(--ps-text)',
     display: 'inline-flex',
     flexShrink: '0',
-    justifyContent: 'center',
     height: '1.125rem',
+    justifyContent: 'center',
     marginBottom: '2px',
     marginInlineEnd: '0.437rem',
     transitionDuration: '150ms',
