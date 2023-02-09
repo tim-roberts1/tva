@@ -3,6 +3,7 @@
 //
 // Manual changes will be lost - proceed with caution!
 
+import type { GeneratedStyles } from '../../../utils/types'
 import keyframes from '.././generated/keyframes.module'
 import states from '.././generated/states.module'
 
@@ -10,7 +11,7 @@ export default {
   pandoTooltipWrapper: {
     display: 'inline-block',
     position: 'relative',
-    '&:is(:hover, :focus-within)\r\n  > [data-tooltip]:not([disabled])': {
+    '&:is(:hover, :focus-within) > [data-tooltip]:not([disabled])': {
       display: 'inline-block',
     },
   },
@@ -33,4 +34,4 @@ export default {
     cursor: 'pointer',
     display: 'inline-block',
   },
-}
+} satisfies GeneratedStyles

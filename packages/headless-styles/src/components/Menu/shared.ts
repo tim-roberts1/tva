@@ -1,6 +1,8 @@
 import type { MenuOptions } from './types'
 
-export function getDefaultMenuOptions(options?: MenuOptions) {
+export function getDefaultMenuOptions(
+  options?: MenuOptions
+): Required<MenuOptions> {
   return {
     isExpanded: options?.isExpanded ?? false,
     label: options?.label ?? 'menu',

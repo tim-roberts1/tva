@@ -3,6 +3,8 @@
 //
 // Manual changes will be lost - proceed with caution!
 
+import type { GeneratedStyles } from '../../../utils/types'
+
 export default {
   bottomPosition: {
     paddingTop: '1em',
@@ -248,4 +250,4 @@ export default {
       bottom: '0.5rem',
     },
   },
-}
+} satisfies GeneratedStyles

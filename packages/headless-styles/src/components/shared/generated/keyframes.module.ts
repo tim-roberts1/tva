@@ -3,6 +3,8 @@
 //
 // Manual changes will be lost - proceed with caution!
 
+import type { GeneratedStyles } from '../../../utils/types'
+
 export default {
   keyframesFadeInAnimation: {
     '@keyframes fadeInAnimation': {
@@ -20,4 +22,4 @@ export default {
     animationName: 'fadeInAnimation',
     animationTimingFunction: 'ease-in-out',
   },
-}
+} satisfies GeneratedStyles

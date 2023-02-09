@@ -71,20 +71,21 @@ export default writeToFile
 // to finish the job by adding the remaining file imports to the TS file
 function buildComposedOutput(body) {
   const importMap = new Map()
+  importMap.set('../../../utils/types', 'type { GeneratedStyles }')
   let output = '{\n'
 
   for (const [className, value] of Object.entries(body)) {
     output += buildTopLevelSelectorOutput(className, value, importMap)
   }
 
-  output += '}'
+  output += '} satisfies GeneratedStyles'
 
-  let imports = [...importMap.entries()].map(
-    ([file, name]) => `import ${name} from "${file}"`
-  )
+  let imports = [...importMap.entries()]
+    .map(([file, name]) => `import ${name} from "${file}"`)
+    .join('\n')
 
   return {
-    imports: imports.join('\n') + '\n',
+    imports: imports + '\n',
     output,
   }
 }
@@ -96,22 +97,30 @@ function handleNestedProperties(value, importMap) {
   }
 
   for (const [innerSelector, innerValue] of Object.entries(value)) {
-    if (innerSelector === 'composes' && Array.isArray(innerValue)) {
-      innerValue.forEach((composeValue) => {
-        const externalCompose = getExternalComposeFileAndValue(composeValue)
-
-        if (externalCompose) {
-          classEntry.externalEntries.push(
-            getExternalEntry(externalCompose, importMap)
-          )
-        }
-      })
-      continue
+    if (innerSelector === 'composes') {
+      if (Array.isArray(innerValue)) {
+        innerValue.forEach((composeValue) => {
+          tryPushExternalComposeValue(classEntry, importMap, composeValue)
+        })
+      } else {
+        tryPushExternalComposeValue(classEntry, importMap, innerValue)
+      }
+    } else {
+      classEntry.directEntries[innerSelector] = innerValue
     }
-
-    classEntry.directEntries[innerSelector] = innerValue
   }
+
   return classEntry
+}
+
+function tryPushExternalComposeValue(classEntry, importMap, composeValue) {
+  const externalCompose = getExternalComposeFileAndValue(composeValue)
+
+  if (externalCompose) {
+    classEntry.externalEntries.push(
+      getExternalEntry(externalCompose, importMap)
+    )
+  }
 }
 
 function getExternalComposeFileAndValue(composes) {

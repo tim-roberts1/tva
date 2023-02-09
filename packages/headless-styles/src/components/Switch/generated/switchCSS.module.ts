@@ -3,6 +3,8 @@
 //
 // Manual changes will be lost - proceed with caution!
 
+import type { GeneratedStyles } from '../../../utils/types'
+
 export default {
   wrapper: {
     alignItems: 'center',
@@ -143,4 +145,4 @@ export default {
       background: 'var(--ps-danger-surface)',
     },
   },
-}
+} satisfies GeneratedStyles

@@ -3,6 +3,8 @@
 //
 // Manual changes will be lost - proceed with caution!
 
+import type { GeneratedStyles } from '../../../utils/types'
+
 export default {
   bar: {
     backgroundColor: 'var(--ps-text-strong)',
@@ -28,4 +30,4 @@ export default {
   xsSize: {
     height: '0.25rem',
   },
-}
+} satisfies GeneratedStyles

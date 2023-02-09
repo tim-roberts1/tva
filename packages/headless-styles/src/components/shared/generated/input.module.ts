@@ -3,6 +3,7 @@
 //
 // Manual changes will be lost - proceed with caution!
 
+import type { GeneratedStyles } from '../../../utils/types'
 import states from '.././generated/states.module'
 
 export default {
@@ -61,4 +62,4 @@ export default {
   pandoInputPaddingStart: {
     paddingInlineStart: '1rem',
   },
-}
+} satisfies GeneratedStyles

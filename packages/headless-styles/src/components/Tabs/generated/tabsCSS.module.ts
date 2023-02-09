@@ -3,13 +3,15 @@
 //
 // Manual changes will be lost - proceed with caution!
 
+import type { GeneratedStyles } from '../../../utils/types'
+
 export default {
   tabWrapper: {
     width: '100%',
   },
   tabList: {
     backgroundImage:
-      'linear-gradient(\r\n    to top,\r\n    transparent 0,\r\n    transparent 1rem,\r\n    var(--ps-border-weak) 1.0625rem,\r\n    var(--ps-border-weak) 1.125rem,\r\n    transparent 1.1875rem,\r\n    transparent 100%\r\n  )',
+      'linear-gradient( to top, transparent 0, transparent 1rem, var(--ps-border-weak) 1.0625rem, var(--ps-border-weak) 1.125rem, transparent 1.1875rem, transparent 100% )',
     borderRadius: '6px',
     display: 'flex',
     WebkitOverflowScrolling: 'touch',
@@ -184,4 +186,4 @@ export default {
       outline: 'none',
     },
   },
-}
+} satisfies GeneratedStyles
