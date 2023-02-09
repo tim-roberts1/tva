@@ -48,12 +48,12 @@
 
 /* states */
 
-.radioInput:focus + .radioControl {
+.radioInput:focus + :is(.radioControl, [data-control]) {
   outline: 3px solid var(--ps-action-border-focus);
   outline-offset: 2px;
 }
 
-.radioInput:focus:not(:focus-visible) + .radioControl {
+.radioInput:focus:not(:focus-visible) + :is(.radioControl, [data-control]) {
   box-shadow: none;
   outline: none;
 }

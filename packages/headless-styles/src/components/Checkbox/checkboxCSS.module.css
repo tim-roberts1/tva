@@ -47,12 +47,13 @@
   border-color: var(--ps-background-hover);
 }
 
-.checkboxInput:focus + .checkboxControl {
+.checkboxInput:focus + :is(.checkboxControl, [data-control]) {
   outline: 3px solid var(--ps-action-border-focus);
   outline-offset: 2px;
 }
 
-.checkboxInput:focus:not(:focus-visible) + .checkboxControl {
+.checkboxInput:focus:not(:focus-visible)
+  + :is(.checkboxControl, [data-control]) {
   box-shadow: none;
   outline: none;
 }

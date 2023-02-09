@@ -34,6 +34,7 @@ export function createCheckboxFieldProps(
       ...hidden,
       ...dataProps,
       disabled,
+      'data-control': true,
     },
   }
 }

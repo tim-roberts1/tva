@@ -33,11 +33,11 @@ export default {
     position: 'absolute',
     whiteSpace: 'nowrap',
     width: '1px',
-    '&:focus + .radioControl': {
+    '&:focus + :is(.radioControl, [data-control])': {
       outline: '3px solid var(--ps-action-border-focus)',
       outlineOffset: '2px',
     },
-    '&:focus:not(:focus-visible) + .radioControl': {
+    '&:focus:not(:focus-visible) + :is(.radioControl, [data-control])': {
       boxShadow: 'none',
       outline: 'none',
     },
