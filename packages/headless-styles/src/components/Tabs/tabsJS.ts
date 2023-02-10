@@ -10,7 +10,7 @@ import styles from './generated/tabsCSS.module'
 export function getJSTabsProps(options?: TabsOptions) {
   const defaultOptions = getDefaultTabsOptions(options)
   const props = createTabsProps()
-  const { sizeClass } = createTabsClasses<typeof styles>(defaultOptions.size)
+  const { sizeClass } = createTabsClasses(defaultOptions.size)
   const baseProps = {
     ...props,
     wrapper: {

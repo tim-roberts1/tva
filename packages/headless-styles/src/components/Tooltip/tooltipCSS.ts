@@ -11,7 +11,7 @@ export function getTooltipProps(options?: TooltipOptions) {
   const defaultOptions = getDefaultTooltipOptions(options)
   const props = createTooltipProps(defaultOptions)
   const { positionClass, contentPositionClass } =
-    getTooltipClasses<typeof positionStyles>(defaultOptions)
+    getTooltipClasses(defaultOptions)
 
   return {
     ...props,

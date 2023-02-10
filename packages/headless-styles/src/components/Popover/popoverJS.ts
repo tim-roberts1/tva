@@ -11,7 +11,7 @@ export function getJSPopoverProps(options?: PopoverOptions) {
   const defaultOptions = getDefaultPopoverOptions(options)
   const props = createPopoverProps(defaultOptions)
   const { positionClass, contentPositionClass } =
-    getTooltipClasses<typeof positionStyles>(defaultOptions)
+    getTooltipClasses(defaultOptions)
   const contentPositionStyles = positionStyles[contentPositionClass]
   const baseProps = {
     ...props,

@@ -12,7 +12,7 @@ const TAB = 'ps-tabs'
 export function getTabsProps(options?: TabsOptions) {
   const defaultOptions = getDefaultTabsOptions(options)
   const props = createTabsProps()
-  const { sizeClass } = createTabsClasses<typeof styles>(defaultOptions.size)
+  const { sizeClass } = createTabsClasses(defaultOptions.size)
 
   return {
     ...props,

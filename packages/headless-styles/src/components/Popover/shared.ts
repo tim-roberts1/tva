@@ -4,9 +4,7 @@ import {
   getDialogA11yLabel,
 } from '../../utils/a11yHelpers'
 import { getTooltipClasses } from '../shared/helpers/tooltipHelpers'
-import type { TooltipStyleKeys } from '../shared/helpers/types'
 import type { IconButtonOptions } from '../../types'
-import type { StyleKey } from '../types'
 import type { PopoverOptions } from './types'
 
 export function getDefaultPopoverOptions(options?: PopoverOptions) {
@@ -20,20 +18,14 @@ export function getDefaultPopoverOptions(options?: PopoverOptions) {
   }
 }
 
-interface PopoverStyleKeys<SM> extends TooltipStyleKeys<SM> {
-  popoverContentClass: StyleKey<SM>
-}
-
-export function getPopoverClasses<StyleModule>(
-  options: Required<PopoverOptions>
-): PopoverStyleKeys<StyleModule> {
+export function getPopoverClasses(options: Required<PopoverOptions>) {
   const contentClass = options.headerId
-    ? 'popoverContentWithHeading'
-    : 'popoverContent'
+    ? ('popoverContentWithHeading' as const)
+    : ('popoverContent' as const)
 
   return {
     ...getTooltipClasses(options),
-    popoverContentClass: contentClass as StyleKey<StyleModule>,
+    popoverContentClass: contentClass,
   }
 }
 

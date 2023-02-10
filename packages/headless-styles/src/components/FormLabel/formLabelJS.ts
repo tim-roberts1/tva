@@ -10,7 +10,7 @@ import styles from './generated/formLabelCSS.module'
 export function getJSFormLabelProps(options?: FormLabelOptions) {
   const { value, ...defaultOptions } = getDefaultFormLabelOptions(options)
   const label = getFormValue(value, defaultOptions.required)
-  const { labelClass } = getFormLabelClasses<typeof styles>(defaultOptions.kind)
+  const { labelClass } = getFormLabelClasses(defaultOptions.kind)
 
   return {
     a11yProps: {

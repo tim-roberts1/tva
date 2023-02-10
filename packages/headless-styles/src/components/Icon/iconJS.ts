@@ -21,10 +21,7 @@ export const ChakraIcon = {
 
 export function getJSIconProps(options?: IconOptions) {
   const { size, customSize, ...a11y } = getDefaultIconOptions(options)
-  const { sizeClass } = createIconSelectorClasses<typeof styles>(
-    size,
-    customSize
-  )
+  const { sizeClass } = createIconSelectorClasses(size, customSize)
   const jsStyles = {
     ...styles[sizeClass],
     ...(customSize && {

@@ -14,7 +14,7 @@ function getIconBtnSize(size?: ButtonSize) {
   }
 }
 
-function createBtnClass<T extends string>(name: T) {
+function createBtnClass<Name extends string>(name: Name) {
   return `${name}Button` as const
 }
 

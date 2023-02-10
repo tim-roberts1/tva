@@ -1,15 +1,9 @@
-import type { CheckboxDirection, StyleKey } from '../types'
+import type { CheckboxDirection } from '../types'
 import type { FormControlOptions } from './types'
 
-interface FormControlStyleKeys<SM> {
-  directionClass: StyleKey<SM>
-}
-
-export function getFormControlClasses<StyleModule>(
-  direction: CheckboxDirection
-): FormControlStyleKeys<StyleModule> {
+export function getFormControlClasses(direction: CheckboxDirection) {
   return {
-    directionClass: `${direction}FormControl` as StyleKey<StyleModule>,
+    directionClass: `${direction}FormControl` as const,
   }
 }
 

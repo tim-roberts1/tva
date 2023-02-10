@@ -1,15 +1,8 @@
-import type { StyleKey } from '../types'
 import type { FormLabelOptions, Kind } from './types'
 
-interface FormLabelStyleKeys<SM> {
-  labelClass: StyleKey<SM>
-}
-
-export function getFormLabelClasses<StyleModule>(
-  kind: Kind
-): FormLabelStyleKeys<StyleModule> {
+export function getFormLabelClasses(kind: Kind) {
   return {
-    labelClass: `${kind}FormLabel` as StyleKey<StyleModule>,
+    labelClass: `${kind}FormLabel` as const,
   }
 }
 

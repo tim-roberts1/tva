@@ -1,6 +1,5 @@
 import { createA11yProps } from '../../utils/helpers'
 import { getDefaultInputFieldOptions } from '../shared/defaultOptions'
-import type { StyleKey } from '../types'
 import type { SelectOptions, SelectSize, SelectOptionOptions } from './types'
 
 export function getDefaultSelectOptions(options?: SelectOptions) {
@@ -10,15 +9,9 @@ export function getDefaultSelectOptions(options?: SelectOptions) {
   }
 }
 
-interface SelectStyleKeys<SM> {
-  baseSizeClass: StyleKey<SM>
-}
-
-export function createSelectClasses<StyleModule>(
-  size: SelectSize
-): SelectStyleKeys<StyleModule> {
+export function createSelectClasses(size: SelectSize) {
   return {
-    baseSizeClass: `${size}SelectBase` as StyleKey<StyleModule>,
+    baseSizeClass: `${size}SelectBase` as const,
   }
 }
 

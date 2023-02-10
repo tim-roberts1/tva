@@ -1,4 +1,3 @@
-import type { StyleKey } from '../types'
 import type { TagOptions, TagSize } from './types'
 
 export function getDefaultTagOptions(options?: TagOptions) {
@@ -7,15 +6,9 @@ export function getDefaultTagOptions(options?: TagOptions) {
   }
 }
 
-interface TagStyleKeys<SM> {
-  sizeClass: StyleKey<SM>
-}
-
-export function createTagSelectorClasses<StyleModule>(
-  size: TagSize
-): TagStyleKeys<StyleModule> {
+export function createTagSelectorClasses(size: TagSize) {
   return {
-    sizeClass: `${size}Tag` as StyleKey<StyleModule>,
+    sizeClass: `${size}Tag` as const,
   }
 }
 

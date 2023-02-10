@@ -13,7 +13,7 @@ const SELECT = 'ps-select'
 
 export function getSelectProps(options?: SelectOptions) {
   const { size, ...defaultOptions } = getDefaultSelectOptions(options)
-  const { baseSizeClass } = createSelectClasses<typeof styles>(size)
+  const { baseSizeClass } = createSelectClasses(size)
   const props = createSelectProps(defaultOptions)
 
   return {

@@ -11,9 +11,7 @@ const TAG = 'ps-tag'
 
 export function getTagProps(options?: TagOptions) {
   const defaultOptions = getDefaultTagOptions(options)
-  const { sizeClass } = createTagSelectorClasses<typeof styles>(
-    defaultOptions.size
-  )
+  const { sizeClass } = createTagSelectorClasses(defaultOptions.size)
   const props = createTagProps(defaultOptions)
 
   return {
