@@ -31,6 +31,7 @@ describe('Radio CSS', () => {
       'aria-hidden': true,
       className: `${baseClass}-control radioControl`,
       disabled: false,
+      ['data-control']: true,
     },
   }
 

@@ -33,8 +33,8 @@
   color: var(--ps-text);
   display: inline-flex;
   flex-shrink: 0;
-  justify-content: center;
   height: 1.125rem;
+  justify-content: center;
   margin-bottom: 2px;
   margin-inline-end: 0.437rem;
   transition-duration: 150ms;
@@ -48,12 +48,12 @@
 
 /* states */
 
-.radioInput:focus + .radioControl {
+.radioInput:focus + [data-control] {
   outline: 3px solid var(--ps-action-border-focus);
   outline-offset: 2px;
 }
 
-.radioInput:focus:not(:focus-visible) + .radioControl {
+.radioInput:focus:not(:focus-visible) + [data-control] {
   box-shadow: none;
   outline: none;
 }

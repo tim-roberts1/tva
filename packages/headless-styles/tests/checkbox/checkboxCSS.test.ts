@@ -35,6 +35,7 @@ describe('Checkbox CSS', () => {
       'aria-hidden': true,
       className: `${baseClass}-control checkboxControl`,
       disabled: false,
+      ['data-control']: true,
     },
   }
 

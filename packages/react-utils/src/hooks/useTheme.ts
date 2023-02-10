@@ -4,7 +4,7 @@ import type { CustomThemes } from '../types'
 
 export function useTheme<T extends string>(initialTheme?: CustomThemes<T>) {
   const [theme, setTheme] = useState<CustomThemes<T>>(() => {
-    return initialTheme ?? getCachedTheme()
+    return (initialTheme ?? getCachedTheme()) as CustomThemes<T>
   })
 
   useEffect(() => {

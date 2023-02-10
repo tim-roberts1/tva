@@ -30,11 +30,11 @@ export default {
     position: 'absolute',
     whiteSpace: 'nowrap',
     width: '1px',
-    '&:focus + .checkboxControl': {
+    '&:focus + [data-control]': {
       outline: '3px solid var(--ps-action-border-focus)',
       outlineOffset: '2px',
     },
-    '&:focus:not(:focus-visible) + .checkboxControl': {
+    '&:focus:not(:focus-visible) + [data-control]': {
       boxShadow: 'none',
       outline: 'none',
     },

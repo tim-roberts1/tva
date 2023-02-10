@@ -38,6 +38,7 @@ describe('Switch CSS', () => {
       ...dataPropResults,
       'aria-hidden': true,
       className: `${baseClass}-track mTrack`,
+      ['data-control']: true,
     },
     switchThumb: {
       ...dataPropResults,
