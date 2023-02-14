@@ -62,6 +62,8 @@ const config = {
     },
   ],
 
+  scripts: [{ src: '/clarity.js' }],
+
   presets: [
     [
       '@docusaurus/preset-classic',
