@@ -60,9 +60,13 @@ const config = {
         href: 'https://cdn.jsdelivr.net/npm/@pluralsight/design-tokens@next/npm/normalize/normalize.css',
       },
     },
+    {
+      tagName: 'script',
+      attributes: {
+        src: '/clarity.js',
+      },
+    },
   ],
-
-  scripts: [{ src: '/clarity.js' }],
 
   presets: [
     [
