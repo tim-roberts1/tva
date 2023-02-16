@@ -427,6 +427,41 @@ function BasicFormControl(props) {
 }
 ```
 
+### Hidden Label
+
+When a visual label is not needed, set the label `kind` to `hidden`.
+
+```jsx live
+function HiddenLabel() {
+  const { fieldOptions } = getFormControlProps()
+  const labelProps = getFormLabelProps({
+    ...fieldOptions,
+    kind: 'hidden',
+    htmlFor: 'hidden-label',
+    value: 'Search for videos (example)',
+  })
+  const inputProps = getInputProps({
+    ...fieldOptions,
+    kind: 'icon',
+    id: 'hidden-label',
+    placeholder: 'Search',
+  })
+  const { value, ...input } = inputProps.input
+
+  return (
+    <div>
+      <label {...labelProps}>{labelProps.value}</label>
+      <div {...inputProps.inputWrapper}>
+        <span {...inputProps.iconWrapper}>
+          <SearchIcon {...getIconProps(inputProps.iconOptions)} />
+        </span>
+        <input {...input} defaultValue={value} />
+      </div>
+    </div>
+  )
+}
+```
+
 ### Usage with Form Libraries
 
 [Formik](https://formik.org/) is just one example of how managing forms can be very easy. You can combine most form libraries with our API.
