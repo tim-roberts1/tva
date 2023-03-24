@@ -1,0 +1,35 @@
+.basePromptDialogSection {
+  composes: pandoDialogSection from '../shared/dialog.module.css';
+}
+
+.basePromptAnimation {
+  composes: pandoFadeIn from '../shared/keyframes.module.css';
+}
+
+.promptDialogBackdrop {
+  composes: pandoDialogBackdrop from '../shared/dialog.module.css';
+}
+
+.promptDialogBtnGroup {
+  composes: pandoDialogBtnGroup from '../shared/dialog.module.css';
+}
+
+.promptDialogCancelBtn {
+  composes: pandoDialogCancelBtn from '../shared/dialog.module.css';
+}
+
+.promptFocusGuard {
+  composes: pandoFocusGuard from '../shared/dialog.module.css';
+}
+
+.promptDialogSection {
+  composes: basePromptAnimation basePromptDialogSection;
+}
+
+.promptDialogWrapper {
+  composes: pandoDialogWrapper from '../shared/dialog.module.css';
+}
+
+.promptDialogHeader {
+  composes: pandoDialogHeader from '../shared/dialog.module.css';
+}

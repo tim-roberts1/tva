@@ -18,6 +18,7 @@ export type { ModalOptions } from './components/Modal/types'
 export type { PaginationOptions } from './components/Pagination/types'
 export type { PopoverOptions } from './components/Popover/types'
 export type { ProgressOptions } from './components/Progress/types'
+export type { PromptDialogOptions } from './components/PromptDialog/types'
 export type { RadioOptions } from './components/Radio/types'
 export type {
   SelectOptions,
