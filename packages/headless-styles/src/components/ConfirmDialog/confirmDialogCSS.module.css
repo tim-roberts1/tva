@@ -1,109 +1,39 @@
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+.baseConfirmDialogSection {
+  composes: pandoDialogSection from '../shared/dialog.module.css';
 }
 
-:root {
-  --ps-backdrop: rgba(0 0 0 / 65%);
-}
-
-html[data-theme='light'],
-.light {
-  --ps-backdrop: rgba(255 255 255 / 65%);
+.baseConfirmAnimation {
+  composes: pandoFadeIn from '../shared/keyframes.module.css';
 }
 
 .confirmDialogBackdrop {
-  background: var(--ps-backdrop);
-  height: 100vh;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  z-index: 1300;
+  composes: pandoDialogBackdrop from '../shared/dialog.module.css';
 }
 
 .confirmDialogBtnGroup {
-  display: flex;
-  gap: 1rem;
-  justify-content: flex-end;
-  margin-top: 1.5rem;
+  composes: pandoDialogBtnGroup from '../shared/dialog.module.css';
 }
 
 .confirmDialogCancelBtn {
-  margin-right: 1rem;
+  composes: pandoDialogCancelBtn from '../shared/dialog.module.css';
 }
 
 .confirmFocusGuard {
-  height: 0;
-  left: 1px;
-  overflow: hidden;
-  padding: 0;
-  position: fixed;
-  top: 1px;
-  width: 1px;
+  composes: pandoFocusGuard from '../shared/dialog.module.css';
 }
 
 .confirmDialogSection {
-  animation-delay: 100ms;
-  animation-duration: 150ms;
-  animation-fill-mode: forwards;
-  animation-name: fadeIn;
-  animation-timing-function: ease-in-out;
-  background: var(--ps-surface-weak);
-  border-color: var(--ps-border-weak);
-  border-radius: 8px;
-  border-style: solid;
-  border-width: 1px;
-  box-shadow: 0 10px 15px -3px rgba(0 0 0 / 1%), 0 4px 6px -2px rgba(0 0 0 / 5%);
-  color: var(--ps-text);
-  display: flex;
-  flex-direction: column;
-  font-family: inherit;
-  margin-bottom: 3.75rem;
-  margin-top: 3.75rem;
-  max-width: 30rem;
-  opacity: 0;
-  outline: transparent solid 2px;
-  outline-offset: 2px;
-  padding-bottom: 1.5rem;
-  padding-inline-end: 1.5rem;
-  padding-inline-start: 1.5rem;
-  position: relative;
-  width: 100%;
-  z-index: 1400;
+  composes: baseConfirmAnimation baseConfirmDialogSection;
 }
 
 .confirmDialogWrapper {
-  align-items: flex-start;
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  left: 0;
-  overflow: auto;
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  z-index: 1400;
-  -moz-box-pack: center;
-  -webkit-box-pack: center;
+  composes: pandoDialogWrapper from '../shared/dialog.module.css';
 }
 
 .confirmDialogHeader {
-  align-items: center;
-  display: flex;
-  margin-bottom: 1.5rem;
-  margin-top: 2.5rem;
+  composes: pandoDialogHeader from '../shared/dialog.module.css';
 }
 
 .confirmDialogTitleIcon {
-  color: var(--ps-danger-border);
-  line-height: initial;
-  margin-inline-end: 0.625rem;
+  composes: pandoDialogTitleIcon from '../shared/dialog.module.css';
 }

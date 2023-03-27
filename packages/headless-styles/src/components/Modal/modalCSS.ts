@@ -1,7 +1,6 @@
 import { createClassNameProp } from '../../utils/helpers'
-import styles from '../ConfirmDialog/confirmDialogCSS.module.css'
 import { getDefaultModalOptions, createModalProps } from './shared'
-import modalStyles from './modalCSS.module.css'
+import styles from './modalCSS.module.css'
 import type { ModalOptions } from './types'
 
 const MODAL = 'ps-modal'
@@ -14,42 +13,31 @@ export function getModalProps(options?: ModalOptions) {
     ...props,
     heading: {
       ...props.heading,
-      ...createClassNameProp(
-        `${MODAL}-heading`,
-        styles.confirmDialogHeader,
-        modalStyles.modalHeading
-      ),
+      ...createClassNameProp(`${MODAL}-heading`, styles.modalHeader),
     },
     body: {
       ...props.body,
-      ...createClassNameProp(`${MODAL}-body`, modalStyles.modalBody),
+      ...createClassNameProp(`${MODAL}-body`, styles.modalBody),
     },
     backdrop: {
       ...props.backdrop,
-      ...createClassNameProp(`${MODAL}-backdrop`, styles.confirmDialogBackdrop),
+      ...createClassNameProp(`${MODAL}-backdrop`, styles.modalBackdrop),
     },
     buttonWrapper: {
       ...props.buttonWrapper,
-      ...createClassNameProp(
-        `${MODAL}-btn-wrapper`,
-        modalStyles.modalButtonWrapper
-      ),
+      ...createClassNameProp(`${MODAL}-btn-wrapper`, styles.modalButtonWrapper),
     },
     focusGuard: {
       ...props.focusGuard,
-      ...createClassNameProp(`${MODAL}-focus-guard`, styles.confirmFocusGuard),
+      ...createClassNameProp(`${MODAL}-focus-guard`, styles.modalFocusGuard),
     },
     section: {
       ...props.section,
-      ...createClassNameProp(
-        `${MODAL}-section`,
-        styles.confirmDialogSection,
-        modalStyles.modalSection
-      ),
+      ...createClassNameProp(`${MODAL}-section`, styles.modalSection),
     },
     wrapper: {
       ...props.wrapper,
-      ...createClassNameProp(MODAL, styles.confirmDialogWrapper),
+      ...createClassNameProp(MODAL, styles.modalWrapper),
     },
   }
 }

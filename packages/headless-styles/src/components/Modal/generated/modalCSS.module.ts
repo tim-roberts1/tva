@@ -4,22 +4,47 @@
 // Manual changes will be lost - proceed with caution!
 
 import type { GeneratedStyles } from '../../../utils/types'
+import dialog from '../../shared/generated/dialog.module'
+import keyframes from '../../shared/generated/keyframes.module'
 
 export default {
-  modalButtonWrapper: {
-    position: 'absolute',
-    right: '0',
-    top: '0',
+  baseModalSection: {
+    ...dialog.pandoDialogSection,
+  },
+  baseModalAnimation: {
+    ...keyframes.pandoFadeIn,
+  },
+  modalBackdrop: {
+    ...dialog.pandoDialogBackdrop,
+  },
+  modalBtnGroup: {
+    ...dialog.pandoDialogBtnGroup,
+  },
+  modalCancelBtn: {
+    ...dialog.pandoDialogCancelBtn,
+  },
+  modalFocusGuard: {
+    ...dialog.pandoFocusGuard,
   },
   modalSection: {
+    ...keyframes.pandoFadeIn,
+    ...dialog.pandoDialogSection,
     marginInlineEnd: '1rem',
     marginInlineStart: '1rem',
     maxHeight: '80vh',
     maxWidth: '37.5rem',
     padding: '3rem 2rem 2rem',
   },
-  modalHeading: {
-    marginTop: '0',
+  modalWrapper: {
+    ...dialog.pandoDialogWrapper,
+  },
+  modalHeader: {
+    ...dialog.pandoDialogHeader,
+  },
+  modalButtonWrapper: {
+    position: 'absolute',
+    right: '0',
+    top: '0',
   },
   modalBody: {
     overflow: 'auto',

@@ -88,7 +88,6 @@ export default {
     alignItems: 'center',
     display: 'flex',
     marginBottom: '1.5rem',
-    marginTop: '2.5rem',
   },
   pandoDialogTitleIcon: {
     color: 'var(--ps-danger-border)',

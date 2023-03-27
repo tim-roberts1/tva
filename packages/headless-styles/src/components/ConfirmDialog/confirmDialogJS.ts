@@ -6,17 +6,11 @@ import {
 } from './shared'
 import type { ConfirmDialogOptions } from './types'
 import styles from './generated/confirmDialogCSS.module'
+import animationStyles from '../shared/generated/keyframes.module'
 
 export function getJSConfirmDialogProps(options?: ConfirmDialogOptions) {
   const defaultOptions = getDefaultConfirmDialogOptions(options)
   const props = createConfirmDialogProps(defaultOptions)
-  const backdropStyles = {
-    ...styles.confirmDialogBackdrop,
-    background: styles.root['--ps-backdrop'],
-  }
-  const btnGroupStyles = {
-    ...styles.confirmDialogBtnGroup,
-  }
   const iconProps = createConfirmDialogIconProps(defaultOptions)
 
   return {
@@ -42,11 +36,11 @@ export function getJSConfirmDialogProps(options?: ConfirmDialogOptions) {
     },
     backdrop: {
       ...props.backdrop,
-      ...createJSProps(backdropStyles),
+      ...createJSProps(styles.confirmDialogBackdrop),
     },
     buttonGroup: {
       ...props.buttonGroup,
-      ...createJSProps(btnGroupStyles),
+      ...createJSProps(styles.confirmDialogBtnGroup),
     },
     cancelButton: {
       ...props.cancelButton,
@@ -63,7 +57,7 @@ export function getJSConfirmDialogProps(options?: ConfirmDialogOptions) {
         ...props.section,
       },
       keyframes: {
-        ...createJSProps(styles.keyframesFadeIn),
+        ...createJSProps(animationStyles.keyframesFadeInAnimation),
       },
       ...createJSProps(styles.confirmDialogSection),
     },
