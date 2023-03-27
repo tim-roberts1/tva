@@ -1,7 +1,7 @@
 import { createClassNameProp } from '../../utils/helpers'
+import { createDialogIconProps } from '../shared/defaultOptions'
 import {
   getDefaultConfirmDialogOptions,
-  createConfirmDialogIconProps,
   createConfirmDialogProps,
 } from './shared'
 import styles from './confirmDialogCSS.module.css'
@@ -12,7 +12,7 @@ const CONFIRM_DIALOG = 'ps-confirm-dialog'
 export function getConfirmDialogProps(options?: ConfirmDialogOptions) {
   const defaultOptions = getDefaultConfirmDialogOptions(options)
   const props = createConfirmDialogProps(defaultOptions)
-  const iconProps = createConfirmDialogIconProps(defaultOptions, {
+  const iconProps = createDialogIconProps(defaultOptions, {
     iconWrapper: {
       ...createClassNameProp(
         `${CONFIRM_DIALOG}-icon`,

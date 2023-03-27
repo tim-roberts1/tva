@@ -1,6 +1,6 @@
-import type { DialogOptions } from '../types'
+import type { ConfirmDialogOptions } from '../../types'
 
-export interface PromptDialogOptions extends DialogOptions {
+export interface PromptDialogOptions extends ConfirmDialogOptions {
   inputId?: string
   name?: string
   value?: string

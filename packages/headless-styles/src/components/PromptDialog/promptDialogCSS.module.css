@@ -33,3 +33,11 @@
 .promptDialogHeader {
   composes: pandoDialogHeader from '../shared/dialog.module.css';
 }
+
+.promptDialogTitleIcon {
+  composes: pandoDialogTitleIcon from '../shared/dialog.module.css';
+}
+
+.promptInputWrapper {
+  margin-top: 1rem;
+}

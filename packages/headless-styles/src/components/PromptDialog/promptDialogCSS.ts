@@ -1,4 +1,5 @@
 import { createClassNameProp } from '../../utils/helpers'
+import { createDialogIconProps } from '../shared/defaultOptions'
 import {
   getDefaultPromptDialogOptions,
   createPromptDialogProps,
@@ -8,12 +9,21 @@ import type { PromptDialogOptions } from './types'
 
 const PROMPT_DIALOG = 'ps-prompt-dialog'
 
-export function getConfirmDialogProps(options?: PromptDialogOptions) {
+export function getPromptDialogProps(options?: PromptDialogOptions) {
   const defaultOptions = getDefaultPromptDialogOptions(options)
   const props = createPromptDialogProps(defaultOptions)
+  const iconProps = createDialogIconProps(defaultOptions, {
+    iconWrapper: {
+      ...createClassNameProp(
+        `${PROMPT_DIALOG}-icon`,
+        styles.promptDialogTitleIcon
+      ),
+    },
+  })
 
   return {
     ...props,
+    ...iconProps,
     body: {
       ...props.body,
       ...createClassNameProp(`${PROMPT_DIALOG}-body`),
@@ -22,46 +32,53 @@ export function getConfirmDialogProps(options?: PromptDialogOptions) {
       ...props.backdrop,
       ...createClassNameProp(
         `${PROMPT_DIALOG}-backdrop`,
-        styles.confirmDialogBackdrop
+        styles.promptDialogBackdrop
       ),
     },
     buttonGroup: {
       ...props.buttonGroup,
       ...createClassNameProp(
         `${PROMPT_DIALOG}-btn-group`,
-        styles.confirmDialogBtnGroup
+        styles.promptDialogBtnGroup
       ),
     },
     cancelButton: {
       ...props.cancelButton,
       ...createClassNameProp(
         `${PROMPT_DIALOG}-cancel`,
-        styles.confirmDialogCancelBtn
+        styles.promptDialogCancelBtn
       ),
     },
     focusGuard: {
       ...props.focusGuard,
       ...createClassNameProp(
         `${PROMPT_DIALOG}-focus-guard`,
-        styles.confirmFocusGuard
+        styles.promptFocusGuard
       ),
     },
     section: {
       ...props.section,
       ...createClassNameProp(
         `${PROMPT_DIALOG}-section`,
-        styles.confirmDialogSection
+        styles.promptDialogSection
       ),
     },
     wrapper: {
       ...props.wrapper,
-      ...createClassNameProp(PROMPT_DIALOG, styles.confirmDialogWrapper),
+      ...createClassNameProp(PROMPT_DIALOG, styles.promptDialogWrapper),
     },
     header: {
       ...props.header,
       ...createClassNameProp(
         `${PROMPT_DIALOG}-header`,
-        styles.confirmDialogHeader
+        styles.promptDialogHeader
+      ),
+    },
+    inputWrapper: {
+      ...props.inputWrapper,
+      ...createClassNameProp(
+        `${PROMPT_DIALOG}-inputWrapper`,
+        styles.promptInputWrapper
       ),
     },
   }

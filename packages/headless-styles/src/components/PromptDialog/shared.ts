@@ -9,6 +9,7 @@ export function getDefaultPromptDialogOptions(options?: PromptDialogOptions) {
     headingId: options?.headingId ?? '',
     id: options?.id ?? '',
     inputId: options?.inputId ?? '',
+    kind: options?.kind ?? 'non-destructive',
     name: options?.name ?? '',
     value: options?.value ?? '',
   }
@@ -21,11 +22,11 @@ export function createPromptDialogProps(
 
   return {
     ...props,
+    agreeBtnOptions: createPandoOptions<ButtonOptions>({
+      sentiment: options.kind === 'destructive' ? 'danger' : 'action',
+    }),
     cancelBtnOptions: createPandoOptions<ButtonOptions>({
       usage: 'outline',
-    }),
-    submitBtnOptions: createPandoOptions<ButtonOptions>({
-      sentiment: 'action',
     }),
     inputOptions: createPandoOptions<InputOptions>({
       id: options.inputId,
@@ -38,5 +39,6 @@ export function createPromptDialogProps(
     buttonGroup: {},
     cancelButton: {},
     header: {},
+    inputWrapper: {},
   }
 }
