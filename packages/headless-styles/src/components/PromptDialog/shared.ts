@@ -32,7 +32,7 @@ export function createPromptDialogProps(
       id: options.inputId,
       name: options.name,
       placeholder: '',
-      size: 'm',
+      size: 'l',
       type: 'text',
       value: options.value,
     }),
@@ -40,5 +40,6 @@ export function createPromptDialogProps(
     cancelButton: {},
     header: {},
     inputWrapper: {},
+    kind: options.kind,
   }
 }

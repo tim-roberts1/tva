@@ -35,6 +35,7 @@ export default {
   },
   promptDialogHeader: {
     ...dialog.pandoDialogHeader,
+    marginTop: '2.5rem',
   },
   promptDialogTitleIcon: {
     ...dialog.pandoDialogTitleIcon,

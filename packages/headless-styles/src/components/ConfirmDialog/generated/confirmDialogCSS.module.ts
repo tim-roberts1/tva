@@ -35,6 +35,7 @@ export default {
   },
   confirmDialogHeader: {
     ...dialog.pandoDialogHeader,
+    marginTop: '2.5rem',
   },
   confirmDialogTitleIcon: {
     ...dialog.pandoDialogTitleIcon,

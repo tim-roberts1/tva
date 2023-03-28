@@ -1,7 +1,11 @@
 import {
+  createContext,
   useCallback,
+  useContext,
   useEffect,
+  useMemo,
   useRef,
+  useReducer,
   useState,
   forwardRef,
   memo,
@@ -18,13 +22,43 @@ import { Label } from './FormLabel'
 import { SingleInput } from './Input'
 
 const PROMPT_KEY = 'DELETE'
+const UPDATE_PROMPT = 'UPDATE_PROMPT'
 
-function PromptAlert(props, triggerRef) {
-  const { onClose, onChange, ...promptProps } = props
+const AlertContext = createContext(getPromptDialogProps())
+
+function reducer(state, action) {
+  if (action.type === UPDATE_PROMPT) {
+    return { ...state, ...action.payload }
+  }
+
+  return state
+}
+
+function updatePropsAction(dispatch, options) {
+  return dispatch({ type: UPDATE_PROMPT, payload: options })
+}
+
+function AlertProvider(props) {
+  const { children, ...promptOptions } = props
+  const [state, dispatch] = useReducer(
+    reducer,
+    getPromptDialogProps(promptOptions)
+  )
+
+  const prompt = useMemo(() => {
+    return { ...state, dispatch }
+  }, [state, dispatch])
+
+  return (
+    <AlertContext.Provider value={prompt}>{children}</AlertContext.Provider>
+  )
+}
+
+function AlertEl(props, triggerRef) {
+  const { onClose, ...promptProps } = props
   const wrapperRef = useRef(null)
-  const prompt = getPromptDialogProps(promptProps)
-  const isDestructive = promptProps.kind === 'destructive'
-  const invalid = prompt.inputOptions.value !== PROMPT_KEY
+  const { backdrop, focusGuard, section, wrapper, ...remainingPromptProps } =
+    getPromptDialogProps(promptProps)
   const { ref, onKeyDown, setupFocusTrap } = useFocusTrap(triggerRef)
 
   function handleBackdropClick(event) {
@@ -41,63 +75,128 @@ function PromptAlert(props, triggerRef) {
   }, [setupFocusTrap])
 
   return (
-    <div {...prompt.backdrop}>
-      <div {...prompt.focusGuard} />
+    <div {...backdrop}>
+      <div {...focusGuard} />
 
-      <div {...prompt.wrapper} ref={wrapperRef} onClick={handleBackdropClick}>
-        <section {...prompt.section} ref={ref} onKeyDown={onKeyDown}>
-          <header {...prompt.header}>
-            {isDestructive && (
-              <span {...prompt.iconWrapper}>
-                <DangerDiamondFilledIcon
-                  {...getIconProps(prompt.iconOptions)}
-                />
-              </span>
-            )}
-            <h6 {...prompt.heading}>Delete Repo?</h6>
-          </header>
-
-          <div {...prompt.body}>
-            <p>
-              This action <strong>cannot be undone</strong> and will permanently
-              delete all the data associated with this.
-            </p>
-
-            <div {...prompt.inputWrapper}>
-              <Label htmlFor={prompt.inputOptions.id}>
-                Please type DELETE to confirm.
-              </Label>
-              <SingleInput
-                {...prompt.inputOptions}
-                invalid={invalid && Boolean(prompt.inputOptions.value)}
-                onChange={onChange}
-              />
-            </div>
-          </div>
-
-          <footer {...prompt.buttonGroup}>
-            <button
-              {...getButtonProps(prompt.cancelBtnOptions).button}
-              onClick={onClose}
-            >
-              Cancel
-            </button>
-            <button
-              {...getButtonProps(prompt.agreeBtnOptions).button}
-              disabled={invalid}
-            >
-              Delete
-            </button>
-          </footer>
+      <div {...wrapper} ref={wrapperRef} onClick={handleBackdropClick}>
+        <section {...section} ref={ref} onKeyDown={onKeyDown}>
+          <AlertProvider {...remainingPromptProps}>
+            {props.children}
+          </AlertProvider>
         </section>
       </div>
 
-      <div {...confirm.focusGuard} />
+      <div {...focusGuard} />
     </div>
   )
 }
 
-const PromptDialogEl = memo(forwardRef(PromptAlert))
+const Alert = memo(forwardRef(AlertEl))
+
+function AlertHeader(props) {
+  const prompt = useContext(AlertContext)
+
+  return (
+    <header {...prompt.header}>
+      {prompt.kind === 'destructive' && (
+        <span {...prompt.iconWrapper}>
+          <DangerDiamondFilledIcon {...getIconProps(prompt.iconOptions)} />
+        </span>
+      )}
+      {props.children}
+    </header>
+  )
+}
+
+function AlertTitle(props) {
+  const { headingId } = props
+  const { dispatch, heading } = useContext(AlertContext)
+
+  useEffect(() => {
+    if (headingId !== heading.id) {
+      console.log({
+        headingId,
+        heading: heading.id,
+        payload: getPromptDialogProps({ headingId }),
+      })
+      updatePropsAction(dispatch, getPromptDialogProps({ headingId }))
+    }
+  }, [headingId, heading.id, dispatch])
+
+  return <h6 {...heading}>{props.children}</h6>
+}
+
+function AlertBody(props) {
+  const { bodyId } = props
+  const { dispatch, ...prompt } = useContext(AlertContext)
+
+  useEffect(() => {
+    if (bodyId) {
+      updatePropsAction(dispatch, getPromptDialogProps({ bodyId }))
+    }
+  }, [bodyId, dispatch])
+
+  return <div {...prompt.body}>{props.children}</div>
+}
+
+function AlertText(props) {
+  return <p>{props.children}</p>
+}
+
+function AlertInput(props) {
+  const { inputId, onChange, name, value } = props
+  const { dispatch, ...prompt } = useContext(AlertContext)
+  const invalid = prompt.inputOptions.value !== PROMPT_KEY
+
+  useEffect(() => {
+    if (value) {
+      updatePropsAction(
+        dispatch,
+        getPromptDialogProps({ inputId, name, value })
+      )
+    }
+  }, [inputId, dispatch, name, value])
+
+  return (
+    <div {...prompt.inputWrapper}>
+      <Label htmlFor={prompt.inputOptions.id}>{props.children}</Label>
+      <SingleInput
+        {...prompt.inputOptions}
+        invalid={invalid && Boolean(prompt.inputOptions.value)}
+        onChange={onChange}
+      />
+    </div>
+  )
+}
+
+function AlertFooter(props) {
+  const { buttonGroup } = useContext(AlertContext)
+  return <footer {...buttonGroup}>{props.children}</footer>
+}
+
+function AlertCancelButton(props) {
+  const prompt = useContext(AlertContext)
+
+  return (
+    <button {...getButtonProps(prompt.cancelBtnOptions).button} {...props}>
+      {props.children}
+    </button>
+  )
+}
+
+function AlertActionButton(props) {
+  const prompt = useContext(AlertContext)
+  const btnOptions =
+    prompt.kind === 'destructive'
+      ? prompt.dangerButtonOptions
+      : prompt.buttonOptions
+
+  return (
+    <button {...getButtonProps(btnOptions).button} {...props}>
+      {props.children}
+    </button>
+  )
+}
 
 export default function PromptDialog() {
   const triggerRef = useRef(null)
@@ -150,33 +249,74 @@ export default function PromptDialog() {
 
       {showAlert &&
         createPortal(
-          <PromptDialogEl
-            headingId="normalAlert-header"
-            bodyId="normalAlert-body"
-            id="normalAlert"
-            inputId="normalAlert-input"
-            name="normalAlert"
+          <Alert
+            id="non-destructive-alert"
+            kind="non-destructive"
             onClose={handleCloseAlert}
-            onChange={handleOnChange}
             ref={triggerRef}
-            value={value}
-          />,
+          >
+            <AlertHeader>
+              <AlertTitle headingId="non-destructiveAlert-heading">
+                Non-destructive Alert
+              </AlertTitle>
+            </AlertHeader>
+            <AlertBody bodyId="non-destructiveAlert-body">
+              <AlertText>
+                This action <strong>cannot be undone</strong> and will
+                permanently delete all the data associated with this.
+              </AlertText>
+              <AlertInput
+                inputId="non-destructiveAlert-input"
+                onChange={handleOnChange}
+                name="non-destructive-input"
+                value={value}
+              >
+                Please type <strong>DELETE</strong> to confirm.
+              </AlertInput>
+            </AlertBody>
+            <AlertFooter>
+              <AlertCancelButton onClick={handleCloseAlert}>
+                Cancel
+              </AlertCancelButton>
+              <AlertActionButton>Confirm</AlertActionButton>
+            </AlertFooter>
+          </Alert>,
           document.getElementById('root')
         )}
       {showDestructiveAlert &&
         createPortal(
-          <PromptDialogEl
-            headingId="destructiveAlert-header"
-            bodyId="destructiveAlert-body"
-            id="destructiveAlert"
-            inputId="destructiveAlert-input"
+          <Alert
+            id="destructive-alert"
             kind="destructive"
-            name="destructiveAlert"
             onClose={handleCloseDestructiveAlert}
-            onChange={handleOnChange}
             ref={destTriggerRef}
-            value={value}
-          />,
+          >
+            <AlertHeader>
+              <AlertTitle headingId="destructiveAlert-heading">
+                Destructive Alert
+              </AlertTitle>
+            </AlertHeader>
+            <AlertBody bodyId="destructiveAlert-body">
+              <AlertText>
+                This action <strong>cannot be undone</strong> and will
+                permanently delete all the data associated with this.
+              </AlertText>
+              <AlertInput
+                inputId="destructiveAlert-input"
+                onChange={handleOnChange}
+                name="destructive-input"
+                value={value}
+              >
+                Please type <strong>DELETE</strong> to confirm.
+              </AlertInput>
+            </AlertBody>
+            <AlertFooter>
+              <AlertCancelButton onClick={handleCloseDestructiveAlert}>
+                Cancel
+              </AlertCancelButton>
+              <AlertActionButton>Confirm</AlertActionButton>
+            </AlertFooter>
+          </Alert>,
           document.getElementById('root')
         )}
     </div>
