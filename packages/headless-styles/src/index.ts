@@ -1,5 +1,15 @@
-export { getConfirmDialogProps } from './components/ConfirmDialog/confirmDialogCSS'
-export { getJSConfirmDialogProps } from './components/ConfirmDialog/confirmDialogJS'
+export {
+  getAlertBackdropProps,
+  getAlertBodyProps,
+  getAlertCancelButtonProps,
+  getAlertConfirmButtonProps,
+  getAlertFooterProps,
+  getAlertHeaderProps,
+  getAlertHeadingProps,
+  getAlertInputProps,
+  getAlertLabelProps,
+  getAlertProps,
+} from './components/Alert/alertCSS'
 
 export { getAdmonitionProps } from './components/Admonition/admonitionCSS'
 export { getJSAdmonitionProps } from './components/Admonition/admonitionJS'
@@ -18,6 +28,9 @@ export { getJSCheckboxProps } from './components/Checkbox/checkboxJS'
 
 export { getCircularProgressProps } from './components/CircularProgress/circularProgressCSS'
 export { getJSCircularProgressProps } from './components/CircularProgress/circularProgressJS'
+
+export { getConfirmDialogProps } from './components/ConfirmDialog/confirmDialogCSS'
+export { getJSConfirmDialogProps } from './components/ConfirmDialog/confirmDialogJS'
 
 export { getErrorMessageProps } from './components/ErrorMessage/errorMessageCSS'
 export { getJSErrorMessageProps } from './components/ErrorMessage/errorMessageJS'

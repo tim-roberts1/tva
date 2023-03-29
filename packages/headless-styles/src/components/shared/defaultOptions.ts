@@ -3,7 +3,6 @@ import type {
   CheckboxOptions,
   ConfirmDialogOptions,
   IconOptions,
-  PromptDialogOptions,
   RadioOptions,
 } from '../../types'
 import type {
@@ -39,8 +38,12 @@ export function createCheckboxFieldProps(
   }
 }
 
+export interface CreateDialogIconPropsOptions {
+  kind: ConfirmDialogOptions['kind']
+}
+
 export function createDialogIconProps(
-  options: ConfirmDialogOptions | PromptDialogOptions,
+  options: CreateDialogIconPropsOptions,
   additions?: IconPropsOptions
 ) {
   if (options.kind === 'destructive') {
