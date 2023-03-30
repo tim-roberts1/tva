@@ -11,7 +11,7 @@ import styles from './alertCSS.module.css'
 
 const ALERT = 'pando-alert'
 
-export function getAlertBackdropProps() {
+export function getAlertBackdropProps(options: DialogOptions) {
   return {
     backdrop: {
       ...createClassNameProp(`${ALERT}-backdrop`, styles.alertDialogBackdrop),
@@ -27,20 +27,21 @@ export function getAlertBackdropProps() {
     },
     wrapper: {
       'data-focus-lock-disabled': false,
+      'aria-describedby': options.bodyId,
+      id: options.id,
+      role: 'alertdialog',
       tabIndex: -1,
+      ...getDialogA11yLabel(options),
       ...createClassNameProp(ALERT, styles.alertDialogWrapper),
     },
   }
 }
 
-export function getAlertProps(options: DialogOptions) {
+export function getAlertProps() {
   return {
     'aria-modal': true,
-    'aria-describedby': options.bodyId,
-    id: options.id,
-    role: 'alertdialog',
+    role: 'document',
     tabIndex: -1,
-    ...getDialogA11yLabel(options),
     ...createClassNameProp(`${ALERT}-section`, styles.alertDialogSection),
   }
 }
@@ -112,7 +113,7 @@ export function getAlertCancelButtonProps() {
       usage: 'outline',
     }),
     button: {
-      ...createClassNameProp(`${ALERT}-cancel`, styles.alertDialogCancelBtn),
+      ...createClassNameProp(`${ALERT}-cancel`),
     },
   }
 }

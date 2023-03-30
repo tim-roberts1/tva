@@ -71,8 +71,6 @@ export { getJSPopoverProps } from './components/Popover/popoverJS'
 export { getProgressProps } from './components/Progress/progressCSS'
 export { getJSProgressProps } from './components/Progress/progressJS'
 
-export { getPromptDialogProps } from './components/PromptDialog/promptDialogCSS'
-
 export { getRadioProps } from './components/Radio/radioCSS'
 export { getJSRadioProps } from './components/Radio/radioJS'
 

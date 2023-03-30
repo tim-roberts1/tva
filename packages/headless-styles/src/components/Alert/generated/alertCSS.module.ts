@@ -17,9 +17,6 @@ export default {
   alertDialogBackdrop: {
     ...dialog.pandoDialogBackdrop,
   },
-  alertDialogCancelBtn: {
-    ...dialog.pandoDialogCancelBtn,
-  },
   alertDialogFooter: {
     ...dialog.pandoDialogBtnGroup,
   },
@@ -36,7 +33,7 @@ export default {
     fontWeight: '500',
     marginTop: '1.2rem',
   },
-  alertInputWrapper: {
+  alertDialogInputWrapper: {
     marginTop: '1rem',
   },
   alertDialogSection: {

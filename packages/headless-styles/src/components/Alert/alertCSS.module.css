@@ -10,10 +10,6 @@
   composes: pandoDialogBackdrop from '../shared/dialog.module.css';
 }
 
-.alertDialogCancelBtn {
-  composes: pandoDialogCancelBtn from '../shared/dialog.module.css';
-}
-
 .alertDialogFooter {
   composes: pandoDialogBtnGroup from '../shared/dialog.module.css';
 }

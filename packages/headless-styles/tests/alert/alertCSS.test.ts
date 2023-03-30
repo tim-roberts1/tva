@@ -51,7 +51,7 @@ describe('Alert CSS', () => {
         usage: 'outline',
       },
       button: {
-        className: 'pando-alert-cancel alertDialogCancelBtn',
+        className: 'pando-alert-cancel',
       },
     })
   })

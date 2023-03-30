@@ -32,9 +32,6 @@ export default {
     justifyContent: 'flex-end',
     marginTop: '1.5rem',
   },
-  pandoDialogCancelBtn: {
-    marginRight: '1rem',
-  },
   pandoFocusGuard: {
     height: '0',
     left: '1px',
@@ -59,7 +56,7 @@ export default {
     fontFamily: 'inherit',
     marginBottom: '3.75rem',
     marginTop: '3.75rem',
-    maxWidth: '30rem',
+    maxWidth: '80ch',
     opacity: '0',
     outline: 'transparent solid 2px',
     outlineOffset: '2px',
@@ -73,7 +70,7 @@ export default {
   pandoDialogWrapper: {
     alignItems: 'flex-start',
     display: 'flex',
-    height: '100vh',
+    height: '100dvh',
     justifyContent: 'center',
     left: '0',
     overflow: 'auto',
@@ -81,8 +78,6 @@ export default {
     top: '0',
     width: '100vw',
     zIndex: '1400',
-    MozBoxPack: 'center',
-    WebkitBoxPack: 'center',
   },
   pandoDialogHeader: {
     alignItems: 'center',

@@ -30,9 +30,9 @@ const CONFIRM_KEY = 'CONFIRM'
 const PROMPT_KEY = 'DELETE'
 
 function AlertBackdrop(props) {
-  const { onClose } = props
+  const { onClose, ...alertOptions } = props
   const wrapperRef = useRef(null)
-  const { focusGuard, ...backdropProps } = getAlertBackdropProps()
+  const { focusGuard, ...backdropProps } = getAlertBackdropProps(alertOptions)
 
   function handleBackdropClick(event) {
     event.stopPropagation()
@@ -59,8 +59,8 @@ function AlertBackdrop(props) {
 }
 
 function AlertEl(props, triggerRef) {
-  const { onClose, children, ...alertDialogProps } = props
-  const alertProps = getAlertProps(alertDialogProps)
+  const { onClose, children, ...alertBackdropOptions } = props
+  const alertProps = getAlertProps()
   const { ref, onKeyDown, setupFocusTrap } = useFocusTrap(triggerRef)
 
   useEffect(() => {
@@ -68,7 +68,7 @@ function AlertEl(props, triggerRef) {
   }, [setupFocusTrap])
 
   return (
-    <AlertBackdrop onClose={onClose}>
+    <AlertBackdrop onClose={onClose} {...alertBackdropOptions}>
       <section {...alertProps} ref={ref} onKeyDown={onKeyDown}>
         {children}
       </section>
@@ -147,10 +147,11 @@ function AlertCancelButton(props) {
 }
 
 function AlertActionButton(props) {
-  const btnProps = getAlertConfirmButtonProps(props)
+  const { kind, ...restBtnProps } = props
+  const btnProps = getAlertConfirmButtonProps(kind)
 
   return (
-    <button {...getButtonProps(btnProps.btnOptions).button} {...props}>
+    <button {...getButtonProps(btnProps.btnOptions).button} {...restBtnProps}>
       {props.children}
     </button>
   )

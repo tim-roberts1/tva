@@ -24,10 +24,6 @@ html[data-theme='light'],
   margin-top: 1.5rem;
 }
 
-.pandoDialogCancelBtn {
-  margin-right: 1rem;
-}
-
 .pandoFocusGuard {
   height: 0;
   left: 1px;
@@ -52,7 +48,7 @@ html[data-theme='light'],
   font-family: inherit;
   margin-bottom: 3.75rem;
   margin-top: 3.75rem;
-  max-width: 30rem;
+  max-width: 80ch;
   opacity: 0;
   outline: transparent solid 2px;
   outline-offset: 2px;
@@ -67,7 +63,7 @@ html[data-theme='light'],
 .pandoDialogWrapper {
   align-items: flex-start;
   display: flex;
-  height: 100vh;
+  height: 100dvh;
   justify-content: center;
   left: 0;
   overflow: auto;
@@ -75,8 +71,6 @@ html[data-theme='light'],
   top: 0;
   width: 100vw;
   z-index: 1400;
-  -moz-box-pack: center;
-  -webkit-box-pack: center;
 }
 
 .pandoDialogHeader {

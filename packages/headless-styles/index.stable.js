@@ -1,5 +1,15 @@
-export { getConfirmDialogProps } from './src/components/ConfirmDialog/confirmDialogCSS'
-export { getJSConfirmDialogProps } from './src/components/ConfirmDialog/confirmDialogJS'
+export {
+  getAlertBackdropProps,
+  getAlertBodyProps,
+  getAlertCancelButtonProps,
+  getAlertConfirmButtonProps,
+  getAlertFooterProps,
+  getAlertHeaderProps,
+  getAlertHeadingProps,
+  getAlertInputProps,
+  getAlertLabelProps,
+  getAlertProps,
+} from './src/components/Alert/alertCSS'
 
 export { getAdmonitionProps } from './src/components/Admonition/admonitionCSS'
 export { getJSAdmonitionProps } from './src/components/Admonition/admonitionJS'
@@ -63,8 +73,6 @@ export { getJSPopoverProps } from './src/components/Popover/popoverJS'
 
 export { getProgressProps } from './src/components/Progress/progressCSS'
 export { getJSProgressProps } from './src/components/Progress/progressJS'
-
-export { getPromptDialogProps as unsafe_getPromptDialogProps } from './src/components/PromptDialog/promptDialogCSS'
 
 export { getRadioProps } from './src/components/Radio/radioCSS'
 export { getJSRadioProps } from './src/components/Radio/radioJS'
