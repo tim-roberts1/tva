@@ -68,7 +68,7 @@ function AlertEl(props, triggerRef) {
 export const Alert = memo(forwardRef(AlertEl))
 
 export function AlertHeader(props) {
-  const headerProps = getAlertHeaderProps(props)
+  const headerProps = getAlertHeaderProps(props.kind)
 
   return (
     <header {...headerProps.header}>

@@ -20,9 +20,6 @@ export default {
   modalBtnGroup: {
     ...dialog.pandoDialogBtnGroup,
   },
-  modalCancelBtn: {
-    ...dialog.pandoDialogCancelBtn,
-  },
   modalFocusGuard: {
     ...dialog.pandoFocusGuard,
   },

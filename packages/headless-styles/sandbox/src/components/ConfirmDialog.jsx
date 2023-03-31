@@ -1,170 +1,22 @@
-import {
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-  forwardRef,
-  memo,
-} from 'react'
+import { useCallback, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { useEscToClose, useFocusTrap } from '@pluralsight/react-utils'
+import { getButtonProps } from '@pluralsight/headless-styles'
 import {
-  getButtonProps,
-  getConfirmDialogProps,
-  getJSConfirmDialogProps,
-  getIconProps,
-} from '../../../src'
-import { DangerDiamondFilledIcon } from '@pluralsight/icons'
+  Alert,
+  AlertBody,
+  AlertActionButton,
+  AlertCancelButton,
+  AlertFooter,
+  AlertHeader,
+  AlertHeading,
+  AlertText,
+} from './Alert'
 
-function ConfirmAlert(props, triggerRef) {
-  const { onClose, ...confirmProps } = props
-  const wrapperRef = useRef(null)
-  const confirm = getConfirmDialogProps(confirmProps)
-  const isDestructive = confirmProps.kind === 'destructive'
-  const { ref, onKeyDown, setupFocusTrap } = useFocusTrap(triggerRef)
-
-  function handleBackdropClick(event) {
-    event.stopPropagation()
-    if (wrapperRef.current === event.target) {
-      onClose()
-    }
-  }
-
-  useEscToClose(onClose)
-
-  useEffect(() => {
-    setupFocusTrap()
-  }, [setupFocusTrap])
-
-  return (
-    <div {...confirm.backdrop}>
-      <div {...confirm.focusGuard} />
-
-      <div {...confirm.wrapper} ref={wrapperRef} onClick={handleBackdropClick}>
-        <section {...confirm.section} ref={ref} onKeyDown={onKeyDown}>
-          <header {...confirm.header}>
-            {isDestructive && (
-              <span {...confirm.iconWrapper}>
-                <DangerDiamondFilledIcon
-                  {...getIconProps(confirm.iconOptions)}
-                />
-              </span>
-            )}
-            <h6 {...confirm.heading}>Test confirm</h6>
-          </header>
-          <p {...confirm.body}>
-            This is an example confirm body that has some really long content
-            because the copy writer is not good and has to say a lot.
-          </p>
-          <footer {...confirm.buttonGroup}>
-            <button
-              {...getButtonProps(confirm.cancelBtnOptions).button}
-              onClick={onClose}
-            >
-              Cancel
-            </button>
-            <button {...getButtonProps(confirm.agreeBtnOptions).button}>
-              Action
-            </button>
-          </footer>
-        </section>
-      </div>
-
-      <div {...confirm.focusGuard} />
-    </div>
-  )
-}
-
-const AlertDialogEl = memo(forwardRef(ConfirmAlert))
-
-function ConfirmAlertJS(props, triggerRef) {
-  const { onClose, ...confirmProps } = props
-  const wrapperRefJS = useRef(null)
-  const confirm = getJSConfirmDialogProps(confirmProps)
-  const isDestructive = confirmProps.kind === 'destructive'
-  const { ref, onKeyDown, setupFocusTrap } = useFocusTrap(triggerRef)
-
-  function handleBackdropClick(event) {
-    event.stopPropagation()
-    if (wrapperRefJS.current === event.target) {
-      onClose()
-    }
-  }
-
-  useEscToClose(onClose)
-
-  useEffect(() => {
-    setupFocusTrap()
-  }, [setupFocusTrap])
-
-  return (
-    <div style={confirm.backdrop.styles}>
-      <div
-        style={confirm.focusGuard.styles}
-        {...confirm.focusGuard.a11yProps}
-      />
-
-      <div
-        style={confirm.wrapper.styles}
-        ref={wrapperRefJS}
-        onClick={handleBackdropClick}
-        {...confirm.wrapper.a11yProps}
-      >
-        <section
-          style={{ ...confirm.section.styles, opacity: 1 }}
-          ref={ref}
-          onKeyDown={onKeyDown}
-          {...confirm.section.a11yProps}
-        >
-          <header style={confirm.header.styles}>
-            {isDestructive && (
-              <span style={confirm.iconWrapper.styles}>
-                <DangerDiamondFilledIcon
-                  {...getIconProps(confirm.iconOptions)}
-                />
-              </span>
-            )}
-            <h6 style={confirm.heading.styles} {...confirm.heading.a11yProps}>
-              Test confirm
-            </h6>
-          </header>
-          <p style={confirm.body.styles}>
-            This is an example confirm body that has some really long content
-            because the copy writer is not good and has to say a lot.
-          </p>
-          <footer style={confirm.buttonGroup.styles}>
-            <button
-              {...getButtonProps(confirm.cancelBtnOptions).button}
-              onClick={onClose}
-            >
-              Cancel
-            </button>
-            <button {...getButtonProps(confirm.agreeBtnOptions).button}>
-              Action
-            </button>
-          </footer>
-        </section>
-      </div>
-
-      <div
-        style={confirm.focusGuard.styles}
-        {...confirm.focusGuard.a11yProps}
-      />
-    </div>
-  )
-}
-
-const AlertDialogJS = memo(forwardRef(ConfirmAlertJS))
-
-export default function ConfirmDialog({ logJS }) {
+export default function ConfirmDialog() {
   const triggerRef = useRef(null)
   const destTriggerRef = useRef(null)
   const [showAlert, setShowAlert] = useState(false)
   const [showDestructiveAlert, setShowDestructiveAlert] = useState(false)
-  const triggerRefJS = useRef(null)
-  const destTriggerRefJS = useRef(null)
-  const [showAlertJS, setShowAlertJS] = useState(false)
-  const [showDestructiveAlertJS, setShowDestructiveAlertJS] = useState(false)
 
   const handleCloseAlert = useCallback(() => {
     setShowAlert(false)
@@ -181,34 +33,6 @@ export default function ConfirmDialog({ logJS }) {
   function handleShowDestructiveAlert() {
     setShowDestructiveAlert(true)
   }
-
-  const handleCloseAlertJS = useCallback(() => {
-    setShowAlertJS(false)
-  }, [])
-
-  function handleShowAlertJS() {
-    setShowAlertJS(true)
-  }
-
-  const handleCloseDestructiveAlertJS = useCallback(() => {
-    setShowDestructiveAlertJS(false)
-  }, [])
-
-  function handleShowDestructiveAlertJS() {
-    setShowDestructiveAlertJS(true)
-  }
-
-  useEffect(() => {
-    if (logJS) {
-      console.log(
-        getJSConfirmDialogProps({
-          id: 'sb-id',
-          headerId: 'sb-headerId',
-          bodyId: 'sb-bodyId',
-        })
-      )
-    }
-  }, [logJS])
 
   return (
     <div>
@@ -234,67 +58,64 @@ export default function ConfirmDialog({ logJS }) {
 
       {showAlert &&
         createPortal(
-          <AlertDialogEl
-            headingId="normalAlert-header"
-            bodyId="normalAlert-body"
-            id="normalAlert"
+          <Alert
+            bodyId="non-destructiveAlert-body"
+            headingId="non-destructiveAlert-heading"
+            id="non-destructive-alert"
             onClose={handleCloseAlert}
             ref={triggerRef}
-          />,
+          >
+            <AlertHeader kind="non-destructive">
+              <AlertHeading id="non-destructiveAlert-heading">
+                Non-destructive Alert
+              </AlertHeading>
+            </AlertHeader>
+            <AlertBody id="non-destructiveAlert-body">
+              <AlertText>
+                This is a non-destructive alert. It is used to confirm an action
+                and this one specifically is very wordy with a lot of words whic
+                is typically not good.
+              </AlertText>
+            </AlertBody>
+            <AlertFooter>
+              <AlertCancelButton onClick={handleCloseAlert}>
+                Cancel
+              </AlertCancelButton>
+              <AlertActionButton kind="non-destructive">
+                Confirm
+              </AlertActionButton>
+            </AlertFooter>
+          </Alert>,
           document.getElementById('root')
         )}
       {showDestructiveAlert &&
         createPortal(
-          <AlertDialogEl
-            headingId="destructiveAlert-header"
+          <Alert
             bodyId="destructiveAlert-body"
-            id="destructiveAlert"
-            kind="destructive"
+            headingId="destructiveAlert-heading"
+            id="destructive-alert"
             onClose={handleCloseDestructiveAlert}
             ref={destTriggerRef}
-          />,
-          document.getElementById('root')
-        )}
-
-      <h3>JS API</h3>
-      <div className="App-container">
-        <button
-          {...getButtonProps().button}
-          onClick={handleShowAlertJS}
-          ref={triggerRefJS}
-        >
-          non-destructive
-        </button>
-        <button
-          {...getButtonProps({ sentiment: 'danger' }).button}
-          onClick={handleShowDestructiveAlertJS}
-          ref={destTriggerRefJS}
-        >
-          destructive
-        </button>
-      </div>
-
-      {showAlertJS &&
-        createPortal(
-          <AlertDialogJS
-            headingId="normalAlert-header"
-            bodyId="normalAlert-body"
-            id="normalAlert"
-            onClose={handleCloseAlertJS}
-            ref={triggerRefJS}
-          />,
-          document.getElementById('root')
-        )}
-      {showDestructiveAlertJS &&
-        createPortal(
-          <AlertDialogJS
-            headingId="destructiveAlert-header"
-            bodyId="destructiveAlert-body"
-            id="destructiveAlert"
-            kind="destructive"
-            onClose={handleCloseDestructiveAlertJS}
-            ref={destTriggerRefJS}
-          />,
+          >
+            <AlertHeader kind="destructive">
+              <AlertHeading id="destructiveAlert-heading">
+                Destructive Alert
+              </AlertHeading>
+            </AlertHeader>
+            <AlertBody id="destructiveAlert-body">
+              <AlertText>
+                This is a destructive alert. It is used to confirm an action and
+                this one specifically is very wordy with a lot of words whic is
+                typically not good.
+              </AlertText>
+            </AlertBody>
+            <AlertFooter>
+              <AlertCancelButton onClick={handleCloseDestructiveAlert}>
+                Cancel
+              </AlertCancelButton>
+              <AlertActionButton kind="destructive">Confirm</AlertActionButton>
+            </AlertFooter>
+          </Alert>,
           document.getElementById('root')
         )}
     </div>

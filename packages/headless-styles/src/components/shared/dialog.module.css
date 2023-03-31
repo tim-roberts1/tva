@@ -48,7 +48,7 @@ html[data-theme='light'],
   font-family: inherit;
   margin-bottom: 3.75rem;
   margin-top: 3.75rem;
-  max-width: 80ch;
+  max-width: 50ch;
   opacity: 0;
   outline: transparent solid 2px;
   outline-offset: 2px;

@@ -56,7 +56,7 @@ export default {
     fontFamily: 'inherit',
     marginBottom: '3.75rem',
     marginTop: '3.75rem',
-    maxWidth: '80ch',
+    maxWidth: '50ch',
     opacity: '0',
     outline: 'transparent solid 2px',
     outlineOffset: '2px',

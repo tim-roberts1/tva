@@ -14,10 +14,6 @@
   composes: pandoDialogBtnGroup from '../shared/dialog.module.css';
 }
 
-.modalCancelBtn {
-  composes: pandoDialogCancelBtn from '../shared/dialog.module.css';
-}
-
 .modalFocusGuard {
   composes: pandoFocusGuard from '../shared/dialog.module.css';
 }

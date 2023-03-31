@@ -12,8 +12,26 @@ import {
 } from '../../src/index'
 
 describe('Alert CSS', () => {
+  test('should return the correct props for the alert', () => {
+    const props = getAlertProps()
+
+    expect(props).toEqual({
+      'aria-modal': true,
+      className: 'pando-alert-section alertDialogSection',
+      role: 'document',
+      tabIndex: -1,
+    })
+  })
+
   test('should return the correct props for the alert backdrop', () => {
-    const props = getAlertBackdropProps()
+    const id = 'alert-id'
+    const headingId = 'alert-header-id'
+    const bodyId = 'alert-body-id'
+    const props = getAlertBackdropProps({
+      bodyId,
+      headingId,
+      id,
+    })
 
     expect(props).toEqual({
       backdrop: {
@@ -26,7 +44,11 @@ describe('Alert CSS', () => {
         className: 'pando-alert-focus-guard alertDialogFocusGuard',
       },
       wrapper: {
+        'aria-describedby': bodyId,
+        'aria-labelledby': headingId,
         'data-focus-lock-disabled': false,
+        id: id,
+        role: 'alertdialog',
         tabIndex: -1,
         className: 'pando-alert alertDialogWrapper',
       },
@@ -141,27 +163,6 @@ describe('Alert CSS', () => {
     expect(props).toEqual({
       htmlFor: id,
       className: 'pando-alert-label alertDialogLabel',
-    })
-  })
-
-  test('should return the correct props for the alert', () => {
-    const id = 'alert-id'
-    const headingId = 'alert-header-id'
-    const bodyId = 'alert-body-id'
-    const props = getAlertProps({
-      bodyId,
-      headingId,
-      id,
-    })
-
-    expect(props).toEqual({
-      'aria-modal': true,
-      'aria-describedby': bodyId,
-      'aria-labelledby': headingId,
-      className: 'pando-alert-section alertDialogSection',
-      id: id,
-      role: 'alertdialog',
-      tabIndex: -1,
     })
   })
 })

@@ -1,4 +1,3 @@
-import { getDialogA11yLabel } from '../../utils/a11yHelpers'
 import { createClassNameProp } from '../../utils/helpers'
 import type { ButtonOptions, InputOptions } from '../../types'
 import type { ConfirmDialogKind } from '../ConfirmDialog/types'
@@ -7,31 +6,27 @@ import {
   createPandoOptions,
 } from '../shared/defaultOptions'
 import type { DialogOptions } from '../types'
+import { getAlertA11yProps } from './shared'
 import styles from './alertCSS.module.css'
 
 const ALERT = 'pando-alert'
 
 export function getAlertBackdropProps(options: DialogOptions) {
+  const a11yProps = getAlertA11yProps(options)
+
   return {
     backdrop: {
       ...createClassNameProp(`${ALERT}-backdrop`, styles.alertDialogBackdrop),
     },
     focusGuard: {
-      'aria-hidden': true,
-      'data-focus-guard': true,
-      tabIndex: 0,
+      ...a11yProps.focusGuard,
       ...createClassNameProp(
         `${ALERT}-focus-guard`,
         styles.alertDialogFocusGuard
       ),
     },
     wrapper: {
-      'data-focus-lock-disabled': false,
-      'aria-describedby': options.bodyId,
-      id: options.id,
-      role: 'alertdialog',
-      tabIndex: -1,
-      ...getDialogA11yLabel(options),
+      ...a11yProps.wrapper,
       ...createClassNameProp(ALERT, styles.alertDialogWrapper),
     },
   }
@@ -39,9 +34,7 @@ export function getAlertBackdropProps(options: DialogOptions) {
 
 export function getAlertProps() {
   return {
-    'aria-modal': true,
-    role: 'document',
-    tabIndex: -1,
+    ...getAlertA11yProps({} as DialogOptions).section,
     ...createClassNameProp(`${ALERT}-section`, styles.alertDialogSection),
   }
 }
@@ -66,14 +59,14 @@ export function getAlertHeaderProps(kind: ConfirmDialogKind) {
 
 export function getAlertHeadingProps(id: string) {
   return {
-    id,
+    ...getAlertA11yProps({ headingId: id } as DialogOptions).heading,
     ...createClassNameProp(`${ALERT}-heading`),
   }
 }
 
 export function getAlertBodyProps(id: string) {
   return {
-    id,
+    ...getAlertA11yProps({ bodyId: id } as DialogOptions).body,
     ...createClassNameProp(`${ALERT}-body`),
   }
 }
