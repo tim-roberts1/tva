@@ -23,6 +23,7 @@ import paginationRoute from './pagination'
 import popoverRoute from './popover'
 import preloadedImgRoute from './preloadedImg'
 import progressRoute from './progress'
+import promptRoute from './prompt'
 import radioRoute from './radio'
 import selectRoute from './select'
 import skeletonRoute from './skeleton'
@@ -58,6 +59,7 @@ const routeConfig = createRouteConfig().createChildren((createRoute) => [
   createRoute(popoverRoute),
   createRoute(preloadedImgRoute),
   createRoute(progressRoute),
+  createRoute(promptRoute),
   createRoute(radioRoute),
   createRoute(selectRoute),
   createRoute(skeletonRoute),

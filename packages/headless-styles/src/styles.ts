@@ -1,10 +1,10 @@
 import admonitionStyles from './components/Admonition/generated/admonitionCSS.module'
+import alertStyles from './components/Alert/generated/alertCSS.module'
 import avatarStyles from './components/Avatar/generated/avatarCSS.module'
 import badgeStyles from './components/Badge/generated/badgeCSS.module'
 import buttonStyles from './components/Button/generated/buttonCSS.module'
 import checkboxStyles from './components/Checkbox/generated/checkboxCSS.module'
 import circularProgressStyles from './components/CircularProgress/generated/circularProgressCSS.module'
-import confirmDialogStyles from './components/ConfirmDialog/generated/confirmDialogCSS.module'
 import errorMessageStyles from './components/ErrorMessage/generated/errorMessageCSS.module'
 import fieldMessageStyles from './components/FieldMessage/generated/fieldMessageCSS.module'
 import formControlStyles from './components/FormControl/generated/formControlCSS.module'
@@ -28,12 +28,12 @@ import tooltipStyles from './components/Tooltip/generated/tooltipCSS.module'
 
 export {
   admonitionStyles,
+  alertStyles,
   avatarStyles,
   badgeStyles,
   buttonStyles,
   checkboxStyles,
   circularProgressStyles,
-  confirmDialogStyles,
   errorMessageStyles,
   fieldMessageStyles,
   formControlStyles,

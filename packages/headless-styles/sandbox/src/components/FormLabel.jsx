@@ -18,6 +18,11 @@ const hiddenLabel = getFormLabelProps({
   value: 'Non-visible label',
 })
 
+export function Label(props) {
+  const { ...labelProps } = getFormLabelProps(props)
+  return <label {...labelProps}>{props.children}</label>
+}
+
 export default function FormLabel({ logJS }) {
   useEffect(() => {
     if (logJS) {

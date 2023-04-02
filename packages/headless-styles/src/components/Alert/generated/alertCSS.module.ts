@@ -8,42 +8,42 @@ import dialog from '../../shared/generated/dialog.module'
 import keyframes from '../../shared/generated/keyframes.module'
 
 export default {
-  baseModalSection: {
+  baseAlertDialogSection: {
     ...dialog.pandoDialogSection,
   },
-  baseModalAnimation: {
+  baseAlertAnimation: {
     ...keyframes.pandoFadeIn,
   },
-  modalBackdrop: {
+  alertDialogBackdrop: {
     ...dialog.pandoDialogBackdrop,
   },
-  modalBtnGroup: {
+  alertDialogFooter: {
     ...dialog.pandoDialogBtnGroup,
   },
-  modalFocusGuard: {
+  alertFocusGuard: {
     ...dialog.pandoFocusGuard,
   },
-  modalSection: {
+  alertDialogHeader: {
+    ...dialog.pandoDialogHeader,
+    marginTop: '2rem',
+  },
+  alertDialogLabel: {
+    display: 'block',
+    fontVariationSettings: "'wght' 500",
+    fontWeight: '500',
+    marginTop: '1.2rem',
+  },
+  alertDialogInputWrapper: {
+    marginTop: '1rem',
+  },
+  alertDialogSection: {
     ...keyframes.pandoFadeIn,
     ...dialog.pandoDialogSection,
-    marginInlineEnd: '1rem',
-    marginInlineStart: '1rem',
-    maxHeight: '80vh',
-    maxWidth: '37.5rem',
-    padding: '3rem 2rem 2rem',
   },
-  modalWrapper: {
+  alertDialogTitleIcon: {
+    ...dialog.pandoDialogTitleIcon,
+  },
+  alertDialogWrapper: {
     ...dialog.pandoDialogWrapper,
-  },
-  modalHeader: {
-    ...dialog.pandoDialogHeader,
-  },
-  modalButtonWrapper: {
-    position: 'absolute',
-    right: '0',
-    top: '0',
-  },
-  modalBody: {
-    overflow: 'auto',
   },
 } satisfies GeneratedStyles

@@ -1,15 +1,3 @@
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 :root {
   --ps-backdrop: rgba(0 0 0 / 65%);
 }
@@ -19,7 +7,7 @@ html[data-theme='light'],
   --ps-backdrop: rgba(255 255 255 / 65%);
 }
 
-.confirmDialogBackdrop {
+.pandoDialogBackdrop {
   background: var(--ps-backdrop);
   height: 100vh;
   left: 0;
@@ -29,18 +17,14 @@ html[data-theme='light'],
   z-index: 1300;
 }
 
-.confirmDialogBtnGroup {
+.pandoDialogBtnGroup {
   display: flex;
   gap: 1rem;
   justify-content: flex-end;
   margin-top: 1.5rem;
 }
 
-.confirmDialogCancelBtn {
-  margin-right: 1rem;
-}
-
-.confirmFocusGuard {
+.pandoFocusGuard {
   height: 0;
   left: 1px;
   overflow: hidden;
@@ -50,12 +34,8 @@ html[data-theme='light'],
   width: 1px;
 }
 
-.confirmDialogSection {
+.pandoDialogSection {
   animation-delay: 100ms;
-  animation-duration: 150ms;
-  animation-fill-mode: forwards;
-  animation-name: fadeIn;
-  animation-timing-function: ease-in-out;
   background: var(--ps-surface-weak);
   border-color: var(--ps-border-weak);
   border-radius: 8px;
@@ -68,7 +48,7 @@ html[data-theme='light'],
   font-family: inherit;
   margin-bottom: 3.75rem;
   margin-top: 3.75rem;
-  max-width: 30rem;
+  max-width: 50ch;
   opacity: 0;
   outline: transparent solid 2px;
   outline-offset: 2px;
@@ -80,10 +60,10 @@ html[data-theme='light'],
   z-index: 1400;
 }
 
-.confirmDialogWrapper {
+.pandoDialogWrapper {
   align-items: flex-start;
   display: flex;
-  height: 100vh;
+  height: 100dvh;
   justify-content: center;
   left: 0;
   overflow: auto;
@@ -91,18 +71,15 @@ html[data-theme='light'],
   top: 0;
   width: 100vw;
   z-index: 1400;
-  -moz-box-pack: center;
-  -webkit-box-pack: center;
 }
 
-.confirmDialogHeader {
+.pandoDialogHeader {
   align-items: center;
   display: flex;
   margin-bottom: 1.5rem;
-  margin-top: 2.5rem;
 }
 
-.confirmDialogTitleIcon {
+.pandoDialogTitleIcon {
   color: var(--ps-danger-border);
   line-height: initial;
   margin-inline-end: 0.625rem;

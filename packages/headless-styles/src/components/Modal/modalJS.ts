@@ -1,69 +1,54 @@
 import { createJSProps } from '../../utils/helpers'
-import styles from '../ConfirmDialog/generated/confirmDialogCSS.module'
+import animationStyles from '../shared/generated/keyframes.module'
 import { createModalProps, getDefaultModalOptions } from './shared'
 import type { ModalOptions } from './types'
-import modalStyles from './generated/modalCSS.module'
+import styles from './generated/modalCSS.module'
 
 export function getJSModalProps(options?: ModalOptions) {
   const defaultOptions = getDefaultModalOptions(options)
   const props = createModalProps(defaultOptions)
-  const combinedStyles = {
-    backdrop: {
-      ...styles.confirmDialogBackdrop,
-      background: styles.root['--ps-backdrop'],
-    },
-    heading: {
-      ...styles.confirmDialogHeader,
-      ...modalStyles.modalHeading,
-    },
-    section: {
-      ...styles.confirmDialogSection,
-      ...modalStyles.modalSection,
-    },
-  }
-
   return {
     ...props,
     heading: {
       a11yProps: {
         ...props.heading,
       },
-      ...createJSProps(combinedStyles.heading),
+      ...createJSProps(styles.modalHeader),
     },
     body: {
       a11yProps: {
         ...props.body,
       },
-      ...createJSProps(modalStyles.modalBody),
+      ...createJSProps(styles.modalBody),
     },
     backdrop: {
       ...props.backdrop,
-      ...createJSProps(combinedStyles.backdrop),
+      ...createJSProps(styles.modalBackdrop),
     },
     buttonWrapper: {
       ...props.buttonWrapper,
-      ...createJSProps(modalStyles.modalButtonWrapper),
+      ...createJSProps(styles.modalButtonWrapper),
     },
     focusGuard: {
       a11yProps: {
         ...props.focusGuard,
       },
-      ...createJSProps(styles.confirmFocusGuard),
+      ...createJSProps(styles.modalFocusGuard),
     },
     section: {
       a11yProps: {
         ...props.section,
       },
       keyframes: {
-        ...createJSProps(styles.keyframesFadeIn),
+        ...createJSProps(animationStyles.keyframesFadeInAnimation),
       },
-      ...createJSProps(combinedStyles.section),
+      ...createJSProps(styles.modalSection),
     },
     wrapper: {
       a11yProps: {
         ...props.wrapper,
       },
-      ...createJSProps(styles.confirmDialogWrapper),
+      ...createJSProps(styles.modalWrapper),
     },
   }
 }

@@ -1,20 +1,19 @@
 import { createA11yProps } from '../../utils/helpers'
-import type { FieldStates, FieldOptions, InputFieldOptions } from '../types'
-import type { RadioOptions } from '../Radio/types'
-import type { CheckboxOptions } from '../Checkbox/types'
+import type {
+  CheckboxOptions,
+  ConfirmDialogOptions,
+  IconOptions,
+  RadioOptions,
+} from '../../types'
+import type {
+  FieldStates,
+  FieldOptions,
+  IconPropsOptions,
+  InputFieldOptions,
+} from '../types'
 
 export type AllCheckboxFieldOptions = CheckboxOptions | RadioOptions
 export type CheckboxTypes = 'checkbox' | 'radio'
-
-export function getDefaultCheckboxFieldOptions(
-  options?: AllCheckboxFieldOptions
-) {
-  return {
-    ...getDefaultFieldOptions(options),
-    checked: options?.checked ?? false,
-    value: options?.value ?? '',
-  }
-}
 
 export function createCheckboxFieldProps(
   options: Required<AllCheckboxFieldOptions>
@@ -39,8 +38,42 @@ export function createCheckboxFieldProps(
   }
 }
 
+export interface CreateDialogIconPropsOptions {
+  kind: ConfirmDialogOptions['kind']
+}
+
+export function createDialogIconProps(
+  options: CreateDialogIconPropsOptions,
+  additions?: IconPropsOptions
+) {
+  if (options.kind === 'destructive') {
+    return {
+      iconOptions: createPandoOptions<IconOptions>({
+        ariaHidden: true,
+        size: 'm',
+        ...additions?.iconOptions,
+      }),
+      iconWrapper: {
+        ...additions?.iconWrapper,
+      },
+    }
+  }
+
+  return {}
+}
+
 export function createPandoOptions<T>(options: T) {
   return { ...options } as T
+}
+
+export function getDefaultCheckboxFieldOptions(
+  options?: AllCheckboxFieldOptions
+) {
+  return {
+    ...getDefaultFieldOptions(options),
+    checked: options?.checked ?? false,
+    value: options?.value ?? '',
+  }
 }
 
 export function getCheckboxFieldA11yProps(options: AllCheckboxFieldOptions) {

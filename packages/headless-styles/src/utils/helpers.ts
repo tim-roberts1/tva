@@ -56,6 +56,12 @@ export function createA11yProps(options: FieldStates) {
   }
 }
 
+export function createJSA11yProps(props: Record<string, unknown>) {
+  return {
+    a11yProps: props,
+  }
+}
+
 export function createClassNameProp(...classNames: string[]) {
   return { className: classNames.join(' ') }
 }

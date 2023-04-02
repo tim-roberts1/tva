@@ -6,18 +6,6 @@
 import type { GeneratedStyles } from '../../../utils/types'
 
 export default {
-  keyframesFadeIn: {
-    '@keyframes fadeIn': {
-      from: {
-        opacity: '0',
-        transform: 'scale(0.9)',
-      },
-      to: {
-        opacity: '1',
-        transform: 'scale(1)',
-      },
-    },
-  },
   root: {
     '--ps-backdrop': 'rgba(0 0 0 / 65%)',
   },
@@ -29,7 +17,7 @@ export default {
   light: {
     '--ps-backdrop': 'rgba(255 255 255 / 65%)',
   },
-  confirmDialogBackdrop: {
+  pandoDialogBackdrop: {
     background: 'var(--ps-backdrop)',
     height: '100vh',
     left: '0',
@@ -38,16 +26,13 @@ export default {
     width: '100vw',
     zIndex: '1300',
   },
-  confirmDialogBtnGroup: {
+  pandoDialogBtnGroup: {
     display: 'flex',
     gap: '1rem',
     justifyContent: 'flex-end',
     marginTop: '1.5rem',
   },
-  confirmDialogCancelBtn: {
-    marginRight: '1rem',
-  },
-  confirmFocusGuard: {
+  pandoFocusGuard: {
     height: '0',
     left: '1px',
     overflow: 'hidden',
@@ -56,12 +41,8 @@ export default {
     top: '1px',
     width: '1px',
   },
-  confirmDialogSection: {
+  pandoDialogSection: {
     animationDelay: '100ms',
-    animationDuration: '150ms',
-    animationFillMode: 'forwards',
-    animationName: 'fadeIn',
-    animationTimingFunction: 'ease-in-out',
     background: 'var(--ps-surface-weak)',
     borderColor: 'var(--ps-border-weak)',
     borderRadius: '8px',
@@ -75,7 +56,7 @@ export default {
     fontFamily: 'inherit',
     marginBottom: '3.75rem',
     marginTop: '3.75rem',
-    maxWidth: '30rem',
+    maxWidth: '50ch',
     opacity: '0',
     outline: 'transparent solid 2px',
     outlineOffset: '2px',
@@ -86,10 +67,10 @@ export default {
     width: '100%',
     zIndex: '1400',
   },
-  confirmDialogWrapper: {
+  pandoDialogWrapper: {
     alignItems: 'flex-start',
     display: 'flex',
-    height: '100vh',
+    height: '100dvh',
     justifyContent: 'center',
     left: '0',
     overflow: 'auto',
@@ -97,16 +78,13 @@ export default {
     top: '0',
     width: '100vw',
     zIndex: '1400',
-    MozBoxPack: 'center',
-    WebkitBoxPack: 'center',
   },
-  confirmDialogHeader: {
+  pandoDialogHeader: {
     alignItems: 'center',
     display: 'flex',
     marginBottom: '1.5rem',
-    marginTop: '2.5rem',
   },
-  confirmDialogTitleIcon: {
+  pandoDialogTitleIcon: {
     color: 'var(--ps-danger-border)',
     lineHeight: 'initial',
     marginInlineEnd: '0.625rem',

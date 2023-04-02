@@ -11,7 +11,29 @@ import {
 } from '../../../src'
 import { useAutoFormatDate } from '../../../../react-utils/src/index.ts'
 
-function InputField(props) {
+export function SingleInput(props) {
+  const { fieldOptions } = getFormControlProps(props)
+  const inputProps = getInputProps({
+    ...fieldOptions,
+    ...props,
+  })
+  const { value, ...input } = inputProps.input
+
+  return (
+    <div {...inputProps.inputWrapper}>
+      <input {...input} value={value} onChange={props.onChange} />
+      {fieldOptions.invalid && (
+        <span {...inputProps.invalidIconWrapper}>
+          <WarningTriangleFilledIcon
+            {...getIconProps(inputProps.invalidIconOptions)}
+          />
+        </span>
+      )}
+    </div>
+  )
+}
+
+export function InputField(props) {
   const { onChange, kind, ...options } = props
   const { fieldOptions } = getFormControlProps(options)
   const labelProps = getFormLabelProps({

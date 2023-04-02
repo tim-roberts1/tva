@@ -1,5 +1,27 @@
-export { getConfirmDialogProps } from './components/ConfirmDialog/confirmDialogCSS'
-export { getJSConfirmDialogProps } from './components/ConfirmDialog/confirmDialogJS'
+export {
+  getAlertBackdropProps,
+  getAlertBodyProps,
+  getAlertCancelButtonProps,
+  getAlertConfirmButtonProps,
+  getAlertFooterProps,
+  getAlertHeaderProps,
+  getAlertHeadingProps,
+  getAlertInputProps,
+  getAlertLabelProps,
+  getAlertProps,
+} from './components/Alert/alertCSS'
+export {
+  getAlertBackdropJSProps,
+  getAlertBodyJSProps,
+  getAlertCancelButtonJSOptions,
+  getAlertConfirmButtonJSOptions,
+  getAlertFooterJSProps,
+  getAlertHeaderJSProps,
+  getAlertHeadingJSProps,
+  getAlertInputJSProps,
+  getAlertLabelJSProps,
+  getAlertJSProps,
+} from './components/Alert/alertJS'
 
 export { getAdmonitionProps } from './components/Admonition/admonitionCSS'
 export { getJSAdmonitionProps } from './components/Admonition/admonitionJS'

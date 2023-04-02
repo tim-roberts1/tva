@@ -10,7 +10,7 @@ describe('Modal CSS', () => {
       size: 'l',
     },
     backdrop: {
-      className: `${baseClass}-backdrop confirmDialogBackdrop`,
+      className: `${baseClass}-backdrop modalBackdrop`,
     },
     buttonWrapper: {
       className: `${baseClass}-btn-wrapper modalButtonWrapper`,
@@ -19,11 +19,11 @@ describe('Modal CSS', () => {
       'aria-hidden': true,
       'data-focus-guard': true,
       tabIndex: 0,
-      className: `${baseClass}-focus-guard confirmFocusGuard`,
+      className: `${baseClass}-focus-guard modalFocusGuard`,
     },
     heading: {
       id: '',
-      className: `${baseClass}-heading confirmDialogHeader modalHeading`,
+      className: `${baseClass}-heading modalHeader`,
     },
     body: {
       id: '',
@@ -35,12 +35,12 @@ describe('Modal CSS', () => {
       id: '',
       role: 'dialog',
       tabIndex: -1,
-      className: `${baseClass}-section confirmDialogSection modalSection`,
+      className: `${baseClass}-section modalSection`,
     },
     wrapper: {
       'data-focus-lock-disabled': false,
       tabIndex: -1,
-      className: `${baseClass} confirmDialogWrapper`,
+      className: `${baseClass} modalWrapper`,
     },
   }
 
