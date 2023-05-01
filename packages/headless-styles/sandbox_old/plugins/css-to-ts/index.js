@@ -16,17 +16,15 @@ export const convert = (input, config = {}) => {
   let mediaReverse = config.mediaReverse
   let convertedCss
 
-  //If input is a String of CSS
-  if (input === path.basename(input)) {
-    convertedCss = convertStringToJson(input, mediaReverse)
-  } else {
-    //If input fs path is a Directory
+  try {
     if (fs.statSync(input).isDirectory()) {
       convertedCss = convertDirToJson(input, mediaReverse)
     } else {
-      //If input fs path is a File
       convertedCss = convertFileToJson(input, mediaReverse)
     }
+  } catch {
+    convertedCss = convertStringToJson(input, mediaReverse)
+    convertedCss.filename = path.basename(config.id, path.extname(config.id))
   }
 
   if (!outputType) {

@@ -7,10 +7,12 @@ import addProperty from '../utils/addProperty'
 const standard = (rule, result) => {
   const obj = {}
   let retObj = {}
-  rule.declarations.forEach((declaration) => {
-    const cssProperty = camelize(declaration.property)
-    obj[cssProperty] = sanitizeWhitespace(declaration.value)
-  })
+  rule.declarations
+    .filter((declaration) => declaration.type === 'declaration')
+    .forEach((declaration) => {
+      const cssProperty = camelize(declaration.property)
+      obj[cssProperty] = sanitizeWhitespace(declaration.value)
+    })
   rule.selectors.forEach((selector) => {
     let name
 

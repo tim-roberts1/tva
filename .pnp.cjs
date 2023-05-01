@@ -5671,7 +5671,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],\
       [\
         "sass",\
-        "npm:1.50.0"\
+        "npm:1.62.1"\
       ],\
       [\
         "sax",\
@@ -38415,6 +38415,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:0a4971ca6ef557a08df7d5756bbb03307381fdf3b6ccf47be731ed3ae97cc9e030360d123aae75e89fc4b1651a55cdda097a5e5ed08026a086cae077f371cec3#npm:18.2.0"],\
             ["react-table", "virtual:bd7332033e2b79a647ea754e7170caf8ffd21e3bbd824beca18e8be9c842af804a14c327b23d87e394ef02c93d7657634adb7207a2df01795b7f47478a6e701e#npm:7.8.0"],\
+            ["sass", "npm:1.62.1"],\
             ["vite", "virtual:bd7332033e2b79a647ea754e7170caf8ffd21e3bbd824beca18e8be9c842af804a14c327b23d87e394ef02c93d7657634adb7207a2df01795b7f47478a6e701e#npm:4.3.3"]\
           ],\
           "linkType": "SOFT"\
@@ -38435,6 +38436,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/sass-npm-1.55.0-594c748a96-7d769ed08e.zip/node_modules/sass/",\
           "packageDependencies": [\
             ["sass", "npm:1.55.0"],\
+            ["chokidar", "npm:3.5.3"],\
+            ["immutable", "npm:4.0.0"],\
+            ["source-map-js", "npm:1.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:1.62.1", {\
+          "packageLocation": "./.yarn/cache/sass-npm-1.62.1-c16d65fd28-1b1b3584b3.zip/node_modules/sass/",\
+          "packageDependencies": [\
+            ["sass", "npm:1.62.1"],\
             ["chokidar", "npm:3.5.3"],\
             ["immutable", "npm:4.0.0"],\
             ["source-map-js", "npm:1.0.2"]\
@@ -41946,14 +41957,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ["npm:4.3.4", {\
           "packageLocation": "./.yarn/cache/vite-npm-4.3.4-4744edd48c-90ce3923ef.zip/node_modules/vite/",\
           "packageDependencies": [\
-            ["vite", "npm:4.3.4"]\
-          ],\
-          "linkType": "SOFT"\
-        }],\
-        ["virtual:57055197d0767b65a8d6be2ddbbab06fb5899bff5e9ac76153e6d9b90684a763c17dc36afdec62efdf3b15dd01bac0114e4731b1c22ff4d67e4ac225db91c094#npm:4.3.4", {\
-          "packageLocation": "./.yarn/__virtual__/vite-virtual-8b5486677c/0/cache/vite-npm-4.3.4-4744edd48c-90ce3923ef.zip/node_modules/vite/",\
-          "packageDependencies": [\
-            ["vite", "virtual:57055197d0767b65a8d6be2ddbbab06fb5899bff5e9ac76153e6d9b90684a763c17dc36afdec62efdf3b15dd01bac0114e4731b1c22ff4d67e4ac225db91c094#npm:4.3.4"],\
+            ["vite", "virtual:dd3df45847fe829fd5ffb9b7749585a9c697dfb38056abace1499b781cbea006ad99f0625f1da313eac0c1b7abb6f3f15f777db8ea816eba668f5946b2a8c58c#npm:4.3.3"],\
             ["@types/less", null],\
             ["@types/node", null],\
             ["@types/sass", null],\
@@ -41965,7 +41969,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["less", null],\
             ["postcss", "npm:8.4.23"],\
             ["rollup", "npm:3.21.0"],\
-            ["sass", null],\
+            ["sass", "npm:1.62.1"],\
             ["stylus", null],\
             ["sugarss", null],\
             ["terser", null]\
@@ -42000,7 +42004,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["less", null],\
             ["postcss", "npm:8.4.23"],\
             ["rollup", "npm:3.21.0"],\
-            ["sass", null],\
+            ["sass", "npm:1.62.1"],\
             ["stylus", null],\
             ["sugarss", null],\
             ["terser", null]\

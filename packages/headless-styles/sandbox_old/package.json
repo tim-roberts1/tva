@@ -25,6 +25,7 @@
     "@types/react-dom": "latest",
     "@types/react-table": "^7",
     "@vitejs/plugin-react": "^1.0.7",
+    "sass": "^1.62.1",
     "vite": "^4.3.3"
   }
 }
