@@ -17177,6 +17177,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss", "npm:8.4.18"],\
             ["rollup", "npm:3.2.2"],\
             ["rollup-plugin-postcss", "virtual:b96c517a0d21d6dd798be595ec2c5abe5e7db27995f5f92e7988ff37caef5cd1e321b1bd8ba38de55b875f4860181cec6baa5d283f214892d2ed4797f945fad5#npm:4.0.2"],\
+            ["sass", "npm:1.62.1"],\
             ["stylelint", "npm:15.6.0"],\
             ["stylelint-config-css-modules", "virtual:b96c517a0d21d6dd798be595ec2c5abe5e7db27995f5f92e7988ff37caef5cd1e321b1bd8ba38de55b875f4860181cec6baa5d283f214892d2ed4797f945fad5#npm:4.2.0"],\
             ["stylelint-config-prettier", "virtual:27fcbe8afddbfc503fdfd3e0d45286605bdca612b2af5dcc010a741b43e5f9cd8af3fc1f737f004647781fba5c310c5c17efb187c43c48acd4ee894e1fb59c21#npm:9.0.5"],\
@@ -38211,6 +38212,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["resolve", "patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=c3c19d"],\
             ["rollup-pluginutils", "npm:2.8.2"],\
             ["safe-identifier", "npm:0.4.2"],\
+            ["sass", "npm:1.62.1"],\
             ["style-inject", "npm:0.3.0"]\
           ],\
           "packagePeers": [\
