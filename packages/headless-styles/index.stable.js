@@ -42,6 +42,7 @@ export {
   getButtonIconOptions,
 } from './src/components/Button/buttonCSS'
 export { getJSButtonProps } from './src/components/Button/buttonJS'
+export { getButtonSassProps } from './src/components/ButtonSass/buttonSassCSS'
 
 export { getCheckboxProps } from './src/components/Checkbox/checkboxCSS'
 export { getJSCheckboxProps } from './src/components/Checkbox/checkboxJS'

@@ -1,0 +1,104 @@
+@use '../shared/button.scss' as *;
+
+/* sentiment (optional) - this must be before usage */
+
+.actionButton {
+  background-color: var(--ps-action-background);
+  border: 2px solid var(--ps-action-border);
+  color: var(--ps-action-text);
+}
+
+.defaultButton {
+  background-color: var(--ps-background);
+  border: 2px solid var(--ps-border-strong);
+  color: var(--ps-text);
+}
+
+.dangerButton {
+  background-color: var(--ps-danger-background);
+  border: 2px solid var(--ps-danger-border);
+  color: var(--ps-danger-text-inverse);
+}
+
+/* size (optional) */
+
+.mButton {
+  font-size: 0.875rem;
+  height: 2rem;
+  min-width: 2.5rem;
+  padding-inline-end: 1.125rem;
+  padding-inline-start: 1.125rem;
+}
+
+.lButton {
+  height: 3rem;
+  min-width: 2.5rem;
+  padding-inline-end: 2.156rem;
+  padding-inline-start: 2.156rem;
+}
+
+/* hover */
+
+.actionButton:hover:not(:disabled) {
+  background-color: var(--ps-action-background-hover);
+}
+
+.defaultButton:hover:not(:disabled) {
+  background-color: var(--ps-background-hover);
+}
+
+.dangerButton:hover:not(:disabled) {
+  background-color: var(--ps-danger-background-hover);
+}
+
+.textButton:hover:not(:disabled) {
+  background-color: transparent;
+  color: var(--ps-action-navigation-hover);
+  scale: 1.1;
+  text-decoration: none;
+}
+
+/* active */
+
+.actionButton:active:not(:disabled) {
+  background-color: var(--ps-action-background-active);
+}
+
+:is(.defaultButton, .outlineButton):active:not(:disabled) {
+  background-color: var(--ps-background-active);
+}
+
+.dangerButton:active:not(:disabled) {
+  background-color: var(--ps-danger-background-active);
+}
+
+.textButton:active:not(:disabled) {
+  background-color: transparent;
+  color: var(--ps-action-navigation-visited);
+}
+
+/* usage (required) - MUST BE LAST */
+
+.filledButton {
+  @include pandoBtn;
+  @include pandoBtnBorder;
+  @include pandoBtnRadius;
+}
+
+.outlineButton {
+  @include pandoBtn;
+  @include pandoBtnRadius;
+
+  background-color: transparent;
+  color: var(--ps-text);
+}
+
+.textButton {
+  @include pandoBtn;
+  @include pandoBtnBorder;
+  @include pandoBtnRadius;
+
+  background-color: transparent;
+  color: var(--ps-text);
+  text-decoration: underline;
+}
