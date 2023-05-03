@@ -33,7 +33,10 @@
   "files": [
     "npm/**/*"
   ],
-  "sideEffects": false,
+  "sideEffects": [
+    "**/*.css",
+    "**/*.scss"
+  ],
   "browserslist": "> 0.25%, not dead",
   "workspaces": [
     "sandbox_old"
