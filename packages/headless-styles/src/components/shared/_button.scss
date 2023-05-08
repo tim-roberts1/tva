@@ -1,6 +1,6 @@
 @use './states.scss' as *;
 
-@mixin pandoBtn() {
+@mixin pando-btn() {
   @include pando-default-states;
   align-items: center;
   appearance: none;
@@ -24,10 +24,10 @@
   white-space: nowrap;
 }
 
-@mixin pandoBtnBorder() {
+@mixin pando-btn-border() {
   border: none;
 }
 
-@mixin pandoBtnRadius() {
+@mixin pando-btn-radius() {
   border-radius: 6px;
 }

@@ -40,23 +40,23 @@
 /* usage (required) */
 
 .pando_filledButton {
-  @include pandoBtn;
-  @include pandoBtnBorder;
-  @include pandoBtnRadius;
+  @include pando-btn;
+  @include pando-btn-border;
+  @include pando-btn-radius;
 }
 
 .pando_outlineButton {
-  @include pandoBtn;
-  @include pandoBtnRadius;
+  @include pando-btn;
+  @include pando-btn-radius;
 
   background-color: transparent;
   color: var(--ps-text);
 }
 
 .pando_textButton {
-  @include pandoBtn;
-  @include pandoBtnBorder;
-  @include pandoBtnRadius;
+  @include pando-btn;
+  @include pando-btn-border;
+  @include pando-btn-radius;
 
   background-color: transparent;
   color: var(--ps-text);
