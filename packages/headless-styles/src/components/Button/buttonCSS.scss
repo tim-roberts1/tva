@@ -64,7 +64,7 @@
   background-color: var(--ps-action-background-active);
 }
 
-:is(.defaultButton, .outlineButton):active:not(:disabled) {
+:is(.pando_defaultButton, .pando_outlineButton):active:not(:disabled) {
   background-color: var(--ps-background-active);
 }
 

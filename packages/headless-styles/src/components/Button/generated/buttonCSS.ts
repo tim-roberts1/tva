@@ -103,7 +103,7 @@ export default {
       outline: 'none',
     },
   },
-  'is(.defaultButton, .outlineButton):active:not(:disabled)': {
+  'is(.pando_defaultButton, .pando_outlineButton):active:not(:disabled)': {
     backgroundColor: 'var(--ps-background-active)',
   },
   pando_filledButton: {
