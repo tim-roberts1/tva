@@ -5,7 +5,7 @@ import {
   getIconButtonClasses,
 } from './shared'
 import type { IconButtonOptions } from './types'
-import styles from './iconButtonCSS.module.css'
+import './iconButtonCSS.scss'
 
 const ICON_BTN = 'pando-icon-btn'
 
@@ -21,9 +21,9 @@ export function getIconButtonProps(options?: IconButtonOptions) {
       ...props.button,
       ...createClassNameProp(
         ICON_BTN,
-        styles[usageClass],
-        styles[sentimentClass],
-        styles[sizeClass],
+        usageClass,
+        sentimentClass,
+        sizeClass,
         ...defaultOptions.classNames
       ),
     },
