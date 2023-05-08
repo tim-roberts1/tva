@@ -2,6 +2,7 @@
 
 @mixin pando-btn() {
   @include pando-default-states;
+
   align-items: center;
   appearance: none;
   cursor: pointer;
