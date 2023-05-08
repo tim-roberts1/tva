@@ -1,7 +1,7 @@
 @use './states.scss' as *;
 
 @mixin pandoBtn() {
-  @include pandoDefaultStates;
+  @include pando-default-states;
   align-items: center;
   appearance: none;
   cursor: pointer;
