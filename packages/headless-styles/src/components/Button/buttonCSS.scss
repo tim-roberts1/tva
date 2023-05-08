@@ -1,14 +1,4 @@
-.btnBase {
-  composes: pandoBtn from '../shared/button.module.css';
-}
-
-.btnDefaultBorder {
-  composes: pandoBtnBorder from '../shared/button.module.css';
-}
-
-.btnDefaultRadius {
-  composes: pandoBtnRadius from '../shared/button.module.css';
-}
+@use '../shared/button.scss' as *;
 
 /* sentiment (optional) - this must be before usage */
 
@@ -89,21 +79,26 @@
 
 /* usage (required) - MUST BE LAST */
 
-/* stylelint-disable no-descending-specificity */
 .filledButton {
-  composes: btnBase btnDefaultRadius btnDefaultBorder;
+  @include pandoBtn;
+  @include pandoBtnBorder;
+  @include pandoBtnRadius;
 }
 
 .outlineButton {
-  composes: btnBase btnDefaultRadius;
+  @include pandoBtn;
+  @include pandoBtnRadius;
+
   background-color: transparent;
   color: var(--ps-text);
 }
 
 .textButton {
-  composes: btnBase btnDefaultRadius btnDefaultBorder;
+  @include pandoBtn;
+  @include pandoBtnBorder;
+  @include pandoBtnRadius;
+
   background-color: transparent;
   color: var(--ps-text);
   text-decoration: underline;
 }
-/* stylelint-enable no-descending-specificity */
