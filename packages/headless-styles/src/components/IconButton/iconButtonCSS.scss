@@ -2,30 +2,30 @@
 
 /* sentiment (optional) */
 
-.actionIconButton {
+.pando_actionIconButton {
   background-color: var(--ps-action-background);
   color: var(--ps-action-text);
 }
 
-.defaultIconButton {
+.pando_defaultIconButton {
   background-color: var(--ps-background);
   color: var(--ps-text);
 }
 
-.dangerIconButton {
+.pando_dangerIconButton {
   background-color: var(--ps-danger-background);
   color: var(--ps-danger-text-inverse);
 }
 
 /* sizes */
 
-.mIconButton {
+.pando_mIconButton {
   height: 2rem;
   min-width: initial;
   width: 2rem;
 }
 
-.lIconButton {
+.pando_lIconButton {
   height: 3rem;
   min-width: initial;
   width: 3rem;
@@ -33,45 +33,45 @@
 
 /* hover */
 
-.actionIconButton:hover:not(:disabled) {
+.pando_actionIconButton:hover:not(:disabled) {
   background-color: var(--ps-action-background-hover);
 }
 
-.defaultIconButton:hover:not(:disabled) {
+.pando_defaultIconButton:hover:not(:disabled) {
   background-color: var(--ps-background-hover);
 }
 
-.dangerIconButton:hover:not(:disabled) {
+.pando_dangerIconButton:hover:not(:disabled) {
   background-color: var(--ps-danger-background-hover);
 }
 
-.textIconButton:hover:not(:disabled) {
+.pando_textIconButton:hover:not(:disabled) {
   background-color: transparent;
   scale: 1.1;
 }
 
 /* active */
 
-.actionIconButton:active:not(:disabled) {
+.pando_actionIconButton:active:not(:disabled) {
   background-color: var(--ps-action-background-active);
 }
 
-.defaultIconButton:active:not(:disabled) {
+.pando_defaultIconButton:active:not(:disabled) {
   background-color: var(--ps-background-active);
 }
 
-.dangerIconButton:active:not(:disabled) {
+.pando_dangerIconButton:active:not(:disabled) {
   background-color: var(--ps-danger-background-active);
 }
 
-.textIconButton:active:not(:disabled) {
+.pando_textIconButton:active:not(:disabled) {
   background-color: transparent;
 }
 
 /* usage (required) - MUST BE LAST */
 
 /* stylelint-disable no-descending-specificity */
-.squareIconButton {
+.pando_squareIconButton {
   @include pandoBtn;
   @include pandoBtnBorder;
   @include pandoBtnRadius;
@@ -79,14 +79,14 @@
   border-radius: 6px;
 }
 
-.roundIconButton {
+.pando_roundIconButton {
   @include pandoBtn;
   @include pandoBtnBorder;
 
   border-radius: 50%;
 }
 
-.textIconButton {
+.pando_textIconButton {
   @include pandoBtn;
   @include pandoBtnBorder;
   @include pandoBtnRadius;

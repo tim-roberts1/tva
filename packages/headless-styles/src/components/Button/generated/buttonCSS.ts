@@ -6,7 +6,7 @@
 import type { GeneratedStyles } from '../../../utils/types'
 
 export default {
-  actionButton: {
+  pando_actionButton: {
     backgroundColor: 'var(--ps-action-background)',
     border: '2px solid var(--ps-action-border)',
     color: 'var(--ps-action-text)',
@@ -17,7 +17,7 @@ export default {
       backgroundColor: 'var(--ps-action-background-active)',
     },
   },
-  defaultButton: {
+  pando_defaultButton: {
     backgroundColor: 'var(--ps-background)',
     border: '2px solid var(--ps-border-strong)',
     color: 'var(--ps-text)',
@@ -25,7 +25,7 @@ export default {
       backgroundColor: 'var(--ps-background-hover)',
     },
   },
-  dangerButton: {
+  pando_dangerButton: {
     backgroundColor: 'var(--ps-danger-background)',
     border: '2px solid var(--ps-danger-border)',
     color: 'var(--ps-danger-text-inverse)',
@@ -36,20 +36,20 @@ export default {
       backgroundColor: 'var(--ps-danger-background-active)',
     },
   },
-  mButton: {
+  pando_mButton: {
     fontSize: '0.875rem',
     height: '2rem',
     minWidth: '2.5rem',
     paddingInlineEnd: '1.125rem',
     paddingInlineStart: '1.125rem',
   },
-  lButton: {
+  pando_lButton: {
     height: '3rem',
     minWidth: '2.5rem',
     paddingInlineEnd: '2.156rem',
     paddingInlineStart: '2.156rem',
   },
-  textButton: {
+  pando_textButton: {
     '&:hover:not(:disabled)': {
       backgroundColor: 'transparent',
       color: 'var(--ps-action-navigation-hover)',
@@ -106,7 +106,7 @@ export default {
   'is(.defaultButton, .outlineButton):active:not(:disabled)': {
     backgroundColor: 'var(--ps-background-active)',
   },
-  filledButton: {
+  pando_filledButton: {
     fontFamily: 'inherit',
     alignItems: 'center',
     appearance: 'none',
@@ -148,7 +148,7 @@ export default {
       outline: 'none',
     },
   },
-  outlineButton: {
+  pando_outlineButton: {
     fontFamily: 'inherit',
     alignItems: 'center',
     appearance: 'none',

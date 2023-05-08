@@ -2,19 +2,19 @@
 
 /* sentiment (optional) - this must be before usage */
 
-.actionButton {
+.pando_actionButton {
   background-color: var(--ps-action-background);
   border: 2px solid var(--ps-action-border);
   color: var(--ps-action-text);
 }
 
-.defaultButton {
+.pando_defaultButton {
   background-color: var(--ps-background);
   border: 2px solid var(--ps-border-strong);
   color: var(--ps-text);
 }
 
-.dangerButton {
+.pando_dangerButton {
   background-color: var(--ps-danger-background);
   border: 2px solid var(--ps-danger-border);
   color: var(--ps-danger-text-inverse);
@@ -22,7 +22,7 @@
 
 /* size (optional) */
 
-.mButton {
+.pando_mButton {
   font-size: 0.875rem;
   height: 2rem;
   min-width: 2.5rem;
@@ -30,7 +30,7 @@
   padding-inline-start: 1.125rem;
 }
 
-.lButton {
+.pando_lButton {
   height: 3rem;
   min-width: 2.5rem;
   padding-inline-end: 2.156rem;
@@ -39,19 +39,19 @@
 
 /* hover */
 
-.actionButton:hover:not(:disabled) {
+.pando_actionButton:hover:not(:disabled) {
   background-color: var(--ps-action-background-hover);
 }
 
-.defaultButton:hover:not(:disabled) {
+.pando_defaultButton:hover:not(:disabled) {
   background-color: var(--ps-background-hover);
 }
 
-.dangerButton:hover:not(:disabled) {
+.pando_dangerButton:hover:not(:disabled) {
   background-color: var(--ps-danger-background-hover);
 }
 
-.textButton:hover:not(:disabled) {
+.pando_textButton:hover:not(:disabled) {
   background-color: transparent;
   color: var(--ps-action-navigation-hover);
   scale: 1.1;
@@ -60,7 +60,7 @@
 
 /* active */
 
-.actionButton:active:not(:disabled) {
+.pando_actionButton:active:not(:disabled) {
   background-color: var(--ps-action-background-active);
 }
 
@@ -68,24 +68,24 @@
   background-color: var(--ps-background-active);
 }
 
-.dangerButton:active:not(:disabled) {
+.pando_dangerButton:active:not(:disabled) {
   background-color: var(--ps-danger-background-active);
 }
 
-.textButton:active:not(:disabled) {
+.pando_textButton:active:not(:disabled) {
   background-color: transparent;
   color: var(--ps-action-navigation-visited);
 }
 
 /* usage (required) - MUST BE LAST */
 
-.filledButton {
+.pando_filledButton {
   @include pandoBtn;
   @include pandoBtnBorder;
   @include pandoBtnRadius;
 }
 
-.outlineButton {
+.pando_outlineButton {
   @include pandoBtn;
   @include pandoBtnRadius;
 
@@ -93,7 +93,7 @@
   color: var(--ps-text);
 }
 
-.textButton {
+.pando_textButton {
   @include pandoBtn;
   @include pandoBtnBorder;
   @include pandoBtnRadius;

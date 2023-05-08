@@ -6,7 +6,7 @@
 import type { GeneratedStyles } from '../../../utils/types'
 
 export default {
-  actionIconButton: {
+  pando_actionIconButton: {
     backgroundColor: 'var(--ps-action-background)',
     color: 'var(--ps-action-text)',
     '&:hover:not(:disabled)': {
@@ -16,7 +16,7 @@ export default {
       backgroundColor: 'var(--ps-action-background-active)',
     },
   },
-  defaultIconButton: {
+  pando_defaultIconButton: {
     backgroundColor: 'var(--ps-background)',
     color: 'var(--ps-text)',
     '&:hover:not(:disabled)': {
@@ -26,7 +26,7 @@ export default {
       backgroundColor: 'var(--ps-background-active)',
     },
   },
-  dangerIconButton: {
+  pando_dangerIconButton: {
     backgroundColor: 'var(--ps-danger-background)',
     color: 'var(--ps-danger-text-inverse)',
     '&:hover:not(:disabled)': {
@@ -36,17 +36,17 @@ export default {
       backgroundColor: 'var(--ps-danger-background-active)',
     },
   },
-  mIconButton: {
+  pando_mIconButton: {
     height: '2rem',
     minWidth: 'initial',
     width: '2rem',
   },
-  lIconButton: {
+  pando_lIconButton: {
     height: '3rem',
     minWidth: 'initial',
     width: '3rem',
   },
-  textIconButton: {
+  pando_textIconButton: {
     '&:hover:not(:disabled)': {
       backgroundColor: 'transparent',
       scale: '1.1',
@@ -97,7 +97,7 @@ export default {
       outline: 'none',
     },
   },
-  squareIconButton: {
+  pando_squareIconButton: {
     fontFamily: 'inherit',
     alignItems: 'center',
     appearance: 'none',
@@ -139,7 +139,7 @@ export default {
       outline: 'none',
     },
   },
-  roundIconButton: {
+  pando_roundIconButton: {
     fontFamily: 'inherit',
     alignItems: 'center',
     appearance: 'none',
