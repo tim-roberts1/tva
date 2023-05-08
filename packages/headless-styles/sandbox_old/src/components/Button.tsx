@@ -3,7 +3,6 @@ import { PlaceholderIcon } from '@pluralsight/icons'
 import {
   getIconProps,
   getButtonProps,
-  getButtonSassProps,
   getButtonIconOptions,
 } from '@pluralsight/headless-styles'
 import type { ButtonOptions } from '@pluralsight/headless-styles/types'
@@ -32,7 +31,6 @@ export default function ButtonPage() {
   return (
     <div id="button">
       <h3>Button</h3>
-      <button {...getButtonSassProps()}>Sass button</button>
       <div className="App-container">
         <Button>Action</Button>
         <Button sentiment="default">Default</Button>
