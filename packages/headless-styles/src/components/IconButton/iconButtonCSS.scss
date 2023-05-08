@@ -31,6 +31,32 @@
   width: 3rem;
 }
 
+/* usage (required) */
+
+.pando_squareIconButton {
+  @include pandoBtn;
+  @include pandoBtnBorder;
+  @include pandoBtnRadius;
+
+  border-radius: 6px;
+}
+
+.pando_roundIconButton {
+  @include pandoBtn;
+  @include pandoBtnBorder;
+
+  border-radius: 50%;
+}
+
+.pando_textIconButton {
+  @include pandoBtn;
+  @include pandoBtnBorder;
+  @include pandoBtnRadius;
+
+  background-color: transparent;
+  color: var(--ps-action-text-inverse);
+}
+
 /* hover */
 
 .pando_actionIconButton:hover:not(:disabled) {
@@ -67,31 +93,3 @@
 .pando_textIconButton:active:not(:disabled) {
   background-color: transparent;
 }
-
-/* usage (required) - MUST BE LAST */
-
-/* stylelint-disable no-descending-specificity */
-.pando_squareIconButton {
-  @include pandoBtn;
-  @include pandoBtnBorder;
-  @include pandoBtnRadius;
-
-  border-radius: 6px;
-}
-
-.pando_roundIconButton {
-  @include pandoBtn;
-  @include pandoBtnBorder;
-
-  border-radius: 50%;
-}
-
-.pando_textIconButton {
-  @include pandoBtn;
-  @include pandoBtnBorder;
-  @include pandoBtnRadius;
-
-  background-color: transparent;
-  color: var(--ps-action-text-inverse);
-}
-/* stylelint-enable no-descending-specificity */

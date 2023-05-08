@@ -37,6 +37,32 @@
   padding-inline-start: 2.156rem;
 }
 
+/* usage (required) */
+
+.pando_filledButton {
+  @include pandoBtn;
+  @include pandoBtnBorder;
+  @include pandoBtnRadius;
+}
+
+.pando_outlineButton {
+  @include pandoBtn;
+  @include pandoBtnRadius;
+
+  background-color: transparent;
+  color: var(--ps-text);
+}
+
+.pando_textButton {
+  @include pandoBtn;
+  @include pandoBtnBorder;
+  @include pandoBtnRadius;
+
+  background-color: transparent;
+  color: var(--ps-text);
+  text-decoration: underline;
+}
+
 /* hover */
 
 .pando_actionButton:hover:not(:disabled) {
@@ -75,30 +101,4 @@
 .pando_textButton:active:not(:disabled) {
   background-color: transparent;
   color: var(--ps-action-navigation-visited);
-}
-
-/* usage (required) - MUST BE LAST */
-
-.pando_filledButton {
-  @include pandoBtn;
-  @include pandoBtnBorder;
-  @include pandoBtnRadius;
-}
-
-.pando_outlineButton {
-  @include pandoBtn;
-  @include pandoBtnRadius;
-
-  background-color: transparent;
-  color: var(--ps-text);
-}
-
-.pando_textButton {
-  @include pandoBtn;
-  @include pandoBtnBorder;
-  @include pandoBtnRadius;
-
-  background-color: transparent;
-  color: var(--ps-text);
-  text-decoration: underline;
 }
