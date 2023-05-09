@@ -1,4 +1,4 @@
-import admonitionStyles from './components/Admonition/generated/admonitionCSS.module'
+import admonitionStyles from './components/Admonition/generated/admonitionCSS'
 import alertStyles from './components/Alert/generated/alertCSS.module'
 import avatarStyles from './components/Avatar/generated/avatarCSS.module'
 import badgeStyles from './components/Badge/generated/badgeCSS.module'
