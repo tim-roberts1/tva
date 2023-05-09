@@ -1,7 +1,7 @@
-@use './states.scss' as states;
+@use './states';
 
-%pando-btn {
-  @extend %pando-default-states;
+%base-btn {
+  @extend %default-states;
 
   align-items: center;
   appearance: none;
@@ -26,11 +26,11 @@
   white-space: nowrap;
 }
 
-%pando-btn-border {
+%base-btn-border {
   border-style: solid;
   border-width: 2px;
 }
 
-%pando-btn-radius {
+%base-btn-radius {
   border-radius: 6px;
 }

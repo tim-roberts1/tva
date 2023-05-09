@@ -1,4 +1,4 @@
-@use '../shared/button.scss' as shared;
+@use '../shared/button' as shared;
 
 /* sentiment (optional) - this must be before usage */
 
@@ -40,22 +40,22 @@
 /* usage (required) */
 
 .pando_filledButton {
-  @extend %pando-btn;
-  @extend %pando-btn-radius;
+  @extend %base-btn;
+  @extend %base-btn-radius;
 }
 
 .pando_outlineButton {
-  @extend %pando-btn;
-  @extend %pando-btn-border;
-  @extend %pando-btn-radius;
+  @extend %base-btn;
+  @extend %base-btn-border;
+  @extend %base-btn-radius;
 
   background-color: transparent;
   color: var(--ps-text);
 }
 
 .pando_textButton {
-  @extend %pando-btn;
-  @extend %pando-btn-radius;
+  @extend %base-btn;
+  @extend %base-btn-radius;
 
   background-color: transparent;
   color: var(--ps-text);
