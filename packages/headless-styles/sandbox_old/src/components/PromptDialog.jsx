@@ -51,14 +51,14 @@ export default function PromptDialog() {
       <h3>CSS API</h3>
       <div className="App-container">
         <button
-          {...getButtonProps().button}
+          {...getButtonProps()}
           onClick={handleShowAlert}
           ref={triggerRef}
         >
           non-destructive
         </button>
         <button
-          {...getButtonProps({ sentiment: 'danger' }).button}
+          {...getButtonProps({ sentiment: 'danger' })}
           onClick={handleShowDestructiveAlert}
           ref={destTriggerRef}
         >
