@@ -10,7 +10,7 @@ describe('Admonition JS', () => {
   test('should allow no props to be passed in', () => {
     const props = getJSAdmonitionProps()
     expect(props.wrapper.cssProps).toContain('align-items: flex-start')
-    expect(props.wrapper.styles).toMatchObject(styles.infoAdmonition)
+    expect(props.wrapper.styles).toMatchObject(styles.pando_infoAdmonition)
     expect(props.wrapper.a11yProps).toMatchObject({
       role: 'region',
     })
@@ -20,63 +20,73 @@ describe('Admonition JS', () => {
     const props = getJSAdmonitionProps({ sentiment: 'info' })
 
     expect(props.iconWrapper.cssProps).toContain(result.inlineBlock)
-    expect(props.iconWrapper.styles).toMatchObject(styles.infoIconWrapper)
+    expect(props.iconWrapper.styles).toMatchObject(styles.pando_infoIconWrapper)
 
     expect(props.textContainer.cssProps).toContain(result.flex)
-    expect(props.textContainer.styles).toMatchObject(styles.infoTextContainer)
+    expect(props.textContainer.styles).toMatchObject(
+      styles.pando_infoTextContainer
+    )
 
     expect(props.wrapper.cssProps).toContain(
       'background-color: var(--ps-info-border)'
     )
-    expect(props.wrapper.styles).toMatchObject(styles.infoAdmonition)
+    expect(props.wrapper.styles).toMatchObject(styles.pando_infoAdmonition)
   })
 
   test('should accept a success sentiment option', () => {
     const props = getJSAdmonitionProps({ sentiment: 'success' })
 
     expect(props.iconWrapper.cssProps).toContain(result.inlineBlock)
-    expect(props.iconWrapper.styles).toMatchObject(styles.successIconWrapper)
+    expect(props.iconWrapper.styles).toMatchObject(
+      styles.pando_successIconWrapper
+    )
 
     expect(props.textContainer.cssProps).toContain(result.flex)
     expect(props.textContainer.styles).toMatchObject(
-      styles.successTextContainer
+      styles.pando_successTextContainer
     )
 
     expect(props.wrapper.cssProps).toContain(
       'background-color: var(--ps-success-border)'
     )
-    expect(props.wrapper.styles).toMatchObject(styles.successAdmonition)
+    expect(props.wrapper.styles).toMatchObject(styles.pando_successAdmonition)
   })
 
   test('should accept a warning sentiment option', () => {
     const props = getJSAdmonitionProps({ sentiment: 'warning' })
 
     expect(props.iconWrapper.cssProps).toContain(result.inlineBlock)
-    expect(props.iconWrapper.styles).toMatchObject(styles.warningIconWrapper)
+    expect(props.iconWrapper.styles).toMatchObject(
+      styles.pando_warningIconWrapper
+    )
 
     expect(props.textContainer.cssProps).toContain(result.flex)
     expect(props.textContainer.styles).toMatchObject(
-      styles.warningTextContainer
+      styles.pando_warningTextContainer
     )
 
     expect(props.wrapper.cssProps).toContain(
       'background-color: var(--ps-warning-border)'
     )
-    expect(props.wrapper.styles).toMatchObject(styles.warningAdmonition)
+    expect(props.wrapper.styles).toMatchObject(styles.pando_warningAdmonition)
   })
 
   test('should accept a danger sentiment option', () => {
     const props = getJSAdmonitionProps({ sentiment: 'danger' })
 
     expect(props.iconWrapper.cssProps).toContain(result.inlineBlock)
-    expect(props.iconWrapper.styles).toMatchObject(styles.dangerIconWrapper)
+    expect(props.iconWrapper.styles).toMatchObject(
+      styles.pando_dangerIconWrapper
+    )
 
     expect(props.textContainer.cssProps).toContain(result.flex)
-    expect(props.textContainer.styles).toMatchObject(styles.dangerTextContainer)
+    expect(props.textContainer.styles).toMatchObject(
+      styles.pando_dangerTextContainer
+    )
 
     expect(props.wrapper.cssProps).toContain(
       'background-color: var(--ps-danger-border)'
     )
-    expect(props.wrapper.styles).toMatchObject(styles.dangerAdmonition)
+    expect(props.wrapper.styles).toMatchObject(styles.pando_dangerAdmonition)
   })
 })

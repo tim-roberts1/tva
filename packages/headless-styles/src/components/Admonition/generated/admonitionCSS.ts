@@ -6,7 +6,7 @@
 import type { GeneratedStyles } from '../../../utils/types'
 
 export default {
-  dangerAdmonition: {
+  pando_dangerAdmonition: {
     alignItems: 'flex-start',
     borderRadius: '6px',
     display: 'flex',
@@ -22,7 +22,7 @@ export default {
     },
     background: 'var(--ps-danger-surface)',
   },
-  warningAdmonition: {
+  pando_warningAdmonition: {
     alignItems: 'flex-start',
     borderRadius: '6px',
     display: 'flex',
@@ -38,7 +38,7 @@ export default {
     },
     background: 'var(--ps-warning-surface)',
   },
-  successAdmonition: {
+  pando_successAdmonition: {
     alignItems: 'flex-start',
     borderRadius: '6px',
     display: 'flex',
@@ -54,7 +54,7 @@ export default {
     },
     background: 'var(--ps-success-surface)',
   },
-  infoAdmonition: {
+  pando_infoAdmonition: {
     alignItems: 'flex-start',
     borderRadius: '6px',
     display: 'flex',
@@ -70,7 +70,7 @@ export default {
     },
     background: 'var(--ps-info-surface)',
   },
-  admonitionTitle: {
+  pando_admonitionTitle: {
     color: 'inherit',
     fontFamily: 'inherit',
     textAlign: 'left',
@@ -78,55 +78,55 @@ export default {
     fontWeight: '700',
     paddingTop: '0.875rem',
   },
-  admonitionDescription: {
+  pando_admonitionDescription: {
     color: 'inherit',
     fontFamily: 'inherit',
     textAlign: 'left',
     marginTop: '4px',
   },
-  dangerIconWrapper: {
+  pando_dangerIconWrapper: {
     display: 'inline-block',
     marginInlineEnd: '0.875rem',
     paddingTop: '0.875rem',
     color: 'var(--ps-danger-text-medium)',
   },
-  warningIconWrapper: {
+  pando_warningIconWrapper: {
     display: 'inline-block',
     marginInlineEnd: '0.875rem',
     paddingTop: '0.875rem',
     color: 'var(--ps-warning-text-medium)',
   },
-  successIconWrapper: {
+  pando_successIconWrapper: {
     display: 'inline-block',
     marginInlineEnd: '0.875rem',
     paddingTop: '0.875rem',
     color: 'var(--ps-success-text-medium)',
   },
-  infoIconWrapper: {
+  pando_infoIconWrapper: {
     display: 'inline-block',
     marginInlineEnd: '0.875rem',
     paddingTop: '0.875rem',
     color: 'var(--ps-info-text-medium)',
   },
-  dangerTextContainer: {
+  pando_dangerTextContainer: {
     display: 'flex',
     flex: '1',
     flexDirection: 'column',
     color: 'var(--ps-danger-text)',
   },
-  warningTextContainer: {
+  pando_warningTextContainer: {
     display: 'flex',
     flex: '1',
     flexDirection: 'column',
     color: 'var(--ps-warning-text)',
   },
-  successTextContainer: {
+  pando_successTextContainer: {
     display: 'flex',
     flex: '1',
     flexDirection: 'column',
     color: 'var(--ps-success-text)',
   },
-  infoTextContainer: {
+  pando_infoTextContainer: {
     display: 'flex',
     flex: '1',
     flexDirection: 'column',

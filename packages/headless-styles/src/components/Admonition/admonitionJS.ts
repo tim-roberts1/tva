@@ -17,7 +17,7 @@ export function getJSAdmonitionProps(options?: AdmonitionOptions) {
   return {
     ...props,
     description: {
-      ...createJSProps(styles.admonitionDescription),
+      ...createJSProps(styles.pando_admonitionDescription),
     },
     iconWrapper: {
       ...props.iconWrapper,
@@ -28,7 +28,7 @@ export function getJSAdmonitionProps(options?: AdmonitionOptions) {
       ...createJSProps(styles[textClass]),
     },
     title: {
-      ...createJSProps(styles.admonitionTitle),
+      ...createJSProps(styles.pando_admonitionTitle),
     },
     wrapper: {
       a11yProps: {

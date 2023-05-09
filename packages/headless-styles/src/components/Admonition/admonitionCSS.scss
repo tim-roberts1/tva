@@ -29,20 +29,6 @@
   text-align: left;
 }
 
-.admonitionDescription {
-  @extend %admonition-text;
-
-  margin-top: 4px;
-}
-
-.admonitionTitle {
-  @extend %admonition-text;
-
-  font-variation-settings: 'wght' 700;
-  font-weight: 700;
-  padding-top: 0.875rem;
-}
-
 %admonition-icon-wrapper {
   display: inline-block;
   margin-inline-end: 0.875rem;
@@ -55,25 +41,39 @@
   flex-direction: column;
 }
 
+.pando_admonitionDescription {
+  @extend %admonition-text;
+
+  margin-top: 4px;
+}
+
+.pando_admonitionTitle {
+  @extend %admonition-text;
+
+  font-variation-settings: 'wght' 700;
+  font-weight: 700;
+  padding-top: 0.875rem;
+}
+
 /* info */
 
-.infoAdmonition {
+.pando_infoAdmonition {
   @extend %admonition-wrapper;
 
   background: var(--ps-info-surface);
 }
 
-.infoAdmonition::before {
+.pando_infoAdmonition::before {
   background-color: var(--ps-info-border);
 }
 
-.infoIconWrapper {
+.pando_infoIconWrapper {
   @extend %admonition-icon-wrapper;
 
   color: var(--ps-info-text-medium);
 }
 
-.infoTextContainer {
+.pando_infoTextContainer {
   @extend %admonition-text-container;
 
   color: var(--ps-info-text);
@@ -81,23 +81,23 @@
 
 /* success */
 
-.successAdmonition {
+.pando_successAdmonition {
   @extend %admonition-wrapper;
 
   background: var(--ps-success-surface);
 }
 
-.successAdmonition::before {
+.pando_successAdmonition::before {
   background-color: var(--ps-success-border);
 }
 
-.successIconWrapper {
+.pando_successIconWrapper {
   @extend %admonition-icon-wrapper;
 
   color: var(--ps-success-text-medium);
 }
 
-.successTextContainer {
+.pando_successTextContainer {
   @extend %admonition-text-container;
 
   color: var(--ps-success-text);
@@ -105,23 +105,23 @@
 
 /* warning */
 
-.warningAdmonition {
+.pando_warningAdmonition {
   @extend %admonition-wrapper;
 
   background: var(--ps-warning-surface);
 }
 
-.warningAdmonition::before {
+.pando_warningAdmonition::before {
   background-color: var(--ps-warning-border);
 }
 
-.warningIconWrapper {
+.pando_warningIconWrapper {
   @extend %admonition-icon-wrapper;
 
   color: var(--ps-warning-text-medium);
 }
 
-.warningTextContainer {
+.pando_warningTextContainer {
   @extend %admonition-text-container;
 
   color: var(--ps-warning-text);
@@ -129,23 +129,23 @@
 
 /* danger */
 
-.dangerAdmonition {
+.pando_dangerAdmonition {
   @extend %admonition-wrapper;
 
   background: var(--ps-danger-surface);
 }
 
-.dangerAdmonition::before {
+.pando_dangerAdmonition::before {
   background-color: var(--ps-danger-border);
 }
 
-.dangerIconWrapper {
+.pando_dangerIconWrapper {
   @extend %admonition-icon-wrapper;
 
   color: var(--ps-danger-text-medium);
 }
 
-.dangerTextContainer {
+.pando_dangerTextContainer {
   @extend %admonition-text-container;
 
   color: var(--ps-danger-text);

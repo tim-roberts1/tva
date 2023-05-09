@@ -38,7 +38,7 @@ export function getAdmonitionHeadingProps(classNames: string[] = []) {
   return {
     ...createClassNameProp(
       `${ADMONITION}-heading`,
-      'admonitionTitle',
+      'pando_admonitionTitle',
       ...classNames
     ),
   }
@@ -48,7 +48,7 @@ export function getAdmonitionTextProps(classNames: string[] = []) {
   return {
     ...createClassNameProp(
       `${ADMONITION}-text`,
-      'admonitionDescription',
+      'pando_admonitionDescription',
       ...classNames
     ),
   }
