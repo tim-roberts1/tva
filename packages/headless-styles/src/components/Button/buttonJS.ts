@@ -11,8 +11,10 @@ export function getJSButtonProps(options?: ButtonOptions) {
     ...styles[sentimentClass],
     ...styles[usageClass],
     ...styles[sizeClass],
-    '&:is(.defaultButton, .outlineButton):active:not(:disabled)': {
-      ...styles['is(.defaultButton, .outlineButton):active:not(:disabled)'],
+    '&:is(.pando_defaultButton, .pando_outlineButton):active:not(:disabled)': {
+      ...styles[
+        'is(.pando_defaultButton, .pando_outlineButton):active:not(:disabled)'
+      ],
     },
   }
 
