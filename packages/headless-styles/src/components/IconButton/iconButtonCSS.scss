@@ -1,4 +1,4 @@
-@use '../shared/button.scss' as *;
+@use '../shared/button.scss' as shared;
 
 /* sentiment (optional) */
 
@@ -34,24 +34,24 @@
 /* usage (required) */
 
 .pando_squareIconButton {
-  @include pando-btn;
-  @include pando-btn-border;
-  @include pando-btn-radius;
+  @include shared.pando-btn;
+  @include shared.pando-btn-border;
+  @include shared.pando-btn-radius;
 
   border-radius: 6px;
 }
 
 .pando_roundIconButton {
-  @include pando-btn;
-  @include pando-btn-border;
+  @include shared.pando-btn;
+  @include shared.pando-btn-border;
 
   border-radius: 50%;
 }
 
 .pando_textIconButton {
-  @include pando-btn;
-  @include pando-btn-border;
-  @include pando-btn-radius;
+  @include shared.pando-btn;
+  @include shared.pando-btn-border;
+  @include shared.pando-btn-radius;
 
   background-color: transparent;
   color: var(--ps-action-text-inverse);

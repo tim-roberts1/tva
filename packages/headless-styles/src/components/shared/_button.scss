@@ -1,7 +1,7 @@
-@use './states.scss' as *;
+@use './states.scss' as states;
 
 @mixin pando-btn() {
-  @include pando-default-states;
+  @include states.pando-default-states;
 
   align-items: center;
   appearance: none;
