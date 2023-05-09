@@ -1,0 +1,103 @@
+@use '../shared/button';
+
+/* sentiment (optional) - this must be before usage */
+
+.pando_actionButton {
+  background-color: var(--ps-action-background);
+  border-color: var(--ps-action-border);
+  color: var(--ps-action-text);
+}
+
+.pando_defaultButton {
+  background-color: var(--ps-background);
+  border-color: var(--ps-border-strong);
+  color: var(--ps-text);
+}
+
+.pando_dangerButton {
+  background-color: var(--ps-danger-background);
+  border-color: var(--ps-danger-border);
+  color: var(--ps-danger-text-inverse);
+}
+
+/* size (optional) */
+
+.pando_mButton {
+  font-size: 0.875rem;
+  height: 2rem;
+  min-width: 2.5rem;
+  padding-inline-end: 1.125rem;
+  padding-inline-start: 1.125rem;
+}
+
+.pando_lButton {
+  height: 3rem;
+  min-width: 2.5rem;
+  padding-inline-end: 2.156rem;
+  padding-inline-start: 2.156rem;
+}
+
+/* usage (required) */
+
+.pando_filledButton {
+  @extend %base-btn;
+  @extend %base-btn-radius;
+}
+
+.pando_outlineButton {
+  @extend %base-btn;
+  @extend %base-btn-border;
+  @extend %base-btn-radius;
+
+  background-color: transparent;
+  color: var(--ps-text);
+}
+
+.pando_textButton {
+  @extend %base-btn;
+  @extend %base-btn-radius;
+
+  background-color: transparent;
+  color: var(--ps-text);
+  text-decoration: underline;
+}
+
+/* hover */
+
+.pando_actionButton:hover:not(:disabled) {
+  background-color: var(--ps-action-background-hover);
+}
+
+.pando_defaultButton:hover:not(:disabled) {
+  background-color: var(--ps-background-hover);
+}
+
+.pando_dangerButton:hover:not(:disabled) {
+  background-color: var(--ps-danger-background-hover);
+}
+
+.pando_textButton:hover:not(:disabled) {
+  background-color: transparent;
+  color: var(--ps-action-navigation-hover);
+  scale: 1.1;
+  text-decoration: none;
+}
+
+/* active */
+
+.pando_actionButton:active:not(:disabled) {
+  background-color: var(--ps-action-background-active);
+}
+
+:is(.pando_defaultButton, .pando_outlineButton):active:not(:disabled) {
+  background-color: var(--ps-background-active);
+}
+
+.pando_dangerButton:active:not(:disabled) {
+  background-color: var(--ps-danger-background-active);
+}
+
+.pando_textButton:active:not(:disabled) {
+  background-color: transparent;
+  color: var(--ps-action-navigation-visited);
+}

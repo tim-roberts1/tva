@@ -1,7 +1,7 @@
 import type { ButtonOptions, ButtonSize } from './types'
 
 function createBtnClass<Name extends string>(name: Name) {
-  return `${name}Button` as const
+  return `pando_${name}Button` as const
 }
 
 // public

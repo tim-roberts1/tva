@@ -7,7 +7,7 @@ import {
 } from './shared'
 import type { IconOptions } from '../Icon/types'
 import type { ButtonOptions, ButtonSize } from './types'
-import styles from './buttonCSS.module.css'
+import './buttonCSS.scss'
 
 const BTN = 'pando-btn'
 
@@ -20,9 +20,9 @@ export function getButtonProps(options?: ButtonOptions) {
     disabled: defaultOptions.disabled,
     ...createClassNameProp(
       BTN,
-      styles[usageClass],
-      styles[sentimentClass],
-      styles[sizeClass],
+      usageClass,
+      sentimentClass,
+      sizeClass,
       ...defaultOptions.classNames
     ),
   }

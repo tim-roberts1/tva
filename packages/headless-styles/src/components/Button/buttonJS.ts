@@ -1,20 +1,22 @@
 import { createA11yProps, createJSProps } from '../../utils/helpers'
 import { getButtonClasses, getDefaultButtonOptions } from './shared'
 import type { ButtonOptions } from './types'
-import styles from './generated/buttonCSS.module'
+import styles from './generated/buttonCSS'
 
 export function getJSButtonProps(options?: ButtonOptions) {
   const defaultOptions = getDefaultButtonOptions(options)
   const { sentimentClass, sizeClass, usageClass } =
     getButtonClasses(defaultOptions)
   const btnStyles = {
-    ...styles.btnBase,
     ...styles[sentimentClass],
     ...styles[usageClass],
     ...styles[sizeClass],
-    '&:is(.defaultButton, .outlineButton):active:not(:disabled)': {
-      ...styles['is(.defaultButton, .outlineButton):active:not(:disabled)'],
+    '&:is(.pando_defaultButton, .pando_outlineButton):active:not(:disabled)': {
+      ...styles[
+        'is(.pando_defaultButton, .pando_outlineButton):active:not(:disabled)'
+      ],
     },
+    '&[aria-disabled="true"]': styles[`aria_disabled_true__${usageClass}`],
   }
 
   return {

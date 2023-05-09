@@ -17,7 +17,7 @@ function getIconSize(size?: ButtonSize) {
 }
 
 function createIconBtnClass<Name extends string>(name: Name) {
-  return `${name}IconButton` as const
+  return `pando_${name}IconButton` as const
 }
 
 // public

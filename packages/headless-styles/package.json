@@ -33,7 +33,10 @@
   "files": [
     "npm/**/*"
   ],
-  "sideEffects": false,
+  "sideEffects": [
+    "**/*.scss",
+    "**/*.scss-*.js"
+  ],
   "browserslist": "> 0.25%, not dead",
   "workspaces": [
     "sandbox_old"
@@ -86,6 +89,7 @@
     "postcss": "^8.4.18",
     "rollup": "^3.2.2",
     "rollup-plugin-postcss": "^4.0.2",
+    "sass": "^1.62.1",
     "stylelint": "^15.6.0",
     "stylelint-config-css-modules": "^4.2.0",
     "stylelint-config-prettier": "^9.0.5",

@@ -1,0 +1,92 @@
+@use '../shared/button';
+
+/* sentiment (optional) */
+
+.pando_actionIconButton {
+  background-color: var(--ps-action-background);
+  color: var(--ps-action-text);
+}
+
+.pando_defaultIconButton {
+  background-color: var(--ps-background);
+  color: var(--ps-text);
+}
+
+.pando_dangerIconButton {
+  background-color: var(--ps-danger-background);
+  color: var(--ps-danger-text-inverse);
+}
+
+/* sizes */
+
+.pando_mIconButton {
+  height: 2rem;
+  min-width: initial;
+  width: 2rem;
+}
+
+.pando_lIconButton {
+  height: 3rem;
+  min-width: initial;
+  width: 3rem;
+}
+
+/* usage (required) */
+
+.pando_squareIconButton {
+  @extend %base-btn;
+  @extend %base-btn-radius;
+
+  border-radius: 6px;
+}
+
+.pando_roundIconButton {
+  @extend %base-btn;
+
+  border-radius: 50%;
+}
+
+.pando_textIconButton {
+  @extend %base-btn;
+  @extend %base-btn-radius;
+
+  background-color: transparent;
+  color: var(--ps-action-text-inverse);
+}
+
+/* hover */
+
+.pando_actionIconButton:hover:not(:disabled) {
+  background-color: var(--ps-action-background-hover);
+}
+
+.pando_defaultIconButton:hover:not(:disabled) {
+  background-color: var(--ps-background-hover);
+}
+
+.pando_dangerIconButton:hover:not(:disabled) {
+  background-color: var(--ps-danger-background-hover);
+}
+
+.pando_textIconButton:hover:not(:disabled) {
+  background-color: transparent;
+  scale: 1.1;
+}
+
+/* active */
+
+.pando_actionIconButton:active:not(:disabled) {
+  background-color: var(--ps-action-background-active);
+}
+
+.pando_defaultIconButton:active:not(:disabled) {
+  background-color: var(--ps-background-active);
+}
+
+.pando_dangerIconButton:active:not(:disabled) {
+  background-color: var(--ps-danger-background-active);
+}
+
+.pando_textIconButton:active:not(:disabled) {
+  background-color: transparent;
+}

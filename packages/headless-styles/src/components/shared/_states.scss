@@ -1,0 +1,22 @@
+%default-states {
+  font-family: inherit;
+
+  /* states */
+
+  &[aria-disabled='true'],
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &:focus {
+    box-shadow: none;
+    outline: 3px solid var(--ps-action-border-focus);
+    outline-offset: 2px;
+  }
+
+  &:focus:not(:focus-visible) {
+    box-shadow: none;
+    outline: none;
+  }
+}

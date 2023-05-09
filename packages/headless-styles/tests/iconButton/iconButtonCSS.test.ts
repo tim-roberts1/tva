@@ -10,7 +10,8 @@ describe('IconButton CSS', () => {
     button: {
       'aria-label': 'button with icon',
       disabled: false,
-      className: 'pando-icon-btn squareIconButton actionIconButton lIconButton',
+      className:
+        'pando-icon-btn pando_squareIconButton pando_actionIconButton pando_lIconButton',
     },
   }
   const ariaLabel = result.button['aria-label']
@@ -39,7 +40,7 @@ describe('IconButton CSS', () => {
       button: {
         ...result.button,
         className:
-          'pando-icon-btn squareIconButton defaultIconButton lIconButton',
+          'pando-icon-btn pando_squareIconButton pando_defaultIconButton pando_lIconButton',
       },
     })
   })
@@ -55,7 +56,7 @@ describe('IconButton CSS', () => {
       button: {
         ...result.button,
         className:
-          'pando-icon-btn squareIconButton actionIconButton lIconButton',
+          'pando-icon-btn pando_squareIconButton pando_actionIconButton pando_lIconButton',
       },
     })
   })
@@ -71,7 +72,7 @@ describe('IconButton CSS', () => {
       button: {
         ...result.button,
         className:
-          'pando-icon-btn roundIconButton actionIconButton lIconButton',
+          'pando-icon-btn pando_roundIconButton pando_actionIconButton pando_lIconButton',
       },
     })
   })
@@ -86,7 +87,8 @@ describe('IconButton CSS', () => {
       ...result,
       button: {
         ...result.button,
-        className: 'pando-icon-btn textIconButton actionIconButton lIconButton',
+        className:
+          'pando-icon-btn pando_textIconButton pando_actionIconButton pando_lIconButton',
       },
     })
   })

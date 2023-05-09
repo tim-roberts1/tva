@@ -5,8 +5,7 @@ import {
   getDefaultIconButtonOptions,
 } from './shared'
 import type { IconButtonOptions } from './types'
-import baseStyles from '../Button/generated/buttonCSS.module'
-import styles from './generated/iconButtonCSS.module'
+import styles from './generated/iconButtonCSS'
 
 export function getJSIconButtonProps(options?: IconButtonOptions) {
   const defaultOptions = getDefaultIconButtonOptions(options)
@@ -14,10 +13,10 @@ export function getJSIconButtonProps(options?: IconButtonOptions) {
   const { sentimentClass, sizeClass, usageClass } =
     getIconButtonClasses(defaultOptions)
   const btnStyles = {
-    ...baseStyles.btnBase,
     ...styles[sentimentClass],
     ...styles[usageClass],
     ...styles[sizeClass],
+    '&[aria-disabled="true"]': styles[`aria_disabled_true__${usageClass}`],
   }
 
   return {

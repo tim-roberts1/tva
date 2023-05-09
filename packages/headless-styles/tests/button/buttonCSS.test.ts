@@ -3,7 +3,7 @@ import { getButtonProps, getButtonIconOptions } from '../../src'
 describe('Button CSS', () => {
   const result = {
     disabled: false,
-    className: 'pando-btn filledButton actionButton lButton',
+    className: 'pando-btn pando_filledButton pando_actionButton pando_lButton',
   }
   const iconResult = {
     ariaHidden: true,
@@ -21,7 +21,8 @@ describe('Button CSS', () => {
       })
     ).toEqual({
       ...result,
-      className: 'pando-btn filledButton defaultButton lButton',
+      className:
+        'pando-btn pando_filledButton pando_defaultButton pando_lButton',
     })
   })
 
@@ -40,7 +41,8 @@ describe('Button CSS', () => {
       })
     ).toEqual({
       ...result,
-      className: 'pando-btn filledButton dangerButton lButton',
+      className:
+        'pando-btn pando_filledButton pando_dangerButton pando_lButton',
     })
   })
 
@@ -59,7 +61,8 @@ describe('Button CSS', () => {
       })
     ).toEqual({
       ...result,
-      className: 'pando-btn outlineButton actionButton lButton',
+      className:
+        'pando-btn pando_outlineButton pando_actionButton pando_lButton',
     })
   })
 
@@ -70,7 +73,7 @@ describe('Button CSS', () => {
       })
     ).toEqual({
       ...result,
-      className: 'pando-btn textButton actionButton lButton',
+      className: 'pando-btn pando_textButton pando_actionButton pando_lButton',
     })
   })
 
@@ -81,7 +84,8 @@ describe('Button CSS', () => {
       })
     ).toEqual({
       ...result,
-      className: 'pando-btn filledButton actionButton mButton',
+      className:
+        'pando-btn pando_filledButton pando_actionButton pando_mButton',
     })
   })
 
@@ -101,14 +105,16 @@ describe('Button CSS', () => {
     ).toEqual({
       ...result,
       disabled: true,
-      className: 'pando-btn filledButton actionButton lButton',
+      className:
+        'pando-btn pando_filledButton pando_actionButton pando_lButton',
     })
   })
 
   test('should allow a custom class name', () => {
     expect(getButtonProps({ classNames: ['custom'] })).toEqual({
       ...result,
-      className: 'pando-btn filledButton actionButton lButton custom',
+      className:
+        'pando-btn pando_filledButton pando_actionButton pando_lButton custom',
     })
   })
 
