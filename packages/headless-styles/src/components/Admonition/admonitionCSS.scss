@@ -1,4 +1,4 @@
-.admonitionWrapper {
+%admonition-wrapper {
   align-items: flex-start;
   border-radius: 6px;
   display: flex;
@@ -9,45 +9,47 @@
   padding-top: 0;
   position: relative;
   width: 100%;
+
+  &::before {
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+    content: '';
+    height: 100%;
+    left: 0.5px;
+    position: absolute;
+    top: 0;
+    width: 4px;
+    z-index: 50;
+  }
 }
 
-.admonitionWrapper::before {
-  border-bottom-left-radius: 6px;
-  border-top-left-radius: 6px;
-  content: '';
-  height: 100%;
-  left: 0.5px;
-  position: absolute;
-  top: 0;
-  width: 4px;
-  z-index: 50;
-}
-
-.admonitionText {
+%admonition-text {
   color: inherit;
   font-family: inherit;
   text-align: left;
 }
 
 .admonitionDescription {
-  composes: admonitionText;
+  @extend %admonition-text;
+
   margin-top: 4px;
 }
 
 .admonitionTitle {
-  composes: admonitionText;
+  @extend %admonition-text;
+
   font-variation-settings: 'wght' 700;
   font-weight: 700;
   padding-top: 0.875rem;
 }
 
-.admonitionIconWrapper {
+%admonition-icon-wrapper {
   display: inline-block;
   margin-inline-end: 0.875rem;
   padding-top: 0.875rem;
 }
 
-.admonitionTextContainer {
+%admonition-text-container {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -56,7 +58,8 @@
 /* info */
 
 .infoAdmonition {
-  composes: admonitionWrapper;
+  @extend %admonition-wrapper;
+
   background: var(--ps-info-surface);
 }
 
@@ -65,19 +68,22 @@
 }
 
 .infoIconWrapper {
-  composes: admonitionIconWrapper;
+  @extend %admonition-icon-wrapper;
+
   color: var(--ps-info-text-medium);
 }
 
 .infoTextContainer {
-  composes: admonitionTextContainer;
+  @extend %admonition-text-container;
+
   color: var(--ps-info-text);
 }
 
 /* success */
 
 .successAdmonition {
-  composes: admonitionWrapper;
+  @extend %admonition-wrapper;
+
   background: var(--ps-success-surface);
 }
 
@@ -86,19 +92,22 @@
 }
 
 .successIconWrapper {
-  composes: admonitionIconWrapper;
+  @extend %admonition-icon-wrapper;
+
   color: var(--ps-success-text-medium);
 }
 
 .successTextContainer {
-  composes: admonitionTextContainer;
+  @extend %admonition-text-container;
+
   color: var(--ps-success-text);
 }
 
 /* warning */
 
 .warningAdmonition {
-  composes: admonitionWrapper;
+  @extend %admonition-wrapper;
+
   background: var(--ps-warning-surface);
 }
 
@@ -107,19 +116,22 @@
 }
 
 .warningIconWrapper {
-  composes: admonitionIconWrapper;
+  @extend %admonition-icon-wrapper;
+
   color: var(--ps-warning-text-medium);
 }
 
 .warningTextContainer {
-  composes: admonitionTextContainer;
+  @extend %admonition-text-container;
+
   color: var(--ps-warning-text);
 }
 
 /* danger */
 
 .dangerAdmonition {
-  composes: admonitionWrapper;
+  @extend %admonition-wrapper;
+
   background: var(--ps-danger-surface);
 }
 
@@ -128,11 +140,13 @@
 }
 
 .dangerIconWrapper {
-  composes: admonitionIconWrapper;
+  @extend %admonition-icon-wrapper;
+
   color: var(--ps-danger-text-medium);
 }
 
 .dangerTextContainer {
-  composes: admonitionTextContainer;
+  @extend %admonition-text-container;
+
   color: var(--ps-danger-text);
 }

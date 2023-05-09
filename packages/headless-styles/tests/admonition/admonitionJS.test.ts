@@ -1,5 +1,5 @@
 import { getJSAdmonitionProps } from '../../src'
-import styles from '../../src/components/Admonition/generated/admonitionCSS.module'
+import styles from '../../src/components/Admonition/generated/admonitionCSS'
 
 describe('Admonition JS', () => {
   const result = {
