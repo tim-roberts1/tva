@@ -15,7 +15,7 @@ import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTab
 </p>
 
 <DocsLinkList>
-  <DocsGithubLink href="https://github.com/pluralsight/pando/tree/main/packages/react/src/components/Admonition" />
+  <DocsGithubLink href="https://github.com/pluralsight/pando/tree/main/packages/react/src/components/Admonition.tsx" />
   <DocsGithubLink href="https://github.com/pluralsight/pando/tree/main/packages/headless-styles/src/components/Admonition/admonitionCSS.ts">
     View Core API
   </DocsGithubLink>
@@ -255,6 +255,11 @@ const AdmonitionIconMap = {
 }
 ```
 
-## Accessbility
+## Accessibility
 
-The Pando Admonition is fully accessible and screen-readable.
+The Pando Admonition is fully accessible and screen-readable through the following features:
+
+1. Admonition is a `div` element with a `role` of "region".
+2. Admonition Status Icon has an `aria-hidden` attribute of "true".
+3. Admonition Close Button has an `aria-label` attribute of "Close admonition".
+4. Admonition Button Icon has an `aria-hidden` attribute of "true" and a `role` of "img".
