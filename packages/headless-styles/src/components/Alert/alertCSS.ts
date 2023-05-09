@@ -7,7 +7,7 @@ import {
 } from '../shared/defaultOptions'
 import type { DialogOptions } from '../types'
 import { getAlertA11yProps } from './shared'
-import styles from './alertCSS.module.css'
+import './alertCSS.scss'
 
 const ALERT = 'pando-alert'
 
@@ -16,18 +16,18 @@ export function getAlertBackdropProps(options: DialogOptions) {
 
   return {
     backdrop: {
-      ...createClassNameProp(`${ALERT}-backdrop`, styles.alertDialogBackdrop),
+      ...createClassNameProp(`${ALERT}-backdrop`, 'pando_alertDialogBackdrop'),
     },
     focusGuard: {
       ...a11yProps.focusGuard,
       ...createClassNameProp(
         `${ALERT}-focus-guard`,
-        styles.alertDialogFocusGuard
+        'pando_alertDialogFocusGuard'
       ),
     },
     wrapper: {
       ...a11yProps.wrapper,
-      ...createClassNameProp(ALERT, styles.alertDialogWrapper),
+      ...createClassNameProp(ALERT, 'pando_alertDialogWrapper'),
     },
   }
 }
@@ -35,7 +35,7 @@ export function getAlertBackdropProps(options: DialogOptions) {
 export function getAlertProps() {
   return {
     ...getAlertA11yProps({} as DialogOptions).section,
-    ...createClassNameProp(`${ALERT}-section`, styles.alertDialogSection),
+    ...createClassNameProp(`${ALERT}-section`, 'pando_alertDialogSection'),
   }
 }
 
@@ -44,7 +44,7 @@ export function getAlertHeaderProps(kind: ConfirmDialogKind) {
     { kind },
     {
       iconWrapper: {
-        ...createClassNameProp(`${ALERT}-icon`, styles.alertDialogTitleIcon),
+        ...createClassNameProp(`${ALERT}-icon`, 'pando_alertDialogTitleIcon'),
       },
     }
   )
@@ -52,7 +52,7 @@ export function getAlertHeaderProps(kind: ConfirmDialogKind) {
   return {
     ...iconProps,
     header: {
-      ...createClassNameProp(`${ALERT}-header`, styles.alertDialogHeader),
+      ...createClassNameProp(`${ALERT}-header`, 'pando_alertDialogHeader'),
     },
   }
 }
@@ -74,7 +74,7 @@ export function getAlertBodyProps(id: string) {
 export function getAlertLabelProps(htmlFor: string) {
   return {
     htmlFor,
-    ...createClassNameProp(`${ALERT}-label`, styles.alertDialogLabel),
+    ...createClassNameProp(`${ALERT}-label`, 'pando_alertDialogLabel'),
   }
 }
 
@@ -88,7 +88,7 @@ export function getAlertInputProps(options: InputOptions) {
     inputWrapper: {
       ...createClassNameProp(
         `${ALERT}-input-wrapper`,
-        styles.alertDialogInputWrapper
+        'pando_alertDialogInputWrapper'
       ),
     },
   }
@@ -96,7 +96,7 @@ export function getAlertInputProps(options: InputOptions) {
 
 export function getAlertFooterProps() {
   return {
-    ...createClassNameProp(`${ALERT}-footer`, styles.alertDialogFooter),
+    ...createClassNameProp(`${ALERT}-footer`, 'pando_alertDialogFooter'),
   }
 }
 

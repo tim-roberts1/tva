@@ -10,8 +10,8 @@ import {
   getAlertLabelJSProps,
   getAlertJSProps,
 } from '../../src/index'
-import styles from '../../src/components/Alert/generated/alertCSS.module'
-import animationStyles from '../../src/components/shared/generated/keyframes.module'
+import styles from '../../src/components/Alert/generated/alertCSS'
+import animationStyles from '../../src/components/shared/generated/keyframes'
 
 describe('Alert JS', () => {
   test('should return the correct props for the alert', () => {
@@ -23,7 +23,7 @@ describe('Alert JS', () => {
       tabIndex: -1,
     })
     expect(props.cssProps).toContain('animation-delay: 100ms')
-    expect(props.styles).toMatchObject(styles.alertDialogSection)
+    expect(props.styles).toMatchObject(styles.pando_alertDialogSection)
     expect(props.keyframes).toMatchObject(
       animationStyles.keyframesFadeInAnimation
     )
@@ -45,7 +45,7 @@ describe('Alert JS', () => {
       tabIndex: 0,
     })
     expect(props.focusGuard.cssProps).toContain('overflow: hidden')
-    expect(props.focusGuard.styles).toMatchObject(styles.alertFocusGuard)
+    expect(props.focusGuard.styles).toMatchObject(styles.pando_alertFocusGuard)
 
     expect(props.wrapper.a11yProps).toEqual({
       'aria-describedby': bodyId,
@@ -56,7 +56,7 @@ describe('Alert JS', () => {
       tabIndex: -1,
     })
     expect(props.wrapper.cssProps).toContain('display: flex')
-    expect(props.wrapper.styles).toMatchObject(styles.alertDialogWrapper)
+    expect(props.wrapper.styles).toMatchObject(styles.pando_alertDialogWrapper)
   })
 
   test('should return the correct props for the alert body', () => {
@@ -98,7 +98,7 @@ describe('Alert JS', () => {
       'align-items: center'
     )
     expect(getAlertHeaderJSProps('destructive').header.styles).toMatchObject(
-      styles.alertDialogHeader
+      styles.pando_alertDialogHeader
     )
 
     expect(getAlertHeaderJSProps('destructive').iconOptions).toMatchObject({
@@ -110,7 +110,7 @@ describe('Alert JS', () => {
     ).toContain('line-height: initial')
     expect(
       getAlertHeaderJSProps('destructive').iconWrapper?.styles
-    ).toMatchObject(styles.alertDialogTitleIcon)
+    ).toMatchObject(styles.pando_alertDialogTitleIcon)
   })
 
   test('should return the correct props for the alert heading', () => {
@@ -127,7 +127,7 @@ describe('Alert JS', () => {
   test('should return the correct props for the alert footer', () => {
     const props = getAlertFooterJSProps()
     expect(props.cssProps).toContain('justify-content: flex-end')
-    expect(props.styles).toMatchObject(styles.alertDialogFooter)
+    expect(props.styles).toMatchObject(styles.pando_alertDialogFooter)
   })
 
   test('should return the correct props for the alert input', () => {
@@ -146,7 +146,7 @@ describe('Alert JS', () => {
     })
     expect(props.inputWrapper.cssProps).toContain('margin-top: 1rem')
     expect(props.inputWrapper.styles).toMatchObject(
-      styles.alertDialogInputWrapper
+      styles.pando_alertDialogInputWrapper
     )
   })
 
@@ -158,6 +158,6 @@ describe('Alert JS', () => {
       htmlFor: id,
     })
     expect(props.cssProps).toContain('margin-top: 1.2rem')
-    expect(props.styles).toMatchObject(styles.alertDialogLabel)
+    expect(props.styles).toMatchObject(styles.pando_alertDialogLabel)
   })
 })
