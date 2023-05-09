@@ -34,24 +34,24 @@
 /* usage (required) */
 
 .pando_squareIconButton {
-  @include shared.pando-btn;
-  @include shared.pando-btn-border;
-  @include shared.pando-btn-radius;
+  @extend %pando-btn;
+  @extend %pando-btn-border;
+  @extend %pando-btn-radius;
 
   border-radius: 6px;
 }
 
 .pando_roundIconButton {
-  @include shared.pando-btn;
-  @include shared.pando-btn-border;
+  @extend %pando-btn;
+  @extend %pando-btn-border;
 
   border-radius: 50%;
 }
 
 .pando_textIconButton {
-  @include shared.pando-btn;
-  @include shared.pando-btn-border;
-  @include shared.pando-btn-radius;
+  @extend %pando-btn;
+  @extend %pando-btn-border;
+  @extend %pando-btn-radius;
 
   background-color: transparent;
   color: var(--ps-action-text-inverse);

@@ -4,19 +4,19 @@
 
 .pando_actionButton {
   background-color: var(--ps-action-background);
-  border: 2px solid var(--ps-action-border);
+  border-color: var(--ps-action-border);
   color: var(--ps-action-text);
 }
 
 .pando_defaultButton {
   background-color: var(--ps-background);
-  border: 2px solid var(--ps-border-strong);
+  border-color: var(--ps-border-strong);
   color: var(--ps-text);
 }
 
 .pando_dangerButton {
   background-color: var(--ps-danger-background);
-  border: 2px solid var(--ps-danger-border);
+  border-color: var(--ps-danger-border);
   color: var(--ps-danger-text-inverse);
 }
 
@@ -40,23 +40,22 @@
 /* usage (required) */
 
 .pando_filledButton {
-  @include shared.pando-btn;
-  @include shared.pando-btn-border;
-  @include shared.pando-btn-radius;
+  @extend %pando-btn;
+  @extend %pando-btn-radius;
 }
 
 .pando_outlineButton {
-  @include shared.pando-btn;
-  @include shared.pando-btn-radius;
+  @extend %pando-btn;
+  @extend %pando-btn-border;
+  @extend %pando-btn-radius;
 
   background-color: transparent;
   color: var(--ps-text);
 }
 
 .pando_textButton {
-  @include shared.pando-btn;
-  @include shared.pando-btn-border;
-  @include shared.pando-btn-radius;
+  @extend %pando-btn;
+  @extend %pando-btn-radius;
 
   background-color: transparent;
   color: var(--ps-text);

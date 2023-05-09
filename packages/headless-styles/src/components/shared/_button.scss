@@ -1,10 +1,11 @@
 @use './states.scss' as states;
 
-@mixin pando-btn() {
-  @include states.pando-default-states;
+%pando-btn {
+  @extend %pando-default-states;
 
   align-items: center;
   appearance: none;
+  border: none;
   cursor: pointer;
   display: inline-flex;
   font-size: inherit;
@@ -25,10 +26,11 @@
   white-space: nowrap;
 }
 
-@mixin pando-btn-border() {
-  border: none;
+%pando-btn-border {
+  border-width: 2px;
+  border-style: solid;
 }
 
-@mixin pando-btn-radius() {
+%pando-btn-radius {
   border-radius: 6px;
 }
