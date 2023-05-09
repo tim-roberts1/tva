@@ -42,8 +42,6 @@ export default {
     userSelect: 'none',
     verticalAlign: 'middle',
     whiteSpace: 'nowrap',
-    borderStyle: 'solid',
-    borderWidth: '2px',
     borderRadius: '6px',
   },
   pando_roundIconButton: {
@@ -82,8 +80,6 @@ export default {
     userSelect: 'none',
     verticalAlign: 'middle',
     whiteSpace: 'nowrap',
-    borderStyle: 'solid',
-    borderWidth: '2px',
     borderRadius: '50%',
   },
   pando_textIconButton: {
@@ -122,8 +118,6 @@ export default {
     userSelect: 'none',
     verticalAlign: 'middle',
     whiteSpace: 'nowrap',
-    borderStyle: 'solid',
-    borderWidth: '2px',
     borderRadius: '6px',
     backgroundColor: 'transparent',
     color: 'var(--ps-action-text-inverse)',

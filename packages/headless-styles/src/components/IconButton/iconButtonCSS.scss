@@ -35,7 +35,6 @@
 
 .pando_squareIconButton {
   @extend %base-btn;
-  @extend %base-btn-border;
   @extend %base-btn-radius;
 
   border-radius: 6px;
@@ -43,14 +42,12 @@
 
 .pando_roundIconButton {
   @extend %base-btn;
-  @extend %base-btn-border;
 
   border-radius: 50%;
 }
 
 .pando_textIconButton {
   @extend %base-btn;
-  @extend %base-btn-border;
   @extend %base-btn-radius;
 
   background-color: transparent;
