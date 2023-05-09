@@ -4,14 +4,8 @@ import {
   getAdmonitionClasses,
   getDefaultAdmonitionOptions,
 } from './shared'
-import styles from './generated/admonitionCSS.module'
+import styles from './generated/admonitionCSS'
 import type { AdmonitionOptions } from './types'
-
-type WrapperSentimentKey =
-  | 'infoAdmonition'
-  | 'successAdmonition'
-  | 'warningAdmonition'
-  | 'dangerAdmonition'
 
 export function getJSAdmonitionProps(options?: AdmonitionOptions) {
   const defaultOptions = getDefaultAdmonitionOptions(options)
@@ -19,48 +13,28 @@ export function getJSAdmonitionProps(options?: AdmonitionOptions) {
   const { sentimentClass, iconClass, textClass } = getAdmonitionClasses(
     defaultOptions.sentiment
   )
-  const descStyles = {
-    ...styles.admonitionText,
-    ...styles.admonitionDescription,
-  }
-  const iconWrapperStyles = {
-    ...styles.admonitionIconWrapper,
-    ...styles[iconClass],
-  }
-  const textContainerStyles = {
-    ...styles.admonitionTextContainer,
-    ...styles[textClass],
-  }
-  const wrapperStyles = {
-    ...styles.admonitionWrapper,
-    ...styles[sentimentClass],
-    '&::before': {
-      ...styles.admonitionWrapper['&::before'],
-      ...styles[sentimentClass as WrapperSentimentKey]['&::before'],
-    },
-  }
 
   return {
     ...props,
     description: {
-      ...createJSProps(descStyles),
+      ...createJSProps(styles.pando_admonitionDescription),
     },
     iconWrapper: {
       ...props.iconWrapper,
-      ...createJSProps(iconWrapperStyles),
+      ...createJSProps(styles[iconClass]),
     },
     textContainer: {
       ...props.textContainer,
-      ...createJSProps(textContainerStyles),
+      ...createJSProps(styles[textClass]),
     },
     title: {
-      ...createJSProps(styles.admonitionTitle),
+      ...createJSProps(styles.pando_admonitionTitle),
     },
     wrapper: {
       a11yProps: {
         ...props.wrapper,
       },
-      ...createJSProps(wrapperStyles),
+      ...createJSProps(styles[sentimentClass]),
     },
   }
 }

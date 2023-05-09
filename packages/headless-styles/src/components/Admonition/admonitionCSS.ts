@@ -7,7 +7,7 @@ import {
   getAdmonitionClasses,
 } from './shared'
 import type { AdmonitionOptions } from './types'
-import styles from './admonitionCSS.module.css'
+import './admonitionCSS.scss'
 
 const ADMONITION = 'pando-admonition'
 
@@ -21,15 +21,15 @@ export function getAdmonitionProps(options?: AdmonitionOptions) {
     ...props,
     iconWrapper: {
       ...props.iconWrapper,
-      ...createClassNameProp(`${ADMONITION}-icon`, styles[iconClass]),
+      ...createClassNameProp(`${ADMONITION}-icon`, iconClass),
     },
     textContainer: {
       ...props.textContainer,
-      ...createClassNameProp(`${ADMONITION}-text-container`, styles[textClass]),
+      ...createClassNameProp(`${ADMONITION}-text-container`, textClass),
     },
     wrapper: {
       ...props.wrapper,
-      ...createClassNameProp(ADMONITION, styles[sentimentClass]),
+      ...createClassNameProp(ADMONITION, sentimentClass),
     },
   }
 }
@@ -38,7 +38,7 @@ export function getAdmonitionHeadingProps(classNames: string[] = []) {
   return {
     ...createClassNameProp(
       `${ADMONITION}-heading`,
-      styles.admonitionTitle,
+      'pando_admonitionTitle',
       ...classNames
     ),
   }
@@ -48,7 +48,7 @@ export function getAdmonitionTextProps(classNames: string[] = []) {
   return {
     ...createClassNameProp(
       `${ADMONITION}-text`,
-      styles.admonitionDescription,
+      'pando_admonitionDescription',
       ...classNames
     ),
   }

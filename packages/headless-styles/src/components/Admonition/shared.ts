@@ -9,9 +9,9 @@ export function getDefaultAdmonitionOptions(options?: AdmonitionOptions) {
 
 export function getAdmonitionClasses(sentiment: AdmonitionSentiment) {
   return {
-    sentimentClass: `${sentiment}Admonition` as const,
-    iconClass: `${sentiment}IconWrapper` as const,
-    textClass: `${sentiment}TextContainer` as const,
+    sentimentClass: `pando_${sentiment}Admonition` as const,
+    iconClass: `pando_${sentiment}IconWrapper` as const,
+    textClass: `pando_${sentiment}TextContainer` as const,
   }
 }
 

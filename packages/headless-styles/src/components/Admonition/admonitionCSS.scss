@@ -1,0 +1,152 @@
+%admonition-wrapper {
+  align-items: flex-start;
+  border-radius: 6px;
+  display: flex;
+  overflow: hidden;
+  padding-bottom: 0.875rem;
+  padding-inline-end: 0;
+  padding-inline-start: 0.875rem;
+  padding-top: 0;
+  position: relative;
+  width: 100%;
+
+  &::before {
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+    content: '';
+    height: 100%;
+    left: 0.5px;
+    position: absolute;
+    top: 0;
+    width: 4px;
+    z-index: 50;
+  }
+}
+
+%admonition-text {
+  color: inherit;
+  font-family: inherit;
+  text-align: left;
+}
+
+%admonition-icon-wrapper {
+  display: inline-block;
+  margin-inline-end: 0.875rem;
+  padding-top: 0.875rem;
+}
+
+%admonition-text-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.pando_admonitionDescription {
+  @extend %admonition-text;
+
+  margin-top: 4px;
+}
+
+.pando_admonitionTitle {
+  @extend %admonition-text;
+
+  font-variation-settings: 'wght' 700;
+  font-weight: 700;
+  padding-top: 0.875rem;
+}
+
+/* info */
+
+.pando_infoAdmonition {
+  @extend %admonition-wrapper;
+
+  background: var(--ps-info-surface);
+
+  &::before {
+    background-color: var(--ps-info-border);
+  }
+}
+
+.pando_infoIconWrapper {
+  @extend %admonition-icon-wrapper;
+
+  color: var(--ps-info-text-medium);
+}
+
+.pando_infoTextContainer {
+  @extend %admonition-text-container;
+
+  color: var(--ps-info-text);
+}
+
+/* success */
+
+.pando_successAdmonition {
+  @extend %admonition-wrapper;
+
+  background: var(--ps-success-surface);
+
+  &::before {
+    background-color: var(--ps-success-border);
+  }
+}
+
+.pando_successIconWrapper {
+  @extend %admonition-icon-wrapper;
+
+  color: var(--ps-success-text-medium);
+}
+
+.pando_successTextContainer {
+  @extend %admonition-text-container;
+
+  color: var(--ps-success-text);
+}
+
+/* warning */
+
+.pando_warningAdmonition {
+  @extend %admonition-wrapper;
+
+  background: var(--ps-warning-surface);
+
+  &::before {
+    background-color: var(--ps-warning-border);
+  }
+}
+
+.pando_warningIconWrapper {
+  @extend %admonition-icon-wrapper;
+
+  color: var(--ps-warning-text-medium);
+}
+
+.pando_warningTextContainer {
+  @extend %admonition-text-container;
+
+  color: var(--ps-warning-text);
+}
+
+/* danger */
+
+.pando_dangerAdmonition {
+  @extend %admonition-wrapper;
+
+  background: var(--ps-danger-surface);
+
+  &::before {
+    background-color: var(--ps-danger-border);
+  }
+}
+
+.pando_dangerIconWrapper {
+  @extend %admonition-icon-wrapper;
+
+  color: var(--ps-danger-text-medium);
+}
+
+.pando_dangerTextContainer {
+  @extend %admonition-text-container;
+
+  color: var(--ps-danger-text);
+}

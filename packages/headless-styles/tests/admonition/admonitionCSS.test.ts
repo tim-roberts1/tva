@@ -10,13 +10,13 @@ describe('Admonition CSS', () => {
   const baseClass = 'pando-admonition'
   const result = {
     iconWrapper: {
-      className: `${baseClass}-icon infoIconWrapper`,
+      className: `${baseClass}-icon pando_infoIconWrapper`,
     },
     textContainer: {
-      className: `${baseClass}-text-container infoTextContainer`,
+      className: `${baseClass}-text-container pando_infoTextContainer`,
     },
     wrapper: {
-      className: `${baseClass} infoAdmonition`,
+      className: `${baseClass} pando_infoAdmonition`,
       role: 'region',
     },
   }
@@ -34,15 +34,15 @@ describe('Admonition CSS', () => {
       ...result,
       iconWrapper: {
         ...result.iconWrapper,
-        className: `${baseClass}-icon successIconWrapper`,
+        className: `${baseClass}-icon pando_successIconWrapper`,
       },
       textContainer: {
         ...result.textContainer,
-        className: `${baseClass}-text-container successTextContainer`,
+        className: `${baseClass}-text-container pando_successTextContainer`,
       },
       wrapper: {
         ...result.wrapper,
-        className: `${baseClass} successAdmonition`,
+        className: `${baseClass} pando_successAdmonition`,
       },
     })
   })
@@ -52,15 +52,15 @@ describe('Admonition CSS', () => {
       ...result,
       iconWrapper: {
         ...result.iconWrapper,
-        className: `${baseClass}-icon warningIconWrapper`,
+        className: `${baseClass}-icon pando_warningIconWrapper`,
       },
       textContainer: {
         ...result.textContainer,
-        className: `${baseClass}-text-container warningTextContainer`,
+        className: `${baseClass}-text-container pando_warningTextContainer`,
       },
       wrapper: {
         ...result.wrapper,
-        className: `${baseClass} warningAdmonition`,
+        className: `${baseClass} pando_warningAdmonition`,
       },
     })
   })
@@ -70,40 +70,40 @@ describe('Admonition CSS', () => {
       ...result,
       iconWrapper: {
         ...result.iconWrapper,
-        className: `${baseClass}-icon dangerIconWrapper`,
+        className: `${baseClass}-icon pando_dangerIconWrapper`,
       },
       textContainer: {
         ...result.textContainer,
-        className: `${baseClass}-text-container dangerTextContainer`,
+        className: `${baseClass}-text-container pando_dangerTextContainer`,
       },
       wrapper: {
         ...result.wrapper,
-        className: `${baseClass} dangerAdmonition`,
+        className: `${baseClass} pando_dangerAdmonition`,
       },
     })
   })
 
   test('should return the props for a heading', () => {
     expect(getAdmonitionHeadingProps()).toEqual({
-      className: `${baseClass}-heading admonitionTitle`,
+      className: `${baseClass}-heading pando_admonitionTitle`,
     })
   })
 
   test('should return the props for a heading with a custom class', () => {
     expect(getAdmonitionHeadingProps(['custom'])).toEqual({
-      className: `${baseClass}-heading admonitionTitle custom`,
+      className: `${baseClass}-heading pando_admonitionTitle custom`,
     })
   })
 
   test('should return the props for a text', () => {
     expect(getAdmonitionTextProps()).toEqual({
-      className: `${baseClass}-text admonitionDescription`,
+      className: `${baseClass}-text pando_admonitionDescription`,
     })
   })
 
   test('should return the props for a text with a custom class', () => {
     expect(getAdmonitionTextProps(['custom'])).toEqual({
-      className: `${baseClass}-text admonitionDescription custom`,
+      className: `${baseClass}-text pando_admonitionDescription custom`,
     })
   })
 
