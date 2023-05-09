@@ -61,10 +61,10 @@
   @extend %admonition-wrapper;
 
   background: var(--ps-info-surface);
-}
 
-.pando_infoAdmonition::before {
-  background-color: var(--ps-info-border);
+  &::before {
+    background-color: var(--ps-info-border);
+  }
 }
 
 .pando_infoIconWrapper {
@@ -85,10 +85,10 @@
   @extend %admonition-wrapper;
 
   background: var(--ps-success-surface);
-}
 
-.pando_successAdmonition::before {
-  background-color: var(--ps-success-border);
+  &::before {
+    background-color: var(--ps-success-border);
+  }
 }
 
 .pando_successIconWrapper {
@@ -109,10 +109,10 @@
   @extend %admonition-wrapper;
 
   background: var(--ps-warning-surface);
-}
 
-.pando_warningAdmonition::before {
-  background-color: var(--ps-warning-border);
+  &::before {
+    background-color: var(--ps-warning-border);
+  }
 }
 
 .pando_warningIconWrapper {
@@ -133,10 +133,10 @@
   @extend %admonition-wrapper;
 
   background: var(--ps-danger-surface);
-}
 
-.pando_dangerAdmonition::before {
-  background-color: var(--ps-danger-border);
+  &::before {
+    background-color: var(--ps-danger-border);
+  }
 }
 
 .pando_dangerIconWrapper {
