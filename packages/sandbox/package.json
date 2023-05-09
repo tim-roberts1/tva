@@ -10,8 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@pluralsight/icons": "workspace:packages/icons",
-    "@pluralsight/react": "next",
+    "@pluralsight/icons": "next",
+    "@pluralsight/react": "workspace:packages/react",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
