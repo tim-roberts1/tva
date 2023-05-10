@@ -6,7 +6,7 @@ describe('FormControl CSS', () => {
     control: {
       role: 'group',
       disabled: false,
-      className: `${baseClass} formControlBase rowFormControl`,
+      className: `${baseClass} pando_rowFormControl`,
     },
     fieldOptions: {
       disabled: false,
@@ -79,7 +79,7 @@ describe('FormControl CSS', () => {
       ...result,
       control: {
         ...result.control,
-        className: `${baseClass} formControlBase colFormControl`,
+        className: `${baseClass} pando_colFormControl`,
       },
     })
   })
