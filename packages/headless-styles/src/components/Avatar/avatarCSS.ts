@@ -11,7 +11,7 @@ import type {
   AvatarOptions,
   AvatarSize,
 } from './types'
-import styles from './avatarCSS.module.css'
+import './avatarCSS.scss'
 
 const AVATAR = 'pando-avatar'
 
@@ -25,8 +25,8 @@ export function getAvatarProps(options?: AvatarOptions) {
   return {
     ...createClassNameProp(
       AVATAR,
-      styles[sentimentClass],
-      styles[sizeClass],
+      sentimentClass,
+      sizeClass,
       ...defaultOptions.classNames
     ),
   }
@@ -36,7 +36,7 @@ export function getAvatarImageProps(options: AvatarImageOptions) {
   return {
     ...createClassNameProp(
       `${AVATAR}-image`,
-      styles.avatarImage,
+      'pando_avatarImage',
       ...(options.classNames ?? [])
     ),
     alt: options.alt ?? 'user avatar',
@@ -55,8 +55,8 @@ export function getAvatarLabelProps(options: AvatarLabelOptions) {
     ...props,
     ...createClassNameProp(
       `${AVATAR}-label`,
-      styles.avatarLabel,
-      styles[labelClass],
+      'pando_avatarLabel',
+      labelClass,
       ...(options.classNames ?? [])
     ),
   }
