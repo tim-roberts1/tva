@@ -4,11 +4,13 @@
 // Manual changes will be lost - proceed with caution!
 
 import type { GeneratedStyles } from '../../../utils/types'
-import fieldMessageCSS from '../../FieldMessage/generated/fieldMessageCSS.module'
 
 export default {
-  errorMessage: {
-    ...fieldMessageCSS.fieldMessageBase,
+  pando_errorMessage: {
+    display: 'block',
+    fontFamily: 'inherit',
+    paddingTop: '8px',
+    textAlign: 'left',
     color: 'var(--ps-danger-text-weak)',
   },
 } satisfies GeneratedStyles
