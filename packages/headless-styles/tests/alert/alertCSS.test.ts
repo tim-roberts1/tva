@@ -17,7 +17,7 @@ describe('Alert CSS', () => {
 
     expect(props).toEqual({
       'aria-modal': true,
-      className: 'pando-alert-section alertDialogSection',
+      className: 'pando-alert-section pando_alertDialogSection',
       role: 'document',
       tabIndex: -1,
     })
@@ -35,13 +35,13 @@ describe('Alert CSS', () => {
 
     expect(props).toEqual({
       backdrop: {
-        className: 'pando-alert-backdrop alertDialogBackdrop',
+        className: 'pando-alert-backdrop pando_alertDialogBackdrop',
       },
       focusGuard: {
         'aria-hidden': true,
         'data-focus-guard': true,
         tabIndex: 0,
-        className: 'pando-alert-focus-guard alertDialogFocusGuard',
+        className: 'pando-alert-focus-guard pando_alertDialogFocusGuard',
       },
       wrapper: {
         'aria-describedby': bodyId,
@@ -50,7 +50,7 @@ describe('Alert CSS', () => {
         id: id,
         role: 'alertdialog',
         tabIndex: -1,
-        className: 'pando-alert alertDialogWrapper',
+        className: 'pando-alert pando_alertDialogWrapper',
       },
     })
   })
@@ -100,7 +100,7 @@ describe('Alert CSS', () => {
   test('should return the correct props for the alert header', () => {
     const result = {
       header: {
-        className: 'pando-alert-header alertDialogHeader',
+        className: 'pando-alert-header pando_alertDialogHeader',
       },
     }
 
@@ -112,7 +112,7 @@ describe('Alert CSS', () => {
         size: 'm',
       },
       iconWrapper: {
-        className: 'pando-alert-icon alertDialogTitleIcon',
+        className: 'pando-alert-icon pando_alertDialogTitleIcon',
       },
     })
   })
@@ -131,7 +131,7 @@ describe('Alert CSS', () => {
     const props = getAlertFooterProps()
 
     expect(props).toEqual({
-      className: 'pando-alert-footer alertDialogFooter',
+      className: 'pando-alert-footer pando_alertDialogFooter',
     })
   })
 
@@ -151,7 +151,7 @@ describe('Alert CSS', () => {
         size: 'l',
       },
       inputWrapper: {
-        className: 'pando-alert-input-wrapper alertDialogInputWrapper',
+        className: 'pando-alert-input-wrapper pando_alertDialogInputWrapper',
       },
     })
   })
@@ -162,7 +162,7 @@ describe('Alert CSS', () => {
 
     expect(props).toEqual({
       htmlFor: id,
-      className: 'pando-alert-label alertDialogLabel',
+      className: 'pando-alert-label pando_alertDialogLabel',
     })
   })
 })

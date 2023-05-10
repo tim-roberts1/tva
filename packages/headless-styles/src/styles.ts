@@ -1,5 +1,5 @@
 import admonitionStyles from './components/Admonition/generated/admonitionCSS'
-import alertStyles from './components/Alert/generated/alertCSS.module'
+import alertStyles from './components/Alert/generated/alertCSS'
 import avatarStyles from './components/Avatar/generated/avatarCSS.module'
 import badgeStyles from './components/Badge/generated/badgeCSS.module'
 import buttonStyles from './components/Button/generated/buttonCSS'
