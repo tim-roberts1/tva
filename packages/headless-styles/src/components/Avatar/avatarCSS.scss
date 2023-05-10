@@ -1,6 +1,9 @@
 @use '../shared/keyframes';
+@use '../shared/states';
 
 %base-avatar {
+  @extend %default-states;
+
   align-items: center;
   appearance: none;
   aspect-ratio: 1/1;
@@ -13,16 +16,6 @@
   padding: 0;
   position: relative;
   user-select: none;
-
-  &:focus {
-    outline: 3px solid var(--ps-action-border-focus);
-    outline-offset: 2px;
-  }
-
-  &:focus:not(:focus-visible) {
-    box-shadow: none;
-    outline: none;
-  }
 }
 
 .pando_avatarImage {
