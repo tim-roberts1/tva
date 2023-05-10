@@ -4,7 +4,7 @@ import {
   createFieldMessageProps,
 } from './shared'
 import type { FieldMessageOptions } from './types'
-import styles from './fieldMessageCSS.module.css'
+import './fieldMessageCSS.scss'
 
 const FIELD_MESSAGE = 'ps-field-message'
 
@@ -14,6 +14,6 @@ export function getFieldMessageProps(options?: FieldMessageOptions) {
 
   return {
     ...props,
-    ...createClassNameProp(FIELD_MESSAGE, 'size-xs', styles.fieldMessage),
+    ...createClassNameProp(FIELD_MESSAGE, 'size-xs', 'pando_fieldMessage'),
   }
 }

@@ -1,11 +1,12 @@
-.fieldMessageBase {
+%field-message-base {
   display: block;
   font-family: inherit;
   padding-top: 8px;
   text-align: left;
 }
 
-.fieldMessage {
-  composes: fieldMessageBase;
+.pando_fieldMessage {
+  @extend %field-message-base;
+
   color: var(--ps-text);
 }

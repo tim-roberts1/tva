@@ -6,7 +6,7 @@ describe('Field Message CSS', () => {
   const id = 'rocko:1'
   const result = {
     id,
-    className: `${baseClass} size-xs fieldMessage`,
+    className: `${baseClass} size-xs pando_fieldMessage`,
     value: message,
   }
 
