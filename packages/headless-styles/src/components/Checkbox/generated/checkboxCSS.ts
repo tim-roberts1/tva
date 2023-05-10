@@ -6,7 +6,7 @@
 import type { GeneratedStyles } from '../../../utils/types'
 
 export default {
-  checkboxContainer: {
+  pando_checkboxContainer: {
     alignItems: 'center',
     cursor: 'pointer',
     display: 'inline-flex',
@@ -15,11 +15,11 @@ export default {
     '&[disabled]': {
       cursor: 'not-allowed',
     },
-    "&[data-readonly='true']": {
+    '&[data-readonly=true]': {
       cursor: 'not-allowed',
     },
   },
-  checkboxInput: {
+  pando_checkboxInput: {
     border: '0',
     boxSizing: 'border-box',
     clip: 'rect(0, 0, 0, 0)',
@@ -39,7 +39,7 @@ export default {
       outline: 'none',
     },
   },
-  checkboxControl: {
+  pando_checkboxControl: {
     alignItems: 'center',
     borderColor: 'var(--ps-action-border)',
     borderImage: 'initial',
@@ -58,38 +58,32 @@ export default {
     userSelect: 'none',
     verticalAlign: 'top',
     width: '1.125rem',
-    '&:not([disabled]):hover': {
-      background: 'var(--ps-background-hover)',
-      borderColor: 'var(--ps-background-hover)',
-    },
-    "&[data-checked='true']": {
-      background: 'var(--ps-action-background)',
-      borderColor: 'var(--ps-action-background)',
-    },
     '&[disabled]': {
       background: 'var(--ps-background)',
       borderColor: 'var(--ps-background)',
     },
-    "&[data-invalid='true']": {
+    '&[data-checked=true]': {
+      background: 'var(--ps-action-background)',
+      borderColor: 'var(--ps-action-background)',
+    },
+    '&[data-invalid=true]': {
       background: 'var(--ps-danger-surface)',
       borderColor: 'var(--ps-danger-surface)',
       color: 'var(--ps-danger-text)',
     },
-  },
-  checkboxControl_data_checked__true: {
-    '&:hover': {
+    '&:hover:not([disabled])': {
+      background: 'var(--ps-background-hover)',
+      borderColor: 'var(--ps-background-hover)',
+    },
+    '&:hover[data-checked=true]': {
       background: 'var(--ps-action-background-hover)',
       borderColor: 'var(--ps-action-background-hover)',
     },
-  },
-  checkboxControl_data_invalid__true: {
-    '&:hover': {
+    '&:hover[data-invalid=true]': {
       background: 'var(--ps-danger-surface)',
       borderColor: 'var(--ps-danger-surface)',
     },
-  },
-  checkboxControl_data_readonly__true: {
-    '&:hover': {
+    '&:hover[data-readonly=true]': {
       backgroundColor: 'initial',
     },
   },
