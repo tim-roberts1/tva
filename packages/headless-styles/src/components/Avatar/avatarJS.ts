@@ -1,7 +1,7 @@
 import { createJSProps } from '../../utils/helpers'
 import { createAvatarSelectorClasses, getDefaultAvatarOptions } from './shared'
 import type { AvatarOptions } from './types'
-import styles from './generated/avatarCSS.module'
+import styles from './generated/avatarCSS'
 
 export function getJSAvatarProps(options?: AvatarOptions) {
   const defaultOptions = getDefaultAvatarOptions(options)
@@ -10,15 +10,14 @@ export function getJSAvatarProps(options?: AvatarOptions) {
     defaultOptions.size
   )
   const avatarStyles = {
-    ...styles.baseAvatar,
     ...styles[sentimentClass],
     ...styles[sizeClass],
   }
   const imageStyles = {
-    ...styles.avatarImage,
+    ...styles.pando_avatarImage,
   }
   const labelStyles = {
-    ...styles.avatarLabel,
+    ...styles.pando_avatarLabel,
     ...styles[labelClass],
   }
 

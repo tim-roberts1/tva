@@ -28,9 +28,9 @@ export function createAvatarSelectorClasses(
   size: AvatarSize
 ) {
   return {
-    labelClass: `${size}AvatarLabel` as const,
-    sentimentClass: `${sentiment}Avatar` as const,
-    sizeClass: `${size}Avatar` as const,
+    labelClass: `pando_${size}AvatarLabel` as const,
+    sentimentClass: `pando_${sentiment}Avatar` as const,
+    sizeClass: `pando_${size}Avatar` as const,
   }
 }
 

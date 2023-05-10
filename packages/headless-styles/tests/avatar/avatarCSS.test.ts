@@ -10,55 +10,55 @@ describe('Avatar CSS', () => {
 
   test('should allow no props to be passed in', () => {
     expect(getAvatarProps()).toEqual({
-      className: `${baseClass} defaultAvatar mAvatar`,
+      className: `${baseClass} pando_defaultAvatar pando_mAvatar`,
     })
   })
 
   test('should accept a default sentiment type', () => {
     expect(getAvatarProps({ sentiment: 'default' })).toEqual({
-      className: `${baseClass} defaultAvatar mAvatar`,
+      className: `${baseClass} pando_defaultAvatar pando_mAvatar`,
     })
   })
 
   test('should accept a action sentiment type', () => {
     expect(getAvatarProps({ sentiment: 'action' })).toEqual({
-      className: `${baseClass} actionAvatar mAvatar`,
+      className: `${baseClass} pando_actionAvatar pando_mAvatar`,
     })
   })
 
   test('should accept an xs size option', () => {
     expect(getAvatarProps({ size: 'xs' })).toEqual({
-      className: `${baseClass} defaultAvatar xsAvatar`,
+      className: `${baseClass} pando_defaultAvatar pando_xsAvatar`,
     })
   })
 
   test('should accept an s size option', () => {
     expect(getAvatarProps({ size: 's' })).toEqual({
-      className: `${baseClass} defaultAvatar sAvatar`,
+      className: `${baseClass} pando_defaultAvatar pando_sAvatar`,
     })
   })
 
   test('should accept an m size option', () => {
     expect(getAvatarProps({ size: 'm' })).toEqual({
-      className: `${baseClass} defaultAvatar mAvatar`,
+      className: `${baseClass} pando_defaultAvatar pando_mAvatar`,
     })
   })
 
   test('should accept an l size option', () => {
     expect(getAvatarProps({ size: 'l' })).toEqual({
-      className: `${baseClass} defaultAvatar lAvatar`,
+      className: `${baseClass} pando_defaultAvatar pando_lAvatar`,
     })
   })
 
   test('should accept an xl size option', () => {
     expect(getAvatarProps({ size: 'xl' })).toEqual({
-      className: `${baseClass} defaultAvatar xlAvatar`,
+      className: `${baseClass} pando_defaultAvatar pando_xlAvatar`,
     })
   })
 
   test('should allow a custom className to be passed in', () => {
     expect(getAvatarProps({ classNames: ['customClassName'] })).toEqual({
-      className: `${baseClass} defaultAvatar mAvatar customClassName`,
+      className: `${baseClass} pando_defaultAvatar pando_mAvatar customClassName`,
     })
   })
 
@@ -69,7 +69,7 @@ describe('Avatar CSS', () => {
         src: imgSrc,
       })
     ).toEqual({
-      className: `${baseClass}-image avatarImage`,
+      className: `${baseClass}-image pando_avatarImage`,
       alt: 'alt text',
       src: imgSrc,
     })
@@ -83,7 +83,7 @@ describe('Avatar CSS', () => {
         classNames: ['customClassName'],
       })
     ).toEqual({
-      className: `${baseClass}-image avatarImage customClassName`,
+      className: `${baseClass}-image pando_avatarImage customClassName`,
       alt: 'alt text',
       src: imgSrc,
     })

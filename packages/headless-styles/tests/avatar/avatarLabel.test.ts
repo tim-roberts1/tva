@@ -13,7 +13,7 @@ describe('Avatar Label', () => {
       })
     ).toEqual({
       'aria-label': name,
-      className: `${baseClass}-label avatarLabel xsAvatarLabel`,
+      className: `${baseClass}-label pando_avatarLabel pando_xsAvatarLabel`,
       value,
     })
   })
@@ -26,7 +26,7 @@ describe('Avatar Label', () => {
       })
     ).toEqual({
       'aria-label': name,
-      className: `${baseClass}-label avatarLabel sAvatarLabel`,
+      className: `${baseClass}-label pando_avatarLabel pando_sAvatarLabel`,
       value,
     })
   })
@@ -39,7 +39,7 @@ describe('Avatar Label', () => {
       })
     ).toEqual({
       'aria-label': name,
-      className: `${baseClass}-label avatarLabel mAvatarLabel`,
+      className: `${baseClass}-label pando_avatarLabel pando_mAvatarLabel`,
       value,
     })
   })
@@ -52,7 +52,7 @@ describe('Avatar Label', () => {
       })
     ).toEqual({
       'aria-label': name,
-      className: `${baseClass}-label avatarLabel lAvatarLabel`,
+      className: `${baseClass}-label pando_avatarLabel pando_lAvatarLabel`,
       value,
     })
   })
@@ -65,7 +65,7 @@ describe('Avatar Label', () => {
       })
     ).toEqual({
       'aria-label': name,
-      className: `${baseClass}-label avatarLabel xlAvatarLabel`,
+      className: `${baseClass}-label pando_avatarLabel pando_xlAvatarLabel`,
       value,
     })
   })

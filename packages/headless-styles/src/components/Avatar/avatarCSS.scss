@@ -1,4 +1,9 @@
-.baseAvatar {
+@use '../shared/keyframes';
+@use '../shared/states';
+
+%base-avatar {
+  @extend %default-states;
+
   align-items: center;
   appearance: none;
   aspect-ratio: 1/1;
@@ -13,8 +18,9 @@
   user-select: none;
 }
 
-.avatarImage {
-  composes: pandoFadeIn from '../shared/keyframes.module.css';
+.pando_avatarImage {
+  @extend %fade-in;
+
   height: 100%;
   left: 0;
   object-fit: cover;
@@ -23,19 +29,21 @@
   width: 100%;
 }
 
-.defaultAvatar {
-  composes: baseAvatar;
+.pando_defaultAvatar {
+  @extend %base-avatar;
+
   background-color: var(--ps-background);
   color: var(--ps-text-medium);
 }
 
-.actionAvatar {
-  composes: baseAvatar;
+.pando_actionAvatar {
+  @extend %base-avatar;
+
   background-color: var(--ps-action-background);
   color: var(--ps-action-text);
 }
 
-.avatarLabel {
+.pando_avatarLabel {
   font-variation-settings: 'wght' 500;
   font-weight: 500;
   text-transform: uppercase;
@@ -43,67 +51,48 @@
 
 /* sizes */
 
-.xsAvatar {
+.pando_xsAvatar {
   height: 2rem;
   width: 2rem;
 }
 
-.xsAvatarLabel {
+.pando_xsAvatarLabel {
   font-size: 0.875rem;
   line-height: 0;
 }
 
-.sAvatar {
+.pando_sAvatar {
   height: 3rem;
   width: 3rem;
 }
 
-.sAvatarLabel {
+.pando_sAvatarLabel {
   font-size: 1.25rem;
 }
 
-.mAvatar {
+.pando_mAvatar {
   height: 5rem;
   width: 5rem;
 }
 
-.mAvatarLabel {
+.pando_mAvatarLabel {
   font-size: 2.25rem;
 }
 
-.lAvatar {
+.pando_lAvatar {
   height: 7.5rem;
   width: 7.5rem;
 }
 
-.lAvatarLabel {
+.pando_lAvatarLabel {
   font-size: 3rem;
 }
 
-.xlAvatar {
+.pando_xlAvatar {
   height: 10rem;
   width: 10rem;
 }
 
-.xlAvatarLabel {
+.pando_xlAvatarLabel {
   font-size: 3.75rem;
-}
-
-/* hover styles */
-
-a[href].baseAvatar:hover,
-button.baseAvatar:hover {
-  cursor: pointer;
-}
-
-/* focus styles */
-
-.baseAvatar:focus {
-  outline: 3px solid var(--ps-action-border-focus);
-  outline-offset: 2px;
-}
-
-.baseAvatar:focus:not(:focus-visible) {
-  box-shadow: none;
-  outline: none;
 }
