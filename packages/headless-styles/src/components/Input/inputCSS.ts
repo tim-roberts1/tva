@@ -9,7 +9,7 @@ import {
 import type { InputOptions } from './types'
 import './inputCSS.scss'
 
-const INPUT = 'ps-input'
+const INPUT = 'pando-input'
 
 export function getInputProps(options?: InputOptions) {
   const defaultOptions = getDefaultInputOptions(options)

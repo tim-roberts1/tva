@@ -2,7 +2,7 @@ import type { InputOptions } from '../../src/types'
 import { getInputProps } from '../../src'
 
 describe('Input CSS', () => {
-  const baseClass = 'ps-input'
+  const baseClass = 'pando-input'
   const options = {
     id: 'email',
     name: 'user-email',
