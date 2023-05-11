@@ -13,21 +13,21 @@ describe('CircularProgress CSS', () => {
   const result = {
     containerProps: {
       ...a11yProps,
-      className: `${baseClass} base`,
+      className: `${baseClass} pando_circularProgressBase`,
     },
     svgBoxProps: {
-      className: `${baseClass}-box mSize determinate`,
+      className: `${baseClass}-box pando_mCircularProgress pando_determinateCircularProgress`,
       viewBox: '0 0 100 100',
     },
     baseCircleProps: {
-      className: `${baseClass}-base circle`,
+      className: `${baseClass}-base pando_circularProgressCircle`,
       cx: '50',
       cy: '50',
       r: '42',
       strokeWidth: '12px',
     },
     nowCircleProps: {
-      className: `${baseClass}-now circleNow determinate`,
+      className: `${baseClass}-now pando_circularProgressCircleNow pando_determinateCircularProgress`,
       cx: '50',
       cy: '50',
       r: '42',
@@ -36,7 +36,7 @@ describe('CircularProgress CSS', () => {
       strokeDasharray: '0 264',
     },
     labelProps: {
-      className: `${baseClass}-label text`,
+      className: `${baseClass}-label pando_circularProgressText`,
       value: '0%',
     },
   }
@@ -53,7 +53,10 @@ describe('CircularProgress CSS', () => {
 
   test('should accept a kind type', () => {
     expect(
-      getCircularProgressProps({ ariaLabel: ariaLabel, kind: 'determinate' })
+      getCircularProgressProps({
+        ariaLabel: ariaLabel,
+        kind: 'determinate',
+      })
     ).toEqual(result)
     expect(
       getCircularProgressProps({ ariaLabel, kind: 'indeterminate' })
@@ -62,15 +65,15 @@ describe('CircularProgress CSS', () => {
       containerProps: {
         'aria-label': ariaLabel,
         role: 'status',
-        className: `${baseClass} base`,
+        className: `${baseClass} pando_circularProgressBase`,
       },
       svgBoxProps: {
         ...result.svgBoxProps,
-        className: `${baseClass}-box mSize indeterminate`,
+        className: `${baseClass}-box pando_mCircularProgress pando_indeterminateCircularProgress`,
       },
       nowCircleProps: {
         ...result.nowCircleProps,
-        className: `${baseClass}-now circleNow indeterminate`,
+        className: `${baseClass}-now pando_circularProgressCircleNow pando_indeterminateCircularProgress`,
       },
     })
   })
@@ -80,7 +83,7 @@ describe('CircularProgress CSS', () => {
       ...result,
       svgBoxProps: {
         ...result.svgBoxProps,
-        className: `${baseClass}-box xsSize determinate`,
+        className: `${baseClass}-box pando_xsCircularProgress pando_determinateCircularProgress`,
       },
     })
   })
@@ -90,7 +93,7 @@ describe('CircularProgress CSS', () => {
       ...result,
       svgBoxProps: {
         ...result.svgBoxProps,
-        className: `${baseClass}-box mSize determinate`,
+        className: `${baseClass}-box pando_mCircularProgress pando_determinateCircularProgress`,
       },
     })
   })
@@ -105,7 +108,7 @@ describe('CircularProgress CSS', () => {
       ...result,
       containerProps: {
         ...result.containerProps,
-        className: `${baseClass} base test test2`,
+        className: `${baseClass} pando_circularProgressBase test test2`,
       },
     })
   })

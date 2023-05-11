@@ -8,34 +8,27 @@ import {
   VIEWBOX,
 } from './shared'
 import type { CircularProgressOptions } from './types'
-import styles from './generated/circularProgressCSS.module'
+import styles from './generated/circularProgressCSS'
 
 export function getJSCircularProgressProps(options?: CircularProgressOptions) {
   const { kind, size, ...a11y } = getDefaultCircularProgressOptions(options)
   const a11yProps = getA11yCircularProgressProps(a11y, kind)
-  const isIndeterminate = kind === 'indeterminate'
-  const kindKey = styles[kind]
-  const { sizeClass } = createCircularProgressClasses(size)
+  const { sizeClass, kindClass } = createCircularProgressClasses(size, kind)
   const now = a11y.now
   const value = `${now}%`
   const svgBoxStyles = {
-    ...kindKey,
     ...styles[sizeClass],
-    animationName: isIndeterminate
-      ? styles.indeterminate_box.animationName
-      : '',
-    width: size === 'xs' ? styles.xsSize.width : styles.box.width,
+    ...styles[kindClass],
   }
   const nowStyles = {
-    ...styles.circleNow,
-    ...kindKey,
-    animationName: isIndeterminate ? styles.indeterminate.animationName : '',
+    ...styles.pando_circularProgressCircleNow,
+    ...styles[kindClass],
   }
 
   return {
     containerProps: {
       a11yProps,
-      ...createJSProps(styles.base),
+      ...createJSProps(styles.pando_circularProgressBase),
     },
     svgBoxProps: {
       ...createJSProps(svgBoxStyles),
@@ -46,7 +39,7 @@ export function getJSCircularProgressProps(options?: CircularProgressOptions) {
     },
     baseCircleProps: {
       svgProps: getBaseCircleProps(),
-      ...createJSProps(styles.circle),
+      ...createJSProps(styles.pando_circularProgressCircle),
     },
     nowCircleProps: {
       keyframes: styles.keyframesLoading['@keyframes loading'],
@@ -57,7 +50,7 @@ export function getJSCircularProgressProps(options?: CircularProgressOptions) {
       ...createJSProps(nowStyles),
     },
     labelProps: {
-      ...createJSProps(styles.text),
+      ...createJSProps(styles.pando_circularProgressText),
       value,
     },
   }
