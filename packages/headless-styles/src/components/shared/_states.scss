@@ -1,11 +1,17 @@
+%interactive-cursor-states {
+  &:is([aria-disabled='true'], :disabled, [disabled], [data-readonly='true']) {
+    cursor: not-allowed;
+  }
+}
+
 %default-states {
+  @extend %interactive-cursor-states;
+
   font-family: inherit;
 
   /* states */
 
-  &[aria-disabled='true'],
-  &:disabled {
-    cursor: not-allowed;
+  &:is([aria-disabled='true'], :disabled) {
     opacity: 0.5;
   }
 

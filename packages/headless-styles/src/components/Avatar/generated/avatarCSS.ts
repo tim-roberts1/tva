@@ -29,9 +29,11 @@ export default {
     width: '100%',
   },
   pando_defaultAvatar: {
-    fontFamily: 'inherit',
-    '&:disabled': {
+    '&:is([aria-disabled=true], :disabled, [disabled], [data-readonly=true])': {
       cursor: 'not-allowed',
+    },
+    fontFamily: 'inherit',
+    '&:is([aria-disabled=true], :disabled)': {
       opacity: '0.5',
     },
     '&:focus': {
@@ -58,9 +60,11 @@ export default {
     color: 'var(--ps-text-medium)',
   },
   pando_actionAvatar: {
-    fontFamily: 'inherit',
-    '&:disabled': {
+    '&:is([aria-disabled=true], :disabled, [disabled], [data-readonly=true])': {
       cursor: 'not-allowed',
+    },
+    fontFamily: 'inherit',
+    '&:is([aria-disabled=true], :disabled)': {
       opacity: '0.5',
     },
     '&:focus': {
@@ -85,14 +89,6 @@ export default {
     position: 'relative',
     userSelect: 'none',
     color: 'var(--ps-action-text)',
-  },
-  aria_disabled_true__pando_defaultAvatar: {
-    cursor: 'not-allowed',
-    opacity: '0.5',
-  },
-  aria_disabled_true__pando_actionAvatar: {
-    cursor: 'not-allowed',
-    opacity: '0.5',
   },
   pando_avatarLabel: {
     fontVariationSettings: '"wght" 500',

@@ -7,9 +7,11 @@ import type { GeneratedStyles } from '../../../utils/types'
 
 export default {
   pando_filledButton: {
-    fontFamily: 'inherit',
-    '&:disabled': {
+    '&:is([aria-disabled=true], :disabled, [disabled], [data-readonly=true])': {
       cursor: 'not-allowed',
+    },
+    fontFamily: 'inherit',
+    '&:is([aria-disabled=true], :disabled)': {
       opacity: '0.5',
     },
     '&:focus': {
@@ -45,9 +47,11 @@ export default {
     borderRadius: '6px',
   },
   pando_outlineButton: {
-    fontFamily: 'inherit',
-    '&:disabled': {
+    '&:is([aria-disabled=true], :disabled, [disabled], [data-readonly=true])': {
       cursor: 'not-allowed',
+    },
+    fontFamily: 'inherit',
+    '&:is([aria-disabled=true], :disabled)': {
       opacity: '0.5',
     },
     '&:focus': {
@@ -87,9 +91,11 @@ export default {
     color: 'var(--ps-text)',
   },
   pando_textButton: {
-    fontFamily: 'inherit',
-    '&:disabled': {
+    '&:is([aria-disabled=true], :disabled, [disabled], [data-readonly=true])': {
       cursor: 'not-allowed',
+    },
+    fontFamily: 'inherit',
+    '&:is([aria-disabled=true], :disabled)': {
       opacity: '0.5',
     },
     '&:focus': {
@@ -135,18 +141,6 @@ export default {
       backgroundColor: 'transparent',
       color: 'var(--ps-action-navigation-visited)',
     },
-  },
-  aria_disabled_true__pando_filledButton: {
-    cursor: 'not-allowed',
-    opacity: '0.5',
-  },
-  aria_disabled_true__pando_outlineButton: {
-    cursor: 'not-allowed',
-    opacity: '0.5',
-  },
-  aria_disabled_true__pando_textButton: {
-    cursor: 'not-allowed',
-    opacity: '0.5',
   },
   pando_actionButton: {
     backgroundColor: 'var(--ps-action-background)',
