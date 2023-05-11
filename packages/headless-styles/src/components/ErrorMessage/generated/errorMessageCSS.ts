@@ -6,17 +6,11 @@
 import type { GeneratedStyles } from '../../../utils/types'
 
 export default {
-  fieldMessageBase: {
+  pando_errorMessage: {
     display: 'block',
     fontFamily: 'inherit',
     paddingTop: '8px',
     textAlign: 'left',
-  },
-  fieldMessage: {
-    display: 'block',
-    fontFamily: 'inherit',
-    paddingTop: '8px',
-    textAlign: 'left',
-    color: 'var(--ps-text)',
+    color: 'var(--ps-danger-text-weak)',
   },
 } satisfies GeneratedStyles
