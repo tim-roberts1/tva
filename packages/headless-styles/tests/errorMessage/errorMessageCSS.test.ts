@@ -1,7 +1,7 @@
 import { getErrorMessageProps } from '../../src'
 
 describe('ErrorMessage CSS', () => {
-  const baseClass = 'ps-error-message'
+  const baseClass = 'pando-error-message'
   const message = 'We do not speak his name.'
   const id = 'voldemort:1'
   const result = {
