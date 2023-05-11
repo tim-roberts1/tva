@@ -13,10 +13,11 @@ export function getDefaultIconOptions(options?: IconOptions) {
 
 export function createIconSelectorClasses(size: IconSize, customSize?: string) {
   const sizeSuffix = 'IconSize'
+
   return {
     sizeClass: customSize
-      ? (`custom${sizeSuffix}` as const)
-      : (`${size}${sizeSuffix}` as const),
+      ? (`pando_custom${sizeSuffix}` as const)
+      : (`pando_${size}${sizeSuffix}` as const),
   }
 }
 

@@ -6,25 +6,22 @@
 import type { GeneratedStyles } from '../../../utils/types'
 
 export default {
-  psIcon: {
+  pando_customIconSize: {
     display: 'inline-block',
   },
-  sIconSize: {
-    display: 'inline-block',
-    height: '1rem',
-    width: '1rem',
-  },
-  mIconSize: {
-    display: 'inline-block',
-    height: '1.25rem',
-    width: '1.25rem',
-  },
-  lIconSize: {
+  pando_lIconSize: {
     display: 'inline-block',
     height: '1.5rem',
     width: '1.5rem',
   },
-  customIconSize: {
+  pando_mIconSize: {
     display: 'inline-block',
+    height: '1.25rem',
+    width: '1.25rem',
+  },
+  pando_sIconSize: {
+    display: 'inline-block',
+    height: '1rem',
+    width: '1rem',
   },
 } satisfies GeneratedStyles

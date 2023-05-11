@@ -1,0 +1,28 @@
+%icon-base {
+  display: inline-block;
+}
+
+.pando_sIconSize {
+  @extend %icon-base;
+
+  height: 1rem;
+  width: 1rem;
+}
+
+.pando_mIconSize {
+  @extend %icon-base;
+
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.pando_lIconSize {
+  @extend %icon-base;
+
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.pando_customIconSize {
+  @extend %icon-base;
+}
