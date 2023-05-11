@@ -23,11 +23,11 @@
   width: 1px;
 
   &:focus + [data-control] {
-    @include states.focus-styles;
+    @extend %focus-styles;
   }
 
   &:focus:not(:focus-visible) + [data-control] {
-    @include states.invisible-focus-styles;
+    @extend %invisible-focus-styles;
   }
 }
 
