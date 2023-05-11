@@ -6,7 +6,7 @@ import {
 import type { FieldMessageOptions } from './types'
 import './fieldMessageCSS.scss'
 
-const FIELD_MESSAGE = 'ps-field-message'
+const FIELD_MESSAGE = 'pando-field-message'
 
 export function getFieldMessageProps(options?: FieldMessageOptions) {
   const defaultOptions = getDefaultFieldMessageOptions(options)
