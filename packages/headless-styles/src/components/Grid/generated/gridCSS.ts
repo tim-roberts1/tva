@@ -6,11 +6,11 @@
 import type { GeneratedStyles } from '../../../utils/types'
 
 export default {
-  gridContainer: {
+  pando_gridContainer: {
     display: 'grid',
     width: '100%',
   },
-  gridItem: {
+  pando_gridItem: {
     minWidth: '0',
   },
 } satisfies GeneratedStyles
