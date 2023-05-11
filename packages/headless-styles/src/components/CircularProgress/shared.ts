@@ -1,8 +1,8 @@
+import type { ProgressA11yOptions } from '../types'
 import type {
-  CircularProgressA11yOptions,
   CircularProgressOptions,
   CircularProgressKind,
-  DefaultCircularProgressOptions,
+  CircularProgressSize,
 } from './types'
 
 const a11yPropMap = {
@@ -40,11 +40,9 @@ export function getStrokeProps(now: number) {
   }
 }
 
-export function createCircularProgressClasses(
-  options: Pick<DefaultCircularProgressOptions, 'size'>
-) {
+export function createCircularProgressClasses(size: CircularProgressSize) {
   return {
-    sizeClass: `${options.size}Size` as const,
+    sizeClass: `${size}Size` as const,
   }
 }
 
@@ -53,6 +51,7 @@ export function getDefaultCircularProgressOptions(
 ) {
   return {
     ariaLabel: options?.ariaLabel ?? 'circular progress indicator',
+    classNames: options?.classNames ?? [],
     kind: options?.kind ?? 'determinate',
     max: options?.max ?? 100,
     min: options?.min ?? 0,
@@ -62,7 +61,7 @@ export function getDefaultCircularProgressOptions(
 }
 
 export function getA11yCircularProgressProps(
-  a11yOptions?: CircularProgressA11yOptions,
+  a11yOptions?: ProgressA11yOptions,
   kind?: CircularProgressKind
 ) {
   if (kind === 'indeterminate') {
