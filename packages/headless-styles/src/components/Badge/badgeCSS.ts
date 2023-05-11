@@ -4,8 +4,8 @@ import {
   getIconProps,
   createBadgeClasses,
 } from './shared'
-import styles from './badgeCSS.module.css'
 import type { BadgeOptions, BadgeSize } from './types'
+import './badgeCSS.scss'
 
 const BADGE = 'pando-badge'
 
@@ -17,9 +17,9 @@ export function getBadgeProps(options?: BadgeOptions) {
   return {
     ...createClassNameProp(
       BADGE,
-      styles[usageClass],
-      styles[sentimentClass],
-      styles[sizeClass],
+      usageClass,
+      sentimentClass,
+      sizeClass,
       ...defaultOptions.classNames
     ),
   }
@@ -28,6 +28,6 @@ export function getBadgeProps(options?: BadgeOptions) {
 export function getBadgeIconProps(size: BadgeSize) {
   return getIconProps(
     size,
-    createClassNameProp(`${BADGE}-icon`, styles.badgeIcon)
+    createClassNameProp(`${BADGE}-icon`, 'pando_badgeIcon')
   )
 }
