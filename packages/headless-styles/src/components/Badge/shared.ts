@@ -35,9 +35,9 @@ export function getDefaultBadgeOptions(options?: BadgeOptions) {
 export function createBadgeClasses(options: Required<BadgeOptions>) {
   const BADGE = 'Badge'
   return {
-    sentimentClass: `${options.sentiment}${BADGE}` as const,
-    sizeClass: `${options.size}${BADGE}` as const,
-    usageClass: `${options.usage}${BADGE}` as const,
+    sentimentClass: `pando_${options.sentiment}${BADGE}` as const,
+    sizeClass: `pando_${options.size}${BADGE}` as const,
+    usageClass: `pando_${options.usage}${BADGE}` as const,
   }
 }
 
