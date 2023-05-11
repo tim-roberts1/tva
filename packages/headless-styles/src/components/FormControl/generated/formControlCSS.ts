@@ -6,35 +6,25 @@
 import type { GeneratedStyles } from '../../../utils/types'
 
 export default {
-  formControlBase: {
-    alignItems: 'center',
-    display: 'flex',
-    gap: '1rem',
-    position: 'relative',
-    width: '100%',
-    '&[disabled]': {
-      opacity: '0.5',
-    },
-  },
-  rowFormControl: {
-    alignItems: 'center',
-    display: 'flex',
-    gap: '1rem',
-    position: 'relative',
-    width: '100%',
-    '&[disabled]': {
-      opacity: '0.5',
-    },
-  },
-  colFormControl: {
+  pando_colFormControl: {
     alignItems: 'flex-start',
     display: 'flex',
     gap: '1rem',
     position: 'relative',
     width: '100%',
-    '&[disabled]': {
-      opacity: '0.5',
-    },
     flexDirection: 'column',
+  },
+  pando_rowFormControl: {
+    alignItems: 'center',
+    display: 'flex',
+    gap: '1rem',
+    position: 'relative',
+    width: '100%',
+  },
+  disabled__pando_colFormControl: {
+    opacity: '0.5',
+  },
+  disabled__pando_rowFormControl: {
+    opacity: '0.5',
   },
 } satisfies GeneratedStyles

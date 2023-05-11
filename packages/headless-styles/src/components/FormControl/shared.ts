@@ -3,7 +3,7 @@ import type { FormControlOptions } from './types'
 
 export function getFormControlClasses(direction: CheckboxDirection) {
   return {
-    directionClass: `${direction}FormControl` as const,
+    directionClass: `pando_${direction}FormControl` as const,
   }
 }
 
