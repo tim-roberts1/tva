@@ -4,35 +4,30 @@ import {
   createSelectOptionProps,
   getDefaultSelectOptionOptions,
   getDefaultSelectOptions,
+  createSelectClasses,
 } from './shared'
 import type { SelectOptions, SelectOptionOptions } from './types'
-import styles from './generated/selectCSS.module'
+import styles from './generated/selectCSS'
 
 export function getJSSelectProps(options?: SelectOptions) {
   const defaultOptions = getDefaultSelectOptions(options)
   const props = createSelectProps(defaultOptions)
-  const jsStyles = {
-    ...styles.selectBase,
-    ...styles[`${defaultOptions.size}SelectBase`],
-  }
-  const iconWrapperStyles = {
-    ...styles.selectIcon,
-  }
+  const { baseSizeClass } = createSelectClasses(defaultOptions.size)
 
   return {
     ...props,
     fieldWrapper: {
-      ...createJSProps(styles.selectFieldWrapper),
+      ...createJSProps(styles.pando_selectFieldWrapper),
     },
     iconWrapper: {
-      ...createJSProps(iconWrapperStyles),
+      ...createJSProps(styles.pando_selectIcon),
     },
     select: {
       a11yProps: { ...props.select },
-      ...createJSProps(jsStyles),
+      ...createJSProps(styles[baseSizeClass]),
     },
     selectWrapper: {
-      ...createJSProps(styles.selectWrapper),
+      ...createJSProps(styles.pando_selectWrapper),
     },
   }
 }
@@ -44,7 +39,7 @@ export function getJSSelectOptionProps(options?: SelectOptionOptions) {
   return {
     option: {
       a11yProps: { ...props },
-      ...createJSProps(styles.selectOption),
+      ...createJSProps(styles.pando_selectOption),
     },
   }
 }

@@ -15,7 +15,7 @@ export function getDefaultSelectOptions(options?: SelectOptions) {
 
 export function createSelectClasses(size: SelectSize) {
   return {
-    baseSizeClass: `${size}SelectBase` as const,
+    baseSizeClass: `pando_${size}SelectBase` as const,
   }
 }
 

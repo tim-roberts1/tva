@@ -11,10 +11,10 @@ describe('Select CSS', () => {
     } as SelectOptions
     const result = {
       fieldWrapper: {
-        className: `${baseClass}-fieldWrapper selectFieldWrapper`,
+        className: `${baseClass}-fieldWrapper pando_selectFieldWrapper`,
       },
       iconWrapper: {
-        className: `${baseClass}-icon selectIcon`,
+        className: `${baseClass}-icon pando_selectIcon`,
       },
       select: {
         ['aria-invalid']: false,
@@ -27,10 +27,10 @@ describe('Select CSS', () => {
         readOnly: false,
         required: false,
         value: options.value,
-        className: `${baseClass} selectBase lSelectBase`,
+        className: `${baseClass} pando_selectBase pando_lSelectBase`,
       },
       selectWrapper: {
-        className: `${baseClass}-wrapper selectWrapper`,
+        className: `${baseClass}-wrapper pando_selectWrapper`,
       },
     }
 
@@ -50,7 +50,7 @@ describe('Select CSS', () => {
         ...result,
         select: {
           ...result.select,
-          className: `${baseClass} selectBase mSelectBase`,
+          className: `${baseClass} pando_selectBase pando_mSelectBase`,
         },
       })
     })
@@ -68,7 +68,7 @@ describe('Select CSS', () => {
 
   describe('getSelectOptionProps', () => {
     const result = {
-      className: `ps-select-option selectOption`,
+      className: `ps-select-option pando_selectOption`,
       value: '',
     }
 

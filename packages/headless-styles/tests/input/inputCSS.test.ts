@@ -24,10 +24,10 @@ describe('Input CSS', () => {
       required: false,
       type: options.type,
       value: options.value,
-      className: `${baseClass} defaultInput lInputBase`,
+      className: `${baseClass} pando_defaultInput pando_lInputBase`,
     },
     inputWrapper: {
-      className: `${baseClass}-wrapper inputWrapper`,
+      className: `${baseClass}-wrapper pando_inputWrapper`,
     },
   }
 
@@ -50,7 +50,7 @@ describe('Input CSS', () => {
       ...result,
       input: {
         ...result.input,
-        className: `${baseClass} defaultInput mInputBase`,
+        className: `${baseClass} pando_defaultInput pando_mInputBase`,
       },
     })
   })
@@ -74,7 +74,7 @@ describe('Input CSS', () => {
         'data-invalid': true,
       },
       invalidIconWrapper: {
-        className: `${baseClass}-icon inputIcon`,
+        className: `${baseClass}-icon pando_inputIcon`,
         'data-invalid': true,
       },
       invalidIconOptions: {

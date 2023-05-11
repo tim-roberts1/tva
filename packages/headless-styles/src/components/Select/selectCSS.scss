@@ -1,0 +1,39 @@
+@use '../shared/input';
+
+.pando_selectFieldWrapper {
+  width: 100%;
+}
+
+.pando_selectWrapper {
+  @extend %input-wrapper;
+}
+
+.pando_selectBase {
+  @extend %input-base;
+  @extend %input-border-color;
+  @extend %input-padding-start;
+}
+
+.pando_selectIcon {
+  @extend %input-icon;
+
+  color: var(--ps-text-strong);
+  right: 0.5rem;
+}
+
+.pando_selectOption {
+  background-color: initial;
+  color: initial;
+}
+
+/* sizes (optional) */
+
+.pando_mSelectBase {
+  @extend %input-size-m;
+}
+
+.pando_lSelectBase {
+  @extend %input-size-l;
+
+  padding-inline-end: 2.25rem;
+}
