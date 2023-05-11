@@ -7,17 +7,14 @@ import type { GeneratedStyles } from '../../../utils/types'
 
 export default {
   pando_checkboxContainer: {
+    '&:is([aria-disabled=true], :disabled, [disabled], [data-readonly=true])': {
+      cursor: 'not-allowed',
+    },
     alignItems: 'center',
     cursor: 'pointer',
     display: 'inline-flex',
     position: 'relative',
     verticalAlign: 'top',
-    '&[disabled]': {
-      cursor: 'not-allowed',
-    },
-    '&[data-readonly=true]': {
-      cursor: 'not-allowed',
-    },
   },
   pando_checkboxInput: {
     border: '0',
@@ -31,6 +28,7 @@ export default {
     whiteSpace: 'nowrap',
     width: '1px',
     '&:focus + [data-control]': {
+      boxShadow: 'none',
       outline: '3px solid var(--ps-action-border-focus)',
       outlineOffset: '2px',
     },

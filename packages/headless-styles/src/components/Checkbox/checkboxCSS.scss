@@ -1,14 +1,13 @@
+@use '../shared/states';
+
 .pando_checkboxContainer {
+  @extend %interactive-cursor-states;
+
   align-items: center;
   cursor: pointer;
   display: inline-flex;
   position: relative;
   vertical-align: top;
-
-  &[disabled],
-  &[data-readonly='true'] {
-    cursor: not-allowed;
-  }
 }
 
 .pando_checkboxInput {
@@ -24,13 +23,11 @@
   width: 1px;
 
   &:focus + [data-control] {
-    outline: 3px solid var(--ps-action-border-focus);
-    outline-offset: 2px;
+    @include states.focus-styles;
   }
 
   &:focus:not(:focus-visible) + [data-control] {
-    box-shadow: none;
-    outline: none;
+    @include states.invisible-focus-styles;
   }
 }
 
