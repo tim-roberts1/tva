@@ -122,6 +122,7 @@ export default {
   pando_inputIcon: {
     display: 'inline-block',
     lineHeight: '0',
+    pointerEvents: 'none',
     position: 'absolute',
     right: '0.798rem',
     top: '50%',
@@ -134,6 +135,7 @@ export default {
   pando_inputLeadingIcon: {
     display: 'inline-block',
     lineHeight: '0',
+    pointerEvents: 'none',
     position: 'absolute',
     right: 'initial',
     top: '50%',

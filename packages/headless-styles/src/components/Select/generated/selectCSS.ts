@@ -73,6 +73,7 @@ export default {
   pando_selectIcon: {
     display: 'inline-block',
     lineHeight: '0',
+    pointerEvents: 'none',
     position: 'absolute',
     right: '0.5rem',
     top: '50%',
