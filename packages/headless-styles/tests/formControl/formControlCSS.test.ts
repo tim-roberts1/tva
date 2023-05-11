@@ -1,12 +1,12 @@
 import { getFormControlProps } from '../../src'
 
 describe('FormControl CSS', () => {
-  const baseClass = 'ps-form-control'
+  const baseClass = 'pando-form-control'
   const result = {
     control: {
       role: 'group',
       disabled: false,
-      className: `${baseClass} formControlBase rowFormControl`,
+      className: `${baseClass} pando_rowFormControl`,
     },
     fieldOptions: {
       disabled: false,
@@ -79,7 +79,7 @@ describe('FormControl CSS', () => {
       ...result,
       control: {
         ...result.control,
-        className: `${baseClass} formControlBase colFormControl`,
+        className: `${baseClass} pando_colFormControl`,
       },
     })
   })
