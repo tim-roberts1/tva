@@ -6,7 +6,7 @@ import {
 import type { ErrorMessageOptions } from './types'
 import './errorMessageCSS.scss'
 
-const ERROR_MESSAGE = 'ps-error-message'
+const ERROR_MESSAGE = 'pando-error-message'
 
 export function getErrorMessageProps(options?: ErrorMessageOptions) {
   const defaultOptions = getDefaultErrorMessageOptions(options)
