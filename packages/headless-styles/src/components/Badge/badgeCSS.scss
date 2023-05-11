@@ -1,4 +1,4 @@
-.baseBadge {
+%base-badge {
   align-items: center;
   border-radius: 1px;
   display: inline-flex;
@@ -17,38 +17,38 @@
   white-space: nowrap;
 }
 
-.badgeIcon {
+.pando_badgeIcon {
   display: flex;
   line-height: initial;
 }
 
 /* sentiment */
 
-.defaultBadge {
+.pando_defaultBadge {
   background-color: var(--ps-background);
   border: 1px solid var(--ps-border);
   color: var(--ps-text);
 }
 
-.infoBadge {
+.pando_infoBadge {
   background-color: var(--ps-info-surface);
   border: 1px solid var(--ps-info-border);
   color: var(--ps-info-text);
 }
 
-.successBadge {
+.pando_successBadge {
   background-color: var(--ps-success-surface);
   border: 1px solid var(--ps-success-border);
   color: var(--ps-success-text);
 }
 
-.warningBadge {
+.pando_warningBadge {
   background-color: var(--ps-warning-surface);
   border: 1px solid var(--ps-warning-border);
   color: var(--ps-warning-text);
 }
 
-.dangerBadge {
+.pando_dangerBadge {
   background-color: var(--ps-danger-surface);
   border: 1px solid var(--ps-danger-border);
   color: var(--ps-danger-text);
@@ -56,24 +56,26 @@
 
 /* sizes */
 
-.xsBadge {
+.pando_xsBadge {
   font-size: 0.625rem;
   height: 1.125rem;
 }
 
-.sBadge {
+.pando_sBadge {
   font-size: 0.75rem;
   height: 1.5rem;
 }
 
 /* usage - MUST BE LAST */
 
-.filledBadge {
-  composes: baseBadge;
+.pando_filledBadge {
+  @extend %base-badge;
+
   border: none;
 }
 
-.outlineBadge {
-  composes: baseBadge;
+.pando_outlineBadge {
+  @extend %base-badge;
+
   background-color: transparent;
 }

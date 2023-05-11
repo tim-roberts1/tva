@@ -5,7 +5,7 @@ import {
   createBadgeClasses,
   getIconProps,
 } from './shared'
-import styles from './generated/badgeCSS.module'
+import styles from './generated/badgeCSS'
 import type { BadgeOptions, BadgeSize } from './types'
 
 export function getJSBadgeProps(options?: BadgeOptions) {
@@ -14,7 +14,6 @@ export function getJSBadgeProps(options?: BadgeOptions) {
 
   return {
     ...createJSProps({
-      ...styles.baseBadge,
       ...styles[classnames.sentimentClass],
       ...styles[classnames.sizeClass],
       ...styles[classnames.usageClass],
@@ -23,5 +22,8 @@ export function getJSBadgeProps(options?: BadgeOptions) {
 }
 
 export function getJSBadgeIconProps(size: BadgeSize) {
-  return getIconProps(size, createJSProps(styles.badgeIcon)) as OptionProps
+  return getIconProps(
+    size,
+    createJSProps(styles.pando_badgeIcon)
+  ) as OptionProps
 }

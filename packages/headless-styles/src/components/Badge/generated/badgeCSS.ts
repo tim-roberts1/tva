@@ -6,12 +6,12 @@
 import type { GeneratedStyles } from '../../../utils/types'
 
 export default {
-  baseBadge: {
+  pando_outlineBadge: {
     alignItems: 'center',
     borderRadius: '1px',
     display: 'inline-flex',
     fontFamily: 'inherit',
-    fontVariationSettings: "'wght' 600",
+    fontVariationSettings: '"wght" 600',
     fontWeight: '600',
     gap: '4px',
     lineHeight: 'initial',
@@ -23,50 +23,14 @@ export default {
     userSelect: 'none',
     verticalAlign: 'middle',
     whiteSpace: 'nowrap',
+    backgroundColor: 'transparent',
   },
-  badgeIcon: {
-    display: 'flex',
-    lineHeight: 'initial',
-  },
-  defaultBadge: {
-    backgroundColor: 'var(--ps-background)',
-    border: '1px solid var(--ps-border)',
-    color: 'var(--ps-text)',
-  },
-  infoBadge: {
-    backgroundColor: 'var(--ps-info-surface)',
-    border: '1px solid var(--ps-info-border)',
-    color: 'var(--ps-info-text)',
-  },
-  successBadge: {
-    backgroundColor: 'var(--ps-success-surface)',
-    border: '1px solid var(--ps-success-border)',
-    color: 'var(--ps-success-text)',
-  },
-  warningBadge: {
-    backgroundColor: 'var(--ps-warning-surface)',
-    border: '1px solid var(--ps-warning-border)',
-    color: 'var(--ps-warning-text)',
-  },
-  dangerBadge: {
-    backgroundColor: 'var(--ps-danger-surface)',
-    border: '1px solid var(--ps-danger-border)',
-    color: 'var(--ps-danger-text)',
-  },
-  xsBadge: {
-    fontSize: '0.625rem',
-    height: '1.125rem',
-  },
-  sBadge: {
-    fontSize: '0.75rem',
-    height: '1.5rem',
-  },
-  filledBadge: {
+  pando_filledBadge: {
     alignItems: 'center',
     borderRadius: '1px',
     display: 'inline-flex',
     fontFamily: 'inherit',
-    fontVariationSettings: "'wght' 600",
+    fontVariationSettings: '"wght" 600',
     fontWeight: '600',
     gap: '4px',
     lineHeight: 'initial',
@@ -80,23 +44,41 @@ export default {
     whiteSpace: 'nowrap',
     border: 'none',
   },
-  outlineBadge: {
-    alignItems: 'center',
-    borderRadius: '1px',
-    display: 'inline-flex',
-    fontFamily: 'inherit',
-    fontVariationSettings: "'wght' 600",
-    fontWeight: '600',
-    gap: '4px',
+  pando_badgeIcon: {
+    display: 'flex',
     lineHeight: 'initial',
-    maxWidth: 'initial',
-    paddingInlineEnd: '8px',
-    paddingInlineStart: '8px',
-    textTransform: 'uppercase',
-    transition: 'initial',
-    userSelect: 'none',
-    verticalAlign: 'middle',
-    whiteSpace: 'nowrap',
-    backgroundColor: 'transparent',
+  },
+  pando_defaultBadge: {
+    backgroundColor: 'var(--ps-background)',
+    border: '1px solid var(--ps-border)',
+    color: 'var(--ps-text)',
+  },
+  pando_infoBadge: {
+    backgroundColor: 'var(--ps-info-surface)',
+    border: '1px solid var(--ps-info-border)',
+    color: 'var(--ps-info-text)',
+  },
+  pando_successBadge: {
+    backgroundColor: 'var(--ps-success-surface)',
+    border: '1px solid var(--ps-success-border)',
+    color: 'var(--ps-success-text)',
+  },
+  pando_warningBadge: {
+    backgroundColor: 'var(--ps-warning-surface)',
+    border: '1px solid var(--ps-warning-border)',
+    color: 'var(--ps-warning-text)',
+  },
+  pando_dangerBadge: {
+    backgroundColor: 'var(--ps-danger-surface)',
+    border: '1px solid var(--ps-danger-border)',
+    color: 'var(--ps-danger-text)',
+  },
+  pando_xsBadge: {
+    fontSize: '0.625rem',
+    height: '1.125rem',
+  },
+  pando_sBadge: {
+    fontSize: '0.75rem',
+    height: '1.5rem',
   },
 } satisfies GeneratedStyles
