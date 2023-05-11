@@ -7,7 +7,7 @@ import {
 import { FormLabelOptions } from './types'
 import './formLabelCSS.scss'
 
-const FORM_LABEL = 'ps-form-label'
+const FORM_LABEL = 'pando-form-label'
 
 export function getFormLabelProps(options?: FormLabelOptions) {
   const { htmlFor, value, ...defaultOptions } =

@@ -1,7 +1,7 @@
 import { getFormLabelProps } from '../../src'
 
 describe('FormLabel CSS', () => {
-  const baseClass = 'ps-form-label'
+  const baseClass = 'pando-form-label'
   const htmlFor = 'email'
   const value = 'Email alerts'
   const result = {
