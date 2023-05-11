@@ -1,3 +1,14 @@
+@mixin focus-styles {
+  box-shadow: none;
+  outline: 3px solid var(--ps-action-border-focus);
+  outline-offset: 2px;
+}
+
+@mixin invisible-focus-styles {
+  box-shadow: none;
+  outline: none;
+}
+
 %interactive-cursor-states {
   &:is([aria-disabled='true'], :disabled, [disabled], [data-readonly='true']) {
     cursor: not-allowed;
@@ -16,13 +27,10 @@
   }
 
   &:focus {
-    box-shadow: none;
-    outline: 3px solid var(--ps-action-border-focus);
-    outline-offset: 2px;
+    @include focus-styles;
   }
 
   &:focus:not(:focus-visible) {
-    box-shadow: none;
-    outline: none;
+    @include invisible-focus-styles;
   }
 }
