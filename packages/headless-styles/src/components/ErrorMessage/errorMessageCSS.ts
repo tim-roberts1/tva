@@ -4,9 +4,9 @@ import {
   createErrorMessageProps,
 } from './shared'
 import type { ErrorMessageOptions } from './types'
-import styles from './errorMessageCSS.module.css'
+import './errorMessageCSS.scss'
 
-const ERROR_MESSAGE = 'ps-error-message'
+const ERROR_MESSAGE = 'pando-error-message'
 
 export function getErrorMessageProps(options?: ErrorMessageOptions) {
   const defaultOptions = getDefaultErrorMessageOptions(options)
@@ -16,7 +16,7 @@ export function getErrorMessageProps(options?: ErrorMessageOptions) {
     ...errorProps,
     message: {
       ...errorProps.message,
-      ...createClassNameProp(ERROR_MESSAGE, 'size-xs', styles.errorMessage),
+      ...createClassNameProp(ERROR_MESSAGE, 'size-xs', 'pando_errorMessage'),
     },
   }
 }
