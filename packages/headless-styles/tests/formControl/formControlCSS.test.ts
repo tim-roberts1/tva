@@ -1,7 +1,7 @@
 import { getFormControlProps } from '../../src'
 
 describe('FormControl CSS', () => {
-  const baseClass = 'ps-form-control'
+  const baseClass = 'pando-form-control'
   const result = {
     control: {
       role: 'group',
