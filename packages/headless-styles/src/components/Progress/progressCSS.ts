@@ -24,7 +24,7 @@ export function getProgressProps(options?: ProgressOptions) {
     bar: {
       ...a11yProps,
       ...createClassNameProp(
-        PROGRESS,
+        `${PROGRESS}-bar`,
         styles.bar,
         styles[sizeClass],
         styles[kind]
