@@ -1,18 +1,18 @@
 import { getPaginationProps } from '../../src'
 
 describe('Pagination CSS', () => {
-  const baseClass = 'ps-pagination'
+  const baseClass = 'pando-pagination'
   const result = {
     buttonGroup: {
-      className: `${baseClass}-buttonGroup lPaginationButtonGroup`,
+      className: `${baseClass}-buttonGroup pando_lPaginationButtonGroup`,
     },
     container: {
       'aria-label': 'Pagination',
-      className: `${baseClass} lPaginationContainer`,
+      className: `${baseClass} pando_lPaginationContainer`,
       role: 'navigation',
     },
     text: {
-      className: `${baseClass}-text lPaginationText`,
+      className: `${baseClass}-text pando_lPaginationText`,
       role: 'status',
     },
     buttonOptions: {
@@ -41,15 +41,15 @@ describe('Pagination CSS', () => {
       ...result,
       buttonGroup: {
         ...result.buttonGroup,
-        className: `${baseClass}-buttonGroup mPaginationButtonGroup`,
+        className: `${baseClass}-buttonGroup pando_mPaginationButtonGroup`,
       },
       container: {
         ...result.container,
-        className: `${baseClass} mPaginationContainer`,
+        className: `${baseClass} pando_mPaginationContainer`,
       },
       text: {
         ...result.text,
-        className: `${baseClass}-text mPaginationText`,
+        className: `${baseClass}-text pando_mPaginationText`,
       },
       buttonOptions: {
         ...result.buttonOptions,

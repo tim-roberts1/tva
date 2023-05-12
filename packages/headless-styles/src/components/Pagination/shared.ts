@@ -15,9 +15,9 @@ export function createPaginationClasses(options: Required<PaginationOptions>) {
   const { size } = options
 
   return {
-    buttonGroupClass: `${size}PaginationButtonGroup` as const,
-    containerClass: `${size}PaginationContainer` as const,
-    textClass: `${size}PaginationText` as const,
+    buttonGroupClass: `pando_${size}PaginationButtonGroup` as const,
+    containerClass: `pando_${size}PaginationContainer` as const,
+    textClass: `pando_${size}PaginationText` as const,
   }
 }
 

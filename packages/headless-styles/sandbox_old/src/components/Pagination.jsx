@@ -71,13 +71,11 @@ function PaginationButtons(props) {
         {...getButtonProps({
           ...paginationProps.buttonOptions,
           disabled: true,
-        }).button}
+        })}
       >
         Newer
       </button>
-      <button {...getButtonProps(paginationProps.buttonOptions).button}>
-        Older
-      </button>
+      <button {...getButtonProps(paginationProps.buttonOptions)}>Older</button>
     </div>
   )
 }
@@ -181,13 +179,13 @@ function JSPaginationButtons() {
       <button
         disabled
         style={{
-          ...buttonProps.button.styles,
-          ...buttonProps.button.styles['&:disabled'],
+          ...buttonProps.styles,
+          ...buttonProps.styles['&:is([aria-disabled=true], :disabled)'],
         }}
       >
         Newer
       </button>
-      <button style={buttonProps.button.styles}>Older</button>
+      <button style={buttonProps.styles}>Older</button>
     </div>
   )
 }
@@ -212,7 +210,9 @@ function JSArrowButtons(props) {
         disabled
         style={{
           ...prevButtonProps.button.styles,
-          ...prevButtonProps.button.styles['&:disabled'],
+          ...prevButtonProps.button.styles[
+            '&:is([aria-disabled=true], :disabled)'
+          ],
         }}
       >
         <CaretLeftIcon
