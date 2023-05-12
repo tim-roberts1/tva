@@ -1,0 +1,47 @@
+@use '../shared/input';
+
+.pando_inputWrapper {
+  @extend %input-wrapper;
+}
+
+.pando_inputIcon {
+  @extend %input-icon;
+}
+
+.pando_inputLeadingIcon {
+  @extend %input-icon;
+
+  left: 0.798rem;
+  right: initial;
+}
+
+/* kind (required) */
+
+.pando_defaultInput {
+  @extend %input-base;
+  @extend %input-border-color;
+  @extend %input-padding-start;
+}
+
+.pando_iconInput {
+  @extend %input-base;
+  @extend %input-border-color;
+
+  padding-inline-start: 2.5rem;
+}
+
+/* sizes (optional) */
+
+.pando_mInputBase {
+  @extend %input-size-m;
+}
+
+.pando_lInputBase {
+  @extend %input-size-l;
+}
+
+/* states */
+
+.pando_inputIcon[data-invalid='true'] {
+  color: var(--ps-danger-text-weak);
+}

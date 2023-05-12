@@ -26,8 +26,8 @@ export function getDefaultInputOptions(options?: InputOptions) {
 export function createInputClasses(options: Required<InputOptions>) {
   const { size } = options
   return {
-    kindClass: `${options.kind}Input` as const,
-    baseSizeClass: `${size}InputBase` as const,
+    kindClass: `pando_${options.kind}Input` as const,
+    baseSizeClass: `pando_${size}InputBase` as const,
   }
 }
 

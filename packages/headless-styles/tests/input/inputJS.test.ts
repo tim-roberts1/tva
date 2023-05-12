@@ -31,9 +31,11 @@ describe('Input JS', () => {
       value: '',
     }
     expect(getJSInputProps(options).input.cssProps).toContain('opacity: 0.5')
-    expect(getJSInputProps(options).input.styles['&:disabled'].opacity).toEqual(
-      '0.5'
-    )
+    expect(
+      getJSInputProps(options).input.styles[
+        '&:is([aria-disabled=true], :disabled)'
+      ].opacity
+    ).toEqual('0.5')
   })
 
   test('should display a leading icon state', () => {

@@ -6,7 +6,7 @@ import {
   createInputProps,
   getDefaultInputOptions,
 } from './shared'
-import styles from './generated/inputCSS.module'
+import styles from './generated/inputCSS'
 import type { InputOptions } from './types'
 
 export function getJSInputProps(options?: InputOptions) {
@@ -20,11 +20,11 @@ export function getJSInputProps(options?: InputOptions) {
     ...styles[baseSizeClass],
   }
   const invalidIconWrapperStyles = {
-    ...styles.inputIcon,
+    ...styles.pando_inputIcon,
   }
   const leadingIconWrapperStyles = {
-    ...styles.inputIcon,
-    ...styles.inputLeadingIcon,
+    ...styles.pando_inputIcon,
+    ...styles.pando_inputLeadingIcon,
   }
 
   return {
@@ -46,7 +46,7 @@ export function getJSInputProps(options?: InputOptions) {
       ...createJSProps(jsStyles),
     },
     inputWrapper: {
-      ...createJSProps(styles.inputWrapper),
+      ...createJSProps(styles.pando_inputWrapper),
     },
   }
 }

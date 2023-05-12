@@ -7,9 +7,9 @@ import {
   getDefaultInputOptions,
 } from './shared'
 import type { InputOptions } from './types'
-import styles from './inputCSS.module.css'
+import './inputCSS.scss'
 
-const INPUT = 'ps-input'
+const INPUT = 'pando-input'
 
 export function getInputProps(options?: InputOptions) {
   const defaultOptions = getDefaultInputOptions(options)
@@ -17,12 +17,12 @@ export function getInputProps(options?: InputOptions) {
   const props = createInputProps(defaultOptions)
   const leadingIconProps = createInputLeadingIconProps(defaultOptions, {
     iconWrapper: {
-      ...createClassNameProp(`${INPUT}-leading-icon`, styles.inputLeadingIcon),
+      ...createClassNameProp(`${INPUT}-leading-icon`, 'pando_inputLeadingIcon'),
     },
   })
   const invalidIconProps = createInputInvalidIconProps(defaultOptions, {
     invalidIconWrapper: {
-      ...createClassNameProp(`${INPUT}-icon`, styles.inputIcon),
+      ...createClassNameProp(`${INPUT}-icon`, 'pando_inputIcon'),
     },
   })
 
@@ -32,11 +32,11 @@ export function getInputProps(options?: InputOptions) {
     ...leadingIconProps,
     input: {
       ...props.input,
-      ...createClassNameProp(INPUT, styles[kindClass], styles[baseSizeClass]),
+      ...createClassNameProp(INPUT, kindClass, baseSizeClass),
     },
     inputWrapper: {
       ...props.inputWrapper,
-      ...createClassNameProp(`${INPUT}-wrapper`, styles.inputWrapper),
+      ...createClassNameProp(`${INPUT}-wrapper`, 'pando_inputWrapper'),
     },
   }
 }
