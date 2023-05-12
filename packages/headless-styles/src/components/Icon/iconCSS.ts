@@ -5,7 +5,7 @@ import {
   getA11yIconProps,
 } from './shared'
 import type { IconOptions } from './types'
-import styles from './iconCSS.module.css'
+import './iconCSS.scss'
 
 const ICON = 'pando-icon'
 
@@ -20,11 +20,7 @@ export function getIconProps(options?: IconOptions) {
 
   return {
     ...a11yProps,
-    ...createClassNameProp(
-      ICON,
-      styles[sizeClass],
-      ...defaultOptions.classNames
-    ),
+    ...createClassNameProp(ICON, sizeClass, ...defaultOptions.classNames),
     ...(options?.customSize && {
       height: options.customSize,
       width: options.customSize,

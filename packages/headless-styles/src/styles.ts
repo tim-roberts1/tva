@@ -9,7 +9,7 @@ import errorMessageStyles from './components/ErrorMessage/generated/errorMessage
 import fieldMessageStyles from './components/FieldMessage/generated/fieldMessageCSS'
 import formControlStyles from './components/FormControl/generated/formControlCSS'
 import formLabelStyles from './components/FormLabel/generated/formLabelCSS'
-import iconStyles from './components/Icon/generated/iconCSS.module'
+import iconStyles from './components/Icon/generated/iconCSS'
 import iconButtonStyles from './components/IconButton/generated/iconButtonCSS'
 import inputStyles from './components/Input/generated/inputCSS.module'
 import menuStyles from './components/Menu/generated/menuCSS.module'

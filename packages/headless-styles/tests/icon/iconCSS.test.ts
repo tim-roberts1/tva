@@ -5,7 +5,7 @@ describe('Icon CSS', () => {
   const result = {
     'aria-hidden': false,
     'aria-label': 'icon',
-    className: `${baseClass} mIconSize`,
+    className: `${baseClass} pando_mIconSize`,
     role: 'img',
   }
 
@@ -16,19 +16,19 @@ describe('Icon CSS', () => {
   test('should accept a size type', () => {
     expect(getIconProps({ size: 's' })).toEqual({
       ...result,
-      className: `${baseClass} sIconSize`,
+      className: `${baseClass} pando_sIconSize`,
     })
     expect(getIconProps({ size: 'm' })).toEqual(result)
     expect(getIconProps({ size: 'l' })).toEqual({
       ...result,
-      className: `${baseClass} lIconSize`,
+      className: `${baseClass} pando_lIconSize`,
     })
   })
 
   test('should accept a custom size', () => {
     expect(getIconProps({ customSize: '5rem' })).toEqual({
       ...result,
-      className: 'pando-icon customIconSize',
+      className: 'pando-icon pando_customIconSize',
       height: '5rem',
       width: '5rem',
     })
@@ -55,7 +55,7 @@ describe('Icon CSS', () => {
   test('should allow a custom class to be passed in', () => {
     expect(getIconProps({ classNames: ['myClass'] })).toEqual({
       ...result,
-      className: `${baseClass} mIconSize myClass`,
+      className: `${baseClass} pando_mIconSize myClass`,
     })
   })
 })

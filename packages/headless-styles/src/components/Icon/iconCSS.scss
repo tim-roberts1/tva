@@ -1,0 +1,23 @@
+@use 'sass:map';
+
+$icon-sizes: (
+  's': 1rem,
+  'm': 1.25rem,
+  'l': 1.5rem,
+);
+
+@mixin icon-base($size: '') {
+  display: inline-block;
+  height: map.get($icon-sizes, $size);
+  width: map.get($icon-sizes, $size);
+}
+
+@each $size-key, $size-value in $icon-sizes {
+  .pando_#{$size-key}IconSize {
+    @include icon-base($size-key);
+  }
+}
+
+.pando_customIconSize {
+  @include icon-base;
+}
