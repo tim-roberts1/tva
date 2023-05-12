@@ -178,12 +178,18 @@ export default {
     minWidth: '2.5rem',
     paddingInlineEnd: '1.125rem',
     paddingInlineStart: '1.125rem',
+    '&:has(.pando-avatar)': {
+      height: 'auto',
+    },
   },
   pando_lButton: {
     height: '3rem',
     minWidth: '2.5rem',
     paddingInlineEnd: '2.156rem',
     paddingInlineStart: '2.156rem',
+    '&:has(.pando-avatar)': {
+      height: 'auto',
+    },
   },
   'is(.pando_defaultButton, .pando_outlineButton):active:not(:disabled)': {
     backgroundColor: 'var(--ps-background-active)',

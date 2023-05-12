@@ -13,7 +13,7 @@ describe('Progress CSS', () => {
   const result = {
     bar: {
       ...a11yProps,
-      className: `${baseClass} bar sSize linear`,
+      className: `${baseClass}-bar bar sSize linear`,
       style: {
         width: '0%',
       },
@@ -39,7 +39,7 @@ describe('Progress CSS', () => {
         style: {
           width: '80%',
         },
-        className: `${baseClass} bar sSize inset`,
+        className: `${baseClass}-bar bar sSize inset`,
       },
       wrapper: {
         className: `${baseClass} wrapper sSize inset`,
@@ -52,7 +52,7 @@ describe('Progress CSS', () => {
     expect(getProgressProps({ ariaLabel, size: 'xs' })).toEqual({
       bar: {
         ...a11yProps,
-        className: `${baseClass} bar xsSize linear`,
+        className: `${baseClass}-bar bar xsSize linear`,
         style: {
           width: '0%',
         },
@@ -72,7 +72,7 @@ describe('Progress CSS', () => {
         style: {
           width: '80%',
         },
-        className: `${baseClass} bar sSize linear`,
+        className: `${baseClass}-bar bar sSize linear`,
       },
     })
   })
@@ -83,7 +83,7 @@ describe('Progress CSS', () => {
       bar: {
         ...a11yProps,
         'aria-valuemax': 200,
-        className: `${baseClass} bar sSize linear`,
+        className: `${baseClass}-bar bar sSize linear`,
         style: {
           width: '0%',
         },
@@ -97,7 +97,7 @@ describe('Progress CSS', () => {
       bar: {
         ...a11yProps,
         'aria-valuemin': 50,
-        className: `${baseClass} bar sSize linear`,
+        className: `${baseClass}-bar bar sSize linear`,
         style: {
           width: '0%',
         },

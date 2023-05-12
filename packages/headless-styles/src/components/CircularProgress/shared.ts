@@ -40,9 +40,13 @@ export function getStrokeProps(now: number) {
   }
 }
 
-export function createCircularProgressClasses(size: CircularProgressSize) {
+export function createCircularProgressClasses(
+  size: CircularProgressSize,
+  kind: CircularProgressKind
+) {
   return {
-    sizeClass: `${size}Size` as const,
+    sizeClass: `pando_${size}CircularProgress` as const,
+    kindClass: `pando_${kind}CircularProgress` as const,
   }
 }
 
