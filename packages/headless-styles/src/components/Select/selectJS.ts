@@ -24,7 +24,10 @@ export function getJSSelectProps(options?: SelectOptions) {
     },
     select: {
       a11yProps: { ...props.select },
-      ...createJSProps(styles[baseSizeClass]),
+      ...createJSProps({
+        ...styles.pando_selectBase,
+        ...styles[baseSizeClass],
+      }),
     },
     selectWrapper: {
       ...createJSProps(styles.pando_selectWrapper),
