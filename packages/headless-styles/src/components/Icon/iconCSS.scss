@@ -1,28 +1,26 @@
-%icon-base {
+@use 'sass:map';
+
+$icon-sizes: (
+  's': 1rem,
+  'm': 1.25rem,
+  'l': 1.5rem,
+);
+
+@mixin icon-base($size: '') {
   display: inline-block;
+
+  @if map.has-key($icon-sizes, $size) {
+    height: map.get($icon-sizes, $size);
+    width: map.get($icon-sizes, $size);
+  }
 }
 
-.pando_sIconSize {
-  @extend %icon-base;
-
-  height: 1rem;
-  width: 1rem;
-}
-
-.pando_mIconSize {
-  @extend %icon-base;
-
-  height: 1.25rem;
-  width: 1.25rem;
-}
-
-.pando_lIconSize {
-  @extend %icon-base;
-
-  height: 1.5rem;
-  width: 1.5rem;
+@each $name, $value in $icon-sizes {
+  .pando_#{$name}IconSize {
+    @include icon-base($name);
+  }
 }
 
 .pando_customIconSize {
-  @extend %icon-base;
+  @include icon-base();
 }
