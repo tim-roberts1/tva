@@ -4,11 +4,13 @@
 // Manual changes will be lost - proceed with caution!
 
 import type { GeneratedStyles } from '../../../utils/types'
-import fieldMessageCSS from '../../FieldMessage/generated/fieldMessageCSS.module'
 
 export default {
-  errorMessage: {
-    ...fieldMessageCSS.fieldMessageBase,
-    color: 'var(--ps-danger-text-weak)',
+  pando_gridContainer: {
+    display: 'grid',
+    width: '100%',
+  },
+  pando_gridItem: {
+    minWidth: '0',
   },
 } satisfies GeneratedStyles

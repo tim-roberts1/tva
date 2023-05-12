@@ -1,12 +1,12 @@
 import { getFormLabelProps } from '../../src'
 
 describe('FormLabel CSS', () => {
-  const baseClass = 'ps-form-label'
+  const baseClass = 'pando-form-label'
   const htmlFor = 'email'
   const value = 'Email alerts'
   const result = {
     htmlFor: '',
-    className: `${baseClass} defaultFormLabel`,
+    className: `${baseClass} pando_defaultFormLabel`,
     value,
   }
 
@@ -33,7 +33,7 @@ describe('FormLabel CSS', () => {
     expect(getFormLabelProps({ htmlFor, kind: 'hidden', value })).toEqual({
       ...result,
       htmlFor,
-      className: `${baseClass} hiddenFormLabel`,
+      className: `${baseClass} pando_hiddenFormLabel`,
     })
   })
 })

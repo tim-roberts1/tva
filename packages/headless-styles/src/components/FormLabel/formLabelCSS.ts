@@ -4,10 +4,10 @@ import {
   getFormLabelClasses,
   getFormValue,
 } from './shared'
-import styles from './formLabelCSS.module.css'
 import { FormLabelOptions } from './types'
+import './formLabelCSS.scss'
 
-const FORM_LABEL = 'ps-form-label'
+const FORM_LABEL = 'pando-form-label'
 
 export function getFormLabelProps(options?: FormLabelOptions) {
   const { htmlFor, value, ...defaultOptions } =
@@ -18,6 +18,6 @@ export function getFormLabelProps(options?: FormLabelOptions) {
   return {
     htmlFor,
     ...label,
-    ...createClassNameProp(FORM_LABEL, styles[labelClass]),
+    ...createClassNameProp(FORM_LABEL, labelClass),
   }
 }

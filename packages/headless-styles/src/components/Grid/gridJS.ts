@@ -6,13 +6,13 @@ import {
   getDefaultGridItemOptions,
 } from './shared'
 import type { GridOptions, GridItemOptions } from './types'
-import styles from './generated/gridCSS.module'
+import styles from './generated/gridCSS'
 
 export function getJSGridProps(options?: GridOptions) {
   const defaultOptions = getDefaultGridOptions(options)
   const props = createGridProps(defaultOptions)
   const containerStyles = {
-    ...styles.gridContainer,
+    ...styles.pando_gridContainer,
     ...props.style,
   }
 
@@ -27,7 +27,7 @@ export function getJSGridItemProps(options?: GridItemOptions) {
 
   return {
     ...createJSProps({
-      ...styles.gridItem,
+      ...styles.pando_gridItem,
       ...props.style,
     }),
   }

@@ -2,7 +2,7 @@ import type { FormLabelOptions, Kind } from './types'
 
 export function getFormLabelClasses(kind: Kind) {
   return {
-    labelClass: `${kind}FormLabel` as const,
+    labelClass: `pando_${kind}FormLabel` as const,
   }
 }
 

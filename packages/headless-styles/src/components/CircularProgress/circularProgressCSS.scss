@@ -25,24 +25,26 @@
   }
 }
 
-.base {
+%box {
+  animation-name: spin;
+  height: 3rem;
+  width: 3rem;
+}
+
+.pando_circularProgressBase {
   display: inline-block;
   font-family: inherit;
   position: relative;
   vertical-align: middle;
 }
 
-.box {
-  height: 3rem;
-  width: 3rem;
-}
-
-.circle {
+.pando_circularProgressCircle {
   fill: transparent;
   stroke: var(--ps-border);
 }
 
-.circleNow {
+.pando_circularProgressCircleNow {
+  animation-name: loading;
   fill: transparent;
   stroke: var(--ps-text);
   transition-duration: 600ms;
@@ -50,7 +52,7 @@
   transition-timing-function: ease;
 }
 
-.text {
+.pando_circularProgressText {
   display: inline-block;
   font-family: inherit;
   font-size: 0.75rem;
@@ -62,40 +64,30 @@
   width: 100%;
 }
 
-/* custom props - order matters */
+/* sizes */
 
-.determinate {
-  composes: box;
+.pando_mCircularProgress {
+  @extend %box;
 }
 
-.indeterminate.box {
-  animation-direction: normal;
-  animation-duration: 1.5s;
-  animation-fill-mode: none;
-  animation-iteration-count: infinite;
-  animation-name: spin;
-  animation-play-state: running;
-  animation-timing-function: linear;
-}
+.pando_xsCircularProgress {
+  @extend %box;
 
-.indeterminate {
-  animation-direction: normal;
-  animation-duration: 1.5s;
-  animation-fill-mode: none;
-  animation-iteration-count: infinite;
-  animation-name: loading;
-  animation-play-state: running;
-  animation-timing-function: linear;
-}
-
-/* sizes must be last */
-
-.mSize {
-  composes: box;
-}
-
-.xsSize {
-  composes: box;
   height: 1.25rem;
   width: 1.25rem;
+}
+
+/* custom props - order matters */
+
+.pando_determinateCircularProgress {
+  animation-name: none;
+}
+
+.pando_indeterminateCircularProgress {
+  animation-direction: normal;
+  animation-duration: 1.5s;
+  animation-fill-mode: none;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  animation-timing-function: linear;
 }

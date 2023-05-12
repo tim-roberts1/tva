@@ -6,11 +6,11 @@
 import type { GeneratedStyles } from '../../../utils/types'
 
 export default {
-  gridContainer: {
-    display: 'grid',
-    width: '100%',
-  },
-  gridItem: {
-    minWidth: '0',
+  pando_fieldMessage: {
+    display: 'block',
+    fontFamily: 'inherit',
+    paddingTop: '8px',
+    textAlign: 'left',
+    color: 'var(--ps-text)',
   },
 } satisfies GeneratedStyles
