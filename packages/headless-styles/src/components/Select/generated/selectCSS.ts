@@ -7,13 +7,6 @@ import type { GeneratedStyles } from '../../../utils/types'
 
 export default {
   pando_selectBase: {
-    fontFamily: 'inherit',
-    '&:disabled': {
-      cursor: 'not-allowed',
-      opacity: '0.5',
-      background: 'var(--ps-background)',
-      borderColor: 'var(--ps-background)',
-    },
     '&:focus': {
       boxShadow: 'none',
       outline: '3px solid var(--ps-action-border-focus)',
@@ -22,6 +15,13 @@ export default {
     '&:focus:not(:focus-visible)': {
       boxShadow: 'none',
       outline: 'none',
+    },
+    '&:is([aria-disabled=true], :disabled, [disabled], [data-readonly=true])': {
+      cursor: 'not-allowed',
+    },
+    fontFamily: 'inherit',
+    '&:is([aria-disabled=true], :disabled)': {
+      opacity: '0.5',
     },
     appearance: 'none',
     background: 'inherit',
@@ -42,15 +42,15 @@ export default {
       color: 'var(--ps-text-weak)',
       opacity: '1',
     },
+    '&:disabled': {
+      background: 'var(--ps-background)',
+      borderColor: 'var(--ps-background)',
+    },
     '&:not(:disabled, [data-readonly=true]):hover': {
       boxShadow: 'var(--ps-border-strong) 0 0 0 1px',
     },
     borderColor: 'var(--ps-action-border)',
     paddingInlineStart: '1rem',
-  },
-  aria_disabled_true__pando_selectBase: {
-    cursor: 'not-allowed',
-    opacity: '0.5',
   },
   pando_selectWrapper: {
     marginTop: '8px',
