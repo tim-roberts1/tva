@@ -9,7 +9,7 @@ import {
 import type { SelectOptions, SelectOptionOptions } from './types'
 import './selectCSS.scss'
 
-const SELECT = 'ps-select'
+const SELECT = 'pando-select'
 
 export function getSelectProps(options?: SelectOptions) {
   const { size, ...defaultOptions } = getDefaultSelectOptions(options)

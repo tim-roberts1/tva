@@ -2,8 +2,8 @@ import { getSelectProps, getSelectOptionProps } from '../../src'
 import type { SelectOptions } from '../../src/types'
 
 describe('Select CSS', () => {
+  const baseClass = 'pando-select'
   describe('getSelectProps', () => {
-    const baseClass = 'ps-select'
     const options = {
       id: 'email',
       name: 'user-email',
@@ -68,7 +68,7 @@ describe('Select CSS', () => {
 
   describe('getSelectOptionProps', () => {
     const result = {
-      className: `ps-select-option pando_selectOption`,
+      className: `${baseClass}-option pando_selectOption`,
       value: '',
     }
 
