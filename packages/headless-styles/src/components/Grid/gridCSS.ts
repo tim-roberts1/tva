@@ -6,7 +6,7 @@ import {
   createGridItemProps,
 } from './shared'
 import type { GridOptions, GridItemOptions } from './types'
-import styles from './gridCSS.module.css'
+import './gridCSS.scss'
 
 const GRID = 'pando-grid'
 
@@ -18,7 +18,7 @@ export function getGridProps(options?: GridOptions) {
     ...props,
     ...createClassNameProp(
       GRID,
-      styles.gridContainer,
+      'pando_gridContainer',
       ...defaultOptions.classNames
     ),
   }
@@ -32,7 +32,7 @@ export function getGridItemProps(options?: GridItemOptions) {
     ...props,
     ...createClassNameProp(
       `${GRID}-item`,
-      styles.gridItem,
+      'pando_gridItem',
       ...defaultOptions.classNames
     ),
   }
