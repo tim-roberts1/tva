@@ -8,16 +8,13 @@ $icon-sizes: (
 
 @mixin icon-base($size: '') {
   display: inline-block;
-
-  @if map.has-key($icon-sizes, $size) {
-    height: map.get($icon-sizes, $size);
-    width: map.get($icon-sizes, $size);
-  }
+  height: map.get($icon-sizes, $size);
+  width: map.get($icon-sizes, $size);
 }
 
-@each $name, $value in $icon-sizes {
-  .pando_#{$name}IconSize {
-    @include icon-base($name);
+@each $size-key in $icon-sizes {
+  .pando_#{$size-key}IconSize {
+    @include icon-base($size-key);
   }
 }
 
