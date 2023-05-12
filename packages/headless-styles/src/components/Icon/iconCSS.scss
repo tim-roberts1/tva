@@ -12,7 +12,7 @@ $icon-sizes: (
   width: map.get($icon-sizes, $size);
 }
 
-@each $size-key in $icon-sizes {
+@each $size-key, $size-value in $icon-sizes {
   .pando_#{$size-key}IconSize {
     @include icon-base($size-key);
   }
