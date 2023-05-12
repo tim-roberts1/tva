@@ -22,5 +22,5 @@ $icon-sizes: (
 }
 
 .pando_customIconSize {
-  @include icon-base();
+  @include icon-base;
 }
