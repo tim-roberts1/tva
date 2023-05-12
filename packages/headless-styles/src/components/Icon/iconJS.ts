@@ -5,17 +5,16 @@ import {
   getDefaultIconOptions,
 } from './shared'
 import type { IconOptions } from './types'
-import styles from './generated/iconCSS.module'
+import styles from './generated/iconCSS'
 
 export const ChakraIcon = {
-  baseStyle: styles.psIcon,
   defaultProps: {
     size: 'm',
   },
   sizes: {
-    s: styles.sIconSize,
-    m: styles.mIconSize,
-    l: styles.lIconSize,
+    s: styles.pando_sIconSize,
+    m: styles.pando_mIconSize,
+    l: styles.pando_lIconSize,
   },
 }
 

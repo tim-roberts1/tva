@@ -5,7 +5,7 @@ import {
   getFormValue,
 } from './shared'
 import type { FormLabelOptions } from './types'
-import styles from './generated/formLabelCSS.module'
+import styles from './generated/formLabelCSS'
 
 export function getJSFormLabelProps(options?: FormLabelOptions) {
   const { value, ...defaultOptions } = getDefaultFormLabelOptions(options)

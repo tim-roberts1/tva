@@ -1,0 +1,7 @@
+@use '../shared/fieldMessage';
+
+.pando_errorMessage {
+  @extend %field-message-base;
+
+  color: var(--ps-danger-text-weak);
+}
