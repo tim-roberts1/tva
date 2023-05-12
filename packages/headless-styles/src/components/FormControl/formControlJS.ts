@@ -1,7 +1,7 @@
 import { createJSProps } from '../../utils/helpers'
 import { getDefaultFormControlOptions, getFormControlClasses } from './shared'
 import type { FormControlOptions } from './types'
-import styles from './generated/formControlCSS.module'
+import styles from './generated/formControlCSS'
 
 export function getJSFormControlProps(options?: FormControlOptions) {
   const { groupType, direction, ...fieldOptions } =
@@ -14,10 +14,7 @@ export function getJSFormControlProps(options?: FormControlOptions) {
       disabled: fieldOptions.disabled,
     },
     control: {
-      ...createJSProps({
-        ...styles.formControlBase,
-        ...styles[directionClass],
-      }),
+      ...createJSProps(styles[directionClass]),
     },
     fieldOptions,
   }

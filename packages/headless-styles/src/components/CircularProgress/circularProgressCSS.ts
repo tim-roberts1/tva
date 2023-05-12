@@ -8,47 +8,52 @@ import {
   VIEWBOX,
 } from './shared'
 import type { CircularProgressOptions } from './types'
-import styles from './circularProgressCSS.module.css'
+import './circularProgressCSS.scss'
 
-const CIRC_PROGRESS = 'ps-circular-progress'
+const CIRC_PROGRESS = 'pando-circular-progress'
 
 export function getCircularProgressProps(options?: CircularProgressOptions) {
-  const { kind, size, ...a11y } = getDefaultCircularProgressOptions(options)
+  const { classNames, kind, size, ...a11y } =
+    getDefaultCircularProgressOptions(options)
   const a11yProps = getA11yCircularProgressProps(a11y, kind)
-  const { sizeClass } = createCircularProgressClasses({
-    size,
-  })
+  const { sizeClass, kindClass } = createCircularProgressClasses(size, kind)
   const now = a11y.now
   const value = `${now}%`
 
   return {
     containerProps: {
       ...a11yProps,
-      ...createClassNameProp(CIRC_PROGRESS, styles.base),
+      ...createClassNameProp(
+        CIRC_PROGRESS,
+        'pando_circularProgressBase',
+        ...classNames
+      ),
     },
     svgBoxProps: {
-      ...createClassNameProp(
-        `${CIRC_PROGRESS}-box`,
-        styles[sizeClass],
-        styles[kind]
-      ),
+      ...createClassNameProp(`${CIRC_PROGRESS}-box`, sizeClass, kindClass),
       viewBox: VIEWBOX,
     },
     baseCircleProps: {
       ...getBaseCircleProps(),
-      ...createClassNameProp(`${CIRC_PROGRESS}-base`, styles.circle),
+      ...createClassNameProp(
+        `${CIRC_PROGRESS}-base`,
+        'pando_circularProgressCircle'
+      ),
     },
     nowCircleProps: {
       ...getBaseCircleProps(),
       ...createClassNameProp(
         `${CIRC_PROGRESS}-now`,
-        styles.circleNow,
-        styles[kind]
+        'pando_circularProgressCircleNow',
+        kindClass
       ),
       ...getStrokeProps(now),
     },
     labelProps: {
-      ...createClassNameProp(`${CIRC_PROGRESS}-label`, styles.text),
+      ...createClassNameProp(
+        `${CIRC_PROGRESS}-label`,
+        'pando_circularProgressText'
+      ),
       value,
     },
   }
