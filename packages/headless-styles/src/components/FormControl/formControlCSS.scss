@@ -1,0 +1,22 @@
+%form-control-base {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  position: relative;
+  width: 100%;
+
+  &[disabled] {
+    opacity: 0.5;
+  }
+}
+
+.pando_rowFormControl {
+  @extend %form-control-base;
+}
+
+.pando_colFormControl {
+  @extend %form-control-base;
+
+  align-items: flex-start;
+  flex-direction: column;
+}

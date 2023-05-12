@@ -32,28 +32,35 @@ export default {
       },
     },
   },
-  base: {
+  pando_xsCircularProgress: {
+    animationName: 'spin',
+    height: '1.25rem',
+    width: '1.25rem',
+  },
+  pando_mCircularProgress: {
+    animationName: 'spin',
+    height: '3rem',
+    width: '3rem',
+  },
+  pando_circularProgressBase: {
     display: 'inline-block',
     fontFamily: 'inherit',
     position: 'relative',
     verticalAlign: 'middle',
   },
-  box: {
-    height: '3rem',
-    width: '3rem',
-  },
-  circle: {
+  pando_circularProgressCircle: {
     fill: 'transparent',
     stroke: 'var(--ps-border)',
   },
-  circleNow: {
+  pando_circularProgressCircleNow: {
+    animationName: 'loading',
     fill: 'transparent',
     stroke: 'var(--ps-text)',
     transitionDuration: '600ms',
     transitionProperty: 'stroke-dasharray, stroke',
     transitionTimingFunction: 'ease',
   },
-  text: {
+  pando_circularProgressText: {
     display: 'inline-block',
     fontFamily: 'inherit',
     fontSize: '0.75rem',
@@ -64,34 +71,15 @@ export default {
     transform: 'translate(-50%, -50%)',
     width: '100%',
   },
-  determinate: {
-    height: '3rem',
-    width: '3rem',
+  pando_determinateCircularProgress: {
+    animationName: 'none',
   },
-  indeterminate_box: {
+  pando_indeterminateCircularProgress: {
     animationDirection: 'normal',
     animationDuration: '1.5s',
     animationFillMode: 'none',
     animationIterationCount: 'infinite',
-    animationName: 'spin',
     animationPlayState: 'running',
     animationTimingFunction: 'linear',
-  },
-  indeterminate: {
-    animationDirection: 'normal',
-    animationDuration: '1.5s',
-    animationFillMode: 'none',
-    animationIterationCount: 'infinite',
-    animationName: 'loading',
-    animationPlayState: 'running',
-    animationTimingFunction: 'linear',
-  },
-  mSize: {
-    height: '3rem',
-    width: '3rem',
-  },
-  xsSize: {
-    height: '1.25rem',
-    width: '1.25rem',
   },
 } satisfies GeneratedStyles

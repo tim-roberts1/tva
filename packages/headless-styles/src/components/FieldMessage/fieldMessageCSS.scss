@@ -1,0 +1,7 @@
+@use '../shared/fieldMessage';
+
+.pando_fieldMessage {
+  @extend %field-message-base;
+
+  color: var(--ps-text);
+}

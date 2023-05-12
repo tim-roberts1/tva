@@ -1,9 +1,9 @@
 import { createClassNameProp } from '../../utils/helpers'
 import { getDefaultFormControlOptions, getFormControlClasses } from './shared'
-import styles from './formControlCSS.module.css'
 import type { FormControlOptions } from './types'
+import './formControlCSS.scss'
 
-const FORM_CONTROL = 'ps-form-control'
+const FORM_CONTROL = 'pando-form-control'
 
 export function getFormControlProps(options?: FormControlOptions) {
   const { groupType, direction, ...fieldOptions } =
@@ -17,11 +17,7 @@ export function getFormControlProps(options?: FormControlOptions) {
     control: {
       ...role,
       disabled: fieldOptions.disabled,
-      ...createClassNameProp(
-        FORM_CONTROL,
-        styles.formControlBase,
-        styles[directionClass]
-      ),
+      ...createClassNameProp(FORM_CONTROL, directionClass),
     },
     fieldOptions,
   }

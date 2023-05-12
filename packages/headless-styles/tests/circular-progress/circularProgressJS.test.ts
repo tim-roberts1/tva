@@ -5,11 +5,11 @@ describe('circular progress JS', () => {
   test('should return a distinct animation based on the kind', () => {
     expect(
       getJSCircularProgressProps({ ariaLabel }).svgBoxProps.styles.animationName
-    ).toEqual('')
+    ).toEqual('none')
     expect(
       getJSCircularProgressProps({ ariaLabel }).nowCircleProps.styles
         .animationName
-    ).toEqual('')
+    ).toEqual('none')
 
     expect(
       getJSCircularProgressProps({

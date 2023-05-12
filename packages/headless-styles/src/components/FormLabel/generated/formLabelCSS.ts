@@ -6,7 +6,7 @@
 import type { GeneratedStyles } from '../../../utils/types'
 
 export default {
-  defaultFormLabel: {
+  pando_defaultFormLabel: {
     alignItems: 'center',
     display: 'flex',
     fontFamily: 'inherit',
@@ -18,7 +18,7 @@ export default {
     textAlign: 'start',
     userSelect: 'none',
   },
-  hiddenFormLabel: {
+  pando_hiddenFormLabel: {
     border: '0',
     clip: 'rect(0 0 0 0)',
     height: '1px',
