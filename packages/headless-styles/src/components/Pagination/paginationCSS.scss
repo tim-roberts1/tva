@@ -1,0 +1,58 @@
+%pagination-container {
+  align-items: baseline;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  grid-template-rows: 1fr;
+  row-gap: 0;
+  text-align: right;
+  width: 100%;
+}
+
+.pando_mPaginationContainer {
+  @extend %pagination-container;
+
+  column-gap: 1rem;
+}
+
+.pando_lPaginationContainer {
+  @extend %pagination-container;
+
+  column-gap: 2rem;
+}
+
+%pagination-button-group {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.pando_mPaginationButtonGroup {
+  @extend %pagination-button-group;
+
+  gap: 0.5rem;
+}
+
+.pando_lPaginationButtonGroup {
+  @extend %pagination-button-group;
+
+  gap: 1rem;
+}
+
+%pagination-text {
+  color: var(--ps-text-medium);
+  white-space: nowrap;
+}
+
+%pagination-text > strong {
+  color: var(--ps-text-strong);
+}
+
+.pando_mPaginationText {
+  @extend %pagination-text;
+
+  font-size: 0.875rem;
+}
+
+.pando_lPaginationText {
+  @extend %pagination-text;
+}

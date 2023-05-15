@@ -5,7 +5,7 @@ import {
   getDefaultPaginationOptions,
 } from './shared'
 import { PaginationOptions } from './types'
-import styles from './generated/paginationCSS.module'
+import styles from './generated/paginationCSS'
 
 export function getJSPaginationProps(options?: PaginationOptions) {
   const defaultOptions = getDefaultPaginationOptions(options)
@@ -14,7 +14,7 @@ export function getJSPaginationProps(options?: PaginationOptions) {
   const textStyles = {
     ...styles[classes.textClass],
     '& > strong': {
-      ...styles.paginationText___strong,
+      ...styles.pando_lPaginationText___strong,
     },
   }
 

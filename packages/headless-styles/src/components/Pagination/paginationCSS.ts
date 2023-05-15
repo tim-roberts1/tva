@@ -5,9 +5,9 @@ import {
   getDefaultPaginationOptions,
 } from './shared'
 import type { PaginationOptions } from './types'
-import styles from './paginationCSS.module.css'
+import './paginationCSS.scss'
 
-const PAGINATION = 'ps-pagination'
+const PAGINATION = 'pando-pagination'
 
 export function getPaginationProps(options?: PaginationOptions) {
   const defaultOptions = getDefaultPaginationOptions(options)
@@ -20,16 +20,16 @@ export function getPaginationProps(options?: PaginationOptions) {
       ...props.buttonGroup,
       ...createClassNameProp(
         `${PAGINATION}-buttonGroup`,
-        styles[classes.buttonGroupClass]
+        classes.buttonGroupClass
       ),
     },
     container: {
       ...props.container,
-      ...createClassNameProp(PAGINATION, styles[classes.containerClass]),
+      ...createClassNameProp(PAGINATION, classes.containerClass),
     },
     text: {
       ...props.text,
-      ...createClassNameProp(`${PAGINATION}-text`, styles[classes.textClass]),
+      ...createClassNameProp(`${PAGINATION}-text`, classes.textClass),
     },
   }
 }
