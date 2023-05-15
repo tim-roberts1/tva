@@ -1540,7 +1540,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],\
       [\
         "@types/svgo",\
-        "npm:2.6.3"\
+        "npm:3.0.0"\
       ],\
       [\
         "@types/testing-library__jest-dom",\
@@ -17291,7 +17291,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/fs-extra", "npm:11.0.1"],\
             ["@types/jest", "npm:29.2.5"],\
             ["@types/react", "npm:18.0.26"],\
-            ["@types/svgo", "npm:2.6.3"],\
+            ["@types/svgo", "npm:3.0.0"],\
             ["@typescript-eslint/eslint-plugin", "virtual:b96c517a0d21d6dd798be595ec2c5abe5e7db27995f5f92e7988ff37caef5cd1e321b1bd8ba38de55b875f4860181cec6baa5d283f214892d2ed4797f945fad5#npm:5.59.2"],\
             ["@typescript-eslint/parser", "virtual:b96c517a0d21d6dd798be595ec2c5abe5e7db27995f5f92e7988ff37caef5cd1e321b1bd8ba38de55b875f4860181cec6baa5d283f214892d2ed4797f945fad5#npm:5.59.2"],\
             ["eslint", "npm:8.39.0"],\
@@ -19975,11 +19975,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@types/svgo", [\
-        ["npm:2.6.3", {\
-          "packageLocation": "./.yarn/cache/@types-svgo-npm-2.6.3-4686f3b65b-d72714e565.zip/node_modules/@types/svgo/",\
+        ["npm:3.0.0", {\
+          "packageLocation": "./.yarn/cache/@types-svgo-npm-3.0.0-d5c2a3424c-057509c4de.zip/node_modules/@types/svgo/",\
           "packageDependencies": [\
-            ["@types/svgo", "npm:2.6.3"],\
-            ["@types/node", "npm:16.11.7"]\
+            ["@types/svgo", "npm:3.0.0"],\
+            ["svgo", "npm:3.0.2"]\
           ],\
           "linkType": "HARD"\
         }]\

@@ -4269,7 +4269,7 @@ __metadata:
     "@types/fs-extra": ^11.0.1
     "@types/jest": ^29.2.5
     "@types/react": latest
-    "@types/svgo": ^2
+    "@types/svgo": ^3
     "@typescript-eslint/eslint-plugin": ^5.59.2
     "@typescript-eslint/parser": ^5.59.2
     eslint: ^8.39.0
@@ -6106,12 +6106,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/svgo@npm:^2":
-  version: 2.6.3
-  resolution: "@types/svgo@npm:2.6.3"
+"@types/svgo@npm:^3":
+  version: 3.0.0
+  resolution: "@types/svgo@npm:3.0.0"
   dependencies:
-    "@types/node": "*"
-  checksum: d72714e565790f247be23065d071b1733021e1dc80358d1ca68a42362ca31d96b42aeeb3799b8e960a44a14cee658093344e6e14f36d0827903307cbeb78db0a
+    svgo: "*"
+  checksum: 057509c4def1a4e9ac5d1650961dc0ef2683ec80daf109aad910312ae9657877d07fc0c294df8d59e2746c5030d50f173049a7721972acfc1788c7dfb794927d
   languageName: node
   linkType: hard
 
@@ -22018,6 +22018,22 @@ __metadata:
   version: 1.0.0
   resolution: "svg-tags@npm:1.0.0"
   checksum: 407e5ef87cfa2fb81c61d738081c2decd022ce13b922d035b214b49810630bf5d1409255a4beb3a940b77b32f6957806deff16f1bf0ce1ab11c7a184115a0b7f
+  languageName: node
+  linkType: hard
+
+"svgo@npm:*":
+  version: 3.0.2
+  resolution: "svgo@npm:3.0.2"
+  dependencies:
+    "@trysound/sax": 0.2.0
+    commander: ^7.2.0
+    css-select: ^5.1.0
+    css-tree: ^2.2.1
+    csso: ^5.0.5
+    picocolors: ^1.0.0
+  bin:
+    svgo: bin/svgo
+  checksum: 381ba14aa782e71ab7033227634a3041c11fa3e2769aeaf0df43a08a615de61925108e34f55af6e7c5146f4a3109e78deabb4fa9d687e36d45d1f848b4e23d17
   languageName: node
   linkType: hard
 
