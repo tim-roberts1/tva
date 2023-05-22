@@ -27,17 +27,17 @@ describe('Grid JS', () => {
       expect(getJSGridItemProps().styles.minWidth).toEqual('0')
     })
 
-    test('should accept a colSpan option', () => {
-      const colSpan = '3 / span 8'
+    test('should accept a col option', () => {
+      const col = '3 / span 8'
 
-      expect(getJSGridItemProps({ colSpan }).cssProps).toContain(
+      expect(getJSGridItemProps({ col }).cssProps).toContain(
         'grid-column: 3 / span 8'
       )
-      expect(getJSGridItemProps({ colSpan }).styles.gridColumn).toEqual(
+      expect(getJSGridItemProps({ col }).styles.gridColumn).toEqual(
         '3 / span 8'
       )
-      expect(getJSGridItemProps({ colSpan }).cssProps).toContain('min-width: 0')
-      expect(getJSGridItemProps({ colSpan }).styles.minWidth).toEqual('0')
+      expect(getJSGridItemProps({ col }).cssProps).toContain('min-width: 0')
+      expect(getJSGridItemProps({ col }).styles.minWidth).toEqual('0')
     })
   })
 })

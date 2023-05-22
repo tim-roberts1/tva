@@ -27,11 +27,12 @@ describe('Grid CSS', () => {
     })
 
     test('should update the gap when option given', () => {
-      expect(getGridProps({ gap: 6 })?.style.gap).toEqual('0.375rem')
-      expect(getGridProps({ gap: 8 })?.style.gap).toEqual('0.5rem')
-      expect(getGridProps({ gap: 12 })?.style.gap).toEqual('0.75rem')
-      expect(getGridProps({ gap: 16 })?.style.gap).toEqual('1rem')
-      expect(getGridProps({ gap: 32 })?.style.gap).toEqual('2rem')
+      expect(getGridProps({ gap: '6' })?.style.gap).toEqual('0.375rem')
+      expect(getGridProps({ gap: '8' })?.style.gap).toEqual('0.5rem')
+      expect(getGridProps({ gap: '12' })?.style.gap).toEqual('0.75rem')
+      expect(getGridProps({ gap: '16' })?.style.gap).toEqual('1rem')
+      expect(getGridProps({ gap: '32' })?.style.gap).toEqual('2rem')
+      expect(getGridProps({ gap: '0' })?.style.gap).toEqual('0rem')
     })
 
     test('should update the cols when option given', () => {
@@ -49,19 +50,19 @@ describe('Grid CSS', () => {
       expect(getGridItemProps()).toEqual(gridItemProps)
     })
 
-    test('should update the colSpan when option given', () => {
+    test('should update the col when option given', () => {
       expect(
-        getGridItemProps({ colSpan: defaultColSpan })?.style.gridColumn
+        getGridItemProps({ col: defaultColSpan })?.style.gridColumn
       ).toEqual(defaultColSpan)
-      expect(
-        getGridItemProps({ colSpan: '3 / span 8' })?.style.gridColumn
-      ).toEqual('3 / span 8')
+      expect(getGridItemProps({ col: '3 / span 8' })?.style.gridColumn).toEqual(
+        '3 / span 8'
+      )
     })
 
-    test('should update the rowSpan when option given', () => {
-      expect(
-        getGridItemProps({ rowSpan: '4rem auto 6rem' })?.style.gridRow
-      ).toEqual('4rem auto 6rem')
+    test('should update the row when option given', () => {
+      expect(getGridItemProps({ row: 'auto auto' })?.style.gridRow).toEqual(
+        'auto auto'
+      )
     })
   })
 })
