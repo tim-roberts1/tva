@@ -13,7 +13,7 @@ export interface GridOptions
 export interface GridItemOptions
   extends DefaultOptions,
     Pick<HTMLAttributes<HTMLDivElement>, 'style'> {
-  area?: keyof GridAreas
+  area?: string
   col?: string
   row?: string
 }
