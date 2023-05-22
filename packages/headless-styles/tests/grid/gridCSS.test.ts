@@ -1,18 +1,23 @@
 import { getGridProps, getGridItemProps } from '../../src/index'
 
 describe('Grid CSS', () => {
+  const defaultColSpan = '1 / span 12'
+
   const gridProps = {
     className: 'pando-grid pando_gridContainer',
     style: {
-      gridTemplateRows: 'repeat(1, 1fr)',
-      gridTemplateColumns: 'repeat(12, 1fr)',
+      gridTemplateAreas: '',
+      gridTemplateRows: '1',
+      gridTemplateColumns: '12 1fr',
       gap: '1rem',
     },
   }
   const gridItemProps = {
     className: 'pando-grid-item pando_gridItem',
     style: {
-      gridColumn: 'span 12 / span 12',
+      gridArea: '',
+      gridColumn: defaultColSpan,
+      gridRow: '',
     },
   }
 
@@ -30,11 +35,11 @@ describe('Grid CSS', () => {
     })
 
     test('should update the cols when option given', () => {
-      expect(getGridProps({ cols: 12 })?.style.gridTemplateColumns).toEqual(
-        'repeat(12, 1fr)'
+      expect(getGridProps({ cols: '12' })?.style.gridTemplateColumns).toEqual(
+        '12 1fr'
       )
-      expect(getGridProps({ cols: 8 })?.style.gridTemplateColumns).toEqual(
-        'repeat(8, 1fr)'
+      expect(getGridProps({ cols: '8' })?.style.gridTemplateColumns).toEqual(
+        '8 1fr'
       )
     })
   })
@@ -45,18 +50,18 @@ describe('Grid CSS', () => {
     })
 
     test('should update the colSpan when option given', () => {
-      expect(getGridItemProps({ colSpan: 12 })?.style.gridColumn).toEqual(
-        'span 12 / span 12'
-      )
-      expect(getGridItemProps({ colSpan: 8 })?.style.gridColumn).toEqual(
-        'span 8 / span 8'
-      )
+      expect(
+        getGridItemProps({ colSpan: defaultColSpan })?.style.gridColumn
+      ).toEqual(defaultColSpan)
+      expect(
+        getGridItemProps({ colSpan: '3 / span 8' })?.style.gridColumn
+      ).toEqual('3 / span 8')
     })
 
     test('should update the rowSpan when option given', () => {
-      expect(getGridItemProps({ rowSpan: 4 })?.style.gridArea).toEqual(
-        'span 4 / span 12 / span 4 / span 12'
-      )
+      expect(
+        getGridItemProps({ rowSpan: '4rem auto 6rem' })?.style.gridRow
+      ).toEqual('4rem auto 6rem')
     })
   })
 })

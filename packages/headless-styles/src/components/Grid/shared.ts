@@ -1,5 +1,14 @@
 import type { GridOptions, GridItemOptions } from './types'
 
+function getFormattedAreas(areas: string[]) {
+  return areas.reduce((prev, current) => {
+    return `"${prev}"
+    "${current}"`
+  }, '')
+}
+
+// public
+
 export const gapMap = {
   6: 0.375,
   8: 0.5,
@@ -10,45 +19,48 @@ export const gapMap = {
 
 export function getDefaultGridOptions(options?: GridOptions) {
   return {
+    areas: options?.areas ?? [],
     classNames: options?.classNames ?? [],
-    cols: options?.cols ?? 12,
-    gap: options?.gap ?? 16,
-    rows: options?.rows ?? 1,
+    cols: options?.cols ?? '12',
+    gap: options?.gap ?? (16 as const),
+    rows: options?.rows ?? '1',
+    style: options?.style ?? {},
   }
 }
 
 export function getDefaultGridItemOptions(options?: GridItemOptions) {
   return {
+    area: options?.area ?? '',
     classNames: options?.classNames ?? [],
-    colSpan: options?.colSpan ?? 12,
-    rowSpan: options?.rowSpan ?? null,
+    colSpan: options?.colSpan ?? '1 / span 12',
+    rowSpan: options?.rowSpan ?? '',
+    style: options?.style ?? {},
   }
 }
 
-export function createGridProps(options: GridOptions) {
+export function createGridProps(options: Required<GridOptions>) {
+  const { areas, cols, rows } = options
+  const gap = gapMap[options.gap as keyof typeof gapMap] ?? 0
+
   return {
     style: {
-      gridTemplateRows: `repeat(${options.rows}, 1fr)`,
-      gridTemplateColumns: `repeat(${options.cols}, 1fr)`,
-      gap: `${gapMap[options.gap as keyof typeof gapMap]}rem`,
+      ...options.style,
+      gridTemplateAreas: getFormattedAreas(areas),
+      gridTemplateRows: rows ?? `repeat(${rows}, 1fr)`,
+      gridTemplateColumns: `${cols} 1fr`,
+      gap: `${gap}rem`,
     },
   }
 }
 
-export function createGridItemProps(options: GridItemOptions) {
+export function createGridItemProps(options: Required<GridItemOptions>) {
   const { colSpan, rowSpan } = options
-
-  if (rowSpan) {
-    return {
-      style: {
-        gridArea: `span ${rowSpan} / span ${colSpan} / span ${rowSpan} / span ${colSpan}`,
-      },
-    }
-  }
-
   return {
     style: {
-      gridColumn: `span ${colSpan} / span ${colSpan}`,
+      ...options.style,
+      gridArea: options.area,
+      gridColumn: colSpan,
+      gridRow: rowSpan,
     },
   }
 }

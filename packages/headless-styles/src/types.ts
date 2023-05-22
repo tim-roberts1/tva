@@ -32,7 +32,13 @@ export type { ErrorMessageOptions } from './components/ErrorMessage/types'
 export type { FieldMessageOptions } from './components/FieldMessage/types'
 export type { FormControlOptions } from './components/FormControl/types'
 export type { FormLabelOptions } from './components/FormLabel/types'
-export type { GridOptions, GridItemOptions } from './components/Grid/types'
+
+export type {
+  GridOptions,
+  GridItemOptions,
+  GridGap,
+} from './components/Grid/types'
+
 export type { IconButtonOptions } from './components/IconButton/types'
 export type { IconOptions } from './components/Icon/types'
 export type { InputOptions } from './components/Input/types'
