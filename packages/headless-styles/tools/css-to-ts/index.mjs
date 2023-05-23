@@ -2,28 +2,27 @@
 
 import fs from 'fs'
 import path from 'path'
-import writeToFile from './convert-inputs/write-file'
+import writeToFile from './convert-inputs/write-file.mjs'
 import {
   convertStringToJson,
   convertFileToJson,
   convertDirToJson,
-} from './convert-inputs/convert-inputs'
+} from './convert-inputs/convert-inputs.mjs'
 
 //Input can be a Dir, File, String
 export const convert = (input, config = {}) => {
   const outputType = config.outputType
   const outputPath = config.outputPath
-  let mediaReverse = config.mediaReverse
   let convertedCss
 
   try {
     if (fs.statSync(input).isDirectory()) {
-      convertedCss = convertDirToJson(input, mediaReverse)
+      convertedCss = convertDirToJson(input, config)
     } else {
-      convertedCss = convertFileToJson(input, mediaReverse)
+      convertedCss = convertFileToJson(input, config)
     }
-  } catch {
-    convertedCss = convertStringToJson(input, mediaReverse)
+  } catch (err) {
+    convertedCss = convertStringToJson(input, config)
     convertedCss.filename = path.basename(config.id, path.extname(config.id))
   }
 

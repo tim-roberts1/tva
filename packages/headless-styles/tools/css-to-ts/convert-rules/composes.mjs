@@ -1,4 +1,4 @@
-import deepMerge from '../utils/deepMerge'
+import deepMerge from '../utils/deepMerge.mjs'
 
 export default function composes(styleObj) {
   for (const [className, value] of Object.entries(styleObj)) {

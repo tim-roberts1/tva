@@ -1,5 +1,5 @@
-import camelize from '../utils/camelize'
-import sanitize from '../utils/sanitize'
+import camelize from '../utils/camelize.mjs'
+import sanitize from '../utils/sanitize.mjs'
 
 const keyframes = (rule) => {
   const keyFrameObj = {}

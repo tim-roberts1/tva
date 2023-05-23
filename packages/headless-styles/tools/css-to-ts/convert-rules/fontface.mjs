@@ -1,6 +1,6 @@
-import camelize from '../utils/camelize'
-import capitalize from '../utils/capitalize'
-import sanitize from '../utils/sanitize'
+import camelize from '../utils/camelize.mjs'
+import capitalize from '../utils/capitalize.mjs'
+import sanitize from '../utils/sanitize.mjs'
 
 function sanitizeName(name, numLen) {
   let updatedName

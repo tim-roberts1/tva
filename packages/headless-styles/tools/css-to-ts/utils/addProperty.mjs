@@ -1,4 +1,4 @@
-import deepMerge from './deepMerge'
+import deepMerge from './deepMerge.mjs'
 
 const addProperty = (obj, key, value) => {
   const retObj = obj

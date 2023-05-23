@@ -1,8 +1,8 @@
 /*eslint no-negated-condition: "off"*/
 
-import camelize from '../utils/camelize'
-import sanitize, { sanitizeWhitespace } from '../utils/sanitize'
-import addProperty from '../utils/addProperty'
+import camelize from '../utils/camelize.mjs'
+import sanitize, { sanitizeWhitespace } from '../utils/sanitize.mjs'
+import addProperty from '../utils/addProperty.mjs'
 
 const standard = (rule, result) => {
   const obj = {}

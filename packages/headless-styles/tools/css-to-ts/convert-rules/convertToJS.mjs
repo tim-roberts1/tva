@@ -1,9 +1,9 @@
 import css from 'css'
-import addProperty from '../utils/addProperty'
-import composes from './composes'
-import fontface from './fontface'
-import keyframes from './keyframes'
-import standard from './standard'
+import addProperty from '../utils/addProperty.mjs'
+import composes from './composes.mjs'
+import fontface from './fontface.mjs'
+import keyframes from './keyframes.mjs'
+import standard from './standard.mjs'
 
 export default function convertToJS(input) {
   try {
