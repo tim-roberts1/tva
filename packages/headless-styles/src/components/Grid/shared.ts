@@ -1,4 +1,4 @@
-import type { GridOptions, GridItemOptions, GridGap, GridAreas } from './types'
+import type { GridOptions, GridItemOptions, GridGap } from './types'
 
 function getFormattedAreas(areas: string[]) {
   return areas.reduce((prev, current) => {
@@ -55,7 +55,7 @@ export function createGridProps(options: Required<GridOptions>) {
 
 export function getDefaultGridItemOptions(options?: GridItemOptions) {
   return {
-    area: (options?.area ?? '') as keyof GridAreas,
+    area: options?.area ?? '',
     classNames: options?.classNames ?? [],
     col: options?.col ?? '1 / span 12',
     row: options?.row ?? '',

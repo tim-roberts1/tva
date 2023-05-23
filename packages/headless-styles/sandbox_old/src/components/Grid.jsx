@@ -22,7 +22,7 @@ function TwoColLayout() {
       <div
         {...getGridItemProps({
           area: 'header',
-          colSpan: 'auto / span 12',
+          col: 'auto / span 12',
           style: getGridItemStyles(),
         })}
       >
@@ -31,7 +31,7 @@ function TwoColLayout() {
       <div
         {...getGridItemProps({
           area: 'nav',
-          colSpan: 'auto / span 3',
+          col: 'auto / span 3',
           style: getGridItemStyles(),
         })}
       >
@@ -40,7 +40,7 @@ function TwoColLayout() {
       <div
         {...getGridItemProps({
           area: 'main',
-          colSpan: 'auto / span 9',
+          col: 'auto / span 9',
           style: getGridItemStyles(),
         })}
       >
@@ -49,7 +49,7 @@ function TwoColLayout() {
       <div
         {...getGridItemProps({
           area: 'footer',
-          colSpan: 'auto / span 12',
+          col: 'auto / span 12',
           style: getGridItemStyles(),
         })}
       >
