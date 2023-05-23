@@ -1,54 +1,76 @@
-import type { GridOptions, GridItemOptions } from './types'
+import type { GridOptions, GridItemOptions, GridGap } from './types'
 
-export const gapMap = {
-  6: 0.375,
-  8: 0.5,
-  12: 0.75,
-  16: 1,
-  32: 2,
+function getFormattedAreas(areas: string[]) {
+  return areas.reduce((prev, current) => {
+    return `"${prev}"
+    "${current}"`
+  }, '')
+}
+
+function getGapValue<K extends string>(gap: GridGap<K>) {
+  const gapMap = createGapMap<GridGap<K>>()
+
+  if (gapMap.has(gap)) return gapMap.get(gap)
+  return '0'
+}
+
+// public
+
+export function createGapMap<K extends string>() {
+  const map = new Map()
+  map.set('6', 0.375)
+  map.set('8', 0.5)
+  map.set('12', 0.75)
+  map.set('16', 1)
+  map.set('32', 2)
+
+  return map as Map<K, GridGap<K>>
 }
 
 export function getDefaultGridOptions(options?: GridOptions) {
   return {
+    areas: options?.areas ?? [],
     classNames: options?.classNames ?? [],
-    cols: options?.cols ?? 12,
-    gap: options?.gap ?? 16,
-    rows: options?.rows ?? 1,
+    cols: options?.cols ?? '12',
+    gap: options?.gap ?? '16',
+    rows: options?.rows ?? '1',
+    style: options?.style ?? {},
+  }
+}
+
+export function createGridProps(options: Required<GridOptions>) {
+  const { areas, cols, rows } = options
+  const gap = getGapValue(options.gap)
+
+  return {
+    style: {
+      ...options.style,
+      gridTemplateAreas: getFormattedAreas(areas),
+      gridTemplateRows: rows ?? `repeat(${rows}, 1fr)`,
+      gridTemplateColumns: `${cols} 1fr`,
+      gap: `${gap}rem`,
+    },
   }
 }
 
 export function getDefaultGridItemOptions(options?: GridItemOptions) {
   return {
+    area: options?.area ?? '',
     classNames: options?.classNames ?? [],
-    colSpan: options?.colSpan ?? 12,
-    rowSpan: options?.rowSpan ?? null,
+    col: options?.col ?? '1 / span 12',
+    row: options?.row ?? '',
+    style: options?.style ?? {},
   }
 }
 
-export function createGridProps(options: GridOptions) {
+export function createGridItemProps(options: Required<GridItemOptions>) {
+  const { col, row } = options
   return {
     style: {
-      gridTemplateRows: `repeat(${options.rows}, 1fr)`,
-      gridTemplateColumns: `repeat(${options.cols}, 1fr)`,
-      gap: `${gapMap[options.gap as keyof typeof gapMap]}rem`,
-    },
-  }
-}
-
-export function createGridItemProps(options: GridItemOptions) {
-  const { colSpan, rowSpan } = options
-
-  if (rowSpan) {
-    return {
-      style: {
-        gridArea: `span ${rowSpan} / span ${colSpan} / span ${rowSpan} / span ${colSpan}`,
-      },
-    }
-  }
-
-  return {
-    style: {
-      gridColumn: `span ${colSpan} / span ${colSpan}`,
+      ...options.style,
+      gridArea: options.area,
+      gridColumn: col,
+      gridRow: row,
     },
   }
 }

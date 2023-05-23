@@ -1,79 +1,65 @@
-import { useEffect } from 'react'
-import {
-  getGridProps,
-  getGridItemProps,
-  getJSGridProps,
-  getJSGridItemProps,
-} from '../../../src'
+import { getGridProps, getGridItemProps } from '@pluralsight/headless-styles'
 
-function getGridItemStyles(options) {
-  const styles = getGridItemProps(options)
-
+function getGridItemStyles() {
   return {
-    style: {
-      ...styles.style,
-      backgroundColor: 'var(--ps-surface-strong)',
-      borderRadius: '6px',
-      marginBottom: '1rem',
-    },
+    backgroundColor: 'var(--ps-surface-strong)',
   }
 }
 
 function TwoColLayout() {
   return (
-    <div {...getGridProps({ gap: 32 })}>
-      <Feature />
-      <Sidebar />
-    </div>
-  )
-}
-
-function Feature() {
-  return (
     <div
-      {...getGridItemProps({
-        colSpan: 9,
+      {...getGridProps({
+        areas: ['header header', 'nav main', 'nav footer'],
+        cols: '12',
+        gap: 6,
+        rows: '5rem 1fr 3rem',
+        style: {
+          height: '30rem',
+        },
       })}
     >
-      <ContentCard height="13rem" />
-      <ContentCard height="13rem" />
-      <ContentCard height="13rem" />
-      <ContentCard height="13rem" />
+      <div
+        {...getGridItemProps({
+          area: 'header',
+          col: 'auto / span 12',
+          style: getGridItemStyles(),
+        })}
+      >
+        Header
+      </div>
+      <div
+        {...getGridItemProps({
+          area: 'nav',
+          col: 'auto / span 3',
+          style: getGridItemStyles(),
+        })}
+      >
+        Nav
+      </div>
+      <div
+        {...getGridItemProps({
+          area: 'main',
+          col: 'auto / span 9',
+          style: getGridItemStyles(),
+        })}
+      >
+        Main
+      </div>
+      <div
+        {...getGridItemProps({
+          area: 'footer',
+          col: 'auto / span 12',
+          style: getGridItemStyles(),
+        })}
+      >
+        Footer
+      </div>
     </div>
   )
 }
 
-function Sidebar() {
-  return (
-    <div
-      {...getGridItemProps({
-        colSpan: 3,
-      })}
-    >
-      <ContentCard height="13rem" />
-      <ContentCard height="10rem" />
-      <ContentCard height="16rem" />
-      <ContentCard height="6rem" />
-    </div>
-  )
-}
-
-function ContentCard({ height }) {
-  return (
-    <div {...getGridItemStyles()}>
-      <div style={{ height }}>content</div>
-    </div>
-  )
-}
-
-export default function Grid({ logJS }) {
-  useEffect(() => {
-    if (logJS) {
-      console.log({ ...getJSGridProps() })
-      console.log({ ...getJSGridItemProps() })
-    }
-  }, [logJS])
-
+export default function Grid() {
   return (
     <div>
       <h3>Grid</h3>
