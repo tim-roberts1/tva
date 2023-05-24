@@ -33,7 +33,7 @@
   "files": [
     "npm/**/*"
   ],
-  "sideEffects": false,
+  "sideEffects": "**/*.css",
   "browserslist": [
     "> 0.25%",
     "not dead"
