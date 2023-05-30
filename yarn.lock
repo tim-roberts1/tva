@@ -4262,7 +4262,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pluralsight/headless-styles@workspace:^, @pluralsight/headless-styles@workspace:packages/headless-styles":
+"@pluralsight/headless-styles@workspace:packages/headless-styles":
   version: 0.0.0-use.local
   resolution: "@pluralsight/headless-styles@workspace:packages/headless-styles"
   dependencies:
@@ -20595,7 +20595,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "sandbox@workspace:packages/sandbox"
   dependencies:
-    "@pluralsight/headless-styles": "workspace:^"
+    "@pluralsight/headless-styles": "workspace:packages/headless-styles"
     "@pluralsight/icons": 0.4.1-next-87eb09
     "@pluralsight/react": "workspace:packages/react"
     "@types/react": ^18.0.28
