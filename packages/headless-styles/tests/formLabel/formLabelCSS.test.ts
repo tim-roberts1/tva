@@ -1,4 +1,4 @@
-import { getFormLabelProps } from '../../src'
+import { getFormLabelProps } from '@headless-styles'
 
 describe('FormLabel CSS', () => {
   const baseClass = 'pando-form-label'
@@ -34,6 +34,20 @@ describe('FormLabel CSS', () => {
       ...result,
       htmlFor,
       className: `${baseClass} pando_hiddenFormLabel`,
+    })
+  })
+
+  test('should accept a custom className', () => {
+    expect(
+      getFormLabelProps({
+        htmlFor,
+        value,
+        classNames: ['custom-class-name'],
+      })
+    ).toEqual({
+      ...result,
+      htmlFor,
+      className: `${baseClass} pando_defaultFormLabel custom-class-name`,
     })
   })
 })
