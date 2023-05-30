@@ -10,9 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@pluralsight/headless-styles": "workspace:^",
+    "@pluralsight/headless-styles": "workspace:packages/headless-styles",
     "@pluralsight/icons": "0.4.1-next-87eb09",
-    "@pluralsight/react": "workspace:^",
+    "@pluralsight/react": "workspace:packages/react",
     "core-js": "^3.30.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
