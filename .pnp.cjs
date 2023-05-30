@@ -17554,6 +17554,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/eslint", "npm:8.37.0"],\
             ["@types/jest", "npm:29.2.5"],\
             ["@types/node", "npm:20.1.7"],\
+            ["@types/pluralsight__headless-styles", null],\
             ["@types/pluralsight__icons", null],\
             ["@types/react", "npm:18.2.0"],\
             ["@types/react-dom", "npm:18.2.1"],\
@@ -17581,6 +17582,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "packagePeers": [\
             "@pluralsight/icons",\
+            "@types/pluralsight__headless-styles",\
             "@types/pluralsight__icons",\
             "@types/react-dom",\
             "@types/react",\
