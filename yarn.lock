@@ -4547,6 +4547,7 @@ __metadata:
     tslib: latest
     typescript: 5.0.4
   peerDependencies:
+    "@pluralsight/headless-styles": "*"
     "@pluralsight/icons": "*"
     react: "*"
     react-dom: "*"
