@@ -1,6 +1,6 @@
-import type { FormLabelOptions, Kind } from './types'
+import type { FormLabelOptions, LabelKind } from './types'
 
-export function getFormLabelClasses(kind: Kind) {
+export function getFormLabelClasses(kind: LabelKind) {
   return {
     labelClass: `pando_${kind}FormLabel` as const,
   }
@@ -8,6 +8,7 @@ export function getFormLabelClasses(kind: Kind) {
 
 export function getDefaultFormLabelOptions(options?: FormLabelOptions) {
   return {
+    classNames: options?.classNames ?? [],
     htmlFor: options?.htmlFor ?? '',
     kind: options?.kind ?? 'default',
     required: options?.required ?? false,
@@ -15,7 +16,10 @@ export function getDefaultFormLabelOptions(options?: FormLabelOptions) {
   }
 }
 
-export function getFormValue(value: string, required: boolean) {
+export function getFormValue(
+  value: FormLabelOptions['value'],
+  required: FormLabelOptions['required']
+) {
   let label = value
 
   if (required) {

@@ -37,7 +37,7 @@ export type {
   FormGroupType,
 } from './components/FormGroup/types'
 
-export type { FormLabelOptions } from './components/FormLabel/types'
+export type { FormLabelOptions, LabelKind } from './components/FormLabel/types'
 
 export type {
   GridOptions,
