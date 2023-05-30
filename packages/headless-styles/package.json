@@ -18,6 +18,10 @@
       "import": "./npm/browser/src/styles.js",
       "require": "./npm/node/src/styles.js",
       "types": "./npm/types/src/styles.d.ts"
+    },
+    "./dev": {
+      "import": "./src/index.ts",
+      "types": "./src/src/types.d.ts"
     }
   },
   "typesVersions": {

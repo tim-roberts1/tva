@@ -10,7 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@pluralsight/icons": "next",
+    "@pluralsight/headless-styles": "workspace:packages/headless-styles",
+    "@pluralsight/icons": "0.4.1-next-87eb09",
     "@pluralsight/react": "workspace:packages/react",
     "core-js": "^3.30.2",
     "react": "^18.2.0",
@@ -27,6 +28,7 @@
     "eslint": "^8.38.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
+    "sass": "^1.62.1",
     "typescript": "5.0.4",
     "vite": "^4.3.2"
   }
